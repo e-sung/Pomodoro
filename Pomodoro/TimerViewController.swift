@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import HGCircularSlider
 
-class TimerViewController: UIViewController {
+public class TimerViewController: UIViewController {
+    
+    @IBOutlet var mainSlider: CircularSlider!
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
