@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0j-TM-sWV" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="37.5" y="113.5" width="300" height="300"/>
+                                <rect key="frame" x="52.333333333333343" y="41.333333333333343" width="331.33333333333326" height="331.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="C0j-TM-sWV" secondAttribute="height" multiplier="1:1" id="d3N-aY-Rei"/>
@@ -49,18 +49,26 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p0n-JA-XET">
-                                <rect key="frame" x="61.5" y="227.5" width="252" height="72"/>
+                                <rect key="frame" x="76.333333333333343" y="171" width="283.33333333333326" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcS-Oi-Txl" customClass="DesignableButton" customModule="Pomodoro" customModuleProvider="target">
-                                <rect key="frame" x="112.5" y="463.5" width="150" height="50"/>
+                                <rect key="frame" x="397.66666666666674" y="297.66666666666669" width="324.33333333333326" height="75"/>
                                 <color key="backgroundColor" red="0.88800019029999999" green="0.68623167279999997" blue="0.37639814620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="HcS-Oi-Txl" secondAttribute="height" multiplier="3:1" id="hgG-WB-ydB"/>
+                                    <constraint firstAttribute="width" secondItem="HcS-Oi-Txl" secondAttribute="height" multiplier="3:1" id="hgG-WB-ydB">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="50"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="100"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="hgG-WB-ydB"/>
+                                    </mask>
+                                </variation>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,6 +84,7 @@
                             <constraint firstItem="p0n-JA-XET" firstAttribute="trailing" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="-24" id="IGA-HE-MDm"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" priority="750" id="IwP-tg-CHI">
                                 <variation key="heightClass=compact-widthClass=compact" constant="-120"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="-150"/>
                             </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HcS-Oi-Txl" secondAttribute="trailing" constant="14" id="Sfn-RK-jeN"/>
                             <constraint firstItem="HcS-Oi-Txl" firstAttribute="width" secondItem="C0j-TM-sWV" secondAttribute="width" multiplier="0.5" id="TKk-Fk-FeP"/>
@@ -86,7 +95,7 @@
                             <constraint firstItem="p0n-JA-XET" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="24" id="oaw-fY-dx5"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sCg-NH-SXf"/>
                             <constraint firstItem="HcS-Oi-Txl" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" id="w1u-Gl-7re"/>
-                            <constraint firstItem="HcS-Oi-Txl" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="14" id="wUA-VQ-w99"/>
+                            <constraint firstItem="HcS-Oi-Txl" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="trailing" priority="750" constant="14" id="wUA-VQ-w99"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
@@ -117,7 +126,13 @@
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
+                                <include reference="Sfn-RK-jeN"/>
                                 <exclude reference="eIe-Zq-zmq"/>
+                                <exclude reference="TKk-Fk-FeP"/>
+                                <exclude reference="jWX-fo-Wng"/>
+                                <exclude reference="n7u-ax-Nez"/>
+                                <include reference="w1u-Gl-7re"/>
+                                <include reference="wUA-VQ-w99"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
