@@ -15,6 +15,9 @@ public class PomodoroInterval: NSObject, Interval {
     var timer: Timer = Timer()
     public weak var delegate: IntervalDelegate?
     public var elapsedSeconds: TimeInterval = 0
+    public var isActive: Bool {
+        return timer.isValid
+    }
     
     public init(intervalDelegate: IntervalDelegate, notiDelegate: UNUserNotificationCenterDelegate) {
         super.init()
