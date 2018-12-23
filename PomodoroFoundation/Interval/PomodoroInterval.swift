@@ -23,7 +23,7 @@ public class PomodoroInterval: NSObject, Interval {
     }
 
     public var targetSeconds: TimeInterval {
-        return 3
+        return 5
 //        return 60 * targetMinute
     }
     public var targetMinute: TimeInterval {
@@ -67,7 +67,7 @@ public class PomodoroInterval: NSObject, Interval {
         return UNNotificationAction(identifier: "interval.focus", title: "Start Break", options: [])
     }
     
-    var notiContent: UNMutableNotificationContent {
+    public var notiContent: UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         content.title = "Time to Break!"
         content.body = "Well Done!!!"
@@ -95,8 +95,7 @@ public class PomodoroInterval: NSObject, Interval {
     func sendNotification(){
         if PermissionManager.shared.canSendLocalNotification {
             let notiCenter = UNUserNotificationCenter.current()
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.001, repeats: false)
-            let request = UNNotificationRequest(identifier: String(describing: self), content: notiContent, trigger: trigger)
+            let request = UNNotificationRequest(identifier: String(describing: self), content: notiContent, trigger: nil)
             notiCenter.add(request) { (error) in
                 if let error = error{
                     print("Error posting notification:\(error.localizedDescription)")

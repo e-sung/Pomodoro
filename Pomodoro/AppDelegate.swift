@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
 import CoreData
+
+var dateBackgroundEnter: Date?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,12 +29,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        dateBackgroundEnter = Date()
+        guard let timerViewController = application.keyWindow?.rootViewController as? TimerViewController else { return }
+        guard let interval = timerViewController.interval else { return }
+        let remainingTime = interval.targetSeconds - interval.elapsedSeconds
+        
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: remainingTime, repeats: false)
+        let request = UNNotificationRequest(identifier: "background.noti", content: interval.notiContent, trigger: trigger)
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.add(request) { (error) in
+            if error != nil {
+                // Handle any errors.
+            }
+        }
+        
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        guard let timerViewController = application.keyWindow?.rootViewController as? TimerViewController else { return }
+        guard var interval = timerViewController.interval else { return }
+        if let dateBackgroundEnter = dateBackgroundEnter {
+            let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
+            interval.elapsedSeconds += timeIntervalSinceBackground
+        }
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

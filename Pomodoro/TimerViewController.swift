@@ -27,6 +27,7 @@ public class TimerViewController: UIViewController {
     }
     
     func setUpInitialView(){
+        
         mainSlider.endPointValue = 0
         mainSlider.isUserInteractionEnabled = false
         updateMainSlider(with: interval)
@@ -42,6 +43,7 @@ public class TimerViewController: UIViewController {
         mainSlider.maximumValue = CGFloat(interval.targetSeconds)
         mainSlider.trackColor = interval.themeColor
         mainSlider.trackFillColor = interval.themeColor
+        mainSlider.setNeedsDisplay()
     }
     
     @IBAction func playOrPauseButtonClicked(_ sender: UIButton) {
@@ -91,12 +93,37 @@ extension TimerViewController {
 
 extension TimerViewController: UNUserNotificationCenterDelegate {
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        playOrPauseButtonClicked(playOrPauseButton)
+        if response.notification.request.identifier == "background.noti" {
+            intervalFinished(by: .time)
+            if response.actionIdentifier != "com.apple.UNNotificationDefaultActionIdentifier" {
+                registerBackgroundTimer()
+            }
+        }
+        else {
+            playOrPauseButtonClicked(playOrPauseButton)
+        }
         completionHandler()
     }
     
     public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         intervalFinished(by: .time)
         completionHandler([.alert, .sound, .badge])
+    }
+}
+
+func registerBackgroundTimer() {
+    let application = UIApplication.shared
+    guard let timerViewController = application.keyWindow?.rootViewController as? TimerViewController else { return }
+    guard let interval = timerViewController.interval else { return }
+    let remainingTime = interval.targetSeconds - interval.elapsedSeconds
+    
+    
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: remainingTime, repeats: false)
+    let request = UNNotificationRequest(identifier: "background.noti", content: interval.notiContent, trigger: trigger)
+    let notificationCenter = UNUserNotificationCenter.current()
+    notificationCenter.add(request) { (error) in
+        if error != nil {
+            // Handle any errors.
+        }
     }
 }
