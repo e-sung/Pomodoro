@@ -24,6 +24,7 @@ public class TimerViewController: UIViewController {
         super.viewDidLoad()
         interval = FocusInterval()
         interval.delegate = self
+        interval.setUpNotification(for: self)
         setUpInitialView()
     }
     
@@ -65,6 +66,7 @@ extension TimerViewController: IntervalDelegate {
             interval = FocusInterval()
         }
         interval.delegate = self
+        interval.setUpNotification(for: self)
         setUpInitialView()
     }
     
@@ -87,5 +89,17 @@ extension TimerViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
         labelTime.text = dateFormatter.string(from: date)
+    }
+}
+
+extension TimerViewController: UNUserNotificationCenterDelegate {
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        print(response.actionIdentifier)
+        completionHandler()
+    }
+    
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        intervalFinished(by: .time)
+        completionHandler([.alert, .sound, .badge])
     }
 }

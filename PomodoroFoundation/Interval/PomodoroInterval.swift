@@ -41,7 +41,6 @@ open class PomodoroInterval: NSObject, Interval {
     }
     
     open func startTimer() {
-        setUpNotification(for: self)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] timer in
             guard let strongSelf = self else { return }
             strongSelf.elapsedSeconds += 1
@@ -68,20 +67,6 @@ open class PomodoroInterval: NSObject, Interval {
     
     open func pauseTimer() {
         timer.invalidate()
-    }
-}
-
-extension PomodoroInterval: UNUserNotificationCenterDelegate {
-    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        if response.actionIdentifier == "asdf" {
-            
-        }
-        completionHandler()
-    }
-    
-    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        delegate?.intervalFinished(by: .time)
-        completionHandler([.alert, .sound])
     }
 }
 
