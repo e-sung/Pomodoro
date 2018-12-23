@@ -10,36 +10,37 @@ import Foundation
 import UserNotifications
 import UIKit
 
-public class BreakInterval: NSObject, Interval {
+open class PomodoroInterval: NSObject, Interval {
     
     public var timer: Timer = Timer()
     public weak var delegate: IntervalDelegate?
     public var elapsedSeconds: TimeInterval = 0
-    public var targetSeconds: TimeInterval {
+    
+    open var targetSeconds: TimeInterval {
         return 60 * targetMinute
     }
-    public var targetMinute: TimeInterval {
-        return 5
+    open var targetMinute: TimeInterval {
+        return 25
     }
     
-    public var themeColor: UIColor {
-        return .green
+    open var themeColor: UIColor {
+        return .red
     }
     
-    public var notiAction: UNNotificationAction {
-        return UNNotificationAction(identifier: "interval.break", title: "Start Focus", options: [])
+    open var notiAction: UNNotificationAction {
+        return UNNotificationAction(identifier: "interval.focus", title: "Start Break", options: [])
     }
     
-    public var notiContent: UNMutableNotificationContent {
+    open var notiContent: UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
-        content.title = "Time to Focus!"
-        content.body = "Cheer Up!!!"
+        content.title = "Time to Break!"
+        content.body = "Well Done!!!"
         content.sound = UNNotificationSound.default
         content.categoryIdentifier = notiCategoryId
         return content
     }
     
-    public func startTimer() {
+    open func startTimer() {
         setUpNotification(for: self)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] timer in
             guard let strongSelf = self else { return }
@@ -48,20 +49,20 @@ public class BreakInterval: NSObject, Interval {
         })
     }
     
-    public func stopTimer() {
+    open func stopTimer() {
         timer.invalidate()
         elapsedSeconds = 0
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
     }
     
-    public func pauseTimer() {
+    open func pauseTimer() {
         timer.invalidate()
         sendNotification()
     }
 }
 
-extension BreakInterval: UNUserNotificationCenterDelegate {
+extension PomodoroInterval: UNUserNotificationCenterDelegate {
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.actionIdentifier == "asdf" {
             

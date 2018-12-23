@@ -29,29 +29,4 @@ class BreakIntervalTests: XCTestCase {
         XCTAssert(sut.notiContent.body == "Cheer Up!!!")
     }
     
-    func testTimerControl() {
-        let sut = BreakInterval()
-        
-        sut.startTimer()
-        XCTAssert(sut.timer.isValid)
-        
-        let expect = expectation(description: "timeElapsed")
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-            
-            XCTAssert(sut.elapsedSeconds > 0)
-            
-            sut.pauseTimer()
-            XCTAssertFalse(sut.timer.isValid)
-            XCTAssert(sut.elapsedSeconds > 0)
-            
-            sut.stopTimer()
-            XCTAssert(sut.elapsedSeconds == 0)
-            XCTAssertFalse(sut.timer.isValid)
-            
-            expect.fulfill()
-        })
-        
-        wait(for: [expect], timeout: 3)
-    }
-    
 }

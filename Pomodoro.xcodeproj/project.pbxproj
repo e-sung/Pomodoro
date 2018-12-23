@@ -31,6 +31,8 @@
 		F087254221CF6731007EB27F /* BreakInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251921CF6579007EB27F /* BreakInterval.swift */; };
 		F087254421CF6CB0007EB27F /* BreakIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254321CF6CB0007EB27F /* BreakIntervalTests.swift */; };
 		F087254621CF6DFD007EB27F /* NSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */; };
+		F087254821CF7051007EB27F /* PomodoroInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254721CF7051007EB27F /* PomodoroInterval.swift */; };
+		F087254B21CF722F007EB27F /* PomodoroIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		F087253121CF6719007EB27F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F087254321CF6CB0007EB27F /* BreakIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakIntervalTests.swift; sourceTree = "<group>"; };
 		F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionTests.swift; sourceTree = "<group>"; };
+		F087254721CF7051007EB27F /* PomodoroInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroInterval.swift; sourceTree = "<group>"; };
+		F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroIntervalTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,9 +245,7 @@
 		F087252121CF6719007EB27F /* PomodoroFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				F087251121CF5E8A007EB27F /* Interval.swift */,
-				F087251721CF6227007EB27F /* FocusInterval.swift */,
-				F087251921CF6579007EB27F /* BreakInterval.swift */,
+				F087254921CF7192007EB27F /* Interval */,
 				F087251521CF6204007EB27F /* PermissionManager.swift */,
 				F087251321CF5FAE007EB27F /* NSObject+Extension.swift */,
 				F087252221CF6719007EB27F /* PomodoroFoundation.h */,
@@ -255,12 +257,24 @@
 		F087252E21CF6719007EB27F /* PomodoroFoundationTests */ = {
 			isa = PBXGroup;
 			children = (
+				F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */,
 				F087252F21CF6719007EB27F /* FocusIntervalTests.swift */,
 				F087254321CF6CB0007EB27F /* BreakIntervalTests.swift */,
 				F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */,
 				F087253121CF6719007EB27F /* Info.plist */,
 			);
 			path = PomodoroFoundationTests;
+			sourceTree = "<group>";
+		};
+		F087254921CF7192007EB27F /* Interval */ = {
+			isa = PBXGroup;
+			children = (
+				F087251121CF5E8A007EB27F /* Interval.swift */,
+				F087254721CF7051007EB27F /* PomodoroInterval.swift */,
+				F087251721CF6227007EB27F /* FocusInterval.swift */,
+				F087251921CF6579007EB27F /* BreakInterval.swift */,
+			);
+			path = Interval;
 			sourceTree = "<group>";
 		};
 		FFD2E382A03C8A4D78114878 /* Pods */ = {
@@ -602,6 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F087254821CF7051007EB27F /* PomodoroInterval.swift in Sources */,
 				F087253F21CF6731007EB27F /* PermissionManager.swift in Sources */,
 				F087254221CF6731007EB27F /* BreakInterval.swift in Sources */,
 				F087253E21CF6731007EB27F /* Interval.swift in Sources */,
@@ -615,6 +630,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F087254421CF6CB0007EB27F /* BreakIntervalTests.swift in Sources */,
+				F087254B21CF722F007EB27F /* PomodoroIntervalTests.swift in Sources */,
 				F087253021CF6719007EB27F /* FocusIntervalTests.swift in Sources */,
 				F087254621CF6DFD007EB27F /* NSObjectExtensionTests.swift in Sources */,
 			);

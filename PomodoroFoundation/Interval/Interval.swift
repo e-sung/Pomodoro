@@ -32,6 +32,7 @@ public protocol Interval {
     func sendNotification()
 }
 
+
 extension Interval {
     
     public var notiCategoryId: String {
