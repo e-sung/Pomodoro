@@ -33,6 +33,7 @@ public class TimerViewController: UIViewController {
         mainSlider.isUserInteractionEnabled = false
         let currentFontSize = labelTime.font.pointSize
         labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .medium)
+        updateLabelTime(with: 0)
     }
     
     @IBAction func playOrPauseButtonClicked(_ sender: UIButton) {
@@ -61,19 +62,20 @@ extension TimerViewController: IntervalDelegate {
     }
     
     public func timeElapsed(_ seconds: TimeInterval) {
-        move(mainSlider, to: seconds)
+        updateLabelTime(with: seconds)
+        updateMainSlider(to: seconds)
     }
-    
-    public func move(_ slider: CircularSlider, to time: TimeInterval) {
+}
+
+extension TimerViewController {
+    func updateMainSlider(to time: TimeInterval) {
         let point = CGFloat(time)
-        slider.endPointValue = point
-        slider.layoutIfNeeded()
-        valueChanged(slider)
+        mainSlider.endPointValue = point
+        mainSlider.layoutIfNeeded()
     }
     
-    func valueChanged(_ sender: CircularSlider) {
-        guard let seconds = TimeInterval(exactly: sender.endPointValue) else { return }
-        let date = Date(timeIntervalSince1970: seconds)
+    func updateLabelTime(with seconds:TimeInterval) {
+        let date = Date(timeIntervalSince1970: interval.targetSeconds - seconds)
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
         labelTime.text = dateFormatter.string(from: date)
