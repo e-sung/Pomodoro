@@ -11,14 +11,6 @@ import UserNotifications
 import UIKit
 
 public class FocusInterval: PomodoroInterval {
-
-    override public var targetSeconds: TimeInterval {
-        return 7
-//        return 60 * targetMinute
-    }
-    override public var targetMinute: TimeInterval {
-        return 25
-    }
     
     override public var themeColor: UIColor {
         return UIColor(named: "Focus")!

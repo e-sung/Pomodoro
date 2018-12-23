@@ -22,8 +22,7 @@ public class TimerViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        interval = FocusInterval(intervalDelegate: self)
-        interval.setUpNotification(notiDelegate: self)
+        interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
         setUpInitialView()
     }
     
@@ -60,12 +59,11 @@ public class TimerViewController: UIViewController {
 extension TimerViewController: IntervalDelegate {
     public func intervalFinished(by finisher: IntervalFinisher) {
         if interval is FocusInterval {
-            interval = BreakInterval(intervalDelegate: self)
+            interval = BreakInterval(intervalDelegate: self, notiDelegate: self)
         }
         else {
-            interval = FocusInterval(intervalDelegate: self)
+            interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
         }
-        interval.setUpNotification(notiDelegate: self)
         setUpInitialView()
     }
     
