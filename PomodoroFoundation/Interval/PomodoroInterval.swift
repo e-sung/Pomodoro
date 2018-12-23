@@ -46,19 +46,25 @@ open class PomodoroInterval: NSObject, Interval {
             guard let strongSelf = self else { return }
             strongSelf.elapsedSeconds += 1
             strongSelf.delegate?.timeElapsed(strongSelf.elapsedSeconds)
+            if strongSelf.elapsedSeconds > strongSelf.targetSeconds {
+                strongSelf.stopTimer(by: .time)
+            }
         })
     }
     
-    open func stopTimer() {
+    open func stopTimer(by finisher: IntervalFinisher = .user) {
         timer.invalidate()
         elapsedSeconds = 0
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        if finisher == .time {
+            sendNotification()
+        }
+        delegate?.intervalFinished(by: finisher)
     }
     
     open func pauseTimer() {
         timer.invalidate()
-        sendNotification()
     }
 }
 

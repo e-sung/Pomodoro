@@ -12,6 +12,12 @@ import UIKit
 
 public protocol IntervalDelegate: class {
     func timeElapsed(_ seconds: TimeInterval)
+    func intervalFinished(by finisher: IntervalFinisher)
+}
+
+public enum IntervalFinisher {
+    case time
+    case user
 }
 
 public protocol Interval {
@@ -26,7 +32,7 @@ public protocol Interval {
     var notiCategoryId: String { get }
     
     func startTimer()
-    func stopTimer()
+    func stopTimer(by finisher:IntervalFinisher)
     func pauseTimer()
     func setUpNotification(for notiDelegate: UNUserNotificationCenterDelegate)
     func sendNotification()
@@ -36,7 +42,7 @@ public protocol Interval {
 extension Interval {
     
     public var notiCategoryId: String {
-        return String(describing: self)
+        return "asdfasdfasdf"
     }
     
     public func setUpNotification(for notiDelegate:UNUserNotificationCenterDelegate) {

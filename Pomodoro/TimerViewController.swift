@@ -47,6 +47,10 @@ public class TimerViewController: UIViewController {
 }
 
 extension TimerViewController: IntervalDelegate {
+    public func intervalFinished(by finisher: IntervalFinisher) {
+        print(finisher)
+    }
+    
     public func timeElapsed(_ seconds: TimeInterval) {
         move(mainSlider, to: seconds)
     }
