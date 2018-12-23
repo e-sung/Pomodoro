@@ -33,6 +33,7 @@
 		F087254621CF6DFD007EB27F /* NSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */; };
 		F087254821CF7051007EB27F /* PomodoroInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254721CF7051007EB27F /* PomodoroInterval.swift */; };
 		F087254B21CF722F007EB27F /* PomodoroIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */; };
+		F087254C21CF8259007EB27F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -481,6 +482,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F087254C21CF8259007EB27F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

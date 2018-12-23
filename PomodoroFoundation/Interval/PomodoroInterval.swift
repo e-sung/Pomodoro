@@ -24,7 +24,7 @@ open class PomodoroInterval: NSObject, Interval {
     }
     
     open var themeColor: UIColor {
-        return .red
+        return UIColor(named: "Focus")!
     }
     
     open var notiAction: UNNotificationAction {

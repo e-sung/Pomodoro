@@ -29,11 +29,18 @@ public class TimerViewController: UIViewController {
     
     func setUpInitialView(){
         mainSlider.endPointValue = 0
-        mainSlider.maximumValue = CGFloat(interval.targetSeconds)
         mainSlider.isUserInteractionEnabled = false
+        updateMainSlider(with: interval)
+        
         let currentFontSize = labelTime.font.pointSize
         labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .medium)
         updateLabelTime(with: 0)
+    }
+    
+    func updateMainSlider(with interval:Interval) {
+        mainSlider.maximumValue = CGFloat(interval.targetSeconds)
+        mainSlider.trackColor = interval.themeColor
+        mainSlider.trackFillColor = interval.themeColor
     }
     
     @IBAction func playOrPauseButtonClicked(_ sender: UIButton) {

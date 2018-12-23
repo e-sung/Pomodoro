@@ -21,7 +21,7 @@ public class FocusInterval: PomodoroInterval {
     }
     
     override public var themeColor: UIColor {
-        return .red
+        return UIColor(named: "Focus")!
     }
     
     override public var notiAction: UNNotificationAction {

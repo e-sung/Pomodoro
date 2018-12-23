@@ -21,7 +21,7 @@ public class BreakInterval: PomodoroInterval {
     }
     
     override public var themeColor: UIColor {
-        return .green
+        return UIColor(named: "Break")!
     }
     
     override public var notiAction: UNNotificationAction {
