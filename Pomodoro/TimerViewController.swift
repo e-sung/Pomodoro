@@ -82,6 +82,7 @@ extension TimerViewController {
     }
     
     func updateLabelTime(with seconds:TimeInterval) {
+        guard seconds <= interval.targetSeconds else { return }
         let date = Date(timeIntervalSince1970: interval.targetSeconds - seconds)
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
