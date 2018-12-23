@@ -91,7 +91,7 @@ extension TimerViewController {
 
 extension TimerViewController: UNUserNotificationCenterDelegate {
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print(response.actionIdentifier)
+        playOrPauseButtonClicked(playOrPauseButton)
         completionHandler()
     }
     
