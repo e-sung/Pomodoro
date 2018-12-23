@@ -10,27 +10,27 @@ import Foundation
 import UserNotifications
 import UIKit
 
-class BreakInterval: NSObject, Interval {
+public class BreakInterval: NSObject, Interval {
     
-    var timer: Timer = Timer()
-    weak var delegate: IntervalDelegate?
-    var elapsedSeconds: TimeInterval = 0
-    var targetSeconds: TimeInterval {
+    public var timer: Timer = Timer()
+    public weak var delegate: IntervalDelegate?
+    public var elapsedSeconds: TimeInterval = 0
+    public var targetSeconds: TimeInterval {
         return 60 * targetMinute
     }
-    var targetMinute: TimeInterval {
+    public var targetMinute: TimeInterval {
         return 5
     }
     
-    var themeColor: UIColor {
+    public var themeColor: UIColor {
         return .green
     }
     
-    var notiAction: UNNotificationAction {
+    public var notiAction: UNNotificationAction {
         return UNNotificationAction(identifier: "interval.break", title: "Start Focus", options: [])
     }
     
-    var notiContent: UNMutableNotificationContent {
+    public var notiContent: UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         content.title = "Time to Focus!"
         content.body = "Cheer Up!!!"
@@ -39,7 +39,7 @@ class BreakInterval: NSObject, Interval {
         return content
     }
     
-    func startTimer() {
+    public func startTimer() {
         setUpNotification(for: self)
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] timer in
             guard let strongSelf = self else { return }
@@ -48,14 +48,14 @@ class BreakInterval: NSObject, Interval {
         })
     }
     
-    func stopTimer() {
+    public func stopTimer() {
         timer.invalidate()
         elapsedSeconds = 0
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
     }
     
-    func pauseTimer() {
+    public func pauseTimer() {
         timer.invalidate()
         sendNotification()
     }

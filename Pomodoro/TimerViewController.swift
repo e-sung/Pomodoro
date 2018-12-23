@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import UserNotifications
 import HGCircularSlider
+import PomodoroFoundation
 
 public class TimerViewController: UIViewController {
     
@@ -46,11 +47,11 @@ public class TimerViewController: UIViewController {
 }
 
 extension TimerViewController: IntervalDelegate {
-    func timeElapsed(_ seconds: TimeInterval) {
+    public func timeElapsed(_ seconds: TimeInterval) {
         move(mainSlider, to: seconds)
     }
     
-    func move(_ slider: CircularSlider, to time: TimeInterval) {
+    public func move(_ slider: CircularSlider, to time: TimeInterval) {
         let point = CGFloat(time)
         slider.endPointValue = point
         slider.layoutIfNeeded()

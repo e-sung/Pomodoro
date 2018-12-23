@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PermissionManager {
-    static var shared = PermissionManager()
-    var canSendLocalNotification = false
+public class PermissionManager {
+    public static var shared = PermissionManager()
+    public var canSendLocalNotification = false
 }

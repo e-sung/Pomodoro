@@ -10,11 +10,11 @@ import Foundation
 import UserNotifications
 import UIKit
 
-protocol IntervalDelegate: class {
+public protocol IntervalDelegate: class {
     func timeElapsed(_ seconds: TimeInterval)
 }
 
-protocol Interval {
+public protocol Interval {
     var timer: Timer { get set }
     var delegate: IntervalDelegate? { get set }
     var elapsedSeconds: TimeInterval { get set }
@@ -34,11 +34,11 @@ protocol Interval {
 
 extension Interval {
     
-    var notiCategoryId: String {
+    public var notiCategoryId: String {
         return String(describing: self)
     }
     
-    func setUpNotification(for notiDelegate:UNUserNotificationCenterDelegate) {
+    public func setUpNotification(for notiDelegate:UNUserNotificationCenterDelegate) {
         let center = UNUserNotificationCenter.current()
         center.delegate = notiDelegate
         center.requestAuthorization(options: [.alert, .sound],
@@ -50,7 +50,7 @@ extension Interval {
         center.setNotificationCategories([timerCategory])
     }
     
-    func sendNotification(){
+    public func sendNotification(){
         if PermissionManager.shared.canSendLocalNotification {
             let notiCenter = UNUserNotificationCenter.current()
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.001, repeats: false)
