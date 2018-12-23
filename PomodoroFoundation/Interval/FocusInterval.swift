@@ -13,7 +13,7 @@ import UIKit
 public class FocusInterval: PomodoroInterval {
 
     override public var targetSeconds: TimeInterval {
-        return 3
+        return 7
 //        return 60 * targetMinute
     }
     override public var targetMinute: TimeInterval {

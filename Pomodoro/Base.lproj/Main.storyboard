@@ -141,6 +141,7 @@
                     <connections>
                         <outlet property="labelTime" destination="p0n-JA-XET" id="Umj-j8-5e6"/>
                         <outlet property="mainSlider" destination="C0j-TM-sWV" id="JAj-M2-36V"/>
+                        <outlet property="playOrPauseButton" destination="HcS-Oi-Txl" id="SL6-Ua-ofD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

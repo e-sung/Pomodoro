@@ -13,7 +13,8 @@ import UIKit
 public class BreakInterval: PomodoroInterval {
 
     override public var targetSeconds: TimeInterval {
-        return 60 * targetMinute
+        return 3
+//        return 60 * targetMinute
     }
     override public var targetMinute: TimeInterval {
         return 5

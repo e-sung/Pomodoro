@@ -57,10 +57,13 @@ open class PomodoroInterval: NSObject, Interval {
         elapsedSeconds = 0
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-        if finisher == .time {
+        if finisher == .user {
+            delegate?.intervalFinished(by: .user)
+        }
+        else {
             sendNotification()
         }
-        delegate?.intervalFinished(by: finisher)
+        
     }
     
     open func pauseTimer() {
@@ -77,6 +80,7 @@ extension PomodoroInterval: UNUserNotificationCenterDelegate {
     }
     
     public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        delegate?.intervalFinished(by: .time)
         completionHandler([.alert, .sound])
     }
 }

@@ -16,6 +16,7 @@ public class TimerViewController: UIViewController {
     
     @IBOutlet var mainSlider: CircularSlider!
     @IBOutlet var labelTime: UILabel!
+    @IBOutlet var playOrPauseButton: UIButton!
     
     var interval: Interval!
     
@@ -48,7 +49,15 @@ public class TimerViewController: UIViewController {
 
 extension TimerViewController: IntervalDelegate {
     public func intervalFinished(by finisher: IntervalFinisher) {
-        print(finisher)
+        playOrPauseButton.setTitle("▶", for: .normal)
+        if interval is FocusInterval {
+            interval = BreakInterval()
+        }
+        else {
+            interval = FocusInterval()
+        }
+        interval.delegate = self
+        setUpInitialView()
     }
     
     public func timeElapsed(_ seconds: TimeInterval) {
