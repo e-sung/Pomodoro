@@ -19,6 +19,10 @@
 		F0843CBC21CE5ADA00EDB65F /* PomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CBB21CE5ADA00EDB65F /* PomodoroTests.swift */; };
 		F0843CC721CE5ADA00EDB65F /* PomodoroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CC621CE5ADA00EDB65F /* PomodoroUITests.swift */; };
 		F087250E21CF1264007EB27F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087250D21CF1264007EB27F /* DesignableView.swift */; };
+		F087251221CF5E8A007EB27F /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251121CF5E8A007EB27F /* Interval.swift */; };
+		F087251421CF5FAF007EB27F /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251321CF5FAE007EB27F /* NSObject+Extension.swift */; };
+		F087251621CF6204007EB27F /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251521CF6204007EB27F /* PermissionManager.swift */; };
+		F087251821CF6227007EB27F /* FocusInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251721CF6227007EB27F /* FocusInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		F0843CC621CE5ADA00EDB65F /* PomodoroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroUITests.swift; sourceTree = "<group>"; };
 		F0843CC821CE5ADA00EDB65F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F087250D21CF1264007EB27F /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		F087251121CF5E8A007EB27F /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
+		F087251321CF5FAE007EB27F /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		F087251521CF6204007EB27F /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
+		F087251721CF6227007EB27F /* FocusInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +142,10 @@
 				F0843CA721CE5AD900EDB65F /* Main.storyboard */,
 				F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */,
 				F0843CAF21CE5ADA00EDB65F /* LaunchScreen.storyboard */,
+				F087251121CF5E8A007EB27F /* Interval.swift */,
+				F087251721CF6227007EB27F /* FocusInterval.swift */,
+				F087251521CF6204007EB27F /* PermissionManager.swift */,
+				F087251321CF5FAE007EB27F /* NSObject+Extension.swift */,
 				F0843CB221CE5ADA00EDB65F /* Info.plist */,
 				F0843CAA21CE5AD900EDB65F /* Pomodoro.xcdatamodeld */,
 			);
@@ -397,10 +409,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F087251221CF5E8A007EB27F /* Interval.swift in Sources */,
 				F087250E21CF1264007EB27F /* DesignableView.swift in Sources */,
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
+				F087251821CF6227007EB27F /* FocusInterval.swift in Sources */,
 				F0843CA621CE5AD900EDB65F /* TimerViewController.swift in Sources */,
+				F087251621CF6204007EB27F /* PermissionManager.swift in Sources */,
 				F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */,
+				F087251421CF5FAF007EB27F /* NSObject+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
