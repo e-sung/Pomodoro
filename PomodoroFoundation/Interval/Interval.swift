@@ -34,7 +34,7 @@ public protocol Interval {
     func startTimer()
     func stopTimer(by finisher:IntervalFinisher)
     func pauseTimer()
-    func setUpNotification(for notiDelegate: UNUserNotificationCenterDelegate)
+    func setUpNotification(notiDelegate: UNUserNotificationCenterDelegate)
     func sendNotification()
 }
 
@@ -45,7 +45,7 @@ extension Interval {
         return "asdfasdfasdf"
     }
     
-    public func setUpNotification(for notiDelegate:UNUserNotificationCenterDelegate) {
+    public func setUpNotification(notiDelegate:UNUserNotificationCenterDelegate) {
         let center = UNUserNotificationCenter.current()
         center.delegate = notiDelegate
         center.requestAuthorization(options: [.alert, .sound],

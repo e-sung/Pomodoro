@@ -22,9 +22,8 @@ public class TimerViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        interval = FocusInterval()
-        interval.delegate = self
-        interval.setUpNotification(for: self)
+        interval = FocusInterval(intervalDelegate: self)
+        interval.setUpNotification(notiDelegate: self)
         setUpInitialView()
     }
     
@@ -36,6 +35,8 @@ public class TimerViewController: UIViewController {
         let currentFontSize = labelTime.font.pointSize
         labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .medium)
         updateLabelTime(with: 0)
+        
+        playOrPauseButton.setTitle("▶", for: .normal)
     }
     
     func updateMainSlider(with interval:Interval) {
@@ -58,15 +59,13 @@ public class TimerViewController: UIViewController {
 
 extension TimerViewController: IntervalDelegate {
     public func intervalFinished(by finisher: IntervalFinisher) {
-        playOrPauseButton.setTitle("▶", for: .normal)
         if interval is FocusInterval {
-            interval = BreakInterval()
+            interval = BreakInterval(intervalDelegate: self)
         }
         else {
-            interval = FocusInterval()
+            interval = FocusInterval(intervalDelegate: self)
         }
-        interval.delegate = self
-        interval.setUpNotification(for: self)
+        interval.setUpNotification(notiDelegate: self)
         setUpInitialView()
     }
     

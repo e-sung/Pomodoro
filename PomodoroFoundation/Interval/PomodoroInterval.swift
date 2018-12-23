@@ -16,6 +16,11 @@ open class PomodoroInterval: NSObject, Interval {
     public weak var delegate: IntervalDelegate?
     public var elapsedSeconds: TimeInterval = 0
     
+    public init(intervalDelegate: IntervalDelegate) {
+        super.init()
+        self.delegate = intervalDelegate
+    }
+
     open var targetSeconds: TimeInterval {
         return 60 * targetMinute
     }
