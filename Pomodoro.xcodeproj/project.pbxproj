@@ -23,6 +23,7 @@
 		F087251421CF5FAF007EB27F /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251321CF5FAE007EB27F /* NSObject+Extension.swift */; };
 		F087251621CF6204007EB27F /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251521CF6204007EB27F /* PermissionManager.swift */; };
 		F087251821CF6227007EB27F /* FocusInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251721CF6227007EB27F /* FocusInterval.swift */; };
+		F087251A21CF6579007EB27F /* BreakInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251921CF6579007EB27F /* BreakInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		F087251321CF5FAE007EB27F /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		F087251521CF6204007EB27F /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		F087251721CF6227007EB27F /* FocusInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusInterval.swift; sourceTree = "<group>"; };
+		F087251921CF6579007EB27F /* BreakInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				F0843CAF21CE5ADA00EDB65F /* LaunchScreen.storyboard */,
 				F087251121CF5E8A007EB27F /* Interval.swift */,
 				F087251721CF6227007EB27F /* FocusInterval.swift */,
+				F087251921CF6579007EB27F /* BreakInterval.swift */,
 				F087251521CF6204007EB27F /* PermissionManager.swift */,
 				F087251321CF5FAE007EB27F /* NSObject+Extension.swift */,
 				F0843CB221CE5ADA00EDB65F /* Info.plist */,
@@ -413,6 +416,7 @@
 				F087250E21CF1264007EB27F /* DesignableView.swift in Sources */,
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
 				F087251821CF6227007EB27F /* FocusInterval.swift in Sources */,
+				F087251A21CF6579007EB27F /* BreakInterval.swift in Sources */,
 				F0843CA621CE5AD900EDB65F /* TimerViewController.swift in Sources */,
 				F087251621CF6204007EB27F /* PermissionManager.swift in Sources */,
 				F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */,
