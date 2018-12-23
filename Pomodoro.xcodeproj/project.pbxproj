@@ -20,7 +20,7 @@
 		F0843CC721CE5ADA00EDB65F /* PomodoroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CC621CE5ADA00EDB65F /* PomodoroUITests.swift */; };
 		F087250E21CF1264007EB27F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087250D21CF1264007EB27F /* DesignableView.swift */; };
 		F087252921CF6719007EB27F /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
-		F087253021CF6719007EB27F /* PomodoroFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087252F21CF6719007EB27F /* PomodoroFoundationTests.swift */; };
+		F087253021CF6719007EB27F /* FocusIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087252F21CF6719007EB27F /* FocusIntervalTests.swift */; };
 		F087253221CF6719007EB27F /* PomodoroFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F087252221CF6719007EB27F /* PomodoroFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F087253521CF6719007EB27F /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F087253621CF6719007EB27F /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -29,6 +29,8 @@
 		F087254021CF6731007EB27F /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251321CF5FAE007EB27F /* NSObject+Extension.swift */; };
 		F087254121CF6731007EB27F /* FocusInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251721CF6227007EB27F /* FocusInterval.swift */; };
 		F087254221CF6731007EB27F /* BreakInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251921CF6579007EB27F /* BreakInterval.swift */; };
+		F087254421CF6CB0007EB27F /* BreakIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254321CF6CB0007EB27F /* BreakIntervalTests.swift */; };
+		F087254621CF6DFD007EB27F /* NSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,8 +119,10 @@
 		F087252221CF6719007EB27F /* PomodoroFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PomodoroFoundation.h; sourceTree = "<group>"; };
 		F087252321CF6719007EB27F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F087252821CF6719007EB27F /* PomodoroFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F087252F21CF6719007EB27F /* PomodoroFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroFoundationTests.swift; sourceTree = "<group>"; };
+		F087252F21CF6719007EB27F /* FocusIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusIntervalTests.swift; sourceTree = "<group>"; };
 		F087253121CF6719007EB27F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F087254321CF6CB0007EB27F /* BreakIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakIntervalTests.swift; sourceTree = "<group>"; };
+		F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,7 +255,9 @@
 		F087252E21CF6719007EB27F /* PomodoroFoundationTests */ = {
 			isa = PBXGroup;
 			children = (
-				F087252F21CF6719007EB27F /* PomodoroFoundationTests.swift */,
+				F087252F21CF6719007EB27F /* FocusIntervalTests.swift */,
+				F087254321CF6CB0007EB27F /* BreakIntervalTests.swift */,
+				F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */,
 				F087253121CF6719007EB27F /* Info.plist */,
 			);
 			path = PomodoroFoundationTests;
@@ -608,7 +614,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F087253021CF6719007EB27F /* PomodoroFoundationTests.swift in Sources */,
+				F087254421CF6CB0007EB27F /* BreakIntervalTests.swift in Sources */,
+				F087253021CF6719007EB27F /* FocusIntervalTests.swift in Sources */,
+				F087254621CF6DFD007EB27F /* NSObjectExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
