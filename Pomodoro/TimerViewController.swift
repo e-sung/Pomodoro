@@ -25,6 +25,7 @@ public class TimerViewController: UIViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+        currentIntervalCount = retreiveCycle(from: UserDefaults.standard)
         interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
         setUpInitialView()
     }
@@ -71,6 +72,7 @@ extension TimerViewController: IntervalDelegate {
         else {
             if finisher == .time {
                 currentIntervalCount += 1
+                saveCycles(currentIntervalCount, to: UserDefaults.standard)
             }
             interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
         }
@@ -117,6 +119,14 @@ extension TimerViewController: UNUserNotificationCenterDelegate {
         intervalFinished(by: .time)
         completionHandler([.alert, .sound, .badge])
     }
+}
+
+func saveCycles(_ cycle: Int, to userDefault: UserDefaults) {
+    userDefault.set(cycle, forKey: "cycle")
+}
+
+func retreiveCycle(from userDefault: UserDefaults) -> Int {
+    return userDefault.integer(forKey: "cycle")
 }
 
 func registerBackgroundTimer() {
