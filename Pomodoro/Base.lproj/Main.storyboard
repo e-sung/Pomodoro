@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0j-TM-sWV" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="32" y="86" width="256" height="256"/>
+                                <rect key="frame" x="37.5" y="113.5" width="300" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="C0j-TM-sWV" secondAttribute="height" multiplier="1:1" id="d3N-aY-Rei"/>
@@ -55,14 +55,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0n-JA-XET">
-                                <rect key="frame" x="56" y="178" width="208" height="72"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="p0n-JA-XET">
+                                <rect key="frame" x="97.5" y="216" width="180" height="95"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                </variation>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcS-Oi-Txl">
-                                <rect key="frame" x="142" y="258" width="36" height="44"/>
+                                <rect key="frame" x="169.5" y="319" width="36" height="54.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="▶">
@@ -83,9 +89,22 @@
                                     <action selector="playOrPauseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YdF-3a-g9y"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAK-wa-qwe">
+                                <rect key="frame" x="138.5" y="454" width="98" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="oAK-wa-qwe" firstAttribute="top" secondItem="C0j-TM-sWV" secondAttribute="bottom" constant="40" id="2Qr-fa-rtt"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="4Ow-0k-WTO"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="7ph-cJ-OOY"/>
                             <constraint firstItem="HcS-Oi-Txl" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" constant="-40" id="AkI-TT-UMX"/>
@@ -96,26 +115,43 @@
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" priority="999" id="CLj-fV-FBc">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-100"/>
                             </constraint>
+                            <constraint firstItem="oAK-wa-qwe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="14" id="CUq-Mm-x41"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="D5F-GA-jif"/>
-                            <constraint firstItem="p0n-JA-XET" firstAttribute="trailing" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="-24" id="IGA-HE-MDm"/>
+                            <constraint firstItem="oAK-wa-qwe" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" id="ECX-mW-UN6"/>
+                            <constraint firstItem="p0n-JA-XET" firstAttribute="trailing" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="-60" id="IGA-HE-MDm"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" priority="750" id="IwP-tg-CHI">
                                 <variation key="heightClass=compact-widthClass=compact" constant="-120"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="-150"/>
                             </constraint>
                             <constraint firstItem="HcS-Oi-Txl" firstAttribute="centerX" secondItem="p0n-JA-XET" secondAttribute="centerX" id="SKe-7W-GFo"/>
+                            <constraint firstItem="oAK-wa-qwe" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" id="SPc-YH-quA"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="centerY" secondItem="C0j-TM-sWV" secondAttribute="centerY" id="WU1-s8-wWh"/>
+                            <constraint firstItem="oAK-wa-qwe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cBF-6p-B6D"/>
+                            <constraint firstItem="oAK-wa-qwe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="14" id="dGo-AZ-d2Z"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="eIe-Zq-zmq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oAK-wa-qwe" secondAttribute="trailing" constant="40" id="ixK-8c-Vct"/>
+                            <constraint firstItem="oAK-wa-qwe" firstAttribute="top" secondItem="C0j-TM-sWV" secondAttribute="bottom" constant="40.333333333333371" id="nZH-SH-fWS"/>
                             <constraint firstItem="HcS-Oi-Txl" firstAttribute="top" secondItem="p0n-JA-XET" secondAttribute="bottom" constant="8" id="o6P-AH-B4B"/>
-                            <constraint firstItem="p0n-JA-XET" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="24" id="oaw-fY-dx5"/>
+                            <constraint firstItem="p0n-JA-XET" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="60" id="oaw-fY-dx5"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sCg-NH-SXf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oAK-wa-qwe" secondAttribute="trailing" constant="40" id="tpo-98-gQk"/>
+                            <constraint firstItem="oAK-wa-qwe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wHm-Yw-ULw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="ixK-8c-Vct"/>
+                                <exclude reference="tpo-98-gQk"/>
                                 <exclude reference="7ph-cJ-OOY"/>
                                 <exclude reference="CLj-fV-FBc"/>
                                 <exclude reference="D5F-GA-jif"/>
                                 <exclude reference="eIe-Zq-zmq"/>
+                                <exclude reference="CUq-Mm-x41"/>
+                                <exclude reference="ECX-mW-UN6"/>
+                                <exclude reference="SPc-YH-quA"/>
+                                <exclude reference="cBF-6p-B6D"/>
+                                <exclude reference="dGo-AZ-d2Z"/>
+                                <exclude reference="nZH-SH-fWS"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -123,14 +159,32 @@
                                 <include reference="D5F-GA-jif"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="ixK-8c-Vct"/>
+                                <exclude reference="2Qr-fa-rtt"/>
+                                <include reference="ECX-mW-UN6"/>
+                                <include reference="dGo-AZ-d2Z"/>
+                                <exclude reference="wHm-Yw-ULw"/>
+                            </mask>
+                        </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
+                                <include reference="tpo-98-gQk"/>
                                 <exclude reference="eIe-Zq-zmq"/>
+                                <exclude reference="2Qr-fa-rtt"/>
+                                <include reference="CUq-Mm-x41"/>
+                                <include reference="SPc-YH-quA"/>
+                                <exclude reference="wHm-Yw-ULw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="CLj-fV-FBc"/>
+                                <exclude reference="2Qr-fa-rtt"/>
+                                <include reference="cBF-6p-B6D"/>
+                                <include reference="nZH-SH-fWS"/>
+                                <exclude reference="wHm-Yw-ULw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -140,6 +194,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="labelIntervalCount" destination="oAK-wa-qwe" id="tw0-f1-XDP"/>
                         <outlet property="labelTime" destination="p0n-JA-XET" id="Umj-j8-5e6"/>
                         <outlet property="mainSlider" destination="C0j-TM-sWV" id="JAj-M2-36V"/>
                         <outlet property="playOrPauseButton" destination="HcS-Oi-Txl" id="SL6-Ua-ofD"/>
@@ -152,7 +207,7 @@
     </scenes>
     <resources>
         <namedColor name="Focus">
-            <color red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.80000000000000004" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

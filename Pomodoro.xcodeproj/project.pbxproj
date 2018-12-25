@@ -34,6 +34,7 @@
 		F087254821CF7051007EB27F /* PomodoroInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254721CF7051007EB27F /* PomodoroInterval.swift */; };
 		F087254B21CF722F007EB27F /* PomodoroIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */; };
 		F087254C21CF8259007EB27F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
+		F09422E621D22B2F00134C63 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E521D22B2F00134C63 /* Cycle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionTests.swift; sourceTree = "<group>"; };
 		F087254721CF7051007EB27F /* PomodoroInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroInterval.swift; sourceTree = "<group>"; };
 		F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroIntervalTests.swift; sourceTree = "<group>"; };
+		F09422E521D22B2F00134C63 /* Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 		F087254921CF7192007EB27F /* Interval */ = {
 			isa = PBXGroup;
 			children = (
+				F09422E521D22B2F00134C63 /* Cycle.swift */,
 				F087251121CF5E8A007EB27F /* Interval.swift */,
 				F087254721CF7051007EB27F /* PomodoroInterval.swift */,
 				F087251721CF6227007EB27F /* FocusInterval.swift */,
@@ -622,6 +625,7 @@
 				F087253F21CF6731007EB27F /* PermissionManager.swift in Sources */,
 				F087254221CF6731007EB27F /* BreakInterval.swift in Sources */,
 				F087253E21CF6731007EB27F /* Interval.swift in Sources */,
+				F09422E621D22B2F00134C63 /* Cycle.swift in Sources */,
 				F087254021CF6731007EB27F /* NSObject+Extension.swift in Sources */,
 				F087254121CF6731007EB27F /* FocusInterval.swift in Sources */,
 			);

@@ -16,10 +16,13 @@ public class TimerViewController: UIViewController {
     
     @IBOutlet var mainSlider: CircularSlider!
     @IBOutlet var labelTime: UILabel!
+    @IBOutlet var labelIntervalCount: UILabel!
     @IBOutlet var playOrPauseButton: UIButton!
     
     var interval: Interval!
-    
+    var maxIntervalCount = 10
+    var currentIntervalCount = 0
+
     override public func viewDidLoad() {
         super.viewDidLoad()
         interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
@@ -37,6 +40,8 @@ public class TimerViewController: UIViewController {
         updateLabelTime(with: 0)
         
         playOrPauseButton.setTitle("▶", for: .normal)
+        
+        labelIntervalCount.text = "\(currentIntervalCount) / \(maxIntervalCount)"
     }
     
     func updateMainSlider(with interval:Interval) {
@@ -64,6 +69,9 @@ extension TimerViewController: IntervalDelegate {
             interval = BreakInterval(intervalDelegate: self, notiDelegate: self)
         }
         else {
+            if finisher == .time {
+                currentIntervalCount += 1
+            }
             interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
         }
         setUpInitialView()
