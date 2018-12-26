@@ -14,47 +14,34 @@ import PomodoroFoundation
 
 public class TimerViewController: UIViewController {
     
+    // MARK: IBOutlets
     @IBOutlet var mainSlider: CircularSlider!
     @IBOutlet var labelTime: UILabel!
     @IBOutlet var labelIntervalCount: UILabel!
     @IBOutlet var playOrPauseButton: UIButton!
     
+    // MARK: Properties
     var interval: Interval!
     var maxIntervalCount = 10
     var currentIntervalCount = 0
 
+    // MARK: LifeCycle
     override public func viewDidLoad() {
         super.viewDidLoad()
-        currentIntervalCount = retreiveCycle(from: UserDefaults.standard)
-        interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
+        setUpInitialValue()
         setUpInitialView()
     }
     
-    func setUpInitialView(){
-        
-        mainSlider.endPointValue = 0
-        mainSlider.isUserInteractionEnabled = false
-        updateMainSlider(with: interval)
-        
-        let currentFontSize = labelTime.font.pointSize
-        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .medium)
-        updateLabelTime(with: 0)
-        
-        playOrPauseButton.setTitle("▶", for: .normal)
-        
-        labelIntervalCount.text = "\(currentIntervalCount) / \(maxIntervalCount)"
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setUpFonts()
     }
     
-    func updateMainSlider(with interval:Interval) {
-        mainSlider.maximumValue = CGFloat(interval.targetSeconds)
-        mainSlider.trackColor = interval.themeColor
-        mainSlider.trackFillColor = interval.themeColor
-        mainSlider.setNeedsDisplay()
-    }
-    
+    // MARK: IBAction
     @IBAction func playOrPauseButtonClicked(_ sender: UIButton) {
         if sender.title(for: .normal) == "▶" {
             sender.setTitle("||", for: .normal)
+            resetCycleIfDayHasPassed()
             interval.startTimer()
         }
         else {
@@ -64,6 +51,68 @@ public class TimerViewController: UIViewController {
     }
 }
 
+// MARK: SetUp
+extension TimerViewController {
+    func setUpInitialValue() {
+        interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
+        resetCycleIfDayHasPassed()
+        currentIntervalCount = retreiveCycle(from: UserDefaults.standard)
+    }
+    
+    func resetCycleIfDayHasPassed() {
+        let latestCycleDate = retreiveLatestCycleDate(from: UserDefaults.standard)
+        if latestCycleDate.isYesterday {
+            currentIntervalCount = 0
+            saveCycles(currentIntervalCount, date: Date(), to: UserDefaults.standard)
+        }
+    }
+    
+    func setUpInitialView(){
+        
+        mainSlider.endPointValue = 0
+        mainSlider.isUserInteractionEnabled = false
+        updateMainSlider(with: interval)
+        
+        setUpFonts()
+        updateLabelTime(with: 0)
+
+        playOrPauseButton.setTitle("▶", for: .normal)
+        
+        labelIntervalCount.text = "\(currentIntervalCount) / \(maxIntervalCount)"
+    }
+    
+    func setUpFonts() {
+        let currentFontSize = labelTime.font.pointSize
+        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .medium)
+        labelTime.font = UIFontMetrics.default.scaledFont(for: labelTime.font)
+    }
+}
+
+// MARK: Update
+extension TimerViewController {
+    func updateMainSlider(with interval:Interval) {
+        mainSlider.maximumValue = CGFloat(interval.targetSeconds)
+        mainSlider.trackColor = interval.themeColor
+        mainSlider.trackFillColor = interval.themeColor
+        mainSlider.setNeedsDisplay()
+    }
+    
+    func updateMainSlider(to time: TimeInterval) {
+        let point = CGFloat(time)
+        mainSlider.endPointValue = point
+        mainSlider.layoutIfNeeded()
+    }
+    
+    func updateLabelTime(with seconds:TimeInterval) {
+        guard seconds <= interval.targetSeconds else { return }
+        let date = Date(timeIntervalSince1970: interval.targetSeconds - seconds)
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
+        labelTime.text = dateFormatter.string(from: date)
+    }
+}
+
+// MARK: IntervalDelegate
 extension TimerViewController: IntervalDelegate {
     public func intervalFinished(by finisher: IntervalFinisher) {
         if interval is FocusInterval {
@@ -85,22 +134,8 @@ extension TimerViewController: IntervalDelegate {
     }
 }
 
-extension TimerViewController {
-    func updateMainSlider(to time: TimeInterval) {
-        let point = CGFloat(time)
-        mainSlider.endPointValue = point
-        mainSlider.layoutIfNeeded()
-    }
-    
-    func updateLabelTime(with seconds:TimeInterval) {
-        guard seconds <= interval.targetSeconds else { return }
-        let date = Date(timeIntervalSince1970: interval.targetSeconds - seconds)
-        let dateFormatter = DateFormatter()
-        dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
-        labelTime.text = dateFormatter.string(from: date)
-    }
-}
 
+// MARK: UserNotificationExtension
 extension TimerViewController: UNUserNotificationCenterDelegate {
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.notification.request.identifier == "background.noti" {
@@ -121,32 +156,14 @@ extension TimerViewController: UNUserNotificationCenterDelegate {
     }
 }
 
-func saveCycles(_ cycle: Int, to userDefault: UserDefaults) {
-    userDefault.set(cycle, forKey: "cycle")
-}
-
-func retreiveCycle(from userDefault: UserDefaults) -> Int {
-    return userDefault.integer(forKey: "cycle")
-}
-
-func registerBackgroundTimer() {
-    dateBackgroundEnter = Date()
-    let application = UIApplication.shared
-    guard let timerViewController = application.keyWindow?.rootViewController as? TimerViewController else { return }
-    guard let interval = timerViewController.interval else { return }
-    let remainingTime = interval.targetSeconds - interval.elapsedSeconds
-    
-    let timeToRing = Date(timeInterval: remainingTime, since: Date())
-    let calendar = Calendar.autoupdatingCurrent
-    let components = calendar.dateComponents(in: .current, from: timeToRing)
-    let newComponents = DateComponents(calendar: calendar, timeZone: .current, hour: components.hour, minute: components.minute, second: components.second)
-    let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
-    
-    let request = UNNotificationRequest(identifier: "background.noti", content: interval.notiContent, trigger: trigger)
-    let notificationCenter = UNUserNotificationCenter.current()
-    notificationCenter.add(request) { (error) in
-        if error != nil {
-            // Handle any errors.
-        }
+// MARK: Etc
+fileprivate extension Date {
+    var isYesterday: Bool {
+        return day != Date().day
+    }
+    var day: String {
+        let formatter = DateFormatter.standard
+        formatter.dateFormat = "dd"
+        return formatter.string(from: self)
     }
 }

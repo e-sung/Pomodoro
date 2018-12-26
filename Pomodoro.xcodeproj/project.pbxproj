@@ -34,6 +34,8 @@
 		F087254821CF7051007EB27F /* PomodoroInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254721CF7051007EB27F /* PomodoroInterval.swift */; };
 		F087254B21CF722F007EB27F /* PomodoroIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */; };
 		F087254C21CF8259007EB27F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
+		F09422EA21D2476600134C63 /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
+		F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionTests.swift; sourceTree = "<group>"; };
 		F087254721CF7051007EB27F /* PomodoroInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroInterval.swift; sourceTree = "<group>"; };
 		F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroIntervalTests.swift; sourceTree = "<group>"; };
+		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
+		F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,8 @@
 			children = (
 				F0843CA321CE5AD900EDB65F /* AppDelegate.swift */,
 				F0843CA521CE5AD900EDB65F /* TimerViewController.swift */,
+				F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */,
+				F09422E921D2476600134C63 /* StandardTime.swift */,
 				F087250D21CF1264007EB27F /* DesignableView.swift */,
 				F0843CA721CE5AD900EDB65F /* Main.storyboard */,
 				F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */,
@@ -595,6 +601,8 @@
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
 				F0843CA621CE5AD900EDB65F /* TimerViewController.swift in Sources */,
 				F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */,
+				F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */,
+				F09422EA21D2476600134C63 /* StandardTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
