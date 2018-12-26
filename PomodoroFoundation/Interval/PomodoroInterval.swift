@@ -26,8 +26,8 @@ public class PomodoroInterval: NSObject, Interval {
     }
 
     public var targetSeconds: TimeInterval {
-        return 5
-//        return 60 * targetMinute
+//        return 5
+        return 60 * targetMinute
     }
     public var targetMinute: TimeInterval {
         return 25

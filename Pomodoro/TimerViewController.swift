@@ -35,6 +35,7 @@ public class TimerViewController: UIViewController {
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setUpFonts()
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     // MARK: IBAction
@@ -83,7 +84,7 @@ extension TimerViewController {
     
     func setUpFonts() {
         let currentFontSize = labelTime.font.pointSize
-        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .medium)
+        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .light)
         labelTime.font = UIFontMetrics.default.scaledFont(for: labelTime.font)
     }
 }
