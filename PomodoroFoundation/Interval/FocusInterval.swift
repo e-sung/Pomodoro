@@ -17,7 +17,7 @@ public class FocusInterval: PomodoroInterval {
     }
     
     override public var notiAction: UNNotificationAction {
-        return UNNotificationAction(identifier: "interval.break", title: "Start Focus", options: [])
+        return UNNotificationAction(identifier: "interval.break", title: "Start Break", options: [])
     }
     
     override public var notiContent: UNMutableNotificationContent {

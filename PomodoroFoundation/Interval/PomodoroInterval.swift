@@ -22,12 +22,12 @@ public class PomodoroInterval: NSObject, Interval {
     public init(intervalDelegate: IntervalDelegate, notiDelegate: UNUserNotificationCenterDelegate) {
         super.init()
         self.delegate = intervalDelegate
-        setUpNotification(notiDelegate: notiDelegate)
+//        setUpNotiAction(notiDelegate: notiDelegate)
     }
 
     public var targetSeconds: TimeInterval {
-//        return 5
-        return 60 * targetMinute
+        return 5
+//        return 60 * targetMinute
     }
     public var targetMinute: TimeInterval {
         return 25
@@ -51,23 +51,15 @@ public class PomodoroInterval: NSObject, Interval {
     public func stopTimer(by finisher: IntervalFinisher = .user) {
         timer.invalidate()
         elapsedSeconds = 0
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-        if finisher == .user {
-            delegate?.intervalFinished(by: .user)
-        }
-        else {
-            sendNotification()
-        }
-        
+        delegate?.intervalFinished(by: finisher)
     }
     
     public func pauseTimer() {
         timer.invalidate()
     }
     
-    var notiAction: UNNotificationAction {
-        return UNNotificationAction(identifier: "interval.focus", title: "Start Break", options: [])
+    public var notiAction: UNNotificationAction {
+        return UNNotificationAction(identifier: "interval.break", title: "Start Break", options: [])
     }
     
     public var notiContent: UNMutableNotificationContent {
@@ -81,29 +73,5 @@ public class PomodoroInterval: NSObject, Interval {
     
     var notiCategoryId: String {
         return "asdfasdfasdf"
-    }
-    
-    func setUpNotification(notiDelegate:UNUserNotificationCenterDelegate) {
-        let center = UNUserNotificationCenter.current()
-        center.delegate = notiDelegate
-        center.requestAuthorization(options: [.alert, .sound],
-                                    completionHandler: {(granted, error) in
-                                        PermissionManager.shared.canSendLocalNotification = granted
-        })
-        let timerCategory = UNNotificationCategory(identifier: notiCategoryId,
-                                                   actions: [notiAction], intentIdentifiers: [], options: [])
-        center.setNotificationCategories([timerCategory])
-    }
-    
-    func sendNotification(){
-        if PermissionManager.shared.canSendLocalNotification {
-            let notiCenter = UNUserNotificationCenter.current()
-            let request = UNNotificationRequest(identifier: String(describing: self), content: notiContent, trigger: nil)
-            notiCenter.add(request) { (error) in
-                if let error = error{
-                    print("Error posting notification:\(error.localizedDescription)")
-                }
-            }
-        }
     }
 }

@@ -24,6 +24,7 @@ public protocol Interval {
     var delegate: IntervalDelegate? { get set }
     var isActive: Bool { get }
     var notiContent: UNMutableNotificationContent { get }
+    var notiAction: UNNotificationAction { get }
     var elapsedSeconds: TimeInterval { get set }
     var targetSeconds: TimeInterval { get }
     var targetMinute: TimeInterval { get }

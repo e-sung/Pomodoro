@@ -44,6 +44,7 @@ public class TimerViewController: UIViewController {
             sender.setTitle("||", for: .normal)
             resetCycleIfDayHasPassed()
             interval.startTimer()
+            
         }
         else {
             interval.pauseTimer()
@@ -55,6 +56,7 @@ public class TimerViewController: UIViewController {
 // MARK: SetUp
 extension TimerViewController {
     func setUpInitialValue() {
+        setUpNotification()
         interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
         resetCycleIfDayHasPassed()
         currentIntervalCount = retreiveCycle(from: UserDefaults.standard)
@@ -85,7 +87,7 @@ extension TimerViewController {
     func setUpFonts() {
         let currentFontSize = labelTime.font.pointSize
         labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .light)
-        labelTime.font = UIFontMetrics.default.scaledFont(for: labelTime.font)
+//        labelTime.font = UIFontMetrics.default.scaledFont(for: labelTime.font)
     }
 }
 
@@ -116,6 +118,9 @@ extension TimerViewController {
 // MARK: IntervalDelegate
 extension TimerViewController: IntervalDelegate {
     public func intervalFinished(by finisher: IntervalFinisher) {
+        clearPendingNotifications(on: UNUserNotificationCenter.current())
+        add(notiAction: interval.notiAction, to: UNUserNotificationCenter.current())
+        publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
         if interval is FocusInterval {
             interval = BreakInterval(intervalDelegate: self, notiDelegate: self)
         }
@@ -126,12 +131,51 @@ extension TimerViewController: IntervalDelegate {
             }
             interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
         }
+
         setUpInitialView()
+    }
+    
+    func toggle(_ interval: Interval) {
+        
+    }
+    
+    func clearPendingNotifications(on notiCenter: UNUserNotificationCenter) {
+        notiCenter.removeAllPendingNotificationRequests()
+        notiCenter.removeAllDeliveredNotifications()
     }
     
     public func timeElapsed(_ seconds: TimeInterval) {
         updateLabelTime(with: seconds)
         updateMainSlider(to: seconds)
+    }
+    
+    func add(notiAction: UNNotificationAction, to notiCenter: UNUserNotificationCenter) {
+        let timerCategory = UNNotificationCategory(identifier: "asdfasdfasdf",
+                                                   actions: [notiAction], intentIdentifiers: [], options: [])
+        notiCenter.setNotificationCategories([timerCategory])
+    }
+    
+    func setUpNotification() {
+        let notiCenter = UNUserNotificationCenter.current()
+        notiCenter.delegate = self
+        notiCenter.requestAuthorization(options: [.alert, .sound],
+                                        completionHandler: {(granted, error) in
+                                            PermissionManager.shared.canSendLocalNotification = granted
+        })
+    }
+    
+    func publishNotiContent(of interval: Interval, via notiCenter: UNUserNotificationCenter) {
+        if PermissionManager.shared.canSendLocalNotification {
+            // TODO: meaningful identifier
+            let request = UNNotificationRequest(identifier: Date().debugDescription,
+                                                content: interval.notiContent,
+                                                trigger: nil)
+            notiCenter.add(request) { (error) in
+                if let error = error{
+                    print("Error posting notification:\(error.localizedDescription)")
+                }
+            }
+        }
     }
 }
 
@@ -152,7 +196,7 @@ extension TimerViewController: UNUserNotificationCenterDelegate {
     }
     
     public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        intervalFinished(by: .time)
+//        intervalFinished(by: .time)
         completionHandler([.alert, .sound, .badge])
     }
 }

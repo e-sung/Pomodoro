@@ -13,8 +13,8 @@ import UIKit
 public class BreakInterval: PomodoroInterval {
 
     override public var targetSeconds: TimeInterval {
-//        return 3
-        return 60 * targetMinute
+        return 3
+//        return 60 * targetMinute
     }
     override public var targetMinute: TimeInterval {
         return 5
@@ -25,9 +25,9 @@ public class BreakInterval: PomodoroInterval {
     }
     
     override public var notiAction: UNNotificationAction {
-        return UNNotificationAction(identifier: "interval.focus", title: "Start Break", options: [])
+        return UNNotificationAction(identifier: "interval.focus", title: "Start Focus", options: [])
     }
-    
+//
     override public var notiContent: UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         content.title = "Time to Focus!"
