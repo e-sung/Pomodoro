@@ -10,24 +10,42 @@ import Foundation
 import UserNotifications
 import UIKit
 
-public class FocusInterval: PomodoroInterval {
+public class FocusInterval: NSObject, Interval {
     
-    override public var themeColor: UIColor {
-        return UIColor(named: "Focus")!
+    public var timer: Timer = Timer()
+    
+    public weak var delegate: IntervalDelegate?
+    
+    public init(intervalDelegate: IntervalDelegate) {
+        super.init()
+        self.delegate = intervalDelegate
     }
-    
-    override public var notiAction: UNNotificationAction {
+
+    public var notiAction: UNNotificationAction {
         return UNNotificationAction(identifier: "interval.break", title: "Start Break", options: [])
     }
     
-    override public var notiContent: UNMutableNotificationContent {
+    public var notiContent: UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         content.title = "Time to Break!"
         content.body = "Well Done!!!"
         content.sound = UNNotificationSound.default
-        content.categoryIdentifier = notiCategoryId
+        content.categoryIdentifier = "TimeToBreak"
         return content
     }
 
+    public var elapsedSeconds: TimeInterval = 0
+    
+    public var targetSeconds: TimeInterval {
+        return 5
+        //        return 60 * targetMinute
+    }
+    public var targetMinute: TimeInterval {
+        return 25
+    }
+    
+    public var themeColor: UIColor {
+        return UIColor(named: "Focus")!
+    }
 }
 

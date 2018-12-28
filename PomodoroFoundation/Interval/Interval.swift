@@ -20,7 +20,8 @@ public enum IntervalFinisher {
     case user
 }
 
-public protocol Interval {
+public protocol Interval: class {
+    var timer: Timer { get set }
     var delegate: IntervalDelegate? { get set }
     var isActive: Bool { get }
     var notiContent: UNMutableNotificationContent { get }
@@ -33,4 +34,31 @@ public protocol Interval {
     func startTimer()
     func stopTimer(by finisher:IntervalFinisher)
     func pauseTimer()
+}
+
+extension Interval {
+    public var isActive: Bool {
+        return timer.isValid
+    }
+    
+    public func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] timer in
+            guard let strongSelf = self else { return }
+            strongSelf.elapsedSeconds += 1
+            strongSelf.delegate?.timeElapsed(strongSelf.elapsedSeconds)
+            if strongSelf.elapsedSeconds > strongSelf.targetSeconds {
+                strongSelf.stopTimer(by: .time)
+            }
+        })
+    }
+    
+    public func stopTimer(by finisher: IntervalFinisher = .user) {
+        timer.invalidate()
+        elapsedSeconds = 0
+        delegate?.intervalFinished(by: finisher)
+    }
+    
+    public func pauseTimer() {
+        timer.invalidate()
+    }
 }

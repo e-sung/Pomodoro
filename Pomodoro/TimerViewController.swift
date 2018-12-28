@@ -57,7 +57,7 @@ public class TimerViewController: UIViewController {
 extension TimerViewController {
     func setUpInitialValue() {
         setUpNotification()
-        interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
+        interval = FocusInterval(intervalDelegate: self)
         resetCycleIfDayHasPassed()
         currentIntervalCount = retreiveCycle(from: UserDefaults.standard)
     }
@@ -87,7 +87,6 @@ extension TimerViewController {
     func setUpFonts() {
         let currentFontSize = labelTime.font.pointSize
         labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .light)
-//        labelTime.font = UIFontMetrics.default.scaledFont(for: labelTime.font)
     }
 }
 
@@ -119,38 +118,40 @@ extension TimerViewController {
 extension TimerViewController: IntervalDelegate {
     public func intervalFinished(by finisher: IntervalFinisher) {
         clearPendingNotifications(on: UNUserNotificationCenter.current())
-        add(notiAction: interval.notiAction, to: UNUserNotificationCenter.current())
+        add(notiAction: interval.notiAction, for: interval.notiContent, to: UNUserNotificationCenter.current())
         publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
+        
+        if finisher == .time && interval is BreakInterval {
+            currentIntervalCount += 1
+            saveCycles(currentIntervalCount, to: UserDefaults.standard)
+        }
+        
         if interval is FocusInterval {
-            interval = BreakInterval(intervalDelegate: self, notiDelegate: self)
+            interval = BreakInterval(intervalDelegate: self)
         }
         else {
-            if finisher == .time {
-                currentIntervalCount += 1
-                saveCycles(currentIntervalCount, to: UserDefaults.standard)
-            }
-            interval = FocusInterval(intervalDelegate: self, notiDelegate: self)
+            interval = FocusInterval(intervalDelegate: self)
         }
 
         setUpInitialView()
-    }
-    
-    func toggle(_ interval: Interval) {
-        
-    }
-    
-    func clearPendingNotifications(on notiCenter: UNUserNotificationCenter) {
-        notiCenter.removeAllPendingNotificationRequests()
-        notiCenter.removeAllDeliveredNotifications()
     }
     
     public func timeElapsed(_ seconds: TimeInterval) {
         updateLabelTime(with: seconds)
         updateMainSlider(to: seconds)
     }
+}
+
+// MARK: Notification
+extension TimerViewController {
     
-    func add(notiAction: UNNotificationAction, to notiCenter: UNUserNotificationCenter) {
-        let timerCategory = UNNotificationCategory(identifier: "asdfasdfasdf",
+    func clearPendingNotifications(on notiCenter: UNUserNotificationCenter) {
+        notiCenter.removeAllPendingNotificationRequests()
+        notiCenter.removeAllDeliveredNotifications()
+    }
+    
+    func add(notiAction: UNNotificationAction, for notiContent: UNNotificationContent, to notiCenter: UNUserNotificationCenter) {
+        let timerCategory = UNNotificationCategory(identifier: notiContent.categoryIdentifier,
                                                    actions: [notiAction], intentIdentifiers: [], options: [])
         notiCenter.setNotificationCategories([timerCategory])
     }
@@ -196,7 +197,6 @@ extension TimerViewController: UNUserNotificationCenterDelegate {
     }
     
     public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-//        intervalFinished(by: .time)
         completionHandler([.alert, .sound, .badge])
     }
 }

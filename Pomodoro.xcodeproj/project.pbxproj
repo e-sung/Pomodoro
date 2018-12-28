@@ -31,7 +31,6 @@
 		F087254221CF6731007EB27F /* BreakInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087251921CF6579007EB27F /* BreakInterval.swift */; };
 		F087254421CF6CB0007EB27F /* BreakIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254321CF6CB0007EB27F /* BreakIntervalTests.swift */; };
 		F087254621CF6DFD007EB27F /* NSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */; };
-		F087254821CF7051007EB27F /* PomodoroInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254721CF7051007EB27F /* PomodoroInterval.swift */; };
 		F087254B21CF722F007EB27F /* PomodoroIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */; };
 		F087254C21CF8259007EB27F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F09422EA21D2476600134C63 /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
@@ -128,7 +127,6 @@
 		F087253121CF6719007EB27F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F087254321CF6CB0007EB27F /* BreakIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakIntervalTests.swift; sourceTree = "<group>"; };
 		F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionTests.swift; sourceTree = "<group>"; };
-		F087254721CF7051007EB27F /* PomodoroInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroInterval.swift; sourceTree = "<group>"; };
 		F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroIntervalTests.swift; sourceTree = "<group>"; };
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
 		F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -277,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				F087251121CF5E8A007EB27F /* Interval.swift */,
-				F087254721CF7051007EB27F /* PomodoroInterval.swift */,
 				F087251721CF6227007EB27F /* FocusInterval.swift */,
 				F087251921CF6579007EB27F /* BreakInterval.swift */,
 			);
@@ -626,7 +623,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F087254821CF7051007EB27F /* PomodoroInterval.swift in Sources */,
 				F087253F21CF6731007EB27F /* PermissionManager.swift in Sources */,
 				F087254221CF6731007EB27F /* BreakInterval.swift in Sources */,
 				F087253E21CF6731007EB27F /* Interval.swift in Sources */,
