@@ -33,6 +33,7 @@
 		F087254621CF6DFD007EB27F /* NSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */; };
 		F087254B21CF722F007EB27F /* PomodoroIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */; };
 		F087254C21CF8259007EB27F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
+		F0880A9C21D67EE7008AE79F /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880A9B21D67EE7008AE79F /* NotificationManager.swift */; };
 		F09422EA21D2476600134C63 /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
 		F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		F087254321CF6CB0007EB27F /* BreakIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakIntervalTests.swift; sourceTree = "<group>"; };
 		F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionTests.swift; sourceTree = "<group>"; };
 		F087254A21CF722F007EB27F /* PomodoroIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroIntervalTests.swift; sourceTree = "<group>"; };
+		F0880A9B21D67EE7008AE79F /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
 		F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +254,7 @@
 			children = (
 				F087254921CF7192007EB27F /* Interval */,
 				F087251521CF6204007EB27F /* PermissionManager.swift */,
+				F0880A9B21D67EE7008AE79F /* NotificationManager.swift */,
 				F087251321CF5FAE007EB27F /* NSObject+Extension.swift */,
 				F087252221CF6719007EB27F /* PomodoroFoundation.h */,
 				F087252321CF6719007EB27F /* Info.plist */,
@@ -623,6 +626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0880A9C21D67EE7008AE79F /* NotificationManager.swift in Sources */,
 				F087253F21CF6731007EB27F /* PermissionManager.swift in Sources */,
 				F087254221CF6731007EB27F /* BreakInterval.swift in Sources */,
 				F087253E21CF6731007EB27F /* Interval.swift in Sources */,

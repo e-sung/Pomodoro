@@ -24,6 +24,7 @@ public class TimerViewController: UIViewController {
     var interval: Interval!
     var maxIntervalCount = 10
     var currentIntervalCount = 0
+    var notificationManager:NotificationManager!
 
     // MARK: LifeCycle
     override public func viewDidLoad() {
@@ -56,7 +57,7 @@ public class TimerViewController: UIViewController {
 // MARK: SetUp
 extension TimerViewController {
     func setUpInitialValue() {
-        setUpNotification()
+        notificationManager = NotificationManager(delegate: self)
         interval = FocusInterval(intervalDelegate: self)
         resetCycleIfDayHasPassed()
         currentIntervalCount = retreiveCycle(from: UserDefaults.standard)
@@ -117,9 +118,7 @@ extension TimerViewController {
 // MARK: IntervalDelegate
 extension TimerViewController: IntervalDelegate {
     public func intervalFinished(by finisher: IntervalFinisher) {
-        clearPendingNotifications(on: UNUserNotificationCenter.current())
-        add(notiAction: interval.notiAction, for: interval.notiContent, to: UNUserNotificationCenter.current())
-        publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
+        notificationManager.publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
         
         if finisher == .time && interval is BreakInterval {
             currentIntervalCount += 1
@@ -142,43 +141,6 @@ extension TimerViewController: IntervalDelegate {
     }
 }
 
-// MARK: Notification
-extension TimerViewController {
-    
-    func clearPendingNotifications(on notiCenter: UNUserNotificationCenter) {
-        notiCenter.removeAllPendingNotificationRequests()
-        notiCenter.removeAllDeliveredNotifications()
-    }
-    
-    func add(notiAction: UNNotificationAction, for notiContent: UNNotificationContent, to notiCenter: UNUserNotificationCenter) {
-        let timerCategory = UNNotificationCategory(identifier: notiContent.categoryIdentifier,
-                                                   actions: [notiAction], intentIdentifiers: [], options: [])
-        notiCenter.setNotificationCategories([timerCategory])
-    }
-    
-    func setUpNotification() {
-        let notiCenter = UNUserNotificationCenter.current()
-        notiCenter.delegate = self
-        notiCenter.requestAuthorization(options: [.alert, .sound],
-                                        completionHandler: {(granted, error) in
-                                            PermissionManager.shared.canSendLocalNotification = granted
-        })
-    }
-    
-    func publishNotiContent(of interval: Interval, via notiCenter: UNUserNotificationCenter) {
-        if PermissionManager.shared.canSendLocalNotification {
-            // TODO: meaningful identifier
-            let request = UNNotificationRequest(identifier: Date().debugDescription,
-                                                content: interval.notiContent,
-                                                trigger: nil)
-            notiCenter.add(request) { (error) in
-                if let error = error{
-                    print("Error posting notification:\(error.localizedDescription)")
-                }
-            }
-        }
-    }
-}
 
 
 // MARK: UserNotificationExtension
