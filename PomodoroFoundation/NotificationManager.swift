@@ -24,15 +24,10 @@ public class NotificationManager {
         clearPendingNotifications(on: notiCenter)
         add(notiAction: interval.notiAction, for: interval.notiContent, to: notiCenter)
         if PermissionManager.shared.canSendLocalNotification {
-            // TODO: meaningful identifier
-            let request = UNNotificationRequest(identifier: Date().debugDescription,
+            let request = UNNotificationRequest(identifier: interval.notiContent.title + Date().description,
                                                 content: interval.notiContent,
                                                 trigger: nil)
-            notiCenter.add(request) { (error) in
-                if let error = error{
-                    print("Error posting notification:\(error.localizedDescription)")
-                }
-            }
+            notiCenter.add(request, withCompletionHandler: nil)
         }
     }
     

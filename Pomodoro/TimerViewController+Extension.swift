@@ -40,9 +40,5 @@ func registerBackgroundTimer() {
     
     let request = UNNotificationRequest(identifier: "background.noti", content: interval.notiContent, trigger: trigger)
     let notificationCenter = UNUserNotificationCenter.current()
-    notificationCenter.add(request) { (error) in
-        if error != nil {
-            // Handle any errors.
-        }
-    }
+    notificationCenter.add(request, withCompletionHandler: nil)
 }
