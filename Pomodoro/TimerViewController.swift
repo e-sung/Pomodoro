@@ -22,8 +22,9 @@ public class TimerViewController: UIViewController {
     
     // MARK: Properties
     var interval: Interval!
-    var maxIntervalCount = 10
-    var currentIntervalCount = 0
+    var maxCycleCount = 10
+    var currentCycleCount = 0
+    var cycleCountForLongBreak = 3
     var notificationManager:NotificationManager!
 
     // MARK: LifeCycle
@@ -60,14 +61,14 @@ extension TimerViewController {
         notificationManager = NotificationManager(delegate: self)
         interval = FocusInterval(intervalDelegate: self)
         resetCycleIfDayHasPassed()
-        currentIntervalCount = retreiveCycle(from: UserDefaults.standard)
+        currentCycleCount = retreiveCycle(from: UserDefaults.standard)
     }
     
     func resetCycleIfDayHasPassed() {
         let latestCycleDate = retreiveLatestCycleDate(from: UserDefaults.standard)
         if latestCycleDate.isYesterday {
-            currentIntervalCount = 0
-            saveCycles(currentIntervalCount, date: Date(), to: UserDefaults.standard)
+            currentCycleCount = 0
+            saveCycles(currentCycleCount, date: Date(), to: UserDefaults.standard)
         }
     }
     
@@ -82,7 +83,7 @@ extension TimerViewController {
 
         playOrPauseButton.setTitle("▶", for: .normal)
         
-        labelIntervalCount.text = "\(currentIntervalCount) / \(maxIntervalCount)"
+        labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
     }
     
     func setUpFonts() {
@@ -121,18 +122,26 @@ extension TimerViewController: IntervalDelegate {
         notificationManager.publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
         
         if finisher == .time && interval is BreakInterval {
-            currentIntervalCount += 1
-            saveCycles(currentIntervalCount, to: UserDefaults.standard)
+            currentCycleCount += 1
+            saveCycles(currentCycleCount, to: UserDefaults.standard)
         }
         
+        resetInterval()
+        setUpInitialView()
+    }
+    
+    func resetInterval() {
         if interval is FocusInterval {
-            interval = BreakInterval(intervalDelegate: self)
+            if (currentCycleCount + 1) % cycleCountForLongBreak == 0 {
+                interval = LongBreakInterval(intervalDelegate: self)
+            }
+            else {
+                interval = BreakInterval(intervalDelegate: self)
+            }
         }
-        else {
+        else if interval is BreakInterval {
             interval = FocusInterval(intervalDelegate: self)
         }
-
-        setUpInitialView()
     }
     
     public func timeElapsed(_ seconds: TimeInterval) {
