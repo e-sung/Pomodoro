@@ -39,6 +39,7 @@
 		F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
 		F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */; };
 		F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */; };
+		F0D89DC421D741840011A0B7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTimeTests.swift; sourceTree = "<group>"; };
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
 		F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerViewController+Extension.swift"; sourceTree = "<group>"; };
+		F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */,
 				F087250D21CF1264007EB27F /* DesignableView.swift */,
 				F0843CA721CE5AD900EDB65F /* Main.storyboard */,
+				F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */,
 				F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */,
 				F0843CAF21CE5ADA00EDB65F /* LaunchScreen.storyboard */,
 				F0843CB221CE5ADA00EDB65F /* Info.plist */,
@@ -608,6 +611,7 @@
 			files = (
 				F087250E21CF1264007EB27F /* DesignableView.swift in Sources */,
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
+				F0D89DC421D741840011A0B7 /* SettingsTableViewController.swift in Sources */,
 				F0843CA621CE5AD900EDB65F /* TimerViewController.swift in Sources */,
 				F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */,
 				F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */,
