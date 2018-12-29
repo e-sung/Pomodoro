@@ -35,6 +35,7 @@
 		F0880A9C21D67EE7008AE79F /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880A9B21D67EE7008AE79F /* NotificationManager.swift */; };
 		F0880A9E21D71FBD008AE79F /* LongBreakInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880A9D21D71FBD008AE79F /* LongBreakInterval.swift */; };
 		F0880AA021D7277F008AE79F /* LongBreakIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880A9F21D7277F008AE79F /* LongBreakIntervalTests.swift */; };
+		F0880AA221D72AB3008AE79F /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA121D72AB3008AE79F /* NotificationManagerTests.swift */; };
 		F09422EA21D2476600134C63 /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
 		F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -132,6 +133,7 @@
 		F0880A9B21D67EE7008AE79F /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		F0880A9D21D71FBD008AE79F /* LongBreakInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakInterval.swift; sourceTree = "<group>"; };
 		F0880A9F21D7277F008AE79F /* LongBreakIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakIntervalTests.swift; sourceTree = "<group>"; };
+		F0880AA121D72AB3008AE79F /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
 		F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -270,6 +272,7 @@
 				F087252F21CF6719007EB27F /* FocusIntervalTests.swift */,
 				F087254321CF6CB0007EB27F /* BreakIntervalTests.swift */,
 				F0880A9F21D7277F008AE79F /* LongBreakIntervalTests.swift */,
+				F0880AA121D72AB3008AE79F /* NotificationManagerTests.swift */,
 				F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */,
 				F087253121CF6719007EB27F /* Info.plist */,
 			);
@@ -646,6 +649,7 @@
 				F0880AA021D7277F008AE79F /* LongBreakIntervalTests.swift in Sources */,
 				F087254421CF6CB0007EB27F /* BreakIntervalTests.swift in Sources */,
 				F087253021CF6719007EB27F /* FocusIntervalTests.swift in Sources */,
+				F0880AA221D72AB3008AE79F /* NotificationManagerTests.swift in Sources */,
 				F087254621CF6DFD007EB27F /* NSObjectExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
