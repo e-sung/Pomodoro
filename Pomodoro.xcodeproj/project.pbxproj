@@ -36,7 +36,8 @@
 		F0880A9E21D71FBD008AE79F /* LongBreakInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880A9D21D71FBD008AE79F /* LongBreakInterval.swift */; };
 		F0880AA021D7277F008AE79F /* LongBreakIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880A9F21D7277F008AE79F /* LongBreakIntervalTests.swift */; };
 		F0880AA221D72AB3008AE79F /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA121D72AB3008AE79F /* NotificationManagerTests.swift */; };
-		F09422EA21D2476600134C63 /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
+		F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
+		F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */; };
 		F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,7 @@
 		F0880A9D21D71FBD008AE79F /* LongBreakInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakInterval.swift; sourceTree = "<group>"; };
 		F0880A9F21D7277F008AE79F /* LongBreakIntervalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongBreakIntervalTests.swift; sourceTree = "<group>"; };
 		F0880AA121D72AB3008AE79F /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
+		F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTimeTests.swift; sourceTree = "<group>"; };
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
 		F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,7 +226,6 @@
 				F0843CA321CE5AD900EDB65F /* AppDelegate.swift */,
 				F0843CA521CE5AD900EDB65F /* TimerViewController.swift */,
 				F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */,
-				F09422E921D2476600134C63 /* StandardTime.swift */,
 				F087250D21CF1264007EB27F /* DesignableView.swift */,
 				F0843CA721CE5AD900EDB65F /* Main.storyboard */,
 				F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */,
@@ -258,6 +259,7 @@
 			children = (
 				F087254921CF7192007EB27F /* Interval */,
 				F087251521CF6204007EB27F /* PermissionManager.swift */,
+				F09422E921D2476600134C63 /* StandardTime.swift */,
 				F0880A9B21D67EE7008AE79F /* NotificationManager.swift */,
 				F087251321CF5FAE007EB27F /* NSObject+Extension.swift */,
 				F087252221CF6719007EB27F /* PomodoroFoundation.h */,
@@ -275,6 +277,7 @@
 				F0880AA121D72AB3008AE79F /* NotificationManagerTests.swift */,
 				F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */,
 				F087253121CF6719007EB27F /* Info.plist */,
+				F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */,
 			);
 			path = PomodoroFoundationTests;
 			sourceTree = "<group>";
@@ -608,7 +611,6 @@
 				F0843CA621CE5AD900EDB65F /* TimerViewController.swift in Sources */,
 				F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */,
 				F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */,
-				F09422EA21D2476600134C63 /* StandardTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +639,7 @@
 				F087253F21CF6731007EB27F /* PermissionManager.swift in Sources */,
 				F087254221CF6731007EB27F /* BreakInterval.swift in Sources */,
 				F087253E21CF6731007EB27F /* Interval.swift in Sources */,
+				F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */,
 				F087254021CF6731007EB27F /* NSObject+Extension.swift in Sources */,
 				F087254121CF6731007EB27F /* FocusInterval.swift in Sources */,
 			);
@@ -647,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0880AA021D7277F008AE79F /* LongBreakIntervalTests.swift in Sources */,
+				F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */,
 				F087254421CF6CB0007EB27F /* BreakIntervalTests.swift in Sources */,
 				F087253021CF6719007EB27F /* FocusIntervalTests.swift in Sources */,
 				F0880AA221D72AB3008AE79F /* NotificationManagerTests.swift in Sources */,
