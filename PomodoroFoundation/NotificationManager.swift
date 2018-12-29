@@ -9,7 +9,7 @@
 import Foundation
 import UserNotifications
 
-public class NotificationManager {
+public class NotificationManager: NSObject {
     
     public init(delegate: UNUserNotificationCenterDelegate) {
         let notiCenter = UNUserNotificationCenter.current()

@@ -16,7 +16,7 @@ public class FocusInterval: NSObject, Interval {
     
     public weak var delegate: IntervalDelegate?
     
-    public init(intervalDelegate: IntervalDelegate) {
+    public init(intervalDelegate: IntervalDelegate? = nil) {
         super.init()
         self.delegate = intervalDelegate
     }
@@ -37,8 +37,8 @@ public class FocusInterval: NSObject, Interval {
     public var elapsedSeconds: TimeInterval = 0
     
     public var targetSeconds: TimeInterval {
-        return 5
-        //        return 60 * targetMinute
+//        return 5
+                return 60 * targetMinute
     }
     public var targetMinute: TimeInterval {
         return 25

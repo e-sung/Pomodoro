@@ -11,8 +11,8 @@ import Foundation
 public class LongBreakInterval: BreakInterval {
     
     override public var targetSeconds: TimeInterval {
-        return 5
-        //        return 60 * targetMinute
+//        return 5
+                return 60 * targetMinute
     }
     
     override public var targetMinute: TimeInterval {

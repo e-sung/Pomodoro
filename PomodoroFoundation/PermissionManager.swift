@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PermissionManager {
+public class PermissionManager: NSObject {
     public static var shared = PermissionManager()
     public var canSendLocalNotification = false
 }
