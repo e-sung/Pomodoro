@@ -13,9 +13,7 @@ class NSObjectExtensionTests: XCTestCase {
     
     
     func testInit() {
-        let focusInterval = FocusInterval()
-        XCTAssert(focusInterval.className == "FocusInterval")
-        XCTAssert(FocusInterval.className == "FocusInterval")
-    }
-    
+        XCTAssert(PermissionManager.className == "PermissionManager")
+        XCTAssert(PermissionManager().className == "PermissionManager")
+    }  
 }

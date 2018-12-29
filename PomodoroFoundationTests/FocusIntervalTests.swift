@@ -24,11 +24,49 @@ class FocusIntervalTests: XCTestCase {
         XCTAssert(sut.elapsedSeconds == 0)
         XCTAssert(sut.targetSeconds == 1500)
         XCTAssert(sut.targetMinute == 25 )
-        XCTAssert(sut.themeColor == .red)
-        XCTAssert(sut.notiCategoryId.contains("FocusInterval"))
+        XCTAssert(sut.themeColor == UIColor(named: "Focus")!)
         XCTAssert(sut.notiAction.title == "Start Break")
         XCTAssert(sut.notiContent.title == "Time to Break!")
         XCTAssert(sut.notiContent.body == "Well Done!!!")
         XCTAssert(sut.notiContent.title == "Time to Break!")
+        
+    }
+    
+    func testTimerStartAndPause() {
+        // Given Nothing
+        
+        // When
+        let sut = FocusInterval()
+        sut.startTimer()
+        
+        // Then
+        XCTAssert(sut.isActive)
+        
+        // When
+        sut.pauseTimer()
+        
+        // Then
+        XCTAssert(sut.isActive == false)
+    }
+    
+    func testTimerStop() {
+        // Given
+        let expect = expectation(description: "Time has elapsed")
+        
+        // When
+        let sut = FocusInterval()
+        sut.startTimer()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            // Then
+            XCTAssert(sut.elapsedSeconds >= 3)
+            
+            // When
+            sut.stopTimer()
+            //Then
+            XCTAssert(sut.elapsedSeconds == 0)
+            expect.fulfill()
+        })
+        
+        wait(for: [expect], timeout: 5)
     }
 }
