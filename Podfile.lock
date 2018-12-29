@@ -1,16 +1,20 @@
 PODS:
   - HGCircularSlider (2.0.0)
+  - SwiftDate (5.0.13)
 
 DEPENDENCIES:
   - HGCircularSlider
+  - SwiftDate
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - HGCircularSlider
+    - SwiftDate
 
 SPEC CHECKSUMS:
   HGCircularSlider: 92e2ee098c814709f455b8f46cd9008147f6a869
+  SwiftDate: f4aea5fa9dee812485f34041121a4cbde01b0dee
 
-PODFILE CHECKSUM: 9756b716b55539205b47120fcc8df35bca555682
+PODFILE CHECKSUM: bcf95f1c468ce3f33619bc62fcc2bbd069e5ef0d
 
 COCOAPODS: 1.5.3

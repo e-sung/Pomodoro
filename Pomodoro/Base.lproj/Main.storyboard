@@ -202,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="132.04225352112675"/>
+            <point key="canvasLocation" x="-60" y="131"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="3ai-bM-iDq">
@@ -215,7 +215,7 @@
                         <sections>
                             <tableViewSection headerTitle="Basics" id="8Qj-KH-uSh">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WQy-zE-Sga">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WQy-zE-Sga" customClass="BasicSettingTableViewCell" customModule="Pomodoro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WQy-zE-Sga" id="ddM-PI-NGl">
@@ -245,8 +245,16 @@
                                                 <constraint firstItem="Q8z-JB-Euk" firstAttribute="leading" secondItem="ddM-PI-NGl" secondAttribute="leadingMargin" id="pSx-ls-yFl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="focusIntervalSetting">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="XbF-pk-R9Z" id="LGy-Ng-UjX"/>
+                                            <outlet property="titleLabel" destination="Q8z-JB-Euk" id="1HM-vx-oSJ"/>
+                                            <segue destination="w0m-g3-IP4" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="xWt-Zh-E9L"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cyC-8h-RCE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cyC-8h-RCE" customClass="BasicSettingTableViewCell" customModule="Pomodoro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cyC-8h-RCE" id="g4Y-ui-GBi">
@@ -276,8 +284,13 @@
                                                 <constraint firstItem="ODZ-8m-Lq2" firstAttribute="bottom" secondItem="g4Y-ui-GBi" secondAttribute="bottomMargin" id="xzN-pm-PKl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="breakIntervalSetting"/>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="ODZ-8m-Lq2" id="cLC-H0-NXD"/>
+                                            <outlet property="titleLabel" destination="EsG-Sn-nah" id="5bB-EH-ZVj"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9RY-oI-onx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9RY-oI-onx" customClass="BasicSettingTableViewCell" customModule="Pomodoro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="143.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9RY-oI-onx" id="ucd-cX-0hC">
@@ -307,8 +320,13 @@
                                                 <constraint firstItem="DhW-qy-rIr" firstAttribute="top" secondItem="ucd-cX-0hC" secondAttribute="topMargin" id="w9a-Hk-OTf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="longBreakIntervalSetting"/>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="EOF-fZ-es3" id="tvm-pY-ZQ0"/>
+                                            <outlet property="titleLabel" destination="DhW-qy-rIr" id="rOp-yU-2iA"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ts3-G1-97q">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ts3-G1-97q" customClass="BasicSettingTableViewCell" customModule="Pomodoro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="187.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ts3-G1-97q" id="SPD-nq-Grv">
@@ -338,6 +356,11 @@
                                                 <constraint firstItem="8iW-8o-QKs" firstAttribute="bottom" secondItem="SPD-nq-Grv" secondAttribute="bottomMargin" id="sJS-OJ-tyW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="TargetSetting"/>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="WDB-84-VUW" id="zdz-kY-2Bd"/>
+                                            <outlet property="titleLabel" destination="8iW-8o-QKs" id="fnI-0h-8By"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -418,6 +441,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9x-th-wpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="870" y="130.98591549295776"/>
+        </scene>
+        <!--Time Picker View Controller-->
+        <scene sceneID="epa-eF-Kt3">
+            <objects>
+                <viewController id="w0m-g3-IP4" customClass="TimePickerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hyz-pZ-uoG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1v-hP-xnd">
+                                <rect key="frame" x="266" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="cloeButtonClicked:" destination="w0m-g3-IP4" eventType="touchUpInside" id="tBo-0z-ahJ"/>
+                                    <segue destination="sQk-jq-Zxp" kind="unwind" identifier="unwindToSettings" unwindAction="unwindToSettingsViewController:" id="kkc-dV-bSu"/>
+                                </connections>
+                            </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-1J-V7l" customClass="DesignableView" customModule="Pomodoro" customModuleProvider="target">
+                                <rect key="frame" x="28" y="338" width="264" height="216"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nga-G0-UPx">
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="216"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="nga-G0-UPx" firstAttribute="leading" secondItem="Efj-1J-V7l" secondAttribute="leading" id="AuX-Ku-40p"/>
+                                    <constraint firstAttribute="trailing" secondItem="nga-G0-UPx" secondAttribute="trailing" id="TZB-QG-iN1"/>
+                                    <constraint firstAttribute="bottom" secondItem="nga-G0-UPx" secondAttribute="bottom" id="pal-M1-aa3"/>
+                                    <constraint firstItem="nga-G0-UPx" firstAttribute="top" secondItem="Efj-1J-V7l" secondAttribute="top" id="wAu-q9-KuU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Efj-1J-V7l" firstAttribute="leading" secondItem="kpA-fO-J9Y" secondAttribute="leading" constant="28" id="bUC-wT-n9q"/>
+                            <constraint firstAttribute="bottom" secondItem="Efj-1J-V7l" secondAttribute="bottom" constant="14" id="fSa-Za-Zvo"/>
+                            <constraint firstItem="kpA-fO-J9Y" firstAttribute="trailing" secondItem="Efj-1J-V7l" secondAttribute="trailing" constant="28" id="zz0-78-9Jt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kpA-fO-J9Y"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="nga-G0-UPx" id="lPF-zn-ht0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CTb-Do-ZgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sQk-jq-Zxp" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1651.875" y="130.98591549295776"/>
         </scene>
     </scenes>
     <resources>
