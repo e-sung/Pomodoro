@@ -356,7 +356,7 @@
                                                 <constraint firstItem="8iW-8o-QKs" firstAttribute="bottom" secondItem="SPD-nq-Grv" secondAttribute="bottomMargin" id="sJS-OJ-tyW"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="TargetSetting"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="targetSetting"/>
                                         <connections>
                                             <outlet property="amountLabel" destination="WDB-84-VUW" id="zdz-kY-2Bd"/>
                                             <outlet property="titleLabel" destination="8iW-8o-QKs" id="fnI-0h-8By"/>
@@ -437,6 +437,16 @@
                             <outlet property="delegate" destination="1xb-OS-UAu" id="9Ip-2n-9zf"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="breakIntervalCell" destination="cyC-8h-RCE" id="f3a-d8-kj6"/>
+                        <outlet property="focusIntervalCell" destination="WQy-zE-Sga" id="dsd-zC-YNp"/>
+                        <outlet property="longBreakIntervalCell" destination="9RY-oI-onx" id="Umq-xN-B8H"/>
+                        <outlet property="targetCell" destination="Ts3-G1-97q" id="Gaz-r1-5lp"/>
+                        <outletCollection property="minuteCells" destination="WQy-zE-Sga" collectionClass="NSMutableArray" id="qzA-eu-E3e"/>
+                        <outletCollection property="minuteCells" destination="cyC-8h-RCE" collectionClass="NSMutableArray" id="SeC-Nu-8YW"/>
+                        <outletCollection property="minuteCells" destination="9RY-oI-onx" collectionClass="NSMutableArray" id="TeV-Ab-F7v"/>
+                        <outletCollection property="minuteCells" destination="Ts3-G1-97q" collectionClass="NSMutableArray" id="Lsa-Cs-kn5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9x-th-wpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -480,11 +490,48 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yx-XF-St3" customClass="DesignableView" customModule="Pomodoro" customModuleProvider="target">
+                                <rect key="frame" x="28" y="300" width="264" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BY-jG-miT">
+                                        <rect key="frame" x="7" y="0.0" width="48" height="30"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelButtonClicked:" destination="w0m-g3-IP4" eventType="touchUpInside" id="Ck7-Jg-YYN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7m-9u-kKW">
+                                        <rect key="frame" x="220" y="0.0" width="37" height="30"/>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="doneButtonClicked:" destination="w0m-g3-IP4" eventType="touchUpInside" id="EMy-zb-4gy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="5BY-jG-miT" firstAttribute="top" secondItem="5yx-XF-St3" secondAttribute="top" id="QGE-sy-fwD"/>
+                                    <constraint firstItem="e7m-9u-kKW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5BY-jG-miT" secondAttribute="trailing" constant="14" id="Wyr-ta-7BL"/>
+                                    <constraint firstAttribute="bottom" secondItem="5BY-jG-miT" secondAttribute="bottom" id="Yt2-zF-uOe"/>
+                                    <constraint firstItem="5BY-jG-miT" firstAttribute="leading" secondItem="5yx-XF-St3" secondAttribute="leading" constant="7" id="b2Z-JF-JEs"/>
+                                    <constraint firstItem="e7m-9u-kKW" firstAttribute="top" secondItem="5yx-XF-St3" secondAttribute="top" id="ci6-pH-Uwq"/>
+                                    <constraint firstAttribute="bottom" secondItem="e7m-9u-kKW" secondAttribute="bottom" id="eh2-2c-wfT"/>
+                                    <constraint firstAttribute="trailing" secondItem="e7m-9u-kKW" secondAttribute="trailing" constant="7" id="lCW-Au-u6q"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="nga-G0-UPx" firstAttribute="top" secondItem="5yx-XF-St3" secondAttribute="bottom" constant="8" id="61d-hF-g4P"/>
+                            <constraint firstItem="5yx-XF-St3" firstAttribute="trailing" secondItem="nga-G0-UPx" secondAttribute="trailing" id="Kar-JS-Wqq"/>
                             <constraint firstItem="Efj-1J-V7l" firstAttribute="leading" secondItem="kpA-fO-J9Y" secondAttribute="leading" constant="28" id="bUC-wT-n9q"/>
                             <constraint firstAttribute="bottom" secondItem="Efj-1J-V7l" secondAttribute="bottom" constant="14" id="fSa-Za-Zvo"/>
+                            <constraint firstItem="5yx-XF-St3" firstAttribute="leading" secondItem="nga-G0-UPx" secondAttribute="leading" id="fk6-3x-6XC"/>
                             <constraint firstItem="kpA-fO-J9Y" firstAttribute="trailing" secondItem="Efj-1J-V7l" secondAttribute="trailing" constant="28" id="zz0-78-9Jt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kpA-fO-J9Y"/>

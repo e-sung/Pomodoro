@@ -11,7 +11,7 @@ import SwiftDate
 
 class TimePickerViewController: UIViewController {
 
-    var cellToUpdate: BasicSettingTableViewCell!
+    weak var cellToUpdate: BasicSettingTableViewCell!
     
     @IBAction func cloeButtonClicked(_ sender: UIButton) {
 //        dismiss(animated: true, completion: nil)
@@ -22,8 +22,28 @@ class TimePickerViewController: UIViewController {
         super.viewDidLoad()
         pickerView.dataSource = self
         pickerView.delegate = self
-        pickerView.selectRow(6, inComponent: 0, animated: false)
-        
+        let userDefaultMinute = retreiveMinute(from: UserDefaults.standard)
+        pickerView.selectRow(rowFor(userDefaultMinute), inComponent: 0, animated: false)
+    }
+    
+    @IBAction func cancelButtonClicked(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func doneButtonClicked(_ sender: UIButton) {
+        let currentRow = pickerView.selectedRow(inComponent: 0)
+        let minuteToSave = selectedMinute(for: currentRow)
+        cellToUpdate.update(for: minuteToSave)
+        save(minuteToSave, to: UserDefaults.standard)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func save(_ minute: Int, to userDefault: UserDefaults) {
+        userDefault.set(minute, forKey: cellToUpdate.cellType.rawValue)
+    }
+    
+    func retreiveMinute(from userDefault: UserDefaults) -> Int {
+        return userDefault.integer(forKey: cellToUpdate.cellType.rawValue)
     }
 }
 
@@ -39,11 +59,14 @@ extension TimePickerViewController: UIPickerViewDataSource {
 
 extension TimePickerViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let interval: Double = Double((row + 1) * 300 )
-        return interval.toString(options: {
-            $0.allowedUnits = [.minute]
-            $0.unitsStyle = .short
-        })
+        return selectedMinute(for: row).minuteString
     }
     
+    func selectedMinute(for row: Int) -> Int {
+        return (row + 1) * 5
+    }
+    
+    func rowFor(_ minute: Int) -> Int {
+        return Int((minute / 5)) - 1
+    }
 }

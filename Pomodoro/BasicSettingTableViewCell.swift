@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftDate
 
 class BasicSettingTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
@@ -26,10 +27,28 @@ class BasicSettingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func update(for amount: Int) {
+        if cellType == .target {
+            
+        }
+        else {
+            amountLabel.text = amount.minuteString
+        }
+    }
+    
     enum TYPE:String {
         case focusTime = "focusIntervalSetting"
         case breakTime = "breakIntervalSetting"
         case longBreakTime = "longBreakIntervalSetting"
         case target = "targetSetting"
+        
+        var defaultAmount: Int {
+            switch self {
+            case .focusTime: return 25
+            case .breakTime: return 5
+            case .longBreakTime: return 15
+            case .target: return 10
+            }
+        }
     }
 }
