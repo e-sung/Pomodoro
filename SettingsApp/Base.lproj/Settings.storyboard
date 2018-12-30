@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -134,8 +133,45 @@
                                             <segue destination="vZM-ox-4fB" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Fc8-FZ-evR"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="E0h-4S-0bV" customClass="AmountSettingCell" customModule="PomodoroSettings">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qcy-rt-YTb" customClass="AmountSettingCell" customModule="PomodoroSettings">
                                         <rect key="frame" x="0.0" y="187.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qcy-rt-YTb" id="g0C-8W-kwR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Break After" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-eJ-dZU">
+                                                    <rect key="frame" x="16" y="11" width="265.5" height="22"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="3 cycles" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hJ-ru-pHQ">
+                                                    <rect key="frame" x="295.5" y="11" width="63.5" height="22"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3hJ-ru-pHQ" firstAttribute="bottom" secondItem="g0C-8W-kwR" secondAttribute="bottomMargin" id="AfS-SQ-tr1"/>
+                                                <constraint firstItem="3hJ-ru-pHQ" firstAttribute="trailing" secondItem="g0C-8W-kwR" secondAttribute="trailingMargin" id="BbI-rv-qbE"/>
+                                                <constraint firstItem="3hJ-ru-pHQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q4h-eJ-dZU" secondAttribute="trailing" constant="14" id="FIe-XB-tI6"/>
+                                                <constraint firstItem="3hJ-ru-pHQ" firstAttribute="top" secondItem="g0C-8W-kwR" secondAttribute="topMargin" id="WTS-Q4-6ot"/>
+                                                <constraint firstItem="Q4h-eJ-dZU" firstAttribute="bottom" secondItem="g0C-8W-kwR" secondAttribute="bottomMargin" id="dWu-f5-tWG"/>
+                                                <constraint firstItem="Q4h-eJ-dZU" firstAttribute="leading" secondItem="g0C-8W-kwR" secondAttribute="leadingMargin" id="nRh-Rw-BQO"/>
+                                                <constraint firstItem="Q4h-eJ-dZU" firstAttribute="top" secondItem="g0C-8W-kwR" secondAttribute="topMargin" id="sdr-VJ-aKs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="cycleForLongBreakSetting"/>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="3hJ-ru-pHQ" id="PRp-is-dRR"/>
+                                            <outlet property="titleLabel" destination="Q4h-eJ-dZU" id="g1S-0c-FTW"/>
+                                            <segue destination="vZM-ox-4fB" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="I22-OJ-a2i"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="E0h-4S-0bV" customClass="AmountSettingCell" customModule="PomodoroSettings">
+                                        <rect key="frame" x="0.0" y="231.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E0h-4S-0bV" id="JsK-mh-E7g">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -176,7 +212,7 @@
                             <tableViewSection headerTitle="Mode" id="IYp-Qa-I2i">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rZW-di-Plg">
-                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="331.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rZW-di-Plg" id="a1J-7y-oTh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -205,7 +241,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="54" id="qRG-N8-Xf6">
-                                        <rect key="frame" x="0.0" y="331.5" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="375.5" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qRG-N8-Xf6" id="cpk-o5-h0f">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
@@ -259,6 +295,7 @@
                         <outletCollection property="settingCells" destination="m0o-Vv-D7S" collectionClass="NSMutableArray" id="0mO-4u-MVe"/>
                         <outletCollection property="settingCells" destination="yMm-uf-e1K" collectionClass="NSMutableArray" id="iO9-GH-DAc"/>
                         <outletCollection property="settingCells" destination="E0h-4S-0bV" collectionClass="NSMutableArray" id="wm4-9p-z24"/>
+                        <outletCollection property="settingCells" destination="qcy-rt-YTb" collectionClass="NSMutableArray" id="8gc-il-mKT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp6-wt-7T7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -368,6 +405,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UMs-Ve-iU9"/>
+        <segue reference="I22-OJ-a2i"/>
     </inferredMetricsTieBreakers>
 </document>

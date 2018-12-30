@@ -38,21 +38,22 @@ public enum SettingContent:String {
         switch self {
         //TODO: Localize!
         case .target: return "\(amount) intervals"
+        case .cycleForLongBreak: return "\(amount) cycles"
         default: return amount.minuteString
         }
     }
     
     func amount(for row: Int) -> Int {
-        if self == .target {
-            return row + 1
+        switch self {
+        case .target, .cycleForLongBreak: return row + 1
+        default: return (row + 1) * 5
         }
-        return (row + 1) * 5
     }
     
     func rowFor(_ amount: Int) -> Int {
-        if self == .target {
-            return amount - 1
+        switch self {
+        case .target, .cycleForLongBreak: return amount - 1
+        default: return Int((amount / 5)) - 1
         }
-        return Int((amount / 5)) - 1
     }
 }
