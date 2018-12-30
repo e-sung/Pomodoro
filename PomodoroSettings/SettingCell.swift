@@ -9,31 +9,31 @@
 import UIKit
 import PomodoroFoundation
 
-protocol SettingCell: class {
+public protocol SettingCell: class {
     func update(for amount: Int)
     var updating: SettingContent { get }
 }
 
-class MinuteSettingCell: UITableViewCell, SettingCell {
+public class MinuteSettingCell: UITableViewCell, SettingCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var amountLabel: UILabel!
-    var updating: SettingContent {
+    public var updating: SettingContent {
         return SettingContent(rawValue: accessibilityIdentifier!)!
     }
     
-    func update(for amount: Int) {
+    public func update(for amount: Int) {
         amountLabel.text = amount.minuteString
     }
 }
 
-class TargetSettingCell: UITableViewCell, SettingCell {
+public class TargetSettingCell: UITableViewCell, SettingCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var amountLabel: UILabel!
-    var updating: SettingContent {
+    public var updating: SettingContent {
         return SettingContent(rawValue: accessibilityIdentifier!)!
     }
     
-    func update(for amount: Int) {
+    public func update(for amount: Int) {
         amountLabel.text = "\(amount) interval"
     }
 }

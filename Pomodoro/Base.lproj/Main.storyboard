@@ -207,7 +207,7 @@
         <!--Settings Table View Controller-->
         <scene sceneID="3ai-bM-iDq">
             <objects>
-                <tableViewController id="1xb-OS-UAu" customClass="SettingsTableViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="1xb-OS-UAu" customClass="SettingsTableViewController" customModule="PomodoroSettings" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZJ0-j8-iLl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,7 +215,7 @@
                         <sections>
                             <tableViewSection headerTitle="Basics" id="8Qj-KH-uSh">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WQy-zE-Sga" customClass="MinuteSettingCell" customModule="Pomodoro" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WQy-zE-Sga" customClass="MinuteSettingCell" customModule="PomodoroSettings">
                                         <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WQy-zE-Sga" id="ddM-PI-NGl">
@@ -254,7 +254,7 @@
                                             <segue destination="w0m-g3-IP4" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="xWt-Zh-E9L"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cyC-8h-RCE" customClass="MinuteSettingCell" customModule="Pomodoro" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cyC-8h-RCE" customClass="MinuteSettingCell" customModule="PomodoroSettings">
                                         <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cyC-8h-RCE" id="g4Y-ui-GBi">
@@ -291,7 +291,7 @@
                                             <segue destination="w0m-g3-IP4" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="eTO-hX-ias"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9RY-oI-onx" customClass="MinuteSettingCell" customModule="Pomodoro" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9RY-oI-onx" customClass="MinuteSettingCell" customModule="PomodoroSettings">
                                         <rect key="frame" x="0.0" y="143.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9RY-oI-onx" id="ucd-cX-0hC">
@@ -328,7 +328,7 @@
                                             <segue destination="w0m-g3-IP4" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="c45-AI-u1Z"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ts3-G1-97q" customClass="TargetSettingCell" customModule="Pomodoro" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ts3-G1-97q" customClass="TargetSettingCell" customModule="PomodoroSettings">
                                         <rect key="frame" x="0.0" y="187.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ts3-G1-97q" id="SPD-nq-Grv">
@@ -454,7 +454,7 @@
         <!--Picker View Controller-->
         <scene sceneID="epa-eF-Kt3">
             <objects>
-                <viewController id="w0m-g3-IP4" customClass="PickerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w0m-g3-IP4" customClass="PickerViewController" customModule="PomodoroSettings" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hyz-pZ-uoG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

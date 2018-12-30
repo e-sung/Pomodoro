@@ -9,12 +9,12 @@
 import UIKit
 import PomodoroFoundation
 
-class PickerViewController: UIViewController, PickerUpdater {
+public class PickerViewController: UIViewController, PickerUpdater {
 
     weak var cellToUpdate: SettingCell!
 
     @IBOutlet var pickerView: UIPickerView!
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         pickerView.dataSource = self
         pickerView.delegate = self
@@ -34,18 +34,18 @@ class PickerViewController: UIViewController, PickerUpdater {
 
 // MARK: PickerViewDataSource
 extension PickerViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return cellToUpdate.updating.numberOfCases
     }
 }
 
 // MARK: PickerViewDelegate
 extension PickerViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let amount = selectedAmount(for: row)
         return cellToUpdate.updating.formattedString(given: amount)
     }

@@ -58,6 +58,16 @@
                ReferencedContainer = "container:Pomodoro.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F0D89DE121D8D32B0011A0B7"
+               BuildableName = "PomodoroSettingsTests.xctest"
+               BlueprintName = "PomodoroSettingsTests"
+               ReferencedContainer = "container:Pomodoro.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

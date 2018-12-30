@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+public class SettingsTableViewController: UITableViewController {
     
     @IBOutlet var settingCells: [UITableViewCell]!
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
@@ -22,12 +22,12 @@ class SettingsTableViewController: UITableViewController {
     }
     
 
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextVC =  segue.destination as? PickerUpdater,
             let cellToUpdate = sender as? SettingCell{
             nextVC.cellToUpdate = cellToUpdate
