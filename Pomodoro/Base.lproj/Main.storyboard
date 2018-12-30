@@ -106,11 +106,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="3u8-iq-ffm" kind="showDetail" id="LJe-Kl-Nie"/>
+                                    <segue destination="3u8-iq-ffm" kind="presentation" id="vDf-EU-bXM"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="top" secondItem="C0j-TM-sWV" secondAttribute="bottom" constant="40" id="2Qr-fa-rtt"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="4Ow-0k-WTO"/>
@@ -200,17 +201,28 @@
                                 <include reference="CLj-fV-FBc"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cSV-Jw-QWy" appends="YES" id="Uhu-Be-Km2"/>
+                        </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="rLT-hC-FVi"/>
                     <connections>
                         <outlet property="labelIntervalCount" destination="oAK-wa-qwe" id="tw0-f1-XDP"/>
                         <outlet property="labelTime" destination="p0n-JA-XET" id="Umj-j8-5e6"/>
                         <outlet property="mainSlider" destination="C0j-TM-sWV" id="JAj-M2-36V"/>
                         <outlet property="playOrPauseButton" destination="HcS-Oi-Txl" id="SL6-Ua-ofD"/>
+                        <outlet property="rightEdgeGR" destination="cSV-Jw-QWy" id="e5a-cX-isG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="cSV-Jw-QWy">
+                    <rectEdge key="edges" right="YES"/>
+                    <connections>
+                        <action selector="rightPanelSwiped:" destination="BYZ-38-t0r" id="L1Q-Pf-XMB"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-435" y="131"/>
+            <point key="canvasLocation" x="1560" y="130.98591549295776"/>
         </scene>
         <!--Settings-->
         <scene sceneID="XfH-iu-MHm">
@@ -218,7 +230,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" bundleIdentifier="com.sungdoo.SettingsApp" id="3u8-iq-ffm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWu-dq-NZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="271" y="131"/>
+            <point key="canvasLocation" x="2265.9375" y="130.98591549295776"/>
         </scene>
     </scenes>
     <resources>

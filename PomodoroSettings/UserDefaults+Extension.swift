@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PomodoroFoundation
 
 public func save(_ amount: Int, for cellType: SettingContent, to userDefault: UserDefaults) {
     userDefault.set(amount, forKey: cellType.rawValue)

@@ -19,6 +19,7 @@ public class TimerViewController: UIViewController {
     @IBOutlet var labelTime: UILabel!
     @IBOutlet var labelIntervalCount: UILabel!
     @IBOutlet var playOrPauseButton: UIButton!
+    @IBOutlet var rightEdgeGR: UIScreenEdgePanGestureRecognizer!
     
     // MARK: Properties
     var interval: Interval!
@@ -52,6 +53,9 @@ public class TimerViewController: UIViewController {
             interval.pauseTimer()
             sender.setTitle("▶", for: .normal)
         }
+    }
+    
+    @IBAction func rightPanelSwiped(_ sender: UIScreenEdgePanGestureRecognizer) {
     }
 }
 

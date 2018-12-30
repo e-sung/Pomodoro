@@ -53,7 +53,6 @@
 		F0D89DF821D8D3580011A0B7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */; };
 		F0D89DF921D8D3650011A0B7 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */; };
 		F0D89DFA21D8D36B0011A0B7 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC721D87BA10011A0B7 /* SettingCell.swift */; };
-		F0D89DFB21D8D5E40011A0B7 /* SettingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DD121D8D1BA0011A0B7 /* SettingContent.swift */; };
 		F0D89DFD21D8D5F80011A0B7 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DFC21D8D5F80011A0B7 /* UserDefaults+Extension.swift */; };
 		F0D89E0521D8D6D80011A0B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89E0421D8D6D80011A0B7 /* AppDelegate.swift */; };
 		F0D89E0721D8D6D80011A0B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89E0621D8D6D80011A0B7 /* ViewController.swift */; };
@@ -66,6 +65,8 @@
 		F0D89E3221D8D7D90011A0B7 /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0D89E3521D8D7D90011A0B7 /* PomodoroSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D89DDA21D8D32B0011A0B7 /* PomodoroSettings.framework */; };
 		F0D89E3621D8D7D90011A0B7 /* PomodoroSettings.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0D89DDA21D8D32B0011A0B7 /* PomodoroSettings.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0D89E3A21D90D820011A0B7 /* SettingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DD121D8D1BA0011A0B7 /* SettingContent.swift */; };
+		F0D89E3B21D90E390011A0B7 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D89E3B21D90E390011A0B7 /* PomodoroFoundation.framework in Frameworks */,
 				05DF4762513D38F4CDA3DFE9 /* Pods_PomodoroSettings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +422,7 @@
 			children = (
 				F087254921CF7192007EB27F /* Interval */,
 				F087251521CF6204007EB27F /* PermissionManager.swift */,
+				F0D89DD121D8D1BA0011A0B7 /* SettingContent.swift */,
 				F0D89DC921D88C020011A0B7 /* Double+Extension.swift */,
 				F0D89DCB21D899160011A0B7 /* UserDefault+Extension.swift */,
 				F09422E921D2476600134C63 /* StandardTime.swift */,
@@ -459,7 +462,6 @@
 		F0D89DDB21D8D32B0011A0B7 /* PomodoroSettings */ = {
 			isa = PBXGroup;
 			children = (
-				F0D89DD121D8D1BA0011A0B7 /* SettingContent.swift */,
 				F0D89DFC21D8D5F80011A0B7 /* UserDefaults+Extension.swift */,
 				F0D89DCF21D8CF4A0011A0B7 /* PickerUpdater.swift */,
 				F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */,
@@ -1083,6 +1085,7 @@
 				F087254221CF6731007EB27F /* BreakInterval.swift in Sources */,
 				F087253E21CF6731007EB27F /* Interval.swift in Sources */,
 				F0D89DD421D8D2690011A0B7 /* UserDefault+Extension.swift in Sources */,
+				F0D89E3A21D90D820011A0B7 /* SettingContent.swift in Sources */,
 				F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */,
 				F087254021CF6731007EB27F /* NSObject+Extension.swift in Sources */,
 				F0D89DD321D8D1DA0011A0B7 /* Double+Extension.swift in Sources */,
@@ -1112,7 +1115,6 @@
 				F0D89DFA21D8D36B0011A0B7 /* SettingCell.swift in Sources */,
 				F0D89DF721D8D3460011A0B7 /* PickerUpdater.swift in Sources */,
 				F0D89DFD21D8D5F80011A0B7 /* UserDefaults+Extension.swift in Sources */,
-				F0D89DFB21D8D5E40011A0B7 /* SettingContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

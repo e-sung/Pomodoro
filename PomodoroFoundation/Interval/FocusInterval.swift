@@ -41,6 +41,7 @@ public class FocusInterval: NSObject, Interval {
                 return 60 * targetMinute
     }
     public var targetMinute: TimeInterval {
+        
         return 25
     }
     

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import PomodoroFoundation
 
 public enum SettingContent:String {
     case focusTime = "focusIntervalSetting"
@@ -43,14 +42,14 @@ public enum SettingContent:String {
         }
     }
     
-    func amount(for row: Int) -> Int {
+    public func amount(for row: Int) -> Int {
         switch self {
         case .target, .cycleForLongBreak: return row + 1
         default: return (row + 1) * 5
         }
     }
     
-    func rowFor(_ amount: Int) -> Int {
+    public func rowFor(_ amount: Int) -> Int {
         switch self {
         case .target, .cycleForLongBreak: return amount - 1
         default: return Int((amount / 5)) - 1
