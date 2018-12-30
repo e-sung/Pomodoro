@@ -10,20 +10,6 @@ import Foundation
 import UIKit
 import UserNotifications
 
-extension TimerViewController {
-    func saveCycles(_ cycle: Int, date: Date = Date(), to userDefault: UserDefaults) {
-        userDefault.set(cycle, forKey: "cycle")
-        userDefault.set(date, forKey: "lastestCycleDate")
-    }
-    
-    func retreiveCycle(from userDefault: UserDefaults) -> Int {
-        return userDefault.integer(forKey: "cycle")
-    }
-    
-    func retreiveLatestCycleDate(from userDefault: UserDefaults) -> Date {
-        return userDefault.value(forKey: "lastestCycleDate") as? Date ?? Date()
-    }
-}
 
 func registerBackgroundTimer() {
     dateBackgroundEnter = Date()

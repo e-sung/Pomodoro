@@ -39,11 +39,11 @@ class TimePickerViewController: UIViewController {
     }
     
     func save(_ minute: Int, to userDefault: UserDefaults) {
-        userDefault.set(minute, forKey: cellToUpdate.cellType.rawValue)
+        Pomodoro.save(minute, for: cellToUpdate.cellType, to: userDefault)
     }
-    
+
     func retreiveMinute(from userDefault: UserDefaults) -> Int {
-        return userDefault.integer(forKey: cellToUpdate.cellType.rawValue)
+        return Pomodoro.retreiveMinute(for: cellToUpdate.cellType, from: userDefault)
     }
 }
 
