@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftDate
 
 protocol SettingCell: class {
     func update(for amount: Int)
@@ -27,6 +26,22 @@ enum SettingContent:String {
         case .longBreakTime: return 15
         case .target: return 10
         }
+    }
+    
+    var numberOfCases: Int {
+        switch self {
+        case .target: return 50
+        default: return 12
+        }
+    }
+    
+    func formattedString(given amount: Int) -> String {
+        switch self {
+        //TODO: Localize!
+        case .target: return "\(amount) intervals"
+        default: return amount.minuteString
+        }
+    
     }
 }
 
