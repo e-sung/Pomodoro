@@ -14,7 +14,7 @@ public protocol SettingCell: class {
     var updating: SettingContent { get }
 }
 
-public class MinuteSettingCell: UITableViewCell, SettingCell {
+public class AmountSettingCell: UITableViewCell, SettingCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var amountLabel: UILabel!
     public var updating: SettingContent {
@@ -22,18 +22,18 @@ public class MinuteSettingCell: UITableViewCell, SettingCell {
     }
     
     public func update(for amount: Int) {
-        amountLabel.text = amount.minuteString
+        amountLabel.text = updating.formattedString(given: amount)
     }
 }
 
-public class TargetSettingCell: UITableViewCell, SettingCell {
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var amountLabel: UILabel!
-    public var updating: SettingContent {
-        return SettingContent(rawValue: accessibilityIdentifier!)!
-    }
-    
-    public func update(for amount: Int) {
-        amountLabel.text = "\(amount) intervals"
-    }
-}
+//public class TargetSettingCell: UITableViewCell, SettingCell {
+//    @IBOutlet var titleLabel: UILabel!
+//    @IBOutlet var amountLabel: UILabel!
+//    public var updating: SettingContent {
+//        return SettingContent(rawValue: accessibilityIdentifier!)!
+//    }
+//
+//    public func update(for amount: Int) {
+//        amountLabel.text = updating.formattedString(given: amount)
+//    }
+//}

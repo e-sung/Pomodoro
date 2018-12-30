@@ -10,14 +10,13 @@ import UIKit
 
 public class SettingsTableViewController: UITableViewController {
     
-    @IBOutlet var settingCells: [UITableViewCell]!
+    @IBOutlet var settingCells: [AmountSettingCell]!
     override public func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
 
-        settingCells.compactMap({ $0 as? SettingCell })
-                    .forEach({ [weak self] in self?.update($0) })
+        settingCells.forEach({ [weak self] in self?.update($0) })
 
     }
     

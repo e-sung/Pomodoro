@@ -13,6 +13,7 @@ public enum SettingContent:String {
     case focusTime = "focusIntervalSetting"
     case breakTime = "breakIntervalSetting"
     case longBreakTime = "longBreakIntervalSetting"
+    case cycleForLongBreak = "cycleForLongBreakSetting"
     case target = "targetSetting"
     
     public var defaultAmount: Int {
@@ -20,6 +21,7 @@ public enum SettingContent:String {
         case .focusTime: return 25
         case .breakTime: return 5
         case .longBreakTime: return 15
+        case .cycleForLongBreak: return 3
         case .target: return 10
         }
     }
@@ -27,6 +29,7 @@ public enum SettingContent:String {
     public var numberOfCases: Int {
         switch self {
         case .target: return 50
+        case .cycleForLongBreak: return 50
         default: return 12
         }
     }
