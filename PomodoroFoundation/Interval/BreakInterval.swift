@@ -27,7 +27,8 @@ public class BreakInterval: NSObject, Interval {
         return 60 * targetMinute
     }
     public var targetMinute: TimeInterval {
-        return 5
+        let breakTimeAmount = retreiveAmount(for: .breakTime, from: UserDefaults.standard)
+        return TimeInterval(exactly: breakTimeAmount)!
     }
     
     public var themeColor: UIColor {

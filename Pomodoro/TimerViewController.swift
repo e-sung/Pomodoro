@@ -55,6 +55,19 @@ public class TimerViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindToTimerViewController(_ unwindSegue: UIStoryboardSegue) {
+        if interval is FocusInterval {
+            interval = FocusInterval(intervalDelegate: self)
+        }
+        else if interval is BreakInterval {
+            interval = BreakInterval(intervalDelegate: self)
+        }
+        else if interval is LongBreakInterval {
+            interval = LongBreakInterval(intervalDelegate: self)
+        }
+        setUpInitialView()
+    }
+    
     @IBAction func rightPanelSwiped(_ sender: UIScreenEdgePanGestureRecognizer) {
     }
 }

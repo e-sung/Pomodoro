@@ -53,7 +53,6 @@
 		F0D89DF821D8D3580011A0B7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */; };
 		F0D89DF921D8D3650011A0B7 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */; };
 		F0D89DFA21D8D36B0011A0B7 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC721D87BA10011A0B7 /* SettingCell.swift */; };
-		F0D89DFD21D8D5F80011A0B7 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DFC21D8D5F80011A0B7 /* UserDefaults+Extension.swift */; };
 		F0D89E0521D8D6D80011A0B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89E0421D8D6D80011A0B7 /* AppDelegate.swift */; };
 		F0D89E0721D8D6D80011A0B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89E0621D8D6D80011A0B7 /* ViewController.swift */; };
 		F0D89E0A21D8D6D80011A0B7 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D89E0821D8D6D80011A0B7 /* Settings.storyboard */; };
@@ -243,7 +242,6 @@
 		F0D89DE221D8D32B0011A0B7 /* PomodoroSettingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroSettingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D89DE921D8D32B0011A0B7 /* PomodoroSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroSettingsTests.swift; sourceTree = "<group>"; };
 		F0D89DEB21D8D32B0011A0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0D89DFC21D8D5F80011A0B7 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		F0D89E0221D8D6D80011A0B7 /* SettingsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D89E0421D8D6D80011A0B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0D89E0621D8D6D80011A0B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -462,7 +460,6 @@
 		F0D89DDB21D8D32B0011A0B7 /* PomodoroSettings */ = {
 			isa = PBXGroup;
 			children = (
-				F0D89DFC21D8D5F80011A0B7 /* UserDefaults+Extension.swift */,
 				F0D89DCF21D8CF4A0011A0B7 /* PickerUpdater.swift */,
 				F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */,
 				F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */,
@@ -1114,7 +1111,6 @@
 				F0D89DF821D8D3580011A0B7 /* SettingsTableViewController.swift in Sources */,
 				F0D89DFA21D8D36B0011A0B7 /* SettingCell.swift in Sources */,
 				F0D89DF721D8D3460011A0B7 /* PickerUpdater.swift in Sources */,
-				F0D89DFD21D8D5F80011A0B7 /* UserDefaults+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

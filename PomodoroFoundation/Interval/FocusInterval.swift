@@ -41,8 +41,8 @@ public class FocusInterval: NSObject, Interval {
                 return 60 * targetMinute
     }
     public var targetMinute: TimeInterval {
-        
-        return 25
+        let focusTimeAmount = retreiveAmount(for: .focusTime, from: UserDefaults.standard)
+        return TimeInterval(exactly: focusTimeAmount)!
     }
     
     public var themeColor: UIColor {

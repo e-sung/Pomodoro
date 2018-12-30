@@ -41,8 +41,4 @@ public class SettingsTableViewController: UITableViewController {
         }
         cell.update(for: defaultValue)
     }
-    
-    @IBAction func doneButtonClicked(_ sender: UIBarButtonItem) {
-        navigationController?.dismiss(animated: true, completion: nil)
-    }
 }

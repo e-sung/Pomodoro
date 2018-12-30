@@ -16,7 +16,8 @@ public class LongBreakInterval: BreakInterval {
     }
     
     override public var targetMinute: TimeInterval {
-        return 15
+        let longBreakAmount = retreiveAmount(for: .longBreakTime, from: UserDefaults.standard)
+        return TimeInterval(exactly: longBreakAmount)!
     }
     
 }

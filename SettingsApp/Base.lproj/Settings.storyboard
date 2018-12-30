@@ -292,7 +292,7 @@
                     <navigationItem key="navigationItem" title="Setting" largeTitleDisplayMode="always" id="9OE-Zi-TI3">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="FAG-Fe-7mC">
                             <connections>
-                                <action selector="doneButtonClicked:" destination="92q-1T-ccy" id="FkB-ka-KRx"/>
+                                <segue destination="ThK-bE-22R" kind="unwind" unwindAction="unwindToTimerViewController:" id="TvL-PT-Lsx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -305,6 +305,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp6-wt-7T7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ThK-bE-22R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2748" y="130.88455772113943"/>
         </scene>
