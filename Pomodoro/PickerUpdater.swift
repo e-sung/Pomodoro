@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PomodoroFoundation
 import UIKit
 
 protocol PickerUpdater:class {

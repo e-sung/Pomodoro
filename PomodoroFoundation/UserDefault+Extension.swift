@@ -8,23 +8,23 @@
 
 import Foundation
 
-func save(_ amount: Int, for cellType: SettingContent, to userDefault: UserDefaults) {
+public func save(_ amount: Int, for cellType: SettingContent, to userDefault: UserDefaults) {
     userDefault.set(amount, forKey: cellType.rawValue)
 }
 
-func retreiveAmount(for cellType: SettingContent, from userDefault: UserDefaults) -> Int {
+public func retreiveAmount(for cellType: SettingContent, from userDefault: UserDefaults) -> Int {
     return userDefault.integer(forKey: cellType.rawValue)
 }
 
-func saveCycles(_ cycle: Int, date: Date = Date(), to userDefault: UserDefaults) {
+public func saveCycles(_ cycle: Int, date: Date = Date(), to userDefault: UserDefaults) {
     userDefault.set(cycle, forKey: "cycle")
     userDefault.set(date, forKey: "lastestCycleDate")
 }
 
-func retreiveCycle(from userDefault: UserDefaults) -> Int {
+public func retreiveCycle(from userDefault: UserDefaults) -> Int {
     return userDefault.integer(forKey: "cycle")
 }
 
-func retreiveLatestCycleDate(from userDefault: UserDefaults) -> Date {
+public func retreiveLatestCycleDate(from userDefault: UserDefaults) -> Date {
     return userDefault.value(forKey: "lastestCycleDate") as? Date ?? Date()
 }

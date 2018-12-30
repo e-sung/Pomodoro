@@ -19,3 +19,8 @@ target 'Pomodoro' do
   end
 
 end
+
+target 'PomodoroFoundation' do
+  use_frameworks!
+  pod 'SwiftDate'
+end
