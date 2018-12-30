@@ -11,15 +11,16 @@ import PomodoroFoundation
 
 public class PickerViewController: UIViewController, PickerUpdater {
 
-    weak var cellToUpdate: SettingCell!
+    weak var settingCell: SettingCell!
 
     @IBOutlet var pickerView: UIPickerView!
     override public func viewDidLoad() {
         super.viewDidLoad()
         pickerView.dataSource = self
         pickerView.delegate = self
-        let userDefaultMinute = retreiveAmount(for: cellToUpdate.updating, from: UserDefaults.standard)
-        pickerView.selectRow(rowFor(userDefaultMinute), inComponent: 0, animated: false)
+        let defaultAmount = retreiveAmount(for: settingCell.content, from: UserDefaults.standard)
+        let defaultRow = settingCell.content.rowFor(defaultAmount)
+        pickerView.selectRow(defaultRow, inComponent: 0, animated: false)
     }
     
     @IBAction func cancelButtonClicked(_ sender: UIButton) {
@@ -27,13 +28,15 @@ public class PickerViewController: UIViewController, PickerUpdater {
     }
     
     @IBAction func doneButtonClicked(_ sender: UIButton) {
-        saveResult()
+        let currentRow = pickerView.selectedRow(inComponent: 0)
+        let amountToSave = settingCell.content.amount(for: currentRow)
+        settingCell.update(for: amountToSave)
         close()
     }
     
     func close() {
         dismiss(animated: true, completion: { [weak self] in
-            guard let cell = self?.cellToUpdate as? UITableViewCell else { return }
+            guard let cell = self?.settingCell as? UITableViewCell else { return }
             cell.setSelected(false, animated: true)
         })
     }
@@ -46,14 +49,14 @@ extension PickerViewController: UIPickerViewDataSource {
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return cellToUpdate.updating.numberOfCases
+        return settingCell.content.numberOfCases
     }
 }
 
 // MARK: PickerViewDelegate
 extension PickerViewController: UIPickerViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let amount = selectedAmount(for: row)
-        return cellToUpdate.updating.formattedString(given: amount)
+        let amount = settingCell.content.amount(for: row)
+        return settingCell.content.formattedString(given: amount)
     }
 }

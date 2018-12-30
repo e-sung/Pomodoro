@@ -41,4 +41,18 @@ public enum SettingContent:String {
         default: return amount.minuteString
         }
     }
+    
+    func amount(for row: Int) -> Int {
+        if self == .target {
+            return row + 1
+        }
+        return (row + 1) * 5
+    }
+    
+    func rowFor(_ amount: Int) -> Int {
+        if self == .target {
+            return amount - 1
+        }
+        return Int((amount / 5)) - 1
+    }
 }

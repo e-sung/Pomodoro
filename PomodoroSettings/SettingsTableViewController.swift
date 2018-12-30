@@ -29,15 +29,15 @@ public class SettingsTableViewController: UITableViewController {
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextVC =  segue.destination as? PickerUpdater,
             let cellToUpdate = sender as? SettingCell{
-            nextVC.cellToUpdate = cellToUpdate
+            nextVC.settingCell = cellToUpdate
         }
     }
     
     func update(_ cell: SettingCell) {
-        var defaultValue = UserDefaults.standard.integer(forKey: cell.updating.rawValue)
+        var defaultValue = UserDefaults.standard.integer(forKey: cell.content.rawValue)
         if defaultValue == 0 {
-            defaultValue = cell.updating.defaultAmount
-            UserDefaults.standard.set(defaultValue, forKey: cell.updating.rawValue)
+            defaultValue = cell.content.defaultAmount
+            UserDefaults.standard.set(defaultValue, forKey: cell.content.rawValue)
         }
         cell.update(for: defaultValue)
     }
