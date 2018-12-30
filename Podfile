@@ -24,3 +24,8 @@ target 'PomodoroFoundation' do
   use_frameworks!
   pod 'SwiftDate'
 end
+
+target 'SettingsApp' do
+  use_frameworks!
+  pod 'SwiftDate'
+end
