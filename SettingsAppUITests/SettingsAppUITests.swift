@@ -55,6 +55,18 @@ class SettingsAppUITests: XCTestCase {
         cancelButton.tap()
         XCTAssert(longBreakSettingCell.staticTexts["35 min"].exists)
         
+        let cycleForLongBreakCell = tableView.cells["cycleForLongBreakSetting"].firstMatch
+        cycleForLongBreakCell.tap()
+        picker.adjust(toPickerWheelValue: "5 cycles")
+        doneButton.tap()
+        XCTAssert(cycleForLongBreakCell.staticTexts["5 cycles"].exists)
+        
+        cycleForLongBreakCell.tap()
+        picker.adjust(toPickerWheelValue: "3 cycles")
+        cancelButton.tap()
+        XCTAssert(cycleForLongBreakCell.staticTexts["5 cycles"].exists)
+        
+        
         let targetCell = tableView.cells["targetSetting"].firstMatch
         targetCell.tap()
         picker.adjust(toPickerWheelValue: "8 intervals")
@@ -87,6 +99,11 @@ class SettingsAppUITests: XCTestCase {
         picker.adjust(toPickerWheelValue: "15 min")
         doneButton.tap()
         
+        let cycleForLongBreakCell = tableView.cells["cycleForLongBreakSetting"].firstMatch
+        cycleForLongBreakCell.tap()
+        picker.adjust(toPickerWheelValue: "3 cycles")
+        doneButton.tap()
+
         let targetCell = tableView.cells["targetSetting"].firstMatch
         targetCell.tap()
         picker.adjust(toPickerWheelValue: "10 intervals")
