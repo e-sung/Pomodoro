@@ -16,14 +16,20 @@ public class TimerViewController: UIViewController {
     
     // MARK: IBOutlets
     @IBOutlet var mainSlider: CircularSlider!
-    @IBOutlet var labelTime: UILabel!
+    @IBOutlet var labelTime: UILabel! {
+        didSet {
+            print(labelTime)
+        }
+    }
     @IBOutlet var labelIntervalCount: UILabel!
     @IBOutlet var playOrPauseButton: UIButton!
     @IBOutlet var rightEdgeGR: UIScreenEdgePanGestureRecognizer!
     
     // MARK: Properties
     var interval: Interval!
-    var maxCycleCount = 10
+    var maxCycleCount: Int {
+        return retreiveAmount(for: .target, from: UserDefaults.standard)
+    }
     var currentCycleCount = 0
     var cycleCountForLongBreak = 3
     var notificationManager:NotificationManager!
@@ -39,6 +45,13 @@ public class TimerViewController: UIViewController {
         super.viewDidAppear(animated)
         setUpFonts()
         UIApplication.shared.isIdleTimerDisabled = true
+    }
+    
+    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { [weak self] _ in
+            self?.setUpFonts()
+            }, completion: nil)
     }
     
     // MARK: IBAction
@@ -103,6 +116,7 @@ extension TimerViewController {
         labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
     }
     
+
     func setUpFonts() {
         let currentFontSize = labelTime.font.pointSize
         labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .light)
