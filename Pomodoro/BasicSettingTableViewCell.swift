@@ -9,46 +9,47 @@
 import UIKit
 import SwiftDate
 
-class BasicSettingTableViewCell: UITableViewCell {
+protocol SettingCell: class {
+    func update(for amount: Int)
+    var updating: SettingContent { get }
+}
+
+enum SettingContent:String {
+    case focusTime = "focusIntervalSetting"
+    case breakTime = "breakIntervalSetting"
+    case longBreakTime = "longBreakIntervalSetting"
+    case target = "targetSetting"
+    
+    var defaultAmount: Int {
+        switch self {
+        case .focusTime: return 25
+        case .breakTime: return 5
+        case .longBreakTime: return 15
+        case .target: return 10
+        }
+    }
+}
+
+class MinuteSettingCell: UITableViewCell, SettingCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var amountLabel: UILabel!
-    var cellType: TYPE!
-
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        guard let identifier = accessibilityIdentifier else { return }
-        cellType = TYPE(rawValue: identifier)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var updating: SettingContent {
+        return SettingContent(rawValue: accessibilityIdentifier!)!
     }
     
     func update(for amount: Int) {
-        if cellType == .target {
-            
-        }
-        else {
-            amountLabel.text = amount.minuteString
-        }
+        amountLabel.text = amount.minuteString
+    }
+}
+
+class TargetSettingCell: UITableViewCell, SettingCell {
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var amountLabel: UILabel!
+    var updating: SettingContent {
+        return SettingContent(rawValue: accessibilityIdentifier!)!
     }
     
-    enum TYPE:String {
-        case focusTime = "focusIntervalSetting"
-        case breakTime = "breakIntervalSetting"
-        case longBreakTime = "longBreakIntervalSetting"
-        case target = "targetSetting"
-        
-        var defaultAmount: Int {
-            switch self {
-            case .focusTime: return 25
-            case .breakTime: return 5
-            case .longBreakTime: return 15
-            case .target: return 10
-            }
-        }
+    func update(for amount: Int) {
+        amountLabel.text = "\(amount) interval"
     }
 }

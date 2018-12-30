@@ -8,11 +8,11 @@
 
 import Foundation
 
-func save(_ minute: Int, for cellType: BasicSettingTableViewCell.TYPE, to userDefault: UserDefaults) {
-    userDefault.set(minute, forKey: cellType.rawValue)
+func save(_ amount: Int, for cellType: SettingContent, to userDefault: UserDefaults) {
+    userDefault.set(amount, forKey: cellType.rawValue)
 }
 
-func retreiveMinute(for cellType: BasicSettingTableViewCell.TYPE, from userDefault: UserDefaults) -> Int {
+func retreiveAmount(for cellType: SettingContent, from userDefault: UserDefaults) -> Int {
     return userDefault.integer(forKey: cellType.rawValue)
 }
 

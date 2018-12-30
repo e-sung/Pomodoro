@@ -40,10 +40,11 @@
 		F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */; };
 		F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */; };
 		F0D89DC421D741840011A0B7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */; };
-		F0D89DC621D7B5CE0011A0B7 /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC521D7B5CE0011A0B7 /* TimePickerViewController.swift */; };
+		F0D89DC621D7B5CE0011A0B7 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */; };
 		F0D89DC821D87BA10011A0B7 /* BasicSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC721D87BA10011A0B7 /* BasicSettingTableViewCell.swift */; };
 		F0D89DCA21D88C020011A0B7 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC921D88C020011A0B7 /* Double+Extension.swift */; };
 		F0D89DCC21D899160011A0B7 /* UserDefault+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DCB21D899160011A0B7 /* UserDefault+Extension.swift */; };
+		F0D89DD021D8CF4A0011A0B7 /* PickerUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DCF21D8CF4A0011A0B7 /* PickerUpdater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,10 +145,11 @@
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
 		F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerViewController+Extension.swift"; sourceTree = "<group>"; };
 		F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		F0D89DC521D7B5CE0011A0B7 /* TimePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
+		F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		F0D89DC721D87BA10011A0B7 /* BasicSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicSettingTableViewCell.swift; sourceTree = "<group>"; };
 		F0D89DC921D88C020011A0B7 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		F0D89DCB21D899160011A0B7 /* UserDefault+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Extension.swift"; sourceTree = "<group>"; };
+		F0D89DCF21D8CF4A0011A0B7 /* PickerUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerUpdater.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,7 +240,8 @@
 				F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */,
 				F087250D21CF1264007EB27F /* DesignableView.swift */,
 				F0843CA721CE5AD900EDB65F /* Main.storyboard */,
-				F0D89DC521D7B5CE0011A0B7 /* TimePickerViewController.swift */,
+				F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */,
+				F0D89DCF21D8CF4A0011A0B7 /* PickerUpdater.swift */,
 				F0D89DCB21D899160011A0B7 /* UserDefault+Extension.swift */,
 				F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */,
 				F0D89DC721D87BA10011A0B7 /* BasicSettingTableViewCell.swift */,
@@ -625,11 +628,12 @@
 			files = (
 				F0D89DCC21D899160011A0B7 /* UserDefault+Extension.swift in Sources */,
 				F087250E21CF1264007EB27F /* DesignableView.swift in Sources */,
-				F0D89DC621D7B5CE0011A0B7 /* TimePickerViewController.swift in Sources */,
+				F0D89DC621D7B5CE0011A0B7 /* PickerViewController.swift in Sources */,
 				F0D89DCA21D88C020011A0B7 /* Double+Extension.swift in Sources */,
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
 				F0D89DC421D741840011A0B7 /* SettingsTableViewController.swift in Sources */,
 				F0843CA621CE5AD900EDB65F /* TimerViewController.swift in Sources */,
+				F0D89DD021D8CF4A0011A0B7 /* PickerUpdater.swift in Sources */,
 				F0D89DC821D87BA10011A0B7 /* BasicSettingTableViewCell.swift in Sources */,
 				F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */,
 				F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */,
