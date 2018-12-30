@@ -17,12 +17,12 @@
 		<key>PomodoroSettings.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>10</integer>
 		</dict>
 		<key>SettingsApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>11</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -48,6 +48,16 @@
 			<true/>
 		</dict>
 		<key>F087252721CF6719007EB27F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0D89E0121D8D6D80011A0B7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0D89E1F21D8D6DA0011A0B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

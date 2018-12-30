@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PomodoroFoundation
 
 public enum SettingContent:String {
     case focusTime = "focusIntervalSetting"

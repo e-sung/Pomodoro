@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		043EBDCCB75E2648B8A0DFE7 /* Pods_PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6ED4FFC9FEC42EFEF23EA2 /* Pods_PomodoroFoundation.framework */; };
+		05DF4762513D38F4CDA3DFE9 /* Pods_PomodoroSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D45DD12ED7CDEE768CA16D /* Pods_PomodoroSettings.framework */; };
 		08A257C018DB2A285D13C78D /* Pods_PomodoroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B232AA18176BBF4A01EF1D2 /* Pods_PomodoroUITests.framework */; };
 		573947069AA98EF34B3762BD /* Pods_PomodoroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101F9904C4E8F233CC2A58C4 /* Pods_PomodoroTests.framework */; };
 		6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */; };
@@ -176,9 +177,11 @@
 
 /* Begin PBXFileReference section */
 		02171224FC74EEF6AE046A70 /* Pods-PomodoroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroTests/Pods-PomodoroTests.release.xcconfig"; sourceTree = "<group>"; };
+		05656D574EB3E24F37264C42 /* Pods-PomodoroSettings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroSettings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroSettings/Pods-PomodoroSettings.debug.xcconfig"; sourceTree = "<group>"; };
 		0830BEE4EDED18599049A33F /* Pods_SettingsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SettingsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		101F9904C4E8F233CC2A58C4 /* Pods_PomodoroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PomodoroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pomodoro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34D45DD12ED7CDEE768CA16D /* Pods_PomodoroSettings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PomodoroSettings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B232AA18176BBF4A01EF1D2 /* Pods_PomodoroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PomodoroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		404297A8360FE5548B149134 /* Pods-Pomodoro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pomodoro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pomodoro/Pods-Pomodoro.release.xcconfig"; sourceTree = "<group>"; };
 		64CBD454E2A56E9A3E7F00E2 /* Pods-PomodoroFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 		C8F1430DB452919F67A53A2C /* Pods-Pomodoro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pomodoro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pomodoro/Pods-Pomodoro.debug.xcconfig"; sourceTree = "<group>"; };
 		CD57ABA303B8C406A0690B5A /* Pods-PomodoroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroTests/Pods-PomodoroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2DA2121686A49505BF6A637 /* Pods-PomodoroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroUITests/Pods-PomodoroUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D7C15C8413C987C653EF257D /* Pods-PomodoroSettings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroSettings.release.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroSettings/Pods-PomodoroSettings.release.xcconfig"; sourceTree = "<group>"; };
 		D8C23AD2B0B8500DE144002D /* Pods-SettingsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsApp/Pods-SettingsApp.release.xcconfig"; sourceTree = "<group>"; };
 		F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		F0843CA021CE5AD900EDB65F /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,8 +250,6 @@
 		F0D89E0B21D8D6DA0011A0B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0D89E0E21D8D6DA0011A0B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0D89E1021D8D6DA0011A0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0D89E1921D8D6DA0011A0B7 /* SettingsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppTests.swift; sourceTree = "<group>"; };
-		F0D89E1B21D8D6DA0011A0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0D89E2021D8D6DA0011A0B7 /* SettingsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SettingsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D89E2421D8D6DA0011A0B7 /* SettingsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppUITests.swift; sourceTree = "<group>"; };
 		F0D89E2621D8D6DA0011A0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05DF4762513D38F4CDA3DFE9 /* Pods_PomodoroSettings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +342,7 @@
 				3B232AA18176BBF4A01EF1D2 /* Pods_PomodoroUITests.framework */,
 				7C6ED4FFC9FEC42EFEF23EA2 /* Pods_PomodoroFoundation.framework */,
 				0830BEE4EDED18599049A33F /* Pods_SettingsApp.framework */,
+				34D45DD12ED7CDEE768CA16D /* Pods_PomodoroSettings.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -354,7 +358,6 @@
 				F0D89DDB21D8D32B0011A0B7 /* PomodoroSettings */,
 				F0D89DE821D8D32B0011A0B7 /* PomodoroSettingsTests */,
 				F0D89E0321D8D6D80011A0B7 /* SettingsApp */,
-				F0D89E1821D8D6DA0011A0B7 /* SettingsAppTests */,
 				F0D89E2321D8D6DA0011A0B7 /* SettingsAppUITests */,
 				F0843CA121CE5AD900EDB65F /* Products */,
 				FFD2E382A03C8A4D78114878 /* Pods */,
@@ -490,15 +493,6 @@
 			path = SettingsApp;
 			sourceTree = "<group>";
 		};
-		F0D89E1821D8D6DA0011A0B7 /* SettingsAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				F0D89E1921D8D6DA0011A0B7 /* SettingsAppTests.swift */,
-				F0D89E1B21D8D6DA0011A0B7 /* Info.plist */,
-			);
-			path = SettingsAppTests;
-			sourceTree = "<group>";
-		};
 		F0D89E2321D8D6DA0011A0B7 /* SettingsAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +515,8 @@
 				64CBD454E2A56E9A3E7F00E2 /* Pods-PomodoroFoundation.release.xcconfig */,
 				744E9710F12782374B9F251F /* Pods-SettingsApp.debug.xcconfig */,
 				D8C23AD2B0B8500DE144002D /* Pods-SettingsApp.release.xcconfig */,
+				05656D574EB3E24F37264C42 /* Pods-PomodoroSettings.debug.xcconfig */,
+				D7C15C8413C987C653EF257D /* Pods-PomodoroSettings.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -649,6 +645,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0D89DF121D8D32B0011A0B7 /* Build configuration list for PBXNativeTarget "PomodoroSettings" */;
 			buildPhases = (
+				7A52294821814EA221E1CAA0 /* [CP] Check Pods Manifest.lock */,
 				F0D89DD521D8D32B0011A0B7 /* Headers */,
 				F0D89DD621D8D32B0011A0B7 /* Sources */,
 				F0D89DD721D8D32B0011A0B7 /* Frameworks */,
@@ -973,6 +970,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PomodoroFoundation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A52294821814EA221E1CAA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PomodoroSettings-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1562,6 +1581,7 @@
 		};
 		F0D89DF221D8D32B0011A0B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05656D574EB3E24F37264C42 /* Pods-PomodoroSettings.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1589,6 +1609,7 @@
 		};
 		F0D89DF321D8D32B0011A0B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7C15C8413C987C653EF257D /* Pods-PomodoroSettings.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1619,6 +1640,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = PomodoroSettingsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1638,6 +1660,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = PomodoroSettingsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1659,6 +1682,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = SettingsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1678,6 +1702,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = SettingsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1695,6 +1720,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = SettingsAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1714,6 +1740,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = SettingsAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

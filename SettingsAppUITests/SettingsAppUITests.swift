@@ -10,25 +10,87 @@ import XCTest
 
 class SettingsAppUITests: XCTestCase {
 
+    var app: XCUIApplication!
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launch()
     }
 
+    func testChangeOrCancelSettings() {
+        let tableView = app.tables.firstMatch
+        let focusSettingCell = tableView.cells["focusIntervalSetting"].firstMatch
+        focusSettingCell.tap()
+        
+        sleep(1)
+        let cancelButton = XCUIApplication().buttons["Cancel"]
+        cancelButton.tap()
+        
+        focusSettingCell.tap()
+        let picker = app.pickerWheels.firstMatch
+        picker.adjust(toPickerWheelValue: "15 min")
+        let doneButton = app.buttons["Done"]
+        doneButton.tap()
+        XCTAssert(focusSettingCell.staticTexts["15 min"].exists)
+        
+        let breakSettingCell = tableView.cells["breakIntervalSetting"].firstMatch
+        breakSettingCell.tap()
+        picker.adjust(toPickerWheelValue: "10 min")
+        doneButton.tap()
+        XCTAssert(breakSettingCell.staticTexts["10 min"].exists)
+        
+        breakSettingCell.tap()
+        picker.adjust(toPickerWheelValue: "35 min")
+        cancelButton.tap()
+        XCTAssert(breakSettingCell.staticTexts["10 min"].exists)
+        
+        let longBreakSettingCell = tableView.cells["longBreakIntervalSetting"].firstMatch
+        longBreakSettingCell.tap()
+        picker.adjust(toPickerWheelValue: "35 min")
+        doneButton.tap()
+        XCTAssert(longBreakSettingCell.staticTexts["35 min"].exists)
+
+        longBreakSettingCell.tap()
+        picker.adjust(toPickerWheelValue: "5 min")
+        cancelButton.tap()
+        XCTAssert(longBreakSettingCell.staticTexts["35 min"].exists)
+        
+        let targetCell = tableView.cells["targetSetting"].firstMatch
+        targetCell.tap()
+        picker.adjust(toPickerWheelValue: "8 intervals")
+        doneButton.tap()
+        XCTAssert(targetCell.staticTexts["8 intervals"].exists)
+        
+        targetCell.tap()
+        picker.adjust(toPickerWheelValue: "7 intervals")
+        cancelButton.tap()
+        XCTAssert(targetCell.staticTexts["8 intervals"].exists)
+    }
+    
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        let tableView = app.tables.firstMatch
+        let focusSettingCell = tableView.cells["focusIntervalSetting"].firstMatch
+        focusSettingCell.tap()
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let picker = app.pickerWheels.firstMatch
+        picker.adjust(toPickerWheelValue: "25 min")
+        let doneButton = app.buttons["Done"]
+        doneButton.tap()
+
+        let breakSettingCell = tableView.cells["breakIntervalSetting"].firstMatch
+        breakSettingCell.tap()
+        picker.adjust(toPickerWheelValue: "5 min")
+        doneButton.tap()
+
+        let longBreakSettingCell = tableView.cells["longBreakIntervalSetting"].firstMatch
+        longBreakSettingCell.tap()
+        picker.adjust(toPickerWheelValue: "15 min")
+        doneButton.tap()
+        
+        let targetCell = tableView.cells["targetSetting"].firstMatch
+        targetCell.tap()
+        picker.adjust(toPickerWheelValue: "10 intervals")
+        doneButton.tap()
     }
 
 }

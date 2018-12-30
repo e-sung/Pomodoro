@@ -23,12 +23,19 @@ public class PickerViewController: UIViewController, PickerUpdater {
     }
     
     @IBAction func cancelButtonClicked(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        close()
     }
     
     @IBAction func doneButtonClicked(_ sender: UIButton) {
         saveResult()
-        dismiss(animated: true, completion: nil)
+        close()
+    }
+    
+    func close() {
+        dismiss(animated: true, completion: { [weak self] in
+            guard let cell = self?.cellToUpdate as? UITableViewCell else { return }
+            cell.setSelected(false, animated: true)
+        })
     }
 }
 

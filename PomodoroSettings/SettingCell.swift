@@ -34,6 +34,6 @@ public class TargetSettingCell: UITableViewCell, SettingCell {
     }
     
     public func update(for amount: Int) {
-        amountLabel.text = "\(amount) interval"
+        amountLabel.text = "\(amount) intervals"
     }
 }
