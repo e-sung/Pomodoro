@@ -19,7 +19,7 @@ public class PickerViewController: UIViewController, PickerUpdater {
         pickerView.dataSource = self
         pickerView.delegate = self
         let defaultAmount = retreiveAmount(for: settingCell.content, from: UserDefaults.standard)
-        let defaultRow = settingCell.content.rowFor(defaultAmount)
+        guard let defaultRow = settingCell.content.rowFor(defaultAmount) else { return }
         pickerView.selectRow(defaultRow, inComponent: 0, animated: false)
     }
     
@@ -29,8 +29,9 @@ public class PickerViewController: UIViewController, PickerUpdater {
     
     @IBAction func doneButtonClicked(_ sender: UIButton) {
         let currentRow = pickerView.selectedRow(inComponent: 0)
-        let amountToSave = settingCell.content.amount(for: currentRow)
-        settingCell.update(for: amountToSave)
+        if let amountToSave = settingCell.content.amount(for: currentRow) {
+            settingCell.update(for: amountToSave)
+        }
         close()
     }
     
@@ -49,14 +50,14 @@ extension PickerViewController: UIPickerViewDataSource {
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return settingCell.content.numberOfCases
+        return settingCell.content.numberOfCases!
     }
 }
 
 // MARK: PickerViewDelegate
 extension PickerViewController: UIPickerViewDelegate {
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let amount = settingCell.content.amount(for: row)
+        guard let amount = settingCell.content.amount(for: row) else { return nil }
         return settingCell.content.formattedString(given: amount)
     }
 }

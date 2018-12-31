@@ -33,12 +33,11 @@ public class SettingsTableViewController: UITableViewController {
         }
     }
     
-    func update(_ cell: SettingCell) {
-        var defaultValue = UserDefaults.standard.integer(forKey: cell.content.rawValue)
-        if defaultValue == 0 {
-            defaultValue = cell.content.defaultAmount
-            UserDefaults.standard.set(defaultValue, forKey: cell.content.rawValue)
+    func update(_ cell: AmountSettingCell) {
+        var amount = UserDefaults.standard.integer(forKey: cell.content.rawValue)
+        if amount == 0, let defaultValue = cell.content.defaultValue as? Int {
+            amount = defaultValue
         }
-        cell.update(for: defaultValue)
+        cell.update(for: amount)
     }
 }

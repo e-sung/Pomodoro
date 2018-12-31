@@ -14,45 +14,53 @@ public enum SettingContent:String {
     case longBreakTime = "longBreakIntervalSetting"
     case cycleForLongBreak = "cycleForLongBreakSetting"
     case target = "targetSetting"
-    
-    public var defaultAmount: Int {
+    case neverSleep = "neverSleepSetting"
+    case enhancedFocusMode = "enhancedFocusModeSetting"
+
+    public var defaultValue: Any {
         switch self {
-        case .focusTime: return 25
-        case .breakTime: return 5
-        case .longBreakTime: return 15
-        case .cycleForLongBreak: return 3
-        case .target: return 10
+        case .focusTime: return 25 as Any
+        case .breakTime: return 5 as Any
+        case .longBreakTime: return 15 as Any
+        case .cycleForLongBreak: return 3 as Any
+        case .target: return 10 as Any
+        case .neverSleep: return true as Any
+        case .enhancedFocusMode: return false as Any
         }
     }
     
-    public var numberOfCases: Int {
+    public var numberOfCases: Int? {
         switch self {
         case .target: return 50
         case .cycleForLongBreak: return 50
-        default: return 12
+        case .focusTime, .breakTime, .longBreakTime: return 12
+        default: return nil
         }
     }
     
-    public func formattedString(given amount: Int) -> String {
+    public func formattedString(given amount: Int) -> String? {
         switch self {
         //TODO: Localize!
         case .target: return "\(amount) intervals"
         case .cycleForLongBreak: return "\(amount) cycles"
-        default: return amount.minuteString
+        case .focusTime, .breakTime, .longBreakTime: return amount.minuteString
+        default: return nil
         }
     }
     
-    public func amount(for row: Int) -> Int {
+    public func amount(for row: Int) -> Int? {
         switch self {
         case .target, .cycleForLongBreak: return row + 1
-        default: return (row + 1) * 5
+        case .focusTime, .breakTime, .longBreakTime : return (row + 1) * 5
+        default: return nil
         }
     }
     
-    public func rowFor(_ amount: Int) -> Int {
+    public func rowFor(_ amount: Int) -> Int? {
         switch self {
         case .target, .cycleForLongBreak: return amount - 1
-        default: return Int((amount / 5)) - 1
+        case .focusTime, .breakTime, .longBreakTime : return Int((amount / 5)) - 1
+        default: return nil
         }
     }
 }
