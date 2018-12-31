@@ -211,7 +211,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Mode" id="IYp-Qa-I2i">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rZW-di-Plg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rZW-di-Plg" customClass="ToggleSettingCell" customModule="PomodoroSettings">
                                         <rect key="frame" x="0.0" y="331.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rZW-di-Plg" id="a1J-7y-oTh">
@@ -226,6 +226,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y00-je-u9i">
                                                     <rect key="frame" x="312" y="7" width="51" height="29.5"/>
+                                                    <connections>
+                                                        <action selector="switchToggled:" destination="rZW-di-Plg" eventType="valueChanged" id="nhG-P0-Cp6"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -239,8 +242,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="Y00-je-u9i" secondAttribute="trailing" constant="14" id="zGN-PN-Pak"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="neverSleepSetting"/>
+                                        <connections>
+                                            <outlet property="toggleSwitch" destination="Y00-je-u9i" id="Hs4-Py-iIa"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="54" id="qRG-N8-Xf6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="54" id="qRG-N8-Xf6" customClass="ToggleSettingCell" customModule="PomodoroSettings">
                                         <rect key="frame" x="0.0" y="375.5" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qRG-N8-Xf6" id="cpk-o5-h0f">
@@ -266,6 +273,9 @@
                                                 </stackView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="agZ-sm-nEh">
                                                     <rect key="frame" x="312" y="11.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchToggled:" destination="qRG-N8-Xf6" eventType="valueChanged" id="6dI-X9-VVr"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -280,6 +290,10 @@
                                                 <constraint firstItem="agZ-sm-nEh" firstAttribute="leading" secondItem="O9Q-Ee-gOU" secondAttribute="trailing" constant="89.5" id="ll6-aR-YYB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="enhancedFocusModeSetting"/>
+                                        <connections>
+                                            <outlet property="toggleSwitch" destination="agZ-sm-nEh" id="E4f-UX-nt8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -297,11 +311,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outletCollection property="settingCells" destination="ri4-UQ-hVn" collectionClass="NSMutableArray" id="AWI-JJ-IvY"/>
-                        <outletCollection property="settingCells" destination="m0o-Vv-D7S" collectionClass="NSMutableArray" id="0mO-4u-MVe"/>
-                        <outletCollection property="settingCells" destination="yMm-uf-e1K" collectionClass="NSMutableArray" id="iO9-GH-DAc"/>
-                        <outletCollection property="settingCells" destination="E0h-4S-0bV" collectionClass="NSMutableArray" id="wm4-9p-z24"/>
-                        <outletCollection property="settingCells" destination="qcy-rt-YTb" collectionClass="NSMutableArray" id="8gc-il-mKT"/>
+                        <outletCollection property="amountSettingCells" destination="ri4-UQ-hVn" collectionClass="NSMutableArray" id="AWI-JJ-IvY"/>
+                        <outletCollection property="amountSettingCells" destination="m0o-Vv-D7S" collectionClass="NSMutableArray" id="0mO-4u-MVe"/>
+                        <outletCollection property="amountSettingCells" destination="yMm-uf-e1K" collectionClass="NSMutableArray" id="iO9-GH-DAc"/>
+                        <outletCollection property="amountSettingCells" destination="E0h-4S-0bV" collectionClass="NSMutableArray" id="wm4-9p-z24"/>
+                        <outletCollection property="amountSettingCells" destination="qcy-rt-YTb" collectionClass="NSMutableArray" id="8gc-il-mKT"/>
+                        <outletCollection property="toggleSettingCells" destination="rZW-di-Plg" collectionClass="NSMutableArray" id="WnT-bM-WUd"/>
+                        <outletCollection property="toggleSettingCells" destination="qRG-N8-Xf6" collectionClass="NSMutableArray" id="ZaB-cN-MFk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp6-wt-7T7" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,13 +10,16 @@ import UIKit
 
 public class SettingsTableViewController: UITableViewController {
     
-    @IBOutlet var settingCells: [AmountSettingCell]!
+    @IBOutlet var amountSettingCells: [AmountSettingCell]!
+    @IBOutlet var toggleSettingCells: [ToggleSettingCell]!
+
     override public func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
 
-        settingCells.forEach({ [weak self] in self?.update($0) })
+        amountSettingCells.forEach({ [weak self] in self?.update($0) })
+        toggleSettingCells.forEach({ [weak self] in self?.setUp($0) })
 
     }
     
@@ -39,5 +42,12 @@ public class SettingsTableViewController: UITableViewController {
             amount = defaultValue
         }
         cell.update(for: amount)
+    }
+    
+    func setUp(_ cell: ToggleSettingCell) {
+        if UserDefaults.standard.object(forKey: cell.content.rawValue) == nil {
+            guard let defaultValue = cell.content.defaultValue as? Bool else { return }
+            cell.setUp(for: defaultValue)
+        }
     }
 }

@@ -26,3 +26,20 @@ public class AmountSettingCell: UITableViewCell, SettingCell {
         save(amount, for: content, to: UserDefaults.standard)
     }
 }
+
+public class ToggleSettingCell: UITableViewCell {
+    
+    @IBOutlet var toggleSwitch: UISwitch!
+    public var content: SettingContent {
+        return SettingContent(rawValue: accessibilityIdentifier!)!
+    }
+    
+    @IBAction func switchToggled(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: content.rawValue)
+    }
+    
+    public func setUp(for value: Bool) {
+        toggleSwitch.isOn = value
+        UserDefaults.standard.set(value, forKey: content.rawValue)
+    }
+}
