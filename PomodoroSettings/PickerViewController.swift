@@ -11,7 +11,7 @@ import PomodoroFoundation
 
 public class PickerViewController: UIViewController, PickerUpdater {
 
-    weak var settingCell: SettingCell!
+    weak var settingCell: AmountSettingCell!
 
     @IBOutlet var pickerView: UIPickerView!
     override public func viewDidLoad() {

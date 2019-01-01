@@ -9,12 +9,8 @@
 import UIKit
 import PomodoroFoundation
 
-public protocol SettingCell: class {
-    func update(for amount: Int)
-    var content: SettingContent { get }
-}
 
-public class AmountSettingCell: UITableViewCell, SettingCell {
+public class AmountSettingCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var amountLabel: UILabel!
     public var content: SettingContent {

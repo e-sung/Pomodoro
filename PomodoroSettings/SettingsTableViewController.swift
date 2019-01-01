@@ -31,7 +31,7 @@ public class SettingsTableViewController: UITableViewController {
     
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextVC =  segue.destination as? PickerUpdater,
-            let cellToUpdate = sender as? SettingCell{
+            let cellToUpdate = sender as? AmountSettingCell{
             nextVC.settingCell = cellToUpdate
         }
     }

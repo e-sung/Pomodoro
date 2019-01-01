@@ -218,7 +218,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nevre Sleep" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HVr-XB-gsQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Never Sleep" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HVr-XB-gsQ">
                                                     <rect key="frame" x="16" y="11.5" width="93" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -259,13 +259,13 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="999" text="Ehnahced Focus Mode" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="de1-AY-qgq">
                                                             <rect key="frame" x="0.0" y="0.0" width="175" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Count time only when clock is visible" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pki-Wb-r14">
                                                             <rect key="frame" x="0.0" y="20.5" width="208.5" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -281,13 +281,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="agZ-sm-nEh" secondAttribute="bottom" constant="7" id="0nX-Eu-w17"/>
                                                 <constraint firstItem="O9Q-Ee-gOU" firstAttribute="centerY" secondItem="agZ-sm-nEh" secondAttribute="centerY" id="1Dj-RH-dem"/>
+                                                <constraint firstItem="agZ-sm-nEh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O9Q-Ee-gOU" secondAttribute="trailing" constant="7" id="9Ve-jf-OeL"/>
                                                 <constraint firstItem="agZ-sm-nEh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cpk-o5-h0f" secondAttribute="top" constant="7" id="BPg-dn-pRP"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="O9Q-Ee-gOU" secondAttribute="bottom" constant="7" id="I2U-w1-3f5"/>
                                                 <constraint firstItem="agZ-sm-nEh" firstAttribute="centerY" secondItem="cpk-o5-h0f" secondAttribute="centerY" id="Mem-WX-nKV"/>
                                                 <constraint firstItem="O9Q-Ee-gOU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cpk-o5-h0f" secondAttribute="top" constant="7" id="P6R-R2-jpa"/>
                                                 <constraint firstAttribute="trailing" secondItem="agZ-sm-nEh" secondAttribute="trailing" constant="14" id="bx0-vk-WIL"/>
                                                 <constraint firstItem="O9Q-Ee-gOU" firstAttribute="leading" secondItem="cpk-o5-h0f" secondAttribute="leading" constant="14" id="gaI-no-JUF"/>
-                                                <constraint firstItem="agZ-sm-nEh" firstAttribute="leading" secondItem="O9Q-Ee-gOU" secondAttribute="trailing" constant="89.5" id="ll6-aR-YYB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="enhancedFocusModeSetting"/>
