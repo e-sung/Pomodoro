@@ -77,23 +77,37 @@ class SettingsAppUITests: XCTestCase {
         picker.adjust(toPickerWheelValue: "7 intervals")
         cancelButton.tap()
         XCTAssert(targetCell.staticTexts["8 intervals"].exists)
+        restoreOriginalState()
     }
     
-    override func tearDown() {
+    func testToggleModes() {
+        let neverSleepSwitch = app.switches["neverSleepSwitch"].firstMatch
+        neverSleepSwitch.tap()
+        sleep(1)
+        neverSleepSwitch.tap()
+        
+        let enhancedFocusModeSwitch = app.switches["enhancedFocusModeSwitch"].firstMatch
+        enhancedFocusModeSwitch.tap()
+        sleep(1)
+        enhancedFocusModeSwitch.tap()
+        
+    }
+    
+    func restoreOriginalState() {
         let tableView = app.tables.firstMatch
         let focusSettingCell = tableView.cells["focusIntervalSetting"].firstMatch
         focusSettingCell.tap()
-
+        
         let picker = app.pickerWheels.firstMatch
         picker.adjust(toPickerWheelValue: "25 min")
         let doneButton = app.buttons["done button"]
         doneButton.tap()
-
+        
         let breakSettingCell = tableView.cells["breakIntervalSetting"].firstMatch
         breakSettingCell.tap()
         picker.adjust(toPickerWheelValue: "5 min")
         doneButton.tap()
-
+        
         let longBreakSettingCell = tableView.cells["longBreakIntervalSetting"].firstMatch
         longBreakSettingCell.tap()
         picker.adjust(toPickerWheelValue: "15 min")
@@ -103,11 +117,10 @@ class SettingsAppUITests: XCTestCase {
         cycleForLongBreakCell.tap()
         picker.adjust(toPickerWheelValue: "3 cycles")
         doneButton.tap()
-
+        
         let targetCell = tableView.cells["targetSetting"].firstMatch
         targetCell.tap()
         picker.adjust(toPickerWheelValue: "10 intervals")
         doneButton.tap()
     }
-
 }

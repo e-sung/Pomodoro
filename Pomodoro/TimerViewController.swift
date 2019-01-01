@@ -28,7 +28,7 @@ public class TimerViewController: UIViewController {
     // MARK: Properties
     var interval: Interval!
     var maxCycleCount: Int {
-        return retreiveAmount(for: .target, from: UserDefaults.standard)
+        return retreiveAmount(for: .target, from: UserDefaults.standard)!
     }
     var currentCycleCount = 0
     var cycleCountForLongBreak = 3
