@@ -31,8 +31,9 @@ public class BreakInterval: NSObject, Interval {
         return TimeInterval(exactly: breakTimeAmount)!
     }
     
-    public var themeColor: UIColor {
-        return UIColor(named: "Break")!
+    public var themeColor: ThemeColorSet {
+        return ThemeColorSet(trackColor: UIColor(named: "GreenEdge")!,
+                             backgroundColor: UIColor(named: "GreenPlate")!)
     }
     
     public var notiAction: UNNotificationAction {

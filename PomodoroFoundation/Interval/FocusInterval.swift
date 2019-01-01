@@ -45,8 +45,17 @@ public class FocusInterval: NSObject, Interval {
         return TimeInterval(exactly: focusTimeAmount)!
     }
     
-    public var themeColor: UIColor {
-        return UIColor(named: "Focus")!
+    public var themeColor: ThemeColorSet {
+        return ThemeColorSet(trackColor: UIColor(named: "OrangeEdge")!,
+                             backgroundColor: UIColor(named: "OrangePlate")!)
     }
 }
 
+public struct ThemeColorSet {
+    public var trackColor: UIColor
+    public var backgroundColor: UIColor
+    public init(trackColor: UIColor, backgroundColor: UIColor ){
+        self.trackColor = trackColor
+        self.backgroundColor = backgroundColor
+    }
+}

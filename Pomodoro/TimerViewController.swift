@@ -107,6 +107,7 @@ extension TimerViewController {
         mainSlider.endPointValue = 0
         mainSlider.isUserInteractionEnabled = false
         updateMainSlider(with: interval)
+        view.backgroundColor = interval.themeColor.backgroundColor
         
         setUpFonts()
         updateLabelTime(with: 0)
@@ -127,8 +128,8 @@ extension TimerViewController {
 extension TimerViewController {
     func updateMainSlider(with interval:Interval) {
         mainSlider.maximumValue = CGFloat(interval.targetSeconds)
-        mainSlider.trackColor = interval.themeColor
-        mainSlider.trackFillColor = interval.themeColor
+//        mainSlider.trackColor = interval.themeColor.trackColor
+        mainSlider.trackFillColor = interval.themeColor.trackColor
         mainSlider.setNeedsDisplay()
     }
     

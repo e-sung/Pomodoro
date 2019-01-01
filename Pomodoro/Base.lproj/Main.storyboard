@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eggWhite" translatesAutoresizingMaskIntoConstraints="NO" id="w84-Xy-4zv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0j-TM-sWV" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="32" y="86" width="256" height="256"/>
+                                <rect key="frame" x="60" y="166" width="255" height="255"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="C0j-TM-sWV" secondAttribute="height" multiplier="1:1" id="d3N-aY-Rei"/>
@@ -30,16 +33,16 @@
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="diskColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" name="YellowEgg"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
-                                        <color key="value" name="Focus"/>
+                                        <color key="value" name="OrangeEdge"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
-                                        <color key="value" name="Focus"/>
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="endThumbTintColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="thumbLineWidth">
                                         <real key="value" value="0.0"/>
@@ -56,20 +59,18 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="p0n-JA-XET">
-                                <rect key="frame" x="92" y="166.5" width="136" height="95.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="90" y="254.5" width="195" height="78"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="60"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="65"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="150"/>
                                 </variation>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcS-Oi-Txl">
-                                <rect key="frame" x="142" y="270" width="36" height="32"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="169.5" y="340.5" width="36" height="40.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="▶">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,7 +91,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAK-wa-qwe">
-                                <rect key="frame" x="111" y="382.5" width="98" height="48"/>
+                                <rect key="frame" x="138.5" y="581" width="98" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -110,7 +111,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="OrangePlate"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="top" secondItem="C0j-TM-sWV" secondAttribute="bottom" constant="40" id="2Qr-fa-rtt"/>
@@ -118,31 +119,34 @@
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="7ph-cJ-OOY"/>
                             <constraint firstItem="HcS-Oi-Txl" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" constant="-40" id="AkI-TT-UMX"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BsM-FH-jKr">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-80"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="-50"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="-100"/>
                             </constraint>
-                            <constraint firstItem="C0j-TM-sWV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" priority="999" id="CLj-fV-FBc">
+                            <constraint firstItem="C0j-TM-sWV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.68" priority="999" id="CLj-fV-FBc">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-100"/>
                             </constraint>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="14" id="CUq-Mm-x41"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="D5F-GA-jif"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" id="ECX-mW-UN6"/>
-                            <constraint firstItem="p0n-JA-XET" firstAttribute="trailing" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="-60" id="IGA-HE-MDm"/>
+                            <constraint firstItem="p0n-JA-XET" firstAttribute="trailing" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="-30" id="IGA-HE-MDm"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" priority="750" id="IwP-tg-CHI">
                                 <variation key="heightClass=compact-widthClass=compact" constant="-120"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="-150"/>
                             </constraint>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w84-Xy-4zv" secondAttribute="bottom" id="MKZ-5q-23j"/>
                             <constraint firstItem="HcS-Oi-Txl" firstAttribute="centerX" secondItem="p0n-JA-XET" secondAttribute="centerX" id="SKe-7W-GFo"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" id="SPc-YH-quA"/>
+                            <constraint firstItem="w84-Xy-4zv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VXe-vx-Sqo"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="centerY" secondItem="C0j-TM-sWV" secondAttribute="centerY" id="WU1-s8-wWh"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cBF-6p-B6D"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="14" id="dGo-AZ-d2Z"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="eIe-Zq-zmq"/>
+                            <constraint firstItem="w84-Xy-4zv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hb7-c3-efs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oAK-wa-qwe" secondAttribute="trailing" constant="40" id="ixK-8c-Vct"/>
-                            <constraint firstItem="oAK-wa-qwe" firstAttribute="top" secondItem="C0j-TM-sWV" secondAttribute="bottom" constant="40.333333333333371" id="nZH-SH-fWS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w84-Xy-4zv" secondAttribute="trailing" id="mal-3k-YKY"/>
+                            <constraint firstItem="oAK-wa-qwe" firstAttribute="top" secondItem="C0j-TM-sWV" secondAttribute="bottom" constant="160" id="nZH-SH-fWS"/>
                             <constraint firstItem="HcS-Oi-Txl" firstAttribute="top" secondItem="p0n-JA-XET" secondAttribute="bottom" constant="8" id="o6P-AH-B4B"/>
-                            <constraint firstItem="p0n-JA-XET" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="60" id="oaw-fY-dx5"/>
-                            <constraint firstItem="p0n-JA-XET" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sCg-NH-SXf"/>
+                            <constraint firstItem="p0n-JA-XET" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="30" id="oaw-fY-dx5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oAK-wa-qwe" secondAttribute="trailing" constant="40" id="tpo-98-gQk"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wHm-Yw-ULw"/>
                         </constraints>
@@ -234,8 +238,15 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="Focus">
-            <color red="0.80000000000000004" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="eggWhite" width="180" height="321"/>
+        <namedColor name="OrangeEdge">
+            <color red="0.96078431372549022" green="0.63529411764705879" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OrangePlate">
+            <color red="0.91764705882352937" green="0.33333333333333331" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="YellowEgg">
+            <color red="1" green="0.85098039215686272" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

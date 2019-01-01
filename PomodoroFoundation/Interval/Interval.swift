@@ -29,7 +29,7 @@ public protocol Interval: class {
     var elapsedSeconds: TimeInterval { get set }
     var targetSeconds: TimeInterval { get }
     var targetMinute: TimeInterval { get }
-    var themeColor: UIColor { get }
+    var themeColor: ThemeColorSet { get }
 
     func startTimer()
     func stopTimer(by finisher:IntervalFinisher)
