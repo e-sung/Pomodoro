@@ -29,7 +29,7 @@ class SettingsAppUITests: XCTestCase {
         focusSettingCell.tap()
         let picker = app.pickerWheels.firstMatch
         picker.adjust(toPickerWheelValue: "15 min")
-        let doneButton = app.buttons["Done"]
+        let doneButton = app.buttons["done button"].firstMatch
         doneButton.tap()
         XCTAssert(focusSettingCell.staticTexts["15 min"].exists)
         
@@ -86,7 +86,7 @@ class SettingsAppUITests: XCTestCase {
 
         let picker = app.pickerWheels.firstMatch
         picker.adjust(toPickerWheelValue: "25 min")
-        let doneButton = app.buttons["Done"]
+        let doneButton = app.buttons["done button"]
         doneButton.tap()
 
         let breakSettingCell = tableView.cells["breakIntervalSetting"].firstMatch

@@ -366,6 +366,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeV-RZ-02j">
                                         <rect key="frame" x="275" y="0.0" width="37" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="done button"/>
                                         <state key="normal" title="Done"/>
                                         <connections>
                                             <action selector="doneButtonClicked:" destination="vZM-ox-4fB" eventType="touchUpInside" id="eD8-LI-1LP"/>
