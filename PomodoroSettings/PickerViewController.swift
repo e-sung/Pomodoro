@@ -18,7 +18,7 @@ public class PickerViewController: UIViewController, PickerUpdater {
         super.viewDidLoad()
         pickerView.dataSource = self
         pickerView.delegate = self
-        let defaultAmount = retreiveAmount(for: settingCell.content, from: UserDefaults.standard)
+        guard let defaultAmount = retreiveAmount(for: settingCell.content, from: UserDefaults.standard) else { return }
         guard let defaultRow = settingCell.content.rowFor(defaultAmount) else { return }
         pickerView.selectRow(defaultRow, inComponent: 0, animated: false)
     }
@@ -37,8 +37,7 @@ public class PickerViewController: UIViewController, PickerUpdater {
     
     func close() {
         dismiss(animated: true, completion: { [weak self] in
-            guard let cell = self?.settingCell as? UITableViewCell else { return }
-            cell.setSelected(false, animated: true)
+            self?.settingCell.setSelected(false, animated: true)
         })
     }
 }

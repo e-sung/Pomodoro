@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PomodoroFoundation
 
 public class SettingsTableViewController: UITableViewController {
     
@@ -22,7 +23,6 @@ public class SettingsTableViewController: UITableViewController {
         toggleSettingCells.forEach({ [weak self] in self?.setUp($0) })
 
     }
-    
 
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,15 +37,16 @@ public class SettingsTableViewController: UITableViewController {
     }
     
     func update(_ cell: AmountSettingCell) {
-        var amount = UserDefaults.standard.integer(forKey: cell.content.rawValue)
+        var amount = retreiveAmount(for: cell.content, from: UserDefaults.standard)
         if amount == 0, let defaultValue = cell.content.defaultValue as? Int {
             amount = defaultValue
         }
-        cell.update(for: amount)
+        guard let valueToUpdate = amount else { return }
+        cell.update(for: valueToUpdate)
     }
     
     func setUp(_ cell: ToggleSettingCell) {
-        if UserDefaults.standard.object(forKey: cell.content.rawValue) == nil {
+        if retreiveBool(for: cell.content, from: UserDefaults.standard) == nil {
             guard let defaultValue = cell.content.defaultValue as? Bool else { return }
             cell.setUp(for: defaultValue)
         }

@@ -21,10 +21,24 @@ public func retreiveLatestCycleDate(from userDefault: UserDefaults) -> Date {
     return userDefault.value(forKey: "lastestCycleDate") as? Date ?? Date()
 }
 
-public func save(_ amount: Int, for cellType: SettingContent, to userDefault: UserDefaults) {
-    userDefault.set(amount, forKey: cellType.rawValue)
+public func save(_ amount: Int, for settingContent: SettingContent, to userDefault: UserDefaults) {
+    userDefault.set(amount, forKey: settingContent.rawValue)
 }
 
-public func retreiveAmount(for cellType: SettingContent, from userDefault: UserDefaults) -> Int {
-    return userDefault.integer(forKey: cellType.rawValue)
+public func retreiveAmount(for settingContent: SettingContent, from userDefault: UserDefaults) -> Int? {
+    let valueInUserDefault = userDefault.object(forKey: settingContent.rawValue) as? Int
+    if valueInUserDefault == nil {
+        return settingContent.defaultValue as? Int
+    }
+    else {
+        return valueInUserDefault
+    }
+}
+
+public func save(_ bool: Bool, for settingContent: SettingContent, to userDefault: UserDefaults) {
+    userDefault.set(bool, forKey: settingContent.rawValue)
+}
+
+public func retreiveBool(for settingContent: SettingContent, from userDefault:UserDefaults) -> Bool? {
+    return userDefault.object(forKey: settingContent.rawValue) as? Bool
 }

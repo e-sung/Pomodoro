@@ -31,11 +31,10 @@ public class ToggleSettingCell: UITableViewCell {
     }
     
     @IBAction func switchToggled(_ sender: UISwitch) {
-        UserDefaults.standard.set(sender.isOn, forKey: content.rawValue)
+        save(sender.isOn, for: content, to: UserDefaults.standard)
     }
     
     public func setUp(for value: Bool) {
         toggleSwitch.isOn = value
-        UserDefaults.standard.set(value, forKey: content.rawValue)
     }
 }

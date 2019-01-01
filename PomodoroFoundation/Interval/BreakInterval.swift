@@ -27,7 +27,7 @@ public class BreakInterval: NSObject, Interval {
         return 60 * targetMinute
     }
     public var targetMinute: TimeInterval {
-        let breakTimeAmount = retreiveAmount(for: .breakTime, from: UserDefaults.standard)
+        let breakTimeAmount = retreiveAmount(for: .breakTime, from: UserDefaults.standard)!
         return TimeInterval(exactly: breakTimeAmount)!
     }
     
