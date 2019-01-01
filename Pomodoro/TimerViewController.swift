@@ -16,15 +16,9 @@ public class TimerViewController: UIViewController {
     
     // MARK: IBOutlets
     @IBOutlet var mainSlider: CircularSlider!
-    @IBOutlet var labelTime: UILabel! {
-        didSet {
-            print(labelTime)
-        }
-    }
+    @IBOutlet var labelTime: UILabel!
     @IBOutlet var labelIntervalCount: UILabel!
-    @IBOutlet var playOrPauseButton: UIButton!
-    @IBOutlet var rightEdgeGR: UIScreenEdgePanGestureRecognizer!
-    
+
     // MARK: Properties
     var interval: Interval!
     var maxCycleCount: Int {
@@ -55,18 +49,32 @@ public class TimerViewController: UIViewController {
     }
     
     // MARK: IBAction
-    @IBAction func playOrPauseButtonClicked(_ sender: UIButton) {
-        if sender.title(for: .normal) == "▶" {
-            sender.setTitle("||", for: .normal)
-            resetCycleIfDayHasPassed()
-            interval.startTimer()
-            
+    @IBAction func eggYellowClicked(_ sender: Any) {
+        startOrStopTimer()
+    }
+    
+    func startOrStopTimer() {
+        if interval.isActive {
+            interval.pauseTimer()
         }
         else {
-            interval.pauseTimer()
-            sender.setTitle("▶", for: .normal)
+            resetCycleIfDayHasPassed()
+            interval.startTimer()
         }
     }
+    
+//    @IBAction func playOrPauseButtonClicked(_ sender: UIButton) {
+//        if sender.title(for: .normal) == "▶" {
+//            sender.setTitle("||", for: .normal)
+//            resetCycleIfDayHasPassed()
+//            interval.startTimer()
+//            
+//        }
+//        else {
+//            interval.pauseTimer()
+//            sender.setTitle("▶", for: .normal)
+//        }
+//    }
     
     @IBAction func unwindToTimerViewController(_ unwindSegue: UIStoryboardSegue) {
         if interval is FocusInterval {
@@ -80,9 +88,7 @@ public class TimerViewController: UIViewController {
         }
         setUpInitialView()
     }
-    
-    @IBAction func rightPanelSwiped(_ sender: UIScreenEdgePanGestureRecognizer) {
-    }
+
 }
 
 // MARK: SetUp
@@ -112,7 +118,7 @@ extension TimerViewController {
         setUpFonts()
         updateLabelTime(with: 0)
 
-        playOrPauseButton.setTitle("▶", for: .normal)
+//        playOrPauseButton.setTitle("▶", for: .normal)
         
         labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
     }
@@ -120,7 +126,7 @@ extension TimerViewController {
 
     func setUpFonts() {
         let currentFontSize = labelTime.font.pointSize
-        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .light)
+        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .regular)
     }
 }
 
@@ -128,7 +134,6 @@ extension TimerViewController {
 extension TimerViewController {
     func updateMainSlider(with interval:Interval) {
         mainSlider.maximumValue = CGFloat(interval.targetSeconds)
-//        mainSlider.trackColor = interval.themeColor.trackColor
         mainSlider.trackFillColor = interval.themeColor.trackColor
         mainSlider.setNeedsDisplay()
     }
@@ -194,7 +199,7 @@ extension TimerViewController: UNUserNotificationCenterDelegate {
             }
         }
         else {
-            playOrPauseButtonClicked(playOrPauseButton)
+            startOrStopTimer()
         }
         completionHandler()
     }
