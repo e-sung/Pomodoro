@@ -305,13 +305,7 @@
                             <outlet property="delegate" destination="92q-1T-ccy" id="GgQ-nF-nSw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" largeTitleDisplayMode="always" id="9OE-Zi-TI3">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="FAG-Fe-7mC">
-                            <connections>
-                                <segue destination="ThK-bE-22R" kind="unwind" unwindAction="unwindToTimerViewController:" id="TvL-PT-Lsx"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Setting" largeTitleDisplayMode="always" id="9OE-Zi-TI3"/>
                     <connections>
                         <outletCollection property="amountSettingCells" destination="ri4-UQ-hVn" collectionClass="NSMutableArray" id="AWI-JJ-IvY"/>
                         <outletCollection property="amountSettingCells" destination="m0o-Vv-D7S" collectionClass="NSMutableArray" id="0mO-4u-MVe"/>
@@ -323,7 +317,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp6-wt-7T7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="ThK-bE-22R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2748" y="130.88455772113943"/>
         </scene>
@@ -411,13 +404,15 @@
             </objects>
             <point key="canvasLocation" x="3576.8000000000002" y="130.88455772113943"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Setting-->
         <scene sceneID="gf9-IG-kdF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ltt-HR-4rT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" image="ic_setting" id="fCM-yK-58y"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EGV-hX-QYw">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="EGV-hX-QYw">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -430,6 +425,9 @@
             <point key="canvasLocation" x="1808.8" y="130.88455772113943"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_setting" width="20" height="21"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="I22-OJ-a2i"/>
     </inferredMetricsTieBreakers>

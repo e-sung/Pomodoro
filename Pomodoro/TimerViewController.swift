@@ -11,6 +11,7 @@ import UIKit
 import UserNotifications
 import HGCircularSlider
 import PomodoroFoundation
+import PomodoroSettings
 import AudioToolbox
 
 public class TimerViewController: UIViewController {
@@ -34,6 +35,7 @@ public class TimerViewController: UIViewController {
         super.viewDidLoad()
         setUpInitialValue()
         setUpInitialView()
+        tabBarController?.delegate = self
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -67,7 +69,7 @@ public class TimerViewController: UIViewController {
         }
     }
     
-    @IBAction func unwindToTimerViewController(_ unwindSegue: UIStoryboardSegue) {
+    func applyNewSetting() {
         if interval is FocusInterval {
             interval = FocusInterval(intervalDelegate: self)
         }
@@ -173,6 +175,16 @@ extension TimerViewController: IntervalDelegate {
     public func timeElapsed(_ seconds: TimeInterval) {
         updateLabelTime(with: seconds)
         updateMainSlider(to: seconds)
+    }
+}
+
+extension TimerViewController: UITabBarControllerDelegate {
+    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        let selectedNavigationController = tabBarController.selectedViewController as? UINavigationController
+        if selectedNavigationController?.topViewController is SettingsTableViewController {
+            applyNewSetting()
+        }
+        return true
     }
 }
 
