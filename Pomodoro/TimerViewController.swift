@@ -37,11 +37,16 @@ public class TimerViewController: UIViewController {
         setUpInitialView()
         tabBarController?.delegate = self
     }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpFonts()
+    }
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setUpFonts()
-        UIApplication.shared.isIdleTimerDisabled = true
+        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
+        UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
     
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -80,6 +85,9 @@ public class TimerViewController: UIViewController {
             interval = LongBreakInterval(intervalDelegate: self)
         }
         setUpInitialView()
+        
+        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
+        UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
 
 }

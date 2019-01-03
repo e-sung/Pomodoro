@@ -50,9 +50,11 @@ public class SettingsTableViewController: UITableViewController {
     }
     
     func setUp(_ cell: ToggleSettingCell) {
-        if retreiveBool(for: cell.content, from: UserDefaults.standard) == nil {
-            guard let defaultValue = cell.content.defaultValue as? Bool else { return }
-            cell.setUp(for: defaultValue)
+        var savedBool = retreiveBool(for: cell.content, from: UserDefaults.standard)
+        if savedBool == nil {
+            savedBool = cell.content.defaultValue as? Bool
         }
+        guard let boolToSetUp = savedBool else { return }
+        cell.setUp(for: boolToSetUp)
     }
 }

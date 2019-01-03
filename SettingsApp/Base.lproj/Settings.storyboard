@@ -211,7 +211,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Mode" id="IYp-Qa-I2i">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rZW-di-Plg" customClass="ToggleSettingCell" customModule="PomodoroSettings">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="rZW-di-Plg" customClass="ToggleSettingCell" customModule="PomodoroSettings">
                                         <rect key="frame" x="0.0" y="331.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rZW-di-Plg" id="a1J-7y-oTh">
@@ -248,7 +248,7 @@
                                             <outlet property="toggleSwitch" destination="Y00-je-u9i" id="Hs4-Py-iIa"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="54" id="qRG-N8-Xf6" customClass="ToggleSettingCell" customModule="PomodoroSettings">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="54" id="qRG-N8-Xf6" customClass="ToggleSettingCell" customModule="PomodoroSettings">
                                         <rect key="frame" x="0.0" y="375.5" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qRG-N8-Xf6" id="cpk-o5-h0f">
