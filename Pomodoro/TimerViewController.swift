@@ -11,6 +11,7 @@ import UIKit
 import UserNotifications
 import HGCircularSlider
 import PomodoroFoundation
+import AudioToolbox
 
 public class TimerViewController: UIViewController {
     
@@ -54,6 +55,9 @@ public class TimerViewController: UIViewController {
     }
     
     func startOrStopTimer() {
+        
+        let pop = SystemSoundID(1520)
+        AudioServicesPlaySystemSound(pop)
         if interval.isActive {
             interval.pauseTimer()
         }
@@ -62,19 +66,6 @@ public class TimerViewController: UIViewController {
             interval.startTimer()
         }
     }
-    
-//    @IBAction func playOrPauseButtonClicked(_ sender: UIButton) {
-//        if sender.title(for: .normal) == "▶" {
-//            sender.setTitle("||", for: .normal)
-//            resetCycleIfDayHasPassed()
-//            interval.startTimer()
-//            
-//        }
-//        else {
-//            interval.pauseTimer()
-//            sender.setTitle("▶", for: .normal)
-//        }
-//    }
     
     @IBAction func unwindToTimerViewController(_ unwindSegue: UIStoryboardSegue) {
         if interval is FocusInterval {
@@ -118,8 +109,6 @@ extension TimerViewController {
         setUpFonts()
         updateLabelTime(with: 0)
 
-//        playOrPauseButton.setTitle("▶", for: .normal)
-        
         labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
     }
     
