@@ -75,6 +75,15 @@ public class TimerViewController: UIViewController {
     }
     
     func applyNewSetting() {
+        if interval.isActive == false {
+            applyNewSettingForInterval()
+        }
+        
+        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
+        UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
+    }
+    
+    func applyNewSettingForInterval() {
         if interval is FocusInterval {
             interval = FocusInterval(intervalDelegate: self)
         }
@@ -85,9 +94,6 @@ public class TimerViewController: UIViewController {
             interval = LongBreakInterval(intervalDelegate: self)
         }
         setUpInitialView()
-        
-        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
-        UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
 
 }
