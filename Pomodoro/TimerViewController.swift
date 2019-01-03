@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TimerViewController.swift
 //  Pomodoro
 //
 //  Created by 류성두 on 22/12/2018.
@@ -53,7 +53,7 @@ public class TimerViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { [weak self] _ in
             self?.setUpFonts()
-            }, completion: nil)
+        }, completion: nil)
     }
     
     // MARK: IBAction

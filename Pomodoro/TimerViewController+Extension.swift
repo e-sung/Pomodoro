@@ -14,8 +14,9 @@ import UserNotifications
 func registerBackgroundTimer() {
     dateBackgroundEnter = Date()
     let application = UIApplication.shared
-    guard let timerViewController = application.keyWindow?.rootViewController as? TimerViewController else { return }
-    guard let interval = timerViewController.interval else { return }
+    guard let tabBarController = application.keyWindow?.rootViewController as? UITabBarController else { return }
+    guard let timerViewController = tabBarController.viewControllers?.compactMap({ $0 as? TimerViewController }).first else { return }
+    guard let interval = timerViewController.interval, interval.isActive else { return }
     let remainingTime = interval.targetSeconds - interval.elapsedSeconds
     
     let timeToRing = Date(timeInterval: remainingTime, since: Date())

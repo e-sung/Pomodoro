@@ -29,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        guard let timerViewController = application.keyWindow?.rootViewController as? TimerViewController else { return }
-        guard let interval = timerViewController.interval, interval.isActive else { return }
         registerBackgroundTimer()
         
         
