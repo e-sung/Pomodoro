@@ -16,9 +16,6 @@ public class SettingsTableViewController: UITableViewController {
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 44
-
         amountSettingCells.forEach({ [weak self] in self?.update($0) })
         toggleSettingCells.forEach({ [weak self] in self?.setUp($0) })
 
@@ -34,6 +31,13 @@ public class SettingsTableViewController: UITableViewController {
             let cellToUpdate = sender as? AmountSettingCell{
             nextVC.settingCell = cellToUpdate
         }
+    }
+    public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    public override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     func update(_ cell: AmountSettingCell) {
