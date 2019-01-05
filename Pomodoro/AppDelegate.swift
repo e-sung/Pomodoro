@@ -48,7 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         let timerViewController = TimerViewController.shared
         guard let interval = timerViewController.interval else { return }
-        if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard) {
+        if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard),
+            let isEnhancedFocusMode = retreiveBool(for: .enhancedFocusMode, from: UserDefaults.standard),
+                isEnhancedFocusMode == false {
             let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
             interval.elapsedSeconds += timeIntervalSinceBackground
         }
