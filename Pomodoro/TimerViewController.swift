@@ -45,11 +45,6 @@ public class TimerViewController: UIViewController {
         refreshViews(with: interval)
         tabBarController?.delegate = self
     }
-
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setUpFonts()
-    }
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -60,7 +55,6 @@ public class TimerViewController: UIViewController {
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { [weak self] _ in
-            self?.setUpFonts()
         }, completion: nil)
     }
     
@@ -140,16 +134,9 @@ extension TimerViewController {
         updateMainSlider(with: interval)
         view.backgroundColor = interval.themeColor.backgroundColor
         
-        setUpFonts()
         updateLabelTime(with: interval.elapsedSeconds)
 
         labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
-    }
-    
-
-    func setUpFonts() {
-        let currentFontSize = labelTime.font.pointSize
-        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .regular)
     }
 }
 
@@ -173,6 +160,8 @@ extension TimerViewController {
         let date = Date(timeIntervalSince1970: interval.targetSeconds - seconds)
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
+        let currentFontSize = labelTime.font.pointSize
+        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .regular)
         labelTime.text = dateFormatter.string(from: date)
     }
 }
