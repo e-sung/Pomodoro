@@ -57,10 +57,24 @@ public func saveIntervalContext(of interval: Interval, to userDefault: UserDefau
     userDefault.set(encodedData, forKey: "IntervalContext")
 }
 
-public func retreiveInterval(from userDefault: UserDefaults) -> IntervalContext? {
+public func retreiveInterval(from userDefault: UserDefaults) -> Interval? {
     guard let encodedData = userDefault.object(forKey: "IntervalContext") as? Data else { return nil}
     guard let intervalContext = try? JSONDecoder().decode(IntervalContext.self, from: encodedData) else { return nil }
-    return intervalContext
+    var interval:Interval? = nil
+    if intervalContext.intervalType == FocusInterval.className {
+        interval = FocusInterval()
+    }
+    else if intervalContext.intervalType == BreakInterval.className {
+        interval = BreakInterval()
+    }
+    else if intervalContext.intervalType == LongBreakInterval.className {
+        interval = LongBreakInterval()
+    }
+    interval?.elapsedSeconds = intervalContext.elapsedSeconds
+    if intervalContext.isActive {
+        interval?.startTimer()
+    }
+    return interval
 }
 
 public func resetIntervalContext(on userDefault: UserDefaults) {
@@ -69,12 +83,12 @@ public func resetIntervalContext(on userDefault: UserDefaults) {
 }
 
 public struct IntervalContext: Codable {
-    var isActive: Bool
-    var intervalType: String
-    var elapsedSeconds: TimeInterval
-    init(of interval:Interval) {
-        self.isActive = interval.isActive
+    public var isActive: Bool
+    public var intervalType: String
+    public var elapsedSeconds: TimeInterval
+    public init(of interval:Interval) {
         self.intervalType = interval.typeIdentifier
+        self.isActive = interval.isActive
         self.elapsedSeconds = interval.elapsedSeconds
     }
 }

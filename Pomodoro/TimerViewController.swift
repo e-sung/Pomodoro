@@ -110,8 +110,14 @@ public class TimerViewController: UIViewController {
 extension TimerViewController {
     func setUpInitialValue() {
         notificationManager = NotificationManager(delegate: self)
-        interval = FocusInterval(intervalDelegate: self)
-        
+        if let savedInterval = retreiveInterval(from: UserDefaults.standard) {
+            interval = savedInterval
+            interval.delegate = self
+        }
+        else {
+            interval = FocusInterval(intervalDelegate: self)
+        }
+
         if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard) {
             let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
             interval.elapsedSeconds += timeIntervalSinceBackground
