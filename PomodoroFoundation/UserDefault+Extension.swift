@@ -58,3 +58,8 @@ public func saveInterval(_ interval: Interval, to userDefault: UserDefaults) {
 public func retreiveInterval(from userDefault: UserDefaults) -> Interval? {
     return userDefault.object(forKey: "Interval") as? Interval
 }
+
+public func resetIntervalContext(on userDefault: UserDefaults) {
+    userDefault.set(nil, forKey: "Interval")
+    userDefault.set(nil, forKey: "dateBackgroundEnter")
+}

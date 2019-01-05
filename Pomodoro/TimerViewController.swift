@@ -117,6 +117,7 @@ extension TimerViewController {
             interval.elapsedSeconds += timeIntervalSinceBackground
         }
         
+        resetIntervalContext(on: UserDefaults.standard)
         resetCycleIfDayHasPassed()
         currentCycleCount = retreiveCycle(from: UserDefaults.standard)
     }

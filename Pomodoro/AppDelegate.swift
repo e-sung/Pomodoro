@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
             interval.elapsedSeconds += timeIntervalSinceBackground
         }
+        resetIntervalContext(on: UserDefaults.standard)
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
     }
