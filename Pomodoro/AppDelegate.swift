@@ -30,6 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        
+        saveDateBackgroundEntered(Date(), to: UserDefaults.standard)
+        let timerViewController = TimerViewController.shared
+        if let interval = timerViewController.interval {
+            saveIntervalContext(of: interval, to: UserDefaults.standard)
+        }
+
         registerBackgroundTimer()
         
         

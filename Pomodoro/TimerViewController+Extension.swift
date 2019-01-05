@@ -15,9 +15,6 @@ import PomodoroFoundation
 func registerBackgroundTimer() {
     let timerViewController = TimerViewController.shared
     guard let interval = timerViewController.interval, interval.isActive else { return }
-    
-    saveDateBackgroundEntered(Date(), to: UserDefaults.standard)
-    saveIntervalContext(of: interval, to: UserDefaults.standard)
 
     let remainingTime = interval.targetSeconds - interval.elapsedSeconds
     

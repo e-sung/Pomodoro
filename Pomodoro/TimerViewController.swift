@@ -42,7 +42,7 @@ public class TimerViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         setUpInitialValue()
-        setUpInitialView()
+        refreshViews(with: interval)
         tabBarController?.delegate = self
     }
 
@@ -101,7 +101,7 @@ public class TimerViewController: UIViewController {
         else if interval is LongBreakInterval {
             interval = LongBreakInterval(intervalDelegate: self)
         }
-        setUpInitialView()
+        refreshViews(with: interval)
     }
 
 }
@@ -118,7 +118,7 @@ extension TimerViewController {
             interval = FocusInterval(intervalDelegate: self)
         }
 
-        if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard) {
+        if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard), interval.isActive {
             let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
             interval.elapsedSeconds += timeIntervalSinceBackground
         }
@@ -136,15 +136,12 @@ extension TimerViewController {
         }
     }
     
-    func setUpInitialView(){
-        
-        mainSlider.endPointValue = 0
-        mainSlider.isUserInteractionEnabled = false
+    func refreshViews(with interval: Interval){
         updateMainSlider(with: interval)
         view.backgroundColor = interval.themeColor.backgroundColor
         
         setUpFonts()
-        updateLabelTime(with: 0)
+        updateLabelTime(with: interval.elapsedSeconds)
 
         labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
     }
@@ -161,6 +158,7 @@ extension TimerViewController {
     func updateMainSlider(with interval:Interval) {
         mainSlider.maximumValue = CGFloat(interval.targetSeconds)
         mainSlider.trackFillColor = interval.themeColor.trackColor
+        updateMainSlider(to: interval.elapsedSeconds)
         mainSlider.setNeedsDisplay()
     }
     
@@ -190,7 +188,7 @@ extension TimerViewController: IntervalDelegate {
         }
         
         resetInterval()
-        setUpInitialView()
+        refreshViews(with: interval)
     }
     
     func resetInterval() {
