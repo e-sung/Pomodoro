@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import PomodoroFoundation
 import CoreData
 
 var dateBackgroundEnter: Date?
@@ -38,9 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        guard let timerViewController = application.keyWindow?.rootViewController as? TimerViewController else { return }
+        let timerViewController = TimerViewController.shared
         guard let interval = timerViewController.interval else { return }
-        if let dateBackgroundEnter = dateBackgroundEnter {
+        if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard) {
             let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
             interval.elapsedSeconds += timeIntervalSinceBackground
         }

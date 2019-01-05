@@ -9,14 +9,16 @@
 import Foundation
 import UIKit
 import UserNotifications
+import PomodoroFoundation
 
 
 func registerBackgroundTimer() {
-    dateBackgroundEnter = Date()
-    let application = UIApplication.shared
-    guard let tabBarController = application.keyWindow?.rootViewController as? UITabBarController else { return }
-    guard let timerViewController = tabBarController.viewControllers?.compactMap({ $0 as? TimerViewController }).first else { return }
+    let timerViewController = TimerViewController.shared
     guard let interval = timerViewController.interval, interval.isActive else { return }
+    
+    saveDateBackgroundEntered(Date(), to: UserDefaults.standard)
+    saveInterval(interval, to: UserDefaults.standard)
+    
     let remainingTime = interval.targetSeconds - interval.elapsedSeconds
     
     let timeToRing = Date(timeInterval: remainingTime, since: Date())

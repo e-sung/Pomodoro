@@ -42,3 +42,19 @@ public func save(_ bool: Bool, for settingContent: SettingContent, to userDefaul
 public func retreiveBool(for settingContent: SettingContent, from userDefault:UserDefaults) -> Bool? {
     return userDefault.object(forKey: settingContent.rawValue) as? Bool
 }
+
+public func saveDateBackgroundEntered(_ date: Date, to userDefault: UserDefaults) {
+    userDefault.set(date, forKey: "dateBackgroundEnter")
+}
+
+public func retreiveDateBackgroundEntered(from userDefault: UserDefaults) -> Date? {
+    return userDefault.object(forKey: "dateBackgroundEnter") as? Date
+}
+
+public func saveInterval(_ interval: Interval, to userDefault: UserDefaults) {
+    userDefault.set(interval, forKey: "Interval")
+}
+
+public func retreiveInterval(from userDefault: UserDefaults) -> Interval? {
+    return userDefault.object(forKey: "Interval") as? Interval
+}

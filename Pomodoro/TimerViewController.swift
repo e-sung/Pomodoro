@@ -29,6 +29,14 @@ public class TimerViewController: UIViewController {
     var currentCycleCount = 0
     var cycleCountForLongBreak = 3
     var notificationManager:NotificationManager!
+    
+    public static var shared: TimerViewController {
+        
+        let application = UIApplication.shared
+        let tabBarController = application.keyWindow!.rootViewController as! UITabBarController
+        return tabBarController.viewControllers!.compactMap({ $0 as? TimerViewController }).first!
+    }
+    
 
     // MARK: LifeCycle
     override public func viewDidLoad() {
@@ -103,6 +111,12 @@ extension TimerViewController {
     func setUpInitialValue() {
         notificationManager = NotificationManager(delegate: self)
         interval = FocusInterval(intervalDelegate: self)
+        
+        if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard) {
+            let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
+            interval.elapsedSeconds += timeIntervalSinceBackground
+        }
+        
         resetCycleIfDayHasPassed()
         currentCycleCount = retreiveCycle(from: UserDefaults.standard)
     }
