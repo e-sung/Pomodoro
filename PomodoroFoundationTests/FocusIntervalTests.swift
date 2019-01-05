@@ -24,11 +24,11 @@ class FocusIntervalTests: XCTestCase {
         XCTAssert(sut.elapsedSeconds == 0)
         XCTAssert(sut.targetSeconds == 1500)
         XCTAssert(sut.targetMinute == 25 )
-        XCTAssert(sut.themeColor == UIColor(named: "Focus")!)
         XCTAssert(sut.notiAction.title == "Start Break")
         XCTAssert(sut.notiContent.title == "Time to Break!")
         XCTAssert(sut.notiContent.body == "Well Done!!!")
         XCTAssert(sut.notiContent.title == "Time to Break!")
+        XCTAssert(sut.typeIdentifier == "FocusInterval")
         
     }
     

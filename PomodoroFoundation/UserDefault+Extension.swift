@@ -51,15 +51,30 @@ public func retreiveDateBackgroundEntered(from userDefault: UserDefaults) -> Dat
     return userDefault.object(forKey: "dateBackgroundEnter") as? Date
 }
 
-public func saveInterval(_ interval: Interval, to userDefault: UserDefaults) {
-    userDefault.set(interval, forKey: "Interval")
+public func saveIntervalContext(of interval: Interval, to userDefault: UserDefaults) {
+    let intervalContext = IntervalContext(of: interval)
+    guard let encodedData = try? JSONEncoder().encode(intervalContext) else { return }
+    userDefault.set(encodedData, forKey: "IntervalContext")
 }
 
-public func retreiveInterval(from userDefault: UserDefaults) -> Interval? {
-    return userDefault.object(forKey: "Interval") as? Interval
+public func retreiveInterval(from userDefault: UserDefaults) -> IntervalContext? {
+    guard let encodedData = userDefault.object(forKey: "IntervalContext") as? Data else { return nil}
+    guard let intervalContext = try? JSONDecoder().decode(IntervalContext.self, from: encodedData) else { return nil }
+    return intervalContext
 }
 
 public func resetIntervalContext(on userDefault: UserDefaults) {
     userDefault.set(nil, forKey: "Interval")
     userDefault.set(nil, forKey: "dateBackgroundEnter")
+}
+
+public struct IntervalContext: Codable {
+    var isActive: Bool
+    var intervalType: String
+    var elapsedSeconds: TimeInterval
+    init(of interval:Interval) {
+        self.isActive = interval.isActive
+        self.intervalType = interval.typeIdentifier
+        self.elapsedSeconds = interval.elapsedSeconds
+    }
 }

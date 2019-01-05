@@ -30,6 +30,7 @@ public protocol Interval: class {
     var targetSeconds: TimeInterval { get }
     var targetMinute: TimeInterval { get }
     var themeColor: ThemeColorSet { get }
+    var typeIdentifier: String { get }
 
     func startTimer()
     func stopTimer(by finisher:IntervalFinisher)

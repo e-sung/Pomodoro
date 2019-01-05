@@ -11,6 +11,10 @@ import UserNotifications
 import UIKit
 
 public class BreakInterval: NSObject, Interval {
+    public var typeIdentifier: String {
+        return className
+    }
+    
     public var timer: Timer = Timer()
     
     public weak var delegate: IntervalDelegate?

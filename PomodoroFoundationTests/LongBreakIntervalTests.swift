@@ -21,7 +21,6 @@ class LongBreakIntervalTests: XCTestCase {
         // Then
         XCTAssert(sut.targetSeconds == 900)
         XCTAssert(sut.targetMinute == 15 )
-        XCTAssert(sut.themeColor == UIColor(named: "Break")!)
         XCTAssert(sut.notiAction.title == "Start Focus")
         XCTAssert(sut.notiContent.title == "Time to Focus!")
         XCTAssert(sut.notiContent.body == "Cheer Up!!!")
