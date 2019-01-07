@@ -20,6 +20,7 @@ public class TimerViewController: UIViewController {
     @IBOutlet var mainSlider: CircularSlider!
     @IBOutlet var labelTime: UILabel!
     @IBOutlet var labelIntervalCount: UILabel!
+    @IBOutlet var rippleButton: RippleButton!
 
     // MARK: Properties
     var interval: Interval!
@@ -42,6 +43,7 @@ public class TimerViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         setUpInitialValue()
+        rippleButton.buttonCornerRadius = Float(mainSlider.frame.width / 2)
         refreshViews(with: interval)
         tabBarController?.delegate = self
     }
@@ -54,7 +56,7 @@ public class TimerViewController: UIViewController {
     
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        coordinator.animate(alongsideTransition: { [weak self] _ in
+        coordinator.animate(alongsideTransition: {  _ in
         }, completion: nil)
     }
     

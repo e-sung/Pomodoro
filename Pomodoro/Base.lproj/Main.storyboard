@@ -89,8 +89,22 @@
                                     <constraint firstAttribute="width" secondItem="aEs-Ou-jv6" secondAttribute="height" multiplier="6:4" id="NRx-0S-DDb"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ol-b31">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ol-b31" customClass="RippleButton" customModule="Pomodoro" customModuleProvider="target">
                                 <rect key="frame" x="60" y="121.5" width="255" height="255"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="trackTouchLocation" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rippleOverBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleBackgroundColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ripplePercent">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="eggYellowClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQm-9o-T6M"/>
                                 </connections>
@@ -207,6 +221,7 @@
                         <outlet property="labelIntervalCount" destination="oAK-wa-qwe" id="tw0-f1-XDP"/>
                         <outlet property="labelTime" destination="p0n-JA-XET" id="Umj-j8-5e6"/>
                         <outlet property="mainSlider" destination="C0j-TM-sWV" id="JAj-M2-36V"/>
+                        <outlet property="rippleButton" destination="c6C-ol-b31" id="dhq-qb-yLq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
