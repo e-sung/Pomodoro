@@ -50,13 +50,16 @@ public class TimerViewController: UIViewController {
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        setUpFonts()
+        
         let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
     
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        coordinator.animate(alongsideTransition: {  _ in
+        coordinator.animate(alongsideTransition: { [weak self] _ in
+            self?.setUpFonts()
         }, completion: nil)
     }
     
@@ -98,6 +101,11 @@ public class TimerViewController: UIViewController {
             interval = LongBreakInterval(intervalDelegate: self)
         }
         refreshViews(with: interval)
+    }
+    
+    func setUpFonts() {
+        let currentFontSize = labelTime.font.pointSize
+        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .regular)
     }
 
 }
@@ -157,8 +165,6 @@ extension TimerViewController {
         let date = Date(timeIntervalSince1970: interval.targetSeconds - seconds)
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
-        let currentFontSize = labelTime.font.pointSize
-        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .regular)
         labelTime.text = dateFormatter.string(from: date)
     }
 }
