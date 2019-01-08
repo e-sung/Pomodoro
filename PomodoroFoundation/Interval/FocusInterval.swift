@@ -39,11 +39,7 @@ public class FocusInterval: NSObject, Interval {
     }
 
     public var elapsedSeconds: TimeInterval = 0
-    
-    public var targetSeconds: TimeInterval {
-//        return 5
-                return 60 * targetMinute
-    }
+
     public var targetMinute: TimeInterval {
         let focusTimeAmount = retreiveAmount(for: .focusTime, from: UserDefaults.standard)!
         return TimeInterval(exactly: focusTimeAmount)!

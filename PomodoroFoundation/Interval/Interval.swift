@@ -62,4 +62,8 @@ extension Interval {
     public func pauseTimer() {
         timer.invalidate()
     }
+    
+    public var targetSeconds: TimeInterval {
+        return isDevMode ? targetMinute : 60 * targetMinute
+    }
 }
