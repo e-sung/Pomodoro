@@ -16,6 +16,7 @@ public enum SettingContent:String {
     case target = "targetSetting"
     case neverSleep = "neverSleepSetting"
     case enhancedFocusMode = "enhancedFocusModeSetting"
+    case devMode = "devModeSetting"
 
     public var defaultValue: Any {
         switch self {
@@ -26,6 +27,7 @@ public enum SettingContent:String {
         case .target: return 10 as Any
         case .neverSleep: return true as Any
         case .enhancedFocusMode: return false as Any
+        case .devMode: return false as Any
         }
     }
     
@@ -43,7 +45,8 @@ public enum SettingContent:String {
         //TODO: Localize!
         case .target: return "\(amount) intervals"
         case .cycleForLongBreak: return "\(amount) cycles"
-        case .focusTime, .breakTime, .longBreakTime: return amount.minuteString
+        case .focusTime, .breakTime, .longBreakTime:
+            return amount.minuteString
         default: return nil
         }
     }

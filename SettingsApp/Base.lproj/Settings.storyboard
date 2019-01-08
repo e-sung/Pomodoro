@@ -299,6 +299,47 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Developer Mode" id="4HW-nb-Icr">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="xyB-DM-fzN" customClass="ToggleSettingCell" customModule="PomodoroSettings">
+                                        <rect key="frame" x="0.0" y="485.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xyB-DM-fzN" id="OuZ-9V-1Of">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dev Mode" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aHq-YK-gmO">
+                                                    <rect key="frame" x="16" y="11.5" width="78" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipK-y9-i6H">
+                                                    <rect key="frame" x="312" y="7" width="51" height="29.5"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="neverSleepSwitch"/>
+                                                    <connections>
+                                                        <action selector="switchToggled:" destination="xyB-DM-fzN" eventType="valueChanged" id="py7-VS-66M"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ipK-y9-i6H" secondAttribute="bottom" constant="7" id="CKT-MQ-VYS"/>
+                                                <constraint firstItem="aHq-YK-gmO" firstAttribute="centerY" secondItem="ipK-y9-i6H" secondAttribute="centerY" id="CW7-rR-qxZ"/>
+                                                <constraint firstItem="ipK-y9-i6H" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aHq-YK-gmO" secondAttribute="trailing" constant="14" id="c69-1o-rdp"/>
+                                                <constraint firstItem="aHq-YK-gmO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OuZ-9V-1Of" secondAttribute="topMargin" id="cqA-sm-EWV"/>
+                                                <constraint firstItem="aHq-YK-gmO" firstAttribute="leading" secondItem="OuZ-9V-1Of" secondAttribute="leadingMargin" id="kIk-o5-S2V"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="aHq-YK-gmO" secondAttribute="bottom" id="m3h-sh-sth"/>
+                                                <constraint firstAttribute="trailing" secondItem="ipK-y9-i6H" secondAttribute="trailing" constant="14" id="vvp-fd-ozv"/>
+                                                <constraint firstItem="ipK-y9-i6H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OuZ-9V-1Of" secondAttribute="top" constant="7" id="yg7-2L-PbT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="devModeSetting"/>
+                                        <connections>
+                                            <outlet property="toggleSwitch" destination="ipK-y9-i6H" id="4az-GU-fXb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="92q-1T-ccy" id="2fK-1x-jJ8"/>
