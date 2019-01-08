@@ -113,11 +113,6 @@ extension TimerViewController {
         else {
             interval = FocusInterval(intervalDelegate: self)
         }
-
-        if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard), interval.isActive {
-            let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
-            interval.elapsedSeconds += timeIntervalSinceBackground
-        }
         
         resetIntervalContext(on: UserDefaults.standard)
         resetCycleIfDayHasPassed()

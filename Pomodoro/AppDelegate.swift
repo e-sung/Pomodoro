@@ -50,7 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let interval = timerViewController.interval else { return }
         if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard),
             let isEnhancedFocusMode = retreiveBool(for: .enhancedFocusMode, from: UserDefaults.standard),
-                isEnhancedFocusMode == false {
+                isEnhancedFocusMode == false,
+                interval.isActive == true
+            {
             let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
             interval.elapsedSeconds += timeIntervalSinceBackground
         }
