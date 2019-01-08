@@ -14,6 +14,7 @@
 		6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */; };
 		AB85875DAEB0C86F6C3B199F /* Pods_SettingsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0830BEE4EDED18599049A33F /* Pods_SettingsApp.framework */; };
 		F03E12DF21E36423003C2129 /* RippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12DE21E36423003C2129 /* RippleButton.swift */; };
+		F03E12E121E44BC1003C2129 /* NumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */; };
 		F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA321CE5AD900EDB65F /* AppDelegate.swift */; };
 		F0843CA621CE5AD900EDB65F /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA521CE5AD900EDB65F /* TimerViewController.swift */; };
 		F0843CA921CE5AD900EDB65F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0843CA721CE5AD900EDB65F /* Main.storyboard */; };
@@ -195,6 +196,7 @@
 		D7C15C8413C987C653EF257D /* Pods-PomodoroSettings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroSettings.release.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroSettings/Pods-PomodoroSettings.release.xcconfig"; sourceTree = "<group>"; };
 		D8C23AD2B0B8500DE144002D /* Pods-SettingsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsApp/Pods-SettingsApp.release.xcconfig"; sourceTree = "<group>"; };
 		F03E12DE21E36423003C2129 /* RippleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleButton.swift; sourceTree = "<group>"; };
+		F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExtensionTests.swift; sourceTree = "<group>"; };
 		F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		F0843CA021CE5AD900EDB65F /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0843CA321CE5AD900EDB65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				F087254521CF6DFD007EB27F /* NSObjectExtensionTests.swift */,
 				F087253121CF6719007EB27F /* Info.plist */,
 				F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */,
+				F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */,
 			);
 			path = PomodoroFoundationTests;
 			sourceTree = "<group>";
@@ -1078,6 +1081,7 @@
 				F087254421CF6CB0007EB27F /* BreakIntervalTests.swift in Sources */,
 				F087253021CF6719007EB27F /* FocusIntervalTests.swift in Sources */,
 				F0880AA221D72AB3008AE79F /* NotificationManagerTests.swift in Sources */,
+				F03E12E121E44BC1003C2129 /* NumberExtensionTests.swift in Sources */,
 				F087254621CF6DFD007EB27F /* NSObjectExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
