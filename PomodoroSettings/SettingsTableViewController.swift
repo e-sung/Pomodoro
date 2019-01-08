@@ -57,4 +57,11 @@ public class SettingsTableViewController: UITableViewController {
         guard let boolToSetUp = savedBool else { return }
         cell.setUp(for: boolToSetUp)
     }
+    
+    @IBAction func devModeToggled(_ sender: UISwitch) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
+            self?.amountSettingCells.forEach({ [weak self] in self?.update($0) })
+        })
+    }
+    
 }

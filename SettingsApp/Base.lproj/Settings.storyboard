@@ -318,6 +318,7 @@
                                                     <rect key="frame" x="312" y="7" width="51" height="29.5"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="neverSleepSwitch"/>
                                                     <connections>
+                                                        <action selector="devModeToggled:" destination="92q-1T-ccy" eventType="valueChanged" id="AWt-Sr-osZ"/>
                                                         <action selector="switchToggled:" destination="xyB-DM-fzN" eventType="valueChanged" id="py7-VS-66M"/>
                                                     </connections>
                                                 </switch>
