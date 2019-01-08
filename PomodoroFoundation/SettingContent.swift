@@ -46,7 +46,7 @@ public enum SettingContent:String {
         case .target: return "\(amount) intervals"
         case .cycleForLongBreak: return "\(amount) cycles"
         case .focusTime, .breakTime, .longBreakTime:
-            return amount.minuteString
+            return isDevMode ? amount.secondString : amount.minuteString
         default: return nil
         }
     }
@@ -54,7 +54,8 @@ public enum SettingContent:String {
     public func amount(for row: Int) -> Int? {
         switch self {
         case .target, .cycleForLongBreak: return row + 1
-        case .focusTime, .breakTime, .longBreakTime : return (row + 1) * 5
+        case .focusTime, .breakTime, .longBreakTime :
+            return isDevMode ? row + 1 : (row + 1) * 5
         default: return nil
         }
     }
@@ -62,7 +63,8 @@ public enum SettingContent:String {
     public func rowFor(_ amount: Int) -> Int? {
         switch self {
         case .target, .cycleForLongBreak: return amount - 1
-        case .focusTime, .breakTime, .longBreakTime : return Int((amount / 5)) - 1
+        case .focusTime, .breakTime, .longBreakTime :
+            return isDevMode ? amount - 1 : Int((amount / 5)) - 1 
         default: return nil
         }
     }

@@ -355,6 +355,7 @@
                         <outletCollection property="amountSettingCells" destination="qcy-rt-YTb" collectionClass="NSMutableArray" id="8gc-il-mKT"/>
                         <outletCollection property="toggleSettingCells" destination="rZW-di-Plg" collectionClass="NSMutableArray" id="WnT-bM-WUd"/>
                         <outletCollection property="toggleSettingCells" destination="qRG-N8-Xf6" collectionClass="NSMutableArray" id="ZaB-cN-MFk"/>
+                        <outletCollection property="toggleSettingCells" destination="xyB-DM-fzN" collectionClass="NSMutableArray" id="6Vk-Gc-2LQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp6-wt-7T7" userLabel="First Responder" sceneMemberID="firstResponder"/>

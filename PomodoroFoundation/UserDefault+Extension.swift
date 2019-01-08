@@ -77,6 +77,10 @@ public func retreiveInterval(from userDefault: UserDefaults) -> Interval? {
     return interval
 }
 
+public var isDevMode: Bool {
+    return retreiveBool(for: .devMode, from: UserDefaults.standard) ?? false
+}
+
 public func resetIntervalContext(on userDefault: UserDefaults) {
     userDefault.set(nil, forKey: "Interval")
     userDefault.set(nil, forKey: "dateBackgroundEnter")
@@ -92,3 +96,4 @@ public struct IntervalContext: Codable {
         self.elapsedSeconds = interval.elapsedSeconds
     }
 }
+
