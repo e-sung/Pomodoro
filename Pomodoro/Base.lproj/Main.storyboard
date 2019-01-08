@@ -20,10 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eggWhite" translatesAutoresizingMaskIntoConstraints="NO" id="w84-Xy-4zv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="562.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="w84-Xy-4zv" secondAttribute="height" multiplier="2:3" id="bl3-WI-vyv"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0j-TM-sWV" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="60" y="121.5" width="255" height="255"/>
+                                <rect key="frame" x="60" y="154" width="255" height="255"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -69,7 +72,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="p0n-JA-XET">
-                                <rect key="frame" x="90" y="213" width="195" height="72"/>
+                                <rect key="frame" x="90" y="245.5" width="195" height="72"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -83,14 +86,14 @@
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shine" translatesAutoresizingMaskIntoConstraints="NO" id="aEs-Ou-jv6">
-                                <rect key="frame" x="135" y="126.5" width="150" height="100"/>
+                                <rect key="frame" x="135" y="159" width="150" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0yk-2c-BV9"/>
                                     <constraint firstAttribute="width" secondItem="aEs-Ou-jv6" secondAttribute="height" multiplier="6:4" id="NRx-0S-DDb"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ol-b31" customClass="RippleButton" customModule="Pomodoro" customModuleProvider="target">
-                                <rect key="frame" x="60" y="121.5" width="255" height="255"/>
+                                <rect key="frame" x="60" y="154" width="255" height="255"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
                                         <color key="value" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,7 +113,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAK-wa-qwe">
-                                <rect key="frame" x="155.5" y="536.5" width="64.5" height="31.5"/>
+                                <rect key="frame" x="155.5" y="576.5" width="64.5" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -119,13 +122,11 @@
                         <color key="backgroundColor" name="OrangePlate"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oAK-wa-qwe" secondAttribute="bottom" constant="10" id="2Pi-Du-Kw7"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="top" secondItem="C0j-TM-sWV" secondAttribute="bottom" constant="40" id="2Qr-fa-rtt"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="4Ow-0k-WTO"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="7ph-cJ-OOY"/>
-                            <constraint firstItem="C0j-TM-sWV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BsM-FH-jKr">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-70"/>
-                                <variation key="heightClass=regular-widthClass=regular" constant="-100"/>
-                            </constraint>
+                            <constraint firstItem="C0j-TM-sWV" firstAttribute="centerY" secondItem="w84-Xy-4zv" secondAttribute="centerY" id="AUr-yF-cbn"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.68" priority="999" id="CLj-fV-FBc">
                                 <variation key="heightClass=regular-widthClass=regular" constant="-100"/>
                             </constraint>
@@ -138,7 +139,6 @@
                                 <variation key="heightClass=compact-widthClass=compact" constant="-120"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="-150"/>
                             </constraint>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w84-Xy-4zv" secondAttribute="bottom" id="MKZ-5q-23j"/>
                             <constraint firstItem="aEs-Ou-jv6" firstAttribute="trailing" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="-30" id="OVK-ft-Q1U"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" id="SPc-YH-quA"/>
                             <constraint firstItem="w84-Xy-4zv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VXe-vx-Sqo"/>
@@ -152,7 +152,6 @@
                             <constraint firstItem="c6C-ol-b31" firstAttribute="top" secondItem="C0j-TM-sWV" secondAttribute="top" id="k3M-K4-Q65"/>
                             <constraint firstItem="c6C-ol-b31" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" id="lar-b6-6eM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w84-Xy-4zv" secondAttribute="trailing" id="mal-3k-YKY"/>
-                            <constraint firstItem="oAK-wa-qwe" firstAttribute="top" secondItem="C0j-TM-sWV" secondAttribute="bottom" constant="160" id="nZH-SH-fWS"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="30" id="oaw-fY-dx5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oAK-wa-qwe" secondAttribute="trailing" constant="40" id="tpo-98-gQk"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="top" secondItem="aEs-Ou-jv6" secondAttribute="top" constant="-5" id="vd3-4m-hjj"/>
@@ -172,7 +171,6 @@
                                 <exclude reference="SPc-YH-quA"/>
                                 <exclude reference="cBF-6p-B6D"/>
                                 <exclude reference="dGo-AZ-d2Z"/>
-                                <exclude reference="nZH-SH-fWS"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -204,7 +202,6 @@
                                 <include reference="CLj-fV-FBc"/>
                                 <exclude reference="2Qr-fa-rtt"/>
                                 <include reference="cBF-6p-B6D"/>
-                                <include reference="nZH-SH-fWS"/>
                                 <exclude reference="wHm-Yw-ULw"/>
                             </mask>
                         </variation>
@@ -263,7 +260,7 @@
     </scenes>
     <resources>
         <image name="Shine" width="300" height="200"/>
-        <image name="eggWhite" width="180" height="321"/>
+        <image name="eggWhite" width="750" height="1125"/>
         <image name="ic_alarm" width="24" height="26"/>
         <image name="ic_setting" width="20" height="21"/>
         <namedColor name="OrangeEdge">
