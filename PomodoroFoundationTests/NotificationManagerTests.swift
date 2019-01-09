@@ -6,12 +6,11 @@
 //  Copyright © 2018 Sungdoo. All rights reserved.
 //
 
-import XCTest
-import UserNotifications
 @testable import PomodoroFoundation
+import UserNotifications
+import XCTest
 
 class NotificationManagerTests: XCTestCase {
-
     var notiExpectation: XCTestExpectation!
     func testInit() {
         let sut = NotificationManager(delegate: self)
@@ -21,20 +20,25 @@ class NotificationManagerTests: XCTestCase {
     func testPublishNotification() {
         let sut = NotificationManager(delegate: self)
         notiExpectation = expectation(description: "Noti Received")
-        
+
         sut.publishNotiContent(of: FocusInterval(), via: UNUserNotificationCenter.current())
         wait(for: [notiExpectation], timeout: 5)
     }
-
 }
 
 // MARK: UserNotificationExtension
+
 extension NotificationManagerTests: UNUserNotificationCenterDelegate {
-    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    public func userNotificationCenter(_: UNUserNotificationCenter,
+                                       didReceive _: UNNotificationResponse,
+                                       withCompletionHandler completionHandler: @escaping () -> Void) {
         completionHandler()
     }
-    
-    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+
+    public func userNotificationCenter(_: UNUserNotificationCenter,
+                                       willPresent notification: UNNotification,
+                                       withCompletionHandler
+                                       completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         XCTAssert(notification.request.content.title == "Time to Break!")
         notiExpectation.fulfill()
         completionHandler([.alert, .sound, .badge])

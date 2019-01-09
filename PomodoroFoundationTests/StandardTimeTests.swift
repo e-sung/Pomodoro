@@ -6,11 +6,10 @@
 //  Copyright © 2018 Sungdoo. All rights reserved.
 //
 
-import XCTest
 @testable import PomodoroFoundation
+import XCTest
 
 class StandardTimeTests: XCTestCase {
-
     func testStandardDates() {
         XCTAssert(Locale.posix == Locale(identifier: "en_US_POSIX"))
         XCTAssert(TimeZone.gmt == TimeZone(identifier: "GMT")!)
@@ -18,6 +17,4 @@ class StandardTimeTests: XCTestCase {
         XCTAssert(DateFormatter.standard.locale == Locale.posix)
         XCTAssert(DateFormatter.standard.calendar == Calendar(identifier: .iso8601))
     }
-
-
 }

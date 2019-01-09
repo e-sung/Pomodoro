@@ -6,67 +6,63 @@
 //  Copyright © 2018 Sungdoo. All rights reserved.
 //
 
-import XCTest
 @testable import PomodoroFoundation
+import XCTest
 
 class FocusIntervalTests: XCTestCase {
-
-
     func testInit() {
         // Given Nothing
-        
+
         // When
         let sut = FocusInterval()
-        
-        
+
         // Then
         XCTAssertFalse(sut.timer.isValid)
         XCTAssert(sut.elapsedSeconds == 0)
         XCTAssert(sut.targetSeconds == 1500)
-        XCTAssert(sut.targetMinute == 25 )
+        XCTAssert(sut.targetMinute == 25)
         XCTAssert(sut.notiAction.title == "Start Break")
         XCTAssert(sut.notiContent.title == "Time to Break!")
         XCTAssert(sut.notiContent.body == "Well Done!!!")
         XCTAssert(sut.notiContent.title == "Time to Break!")
         XCTAssert(sut.typeIdentifier == "FocusInterval")
-        
     }
-    
+
     func testTimerStartAndPause() {
         // Given Nothing
-        
+
         // When
         let sut = FocusInterval()
         sut.startTimer()
-        
+
         // Then
         XCTAssert(sut.isActive)
-        
+
         // When
         sut.pauseTimer()
-        
+
         // Then
         XCTAssert(sut.isActive == false)
     }
-    
+
     func testTimerStop() {
         // Given
         let expect = expectation(description: "Time has elapsed")
-        
+
         // When
         let sut = FocusInterval()
         sut.startTimer()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             // Then
             XCTAssert(sut.elapsedSeconds >= 3)
-            
+
             // When
             sut.stopTimer()
-            //Then
+            // Then
             XCTAssert(sut.elapsedSeconds == 0)
             expect.fulfill()
         })
-        
+
         wait(for: [expect], timeout: 5)
     }
 }

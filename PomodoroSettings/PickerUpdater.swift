@@ -10,8 +10,7 @@ import Foundation
 import PomodoroFoundation
 import UIKit
 
-protocol PickerUpdater:class {
+protocol PickerUpdater: class {
     var pickerView: UIPickerView! { get }
     var settingCell: AmountSettingCell! { get set }
 }
-

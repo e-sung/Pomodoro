@@ -7,39 +7,39 @@
 //
 
 import Foundation
-import UserNotifications
 import UIKit
+import UserNotifications
 
 public class BreakInterval: NSObject, Interval {
     public var typeIdentifier: String {
         return className
     }
-    
+
     public var timer: Timer = Timer()
-    
+
     public weak var delegate: IntervalDelegate?
-    
+
     public init(intervalDelegate: IntervalDelegate? = nil) {
         super.init()
-        self.delegate = intervalDelegate
+        delegate = intervalDelegate
     }
-    
+
     public var elapsedSeconds: TimeInterval = 0
 
     public var targetMinute: TimeInterval {
         let breakTimeAmount = retreiveAmount(for: .breakTime, from: UserDefaults.standard)!
         return TimeInterval(exactly: breakTimeAmount)!
     }
-    
+
     public var themeColor: ThemeColorSet {
         return ThemeColorSet(trackColor: UIColor(named: "GreenEdge")!,
                              backgroundColor: UIColor(named: "GreenPlate")!)
     }
-    
+
     public var notiAction: UNNotificationAction {
         return UNNotificationAction(identifier: "interval.focus", title: "Start Focus", options: [])
     }
-    
+
     public var notiContent: UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         content.title = "Time to Focus!"
@@ -49,6 +49,3 @@ public class BreakInterval: NSObject, Interval {
         return content
     }
 }
-
-
-

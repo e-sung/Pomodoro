@@ -6,9 +6,8 @@
 //  Copyright © 2018 Sungdoo. All rights reserved.
 //
 
-import UIKit
 import PomodoroFoundation
-
+import UIKit
 
 public class AmountSettingCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
@@ -16,7 +15,7 @@ public class AmountSettingCell: UITableViewCell {
     public var content: SettingContent {
         return SettingContent(rawValue: accessibilityIdentifier!)!
     }
-    
+
     public func update(for amount: Int) {
         amountLabel.text = content.formattedString(given: amount)
         save(amount, for: content, to: UserDefaults.standard)
@@ -24,16 +23,15 @@ public class AmountSettingCell: UITableViewCell {
 }
 
 public class ToggleSettingCell: UITableViewCell {
-    
     @IBOutlet var toggleSwitch: UISwitch!
     public var content: SettingContent {
         return SettingContent(rawValue: accessibilityIdentifier!)!
     }
-    
+
     @IBAction func switchToggled(_ sender: UISwitch) {
         save(sender.isOn, for: content, to: UserDefaults.standard)
     }
-    
+
     public func setUp(for value: Bool) {
         toggleSwitch.isOn = value
     }

@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UserNotifications
 import UIKit
+import UserNotifications
 
 public protocol IntervalDelegate: class {
     func timeElapsed(_ seconds: TimeInterval)
@@ -33,7 +33,7 @@ public protocol Interval: class {
     var typeIdentifier: String { get }
 
     func startTimer()
-    func stopTimer(by finisher:IntervalFinisher)
+    func stopTimer(by finisher: IntervalFinisher)
     func pauseTimer()
 }
 
@@ -41,9 +41,9 @@ extension Interval {
     public var isActive: Bool {
         return timer.isValid
     }
-    
+
     public func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] _ in
             guard let strongSelf = self else { return }
             strongSelf.elapsedSeconds += 1
             strongSelf.delegate?.timeElapsed(strongSelf.elapsedSeconds)
@@ -52,17 +52,17 @@ extension Interval {
             }
         })
     }
-    
+
     public func stopTimer(by finisher: IntervalFinisher = .user) {
         timer.invalidate()
         elapsedSeconds = 0
         delegate?.intervalFinished(by: finisher)
     }
-    
+
     public func pauseTimer() {
         timer.invalidate()
     }
-    
+
     public var targetSeconds: TimeInterval {
         return isDevMode ? targetMinute : 60 * targetMinute
     }

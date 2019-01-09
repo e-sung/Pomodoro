@@ -13,45 +13,45 @@ import UIKit
 class DesignableView: UIView {
     @IBInspectable var cornerRadius: Double {
         get {
-            return Double(self.layer.cornerRadius)
-        }set {
-            self.layer.cornerRadius = CGFloat(newValue)
+            return Double(layer.cornerRadius)
+        } set {
+            layer.cornerRadius = CGFloat(newValue)
         }
     }
-    
+
     @IBInspectable var borderWidth: Double {
         get {
-            return Double(self.layer.borderWidth)
+            return Double(layer.borderWidth)
         }
         set {
-            self.layer.borderWidth = CGFloat(newValue)
+            layer.borderWidth = CGFloat(newValue)
         }
     }
-    
+
     @IBInspectable var borderColor: UIColor? {
         get {
-            return UIColor(cgColor: self.layer.borderColor!)
+            return UIColor(cgColor: layer.borderColor!)
         }
         set {
-            self.layer.borderColor = newValue?.cgColor
+            layer.borderColor = newValue?.cgColor
         }
     }
-    
+
     @IBInspectable var shadowColor: UIColor? {
         get {
-            return UIColor(cgColor: self.layer.shadowColor!)
+            return UIColor(cgColor: layer.shadowColor!)
         }
         set {
-            self.layer.shadowColor = newValue?.cgColor
+            layer.shadowColor = newValue?.cgColor
         }
     }
-    
+
     @IBInspectable var shadowOpacity: Float {
         get {
-            return self.layer.shadowOpacity
+            return layer.shadowOpacity
         }
         set {
-            self.layer.shadowOpacity = newValue
+            layer.shadowOpacity = newValue
         }
     }
 }
@@ -60,47 +60,45 @@ class DesignableView: UIView {
 class DesignableButton: UIButton {
     @IBInspectable var cornerRadius: Double {
         get {
-            return Double(self.layer.cornerRadius)
-        }set {
-            self.layer.cornerRadius = CGFloat(newValue)
+            return Double(layer.cornerRadius)
+        } set {
+            layer.cornerRadius = CGFloat(newValue)
         }
     }
-    
+
     @IBInspectable var borderWidth: Double {
         get {
-            return Double(self.layer.borderWidth)
+            return Double(layer.borderWidth)
         }
         set {
-            self.layer.borderWidth = CGFloat(newValue)
+            layer.borderWidth = CGFloat(newValue)
         }
     }
-    
+
     @IBInspectable var borderColor: UIColor? {
         get {
-            return UIColor(cgColor: self.layer.borderColor!)
+            return UIColor(cgColor: layer.borderColor!)
         }
         set {
-            self.layer.borderColor = newValue?.cgColor
+            layer.borderColor = newValue?.cgColor
         }
     }
-    
+
     @IBInspectable var shadowColor: UIColor? {
         get {
-            return UIColor(cgColor: self.layer.shadowColor!)
+            return UIColor(cgColor: layer.shadowColor!)
         }
         set {
-            self.layer.shadowColor = newValue?.cgColor
+            layer.shadowColor = newValue?.cgColor
         }
     }
-    
+
     @IBInspectable var shadowOpacity: Float {
         get {
-            return self.layer.shadowOpacity
+            return layer.shadowOpacity
         }
         set {
-            self.layer.shadowOpacity = newValue
+            layer.shadowOpacity = newValue
         }
     }
 }
-
-

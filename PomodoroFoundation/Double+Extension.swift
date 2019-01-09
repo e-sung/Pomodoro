@@ -13,12 +13,11 @@ extension Double {
         let integerValue = Int(exactly: self)!
         return integerValue.minuteString
     }
-    
+
     public var secondString: String {
         let integerValue = Int(exactly: self)!
         return integerValue.secondString
     }
-    
 }
 
 extension Int {
@@ -26,14 +25,14 @@ extension Int {
         let minute = DateComponents(minute: self)
         return minuteFormatter.string(from: minute)!
     }
-    
+
     public var secondString: String {
         let second = DateComponents(second: self)
         return secondFormatter.string(from: second)!
     }
 }
 
-fileprivate var minuteFormatter: DateComponentsFormatter {
+private var minuteFormatter: DateComponentsFormatter {
     let dateComponentFormatter = DateComponentsFormatter()
     dateComponentFormatter.formattingContext = .beginningOfSentence
     dateComponentFormatter.unitsStyle = .short
@@ -41,7 +40,7 @@ fileprivate var minuteFormatter: DateComponentsFormatter {
     return dateComponentFormatter
 }
 
-fileprivate var secondFormatter: DateComponentsFormatter {
+private var secondFormatter: DateComponentsFormatter {
     let dateComponentFormatter = DateComponentsFormatter()
     dateComponentFormatter.formattingContext = .beginningOfSentence
     dateComponentFormatter.unitsStyle = .short

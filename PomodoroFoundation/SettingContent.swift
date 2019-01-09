@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum SettingContent:String {
+public enum SettingContent: String {
     case focusTime = "focusIntervalSetting"
     case breakTime = "breakIntervalSetting"
     case longBreakTime = "longBreakIntervalSetting"
@@ -30,7 +30,7 @@ public enum SettingContent:String {
         case .devMode: return false as Any
         }
     }
-    
+
     public var numberOfCases: Int? {
         switch self {
         case .target: return 50
@@ -39,10 +39,10 @@ public enum SettingContent:String {
         default: return nil
         }
     }
-    
+
     public func formattedString(given amount: Int) -> String? {
         switch self {
-        //TODO: Localize!
+        // TODO: Localize!
         case .target: return "\(amount) intervals"
         case .cycleForLongBreak: return "\(amount) cycles"
         case .focusTime, .breakTime, .longBreakTime:
@@ -50,21 +50,21 @@ public enum SettingContent:String {
         default: return nil
         }
     }
-    
+
     public func amount(for row: Int) -> Int? {
         switch self {
         case .target, .cycleForLongBreak: return row + 1
-        case .focusTime, .breakTime, .longBreakTime :
+        case .focusTime, .breakTime, .longBreakTime:
             return isDevMode ? row + 1 : (row + 1) * 5
         default: return nil
         }
     }
-    
+
     public func rowFor(_ amount: Int) -> Int? {
         switch self {
         case .target, .cycleForLongBreak: return amount - 1
-        case .focusTime, .breakTime, .longBreakTime :
-            return isDevMode ? amount - 1 : Int((amount / 5)) - 1 
+        case .focusTime, .breakTime, .longBreakTime:
+            return isDevMode ? amount - 1 : Int((amount / 5)) - 1
         default: return nil
         }
     }

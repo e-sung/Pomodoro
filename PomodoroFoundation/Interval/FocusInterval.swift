@@ -7,28 +7,27 @@
 //
 
 import Foundation
-import UserNotifications
 import UIKit
+import UserNotifications
 
 public class FocusInterval: NSObject, Interval {
     public var typeIdentifier: String {
         return className
     }
-    
-    
+
     public var timer: Timer = Timer()
-    
+
     public weak var delegate: IntervalDelegate?
-    
+
     public init(intervalDelegate: IntervalDelegate? = nil) {
         super.init()
-        self.delegate = intervalDelegate
+        delegate = intervalDelegate
     }
 
     public var notiAction: UNNotificationAction {
         return UNNotificationAction(identifier: "interval.break", title: "Start Break", options: [])
     }
-    
+
     public var notiContent: UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         content.title = "Time to Break!"
@@ -44,7 +43,7 @@ public class FocusInterval: NSObject, Interval {
         let focusTimeAmount = retreiveAmount(for: .focusTime, from: UserDefaults.standard)!
         return TimeInterval(exactly: focusTimeAmount)!
     }
-    
+
     public var themeColor: ThemeColorSet {
         return ThemeColorSet(trackColor: UIColor(named: "OrangeEdge")!,
                              backgroundColor: UIColor(named: "OrangePlate")!)
@@ -54,7 +53,7 @@ public class FocusInterval: NSObject, Interval {
 public struct ThemeColorSet {
     public var trackColor: UIColor
     public var backgroundColor: UIColor
-    public init(trackColor: UIColor, backgroundColor: UIColor ){
+    public init(trackColor: UIColor, backgroundColor: UIColor) {
         self.trackColor = trackColor
         self.backgroundColor = backgroundColor
     }

@@ -6,31 +6,29 @@
 //  Copyright © 2019 Sungdoo. All rights reserved.
 //
 
-import XCTest
 @testable import PomodoroFoundation
+import XCTest
 
 class NumberExtensionTests: XCTestCase {
-
     func testMinuteString() {
         // Given
         if Locale.current.languageCode?.hasPrefix("en") == true {
-            let intFour:Int = 4
-            let doubleFour:Double = 4
+            let intFour: Int = 4
+            let doubleFour: Double = 4
             // When, Then
             XCTAssert(doubleFour.minuteString == "4 min")
             XCTAssert(intFour.minuteString == "4 min")
         }
     }
-    
+
     func testSecondString() {
         // Given
         if Locale.current.languageCode?.hasPrefix("en") == true {
-            let intFour:Int = 4
-            let doubleFour:Double = 4
+            let intFour: Int = 4
+            let doubleFour: Double = 4
             // When, Then
             XCTAssert(doubleFour.secondString == "4 sec")
             XCTAssert(intFour.secondString == "4 sec")
         }
     }
-    
 }

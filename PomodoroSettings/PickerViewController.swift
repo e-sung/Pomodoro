@@ -6,15 +6,14 @@
 //  Copyright © 2018 Sungdoo. All rights reserved.
 //
 
-import UIKit
 import PomodoroFoundation
+import UIKit
 
 public class PickerViewController: UIViewController, PickerUpdater {
-
     weak var settingCell: AmountSettingCell!
 
     @IBOutlet var pickerView: UIPickerView!
-    override public func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.dataSource = self
         pickerView.delegate = self
@@ -22,19 +21,19 @@ public class PickerViewController: UIViewController, PickerUpdater {
         guard let defaultRow = settingCell.content.rowFor(defaultAmount) else { return }
         pickerView.selectRow(defaultRow, inComponent: 0, animated: false)
     }
-    
-    @IBAction func cancelButtonClicked(_ sender: UIButton) {
+
+    @IBAction func cancelButtonClicked(_: UIButton) {
         close()
     }
-    
-    @IBAction func doneButtonClicked(_ sender: UIButton) {
+
+    @IBAction func doneButtonClicked(_: UIButton) {
         let currentRow = pickerView.selectedRow(inComponent: 0)
         if let amountToSave = settingCell.content.amount(for: currentRow) {
             settingCell.update(for: amountToSave)
         }
         close()
     }
-    
+
     func close() {
         dismiss(animated: true, completion: { [weak self] in
             self?.settingCell.setSelected(false, animated: true)
@@ -43,19 +42,21 @@ public class PickerViewController: UIViewController, PickerUpdater {
 }
 
 // MARK: PickerViewDataSource
+
 extension PickerViewController: UIPickerViewDataSource {
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in _: UIPickerView) -> Int {
         return 1
     }
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+
+    public func pickerView(_: UIPickerView, numberOfRowsInComponent _: Int) -> Int {
         return settingCell.content.numberOfCases!
     }
 }
 
 // MARK: PickerViewDelegate
+
 extension PickerViewController: UIPickerViewDelegate {
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    public func pickerView(_: UIPickerView, titleForRow row: Int, forComponent _: Int) -> String? {
         guard let amount = settingCell.content.amount(for: row) else { return nil }
         return settingCell.content.formattedString(given: amount)
     }

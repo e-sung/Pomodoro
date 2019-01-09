@@ -6,26 +6,22 @@
 //  Copyright © 2018 Sungdoo. All rights reserved.
 //
 
-import XCTest
 @testable import PomodoroFoundation
+import XCTest
 
 class BreakIntervalTests: XCTestCase {
-    
-    
     func testInit() {
         // Given Nothing
-        
+
         // When
         let sut = BreakInterval()
-        
-        
+
         // Then
         XCTAssert(sut.targetSeconds == 300)
-        XCTAssert(sut.targetMinute == 5 )
+        XCTAssert(sut.targetMinute == 5)
         XCTAssert(sut.notiAction.title == "Start Focus")
         XCTAssert(sut.notiContent.title == "Time to Focus!")
         XCTAssert(sut.notiContent.body == "Cheer Up!!!")
         XCTAssert(sut.typeIdentifier == "BreakInterval")
     }
-    
 }

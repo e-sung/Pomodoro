@@ -10,12 +10,11 @@ import Foundation
 import UserNotifications
 
 public class NotificationManager: NSObject {
-    
     public init(delegate: UNUserNotificationCenterDelegate) {
         let notiCenter = UNUserNotificationCenter.current()
         notiCenter.delegate = delegate
         notiCenter.requestAuthorization(options: [.alert, .sound],
-                                        completionHandler: {(granted, error) in
+                                        completionHandler: { granted, _ in
                                             PermissionManager.shared.canSendLocalNotification = granted
         })
     }
@@ -30,12 +29,12 @@ public class NotificationManager: NSObject {
             notiCenter.add(request, withCompletionHandler: nil)
         }
     }
-    
+
     func clearPendingNotifications(on notiCenter: UNUserNotificationCenter) {
         notiCenter.removeAllPendingNotificationRequests()
         notiCenter.removeAllDeliveredNotifications()
     }
-    
+
     func add(notiAction: UNNotificationAction, for notiContent: UNNotificationContent, to notiCenter: UNUserNotificationCenter) {
         let timerCategory = UNNotificationCategory(identifier: notiContent.categoryIdentifier,
                                                    actions: [notiAction], intentIdentifiers: [], options: [])

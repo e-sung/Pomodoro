@@ -6,14 +6,12 @@
 //  Copyright © 2018 Sungdoo. All rights reserved.
 //
 
-import XCTest
 @testable import PomodoroFoundation
+import XCTest
 
 class NSObjectExtensionTests: XCTestCase {
-    
-    
     func testInit() {
         XCTAssert(PermissionManager.className == "PermissionManager")
         XCTAssert(PermissionManager().className == "PermissionManager")
-    }  
+    }
 }

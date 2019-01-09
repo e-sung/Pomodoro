@@ -29,8 +29,7 @@ public func retreiveAmount(for settingContent: SettingContent, from userDefault:
     let valueInUserDefault = userDefault.object(forKey: settingContent.rawValue) as? Int
     if valueInUserDefault == nil {
         return settingContent.defaultValue as? Int
-    }
-    else {
+    } else {
         return valueInUserDefault
     }
 }
@@ -39,7 +38,7 @@ public func save(_ bool: Bool, for settingContent: SettingContent, to userDefaul
     userDefault.set(bool, forKey: settingContent.rawValue)
 }
 
-public func retreiveBool(for settingContent: SettingContent, from userDefault:UserDefaults) -> Bool? {
+public func retreiveBool(for settingContent: SettingContent, from userDefault: UserDefaults) -> Bool? {
     return userDefault.object(forKey: settingContent.rawValue) as? Bool
 }
 
@@ -58,16 +57,14 @@ public func saveIntervalContext(of interval: Interval, to userDefault: UserDefau
 }
 
 public func retreiveInterval(from userDefault: UserDefaults) -> Interval? {
-    guard let encodedData = userDefault.object(forKey: "IntervalContext") as? Data else { return nil}
+    guard let encodedData = userDefault.object(forKey: "IntervalContext") as? Data else { return nil }
     guard let intervalContext = try? JSONDecoder().decode(IntervalContext.self, from: encodedData) else { return nil }
-    var interval:Interval? = nil
+    var interval: Interval?
     if intervalContext.intervalType == FocusInterval.className {
         interval = FocusInterval()
-    }
-    else if intervalContext.intervalType == BreakInterval.className {
+    } else if intervalContext.intervalType == BreakInterval.className {
         interval = BreakInterval()
-    }
-    else if intervalContext.intervalType == LongBreakInterval.className {
+    } else if intervalContext.intervalType == LongBreakInterval.className {
         interval = LongBreakInterval()
     }
     interval?.elapsedSeconds = intervalContext.elapsedSeconds
@@ -90,10 +87,9 @@ public struct IntervalContext: Codable {
     public var isActive: Bool
     public var intervalType: String
     public var elapsedSeconds: TimeInterval
-    public init(of interval:Interval) {
-        self.intervalType = interval.typeIdentifier
-        self.isActive = interval.isActive
-        self.elapsedSeconds = interval.elapsedSeconds
+    public init(of interval: Interval) {
+        intervalType = interval.typeIdentifier
+        isActive = interval.isActive
+        elapsedSeconds = interval.elapsedSeconds
     }
 }
-
