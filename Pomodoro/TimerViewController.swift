@@ -153,7 +153,9 @@ extension TimerViewController {
 
     func refreshViews(with interval: Interval) {
         updateMainSlider(with: interval)
-        view.backgroundColor = interval.themeColor.backgroundColor
+        UIView.animate(withDuration: 0.5, animations: { [weak self] in
+            self?.view.backgroundColor = interval.themeColor.backgroundColor
+        })
 
         updateLabelTime(with: interval.elapsedSeconds)
 
