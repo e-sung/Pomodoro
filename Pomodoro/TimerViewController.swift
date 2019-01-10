@@ -70,6 +70,19 @@ public class TimerViewController: UIViewController {
         }, completion: nil)
     }
 
+    public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        if newCollection.verticalSizeClass == .compact {
+            mainSlider.trackFillColor = .clear
+        } else {
+            mainSlider.trackFillColor = interval.themeColor.trackColor
+        }
+    }
+
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+    }
+
     // MARK: IBAction
 
     @IBAction func eggYellowClicked(_: Any) {
@@ -153,7 +166,11 @@ extension TimerViewController {
 extension TimerViewController {
     func updateMainSlider(with interval: Interval) {
         mainSlider.maximumValue = CGFloat(interval.targetSeconds)
-        mainSlider.trackFillColor = interval.themeColor.trackColor
+        if traitCollection.verticalSizeClass == .compact {
+            mainSlider.trackFillColor = .clear
+        } else {
+            mainSlider.trackFillColor = interval.themeColor.trackColor
+        }
         updateMainSlider(to: interval.elapsedSeconds)
         mainSlider.setNeedsDisplay()
     }
