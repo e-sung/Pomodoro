@@ -21,6 +21,7 @@ public class TimerViewController: UIViewController {
     @IBOutlet var labelTime: UILabel!
     @IBOutlet var labelIntervalCount: UILabel!
     @IBOutlet var rippleButton: RippleButton!
+    @IBOutlet var imageViewEggWhite: UIImageView!
 
     // MARK: Properties
 
@@ -40,7 +41,7 @@ public class TimerViewController: UIViewController {
             .viewControllers?
             .compactMap({ $0 as? TimerViewController })
             .first else {
-            fatalError("Couldn't Load TimerViewController")
+            fatalError("Couldn't Load TimerViewController.")
         }
         return timerViewController
     }
@@ -63,20 +64,23 @@ public class TimerViewController: UIViewController {
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
 
-    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        coordinator.animate(alongsideTransition: { [weak self] _ in
-            self?.setUpFonts()
-        }, completion: nil)
-    }
-
     public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
+
+        var alphaOfEggWhite: CGFloat = 0
         if newCollection.verticalSizeClass == .compact {
             mainSlider.trackFillColor = .clear
         } else {
+            alphaOfEggWhite = 1
             mainSlider.trackFillColor = interval.themeColor.trackColor
         }
+
+        coordinator.animate(alongsideTransition: { [weak self] _ in
+            self?.imageViewEggWhite.alpha = alphaOfEggWhite
+            self?.mainSlider.setNeedsDisplay()
+        }, completion: { [weak self] _ in
+            self?.setUpFonts()
+        })
     }
 
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
