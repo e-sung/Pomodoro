@@ -18,11 +18,15 @@ class NotificationManagerTests: XCTestCase {
     }
 
     func testPublishNotification() {
-        let sut = NotificationManager(delegate: self)
-        notiExpectation = expectation(description: "Noti Received")
+        #if targetEnvironment(simulator)
+            // Don't test this on simulator because it cannot be tested
+        #else
+            let sut = NotificationManager(delegate: self)
+            notiExpectation = expectation(description: "Noti Received")
 
-        sut.publishNotiContent(of: FocusInterval(), via: UNUserNotificationCenter.current())
-        wait(for: [notiExpectation], timeout: 5)
+            sut.publishNotiContent(of: FocusInterval(), via: UNUserNotificationCenter.current())
+            wait(for: [notiExpectation], timeout: 5)
+        #endif
     }
 }
 

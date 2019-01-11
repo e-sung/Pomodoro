@@ -44,6 +44,7 @@
 		F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
 		F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */; };
 		F09422EC21D2F60700134C63 /* TimerViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */; };
+		F0D52F6721E8A8C900EFA205 /* SettingContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D52F6621E8A8C900EFA205 /* SettingContentTests.swift */; };
 		F0D89DD321D8D1DA0011A0B7 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC921D88C020011A0B7 /* Double+Extension.swift */; };
 		F0D89DD421D8D2690011A0B7 /* UserDefault+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DCB21D899160011A0B7 /* UserDefault+Extension.swift */; };
 		F0D89DE321D8D32B0011A0B7 /* PomodoroSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D89DDA21D8D32B0011A0B7 /* PomodoroSettings.framework */; };
@@ -233,6 +234,7 @@
 		F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTimeTests.swift; sourceTree = "<group>"; };
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
 		F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerViewController+Extension.swift"; sourceTree = "<group>"; };
+		F0D52F6621E8A8C900EFA205 /* SettingContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentTests.swift; sourceTree = "<group>"; };
 		F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		F0D89DC721D87BA10011A0B7 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				F087253121CF6719007EB27F /* Info.plist */,
 				F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */,
 				F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */,
+				F0D52F6621E8A8C900EFA205 /* SettingContentTests.swift */,
 			);
 			path = PomodoroFoundationTests;
 			sourceTree = "<group>";
@@ -1094,6 +1097,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D52F6721E8A8C900EFA205 /* SettingContentTests.swift in Sources */,
 				F0880AA021D7277F008AE79F /* LongBreakIntervalTests.swift in Sources */,
 				F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */,
 				F087254421CF6CB0007EB27F /* BreakIntervalTests.swift in Sources */,

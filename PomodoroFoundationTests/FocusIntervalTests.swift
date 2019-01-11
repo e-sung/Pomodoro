@@ -20,7 +20,7 @@ class FocusIntervalTests: XCTestCase {
         XCTAssertFalse(sut.timer.isValid)
         XCTAssert(sut.elapsedSeconds == 0)
         XCTAssert(sut.targetSeconds == 1500)
-        XCTAssert(sut.targetMinute == 25)
+        XCTAssert(sut.targetMinute == 25, "initial target seconds for focusTime should be 25 minutes")
         XCTAssert(sut.notiAction.title == "Start Break")
         XCTAssert(sut.notiContent.title == "Time to Break!")
         XCTAssert(sut.notiContent.body == "Well Done!!!")
