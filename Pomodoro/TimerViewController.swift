@@ -67,20 +67,21 @@ public class TimerViewController: UIViewController {
     public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
 
-        var alphaOfEggWhite: CGFloat = 0
-        if newCollection.verticalSizeClass == .compact {
-            mainSlider.trackFillColor = .clear
-        } else {
-            alphaOfEggWhite = 1
-            mainSlider.trackFillColor = interval.themeColor.trackColor
-        }
-
         coordinator.animate(alongsideTransition: { [weak self] _ in
+            guard let strongSelf = self else { return }
+            var alphaOfEggWhite: CGFloat = 0
+            if newCollection.verticalSizeClass == .compact {
+                self?.mainSlider.trackFillColor = .clear
+            } else {
+                alphaOfEggWhite = 1
+                self?.mainSlider.trackFillColor = strongSelf.interval.themeColor.trackColor
+            }
+
             self?.imageViewEggWhite.alpha = alphaOfEggWhite
             self?.mainSlider.setNeedsDisplay()
-        }, completion: { [weak self] _ in
             self?.setUpFonts()
-        })
+
+        }, completion: nil)
     }
 
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

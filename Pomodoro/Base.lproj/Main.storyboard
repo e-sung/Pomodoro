@@ -24,7 +24,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="w84-Xy-4zv" secondAttribute="height" multiplier="2:3" id="bl3-WI-vyv"/>
                                 </constraints>
-                                <variation key="heightClass=compact-widthClass=compact" hidden="NO">
+                                <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="bl3-WI-vyv"/>
                                     </mask>
@@ -122,7 +122,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="OrangePlate"/>
+                        <color key="backgroundColor" red="0.50045883655548096" green="0.095378674566745758" blue="0.054858982563018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="w84-Xy-4zv" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="0ZB-Ge-hYQ"/>
