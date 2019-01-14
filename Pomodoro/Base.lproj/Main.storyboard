@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wui-MR-8g3">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eggWhite" translatesAutoresizingMaskIntoConstraints="NO" id="w84-Xy-4zv">
-                                <rect key="frame" x="0.0" y="-435" width="667" height="1125"/>
+                                <rect key="frame" x="0.0" y="-6.5" width="375" height="563"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="w84-Xy-4zv" secondAttribute="height" multiplier="2:3" id="bl3-WI-vyv"/>
                                 </constraints>
@@ -31,7 +31,7 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0j-TM-sWV" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="-40" y="75.5" width="375" height="375"/>
+                                <rect key="frame" x="60" y="147.5" width="255" height="255"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -77,7 +77,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="p0n-JA-XET">
-                                <rect key="frame" x="-10" y="212.5" width="315" height="101.5"/>
+                                <rect key="frame" x="90" y="239" width="195" height="72"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -88,15 +88,13 @@
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shine" translatesAutoresizingMaskIntoConstraints="NO" id="aEs-Ou-jv6">
-                                <rect key="frame" x="155" y="80.5" width="150" height="100"/>
+                                <rect key="frame" x="73" y="160.5" width="229.5" height="229.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="0yk-2c-BV9"/>
-                                    <constraint firstAttribute="width" secondItem="aEs-Ou-jv6" secondAttribute="height" multiplier="6:4" id="NRx-0S-DDb"/>
+                                    <constraint firstAttribute="width" secondItem="aEs-Ou-jv6" secondAttribute="height" multiplier="1:1" id="2kU-Jb-1Bh"/>
                                 </constraints>
-                                <variation key="heightClass=compact-widthClass=compact" hidden="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ol-b31" customClass="RippleButton" customModule="Pomodoro" customModuleProvider="target">
-                                <rect key="frame" x="-40" y="75.5" width="375" height="375"/>
+                                <rect key="frame" x="60" y="147.5" width="255" height="255"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
                                         <color key="value" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,7 +114,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAK-wa-qwe">
-                                <rect key="frame" x="562.5" y="301.5" width="64.5" height="31.5"/>
+                                <rect key="frame" x="155.5" y="576.5" width="64.5" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -139,19 +137,21 @@
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" id="ECX-mW-UN6"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="trailing" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="-30" id="IGA-HE-MDm"/>
                             <constraint firstItem="c6C-ol-b31" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" id="IGm-4E-JRS"/>
+                            <constraint firstItem="aEs-Ou-jv6" firstAttribute="width" secondItem="C0j-TM-sWV" secondAttribute="width" multiplier="0.9" id="Il3-jZ-Fce"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" priority="750" id="IwP-tg-CHI">
                                 <variation key="heightClass=compact-widthClass=regular" constant="-150"/>
                             </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="40" id="Kno-1E-lv9"/>
                             <constraint firstItem="w84-Xy-4zv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Mnw-de-EqZ"/>
-                            <constraint firstItem="aEs-Ou-jv6" firstAttribute="trailing" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="-30" id="OVK-ft-Q1U"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" id="SPc-YH-quA"/>
+                            <constraint firstItem="aEs-Ou-jv6" firstAttribute="centerY" secondItem="C0j-TM-sWV" secondAttribute="centerY" id="TP5-xT-DJe"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="centerY" secondItem="C0j-TM-sWV" secondAttribute="centerY" id="WU1-s8-wWh"/>
                             <constraint firstItem="c6C-ol-b31" firstAttribute="trailing" secondItem="C0j-TM-sWV" secondAttribute="trailing" id="blQ-qT-MiV"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cBF-6p-B6D"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="C0j-TM-sWV" secondAttribute="trailing" constant="14" id="dGo-AZ-d2Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="w84-Xy-4zv" secondAttribute="centerY" constant="44" id="eBX-Pt-ThC"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="eIe-Zq-zmq"/>
+                            <constraint firstItem="aEs-Ou-jv6" firstAttribute="centerX" secondItem="C0j-TM-sWV" secondAttribute="centerX" id="hbS-oM-gwl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oAK-wa-qwe" secondAttribute="trailing" constant="40" id="ixK-8c-Vct"/>
                             <constraint firstItem="c6C-ol-b31" firstAttribute="top" secondItem="C0j-TM-sWV" secondAttribute="top" id="k3M-K4-Q65"/>
                             <constraint firstItem="c6C-ol-b31" firstAttribute="bottom" secondItem="C0j-TM-sWV" secondAttribute="bottom" id="lar-b6-6eM"/>
@@ -159,16 +159,15 @@
                             <constraint firstItem="p0n-JA-XET" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="30" id="oaw-fY-dx5"/>
                             <constraint firstItem="w84-Xy-4zv" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="2" id="ojq-on-Bqu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oAK-wa-qwe" secondAttribute="trailing" constant="40" id="tpo-98-gQk"/>
-                            <constraint firstItem="C0j-TM-sWV" firstAttribute="top" secondItem="aEs-Ou-jv6" secondAttribute="top" constant="-5" id="vd3-4m-hjj"/>
                             <constraint firstItem="oAK-wa-qwe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wHm-Yw-ULw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="ojq-on-Bqu"/>
                                 <exclude reference="Kno-1E-lv9"/>
                                 <exclude reference="ixK-8c-Vct"/>
                                 <exclude reference="tpo-98-gQk"/>
-                                <exclude reference="ojq-on-Bqu"/>
                                 <exclude reference="7ph-cJ-OOY"/>
                                 <exclude reference="CLj-fV-FBc"/>
                                 <exclude reference="D5F-GA-jif"/>
@@ -272,7 +271,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Shine" width="300" height="200"/>
+        <image name="Shine" width="450" height="450"/>
         <image name="eggWhite" width="750" height="1125"/>
         <image name="ic_alarm" width="24" height="26"/>
         <image name="ic_setting" width="20" height="21"/>

@@ -79,9 +79,10 @@ public class TimerViewController: UIViewController {
 
             self?.imageViewEggWhite.alpha = alphaOfEggWhite
             self?.mainSlider.setNeedsDisplay()
-            self?.setUpFonts()
 
-        }, completion: nil)
+        }, completion: { [weak self] _ in
+            self?.setUpFonts()
+        })
     }
 
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -127,7 +128,7 @@ public class TimerViewController: UIViewController {
 
     func setUpFonts() {
         let currentFontSize = labelTime.font.pointSize
-        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .regular)
+        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .light)
     }
 }
 
