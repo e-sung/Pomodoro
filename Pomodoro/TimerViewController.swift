@@ -1,12 +1,9 @@
 import AudioToolbox
 import Foundation
-import HGCircularSlider
-import PomodoroFoundation
-import PomodoroSettings
 import UIKit
 import UserNotifications
 
-public class TimerViewController: UIViewController, IntervalDelegate {
+open class TimerViewController: UIViewController, IntervalDelegate {
     // MAKR: Views
     @IBOutlet var labelTime: UILabel!
 
@@ -23,27 +20,27 @@ public class TimerViewController: UIViewController, IntervalDelegate {
 
     // MARK: UIViewController
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         setUpInitialValue()
         refreshViews(with: interval)
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setUpFonts()
         let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
 
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         setUpFonts()
     }
 
     // MARK: Public Functions
-    
-    public func refreshViews(with interval: Interval) {
+
+    open func refreshViews(with interval: Interval) {
         UIView.animate(withDuration: 0.5, animations: { [weak self] in
             self?.view.backgroundColor = interval.themeColor.backgroundColor
         })
@@ -52,11 +49,11 @@ public class TimerViewController: UIViewController, IntervalDelegate {
 
     // MARK: IntervalDelegate
 
-    public func timeElapsed(_ seconds: TimeInterval) {
+    open func timeElapsed(_ seconds: TimeInterval) {
         updateLabelTime(with: seconds)
     }
 
-    public func intervalFinished(by finisher: IntervalFinisher) {
+    open func intervalFinished(by finisher: IntervalFinisher) {
         notificationManager.publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
 
         if finisher == .time, interval is BreakInterval {
@@ -70,6 +67,7 @@ public class TimerViewController: UIViewController, IntervalDelegate {
 }
 
 // MARK: SetUp
+
 extension TimerViewController {
     func setUpInitialValue() {
         notificationManager = NotificationManager(delegate: self)
@@ -79,12 +77,12 @@ extension TimerViewController {
         } else {
             interval = FocusInterval(intervalDelegate: self)
         }
-        
+
         resetIntervalContext(on: UserDefaults.standard)
         resetCycleIfDayHasPassed()
         currentCycleCount = retreiveCycle(from: UserDefaults.standard)
     }
-    
+
     func setUpFonts() {
         let currentFontSize = labelTime.font.pointSize
         labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .light)
@@ -94,7 +92,7 @@ extension TimerViewController {
 // MARK: Update
 
 extension TimerViewController {
-    func startOrStopTimer() {
+    public func startOrStopTimer() {
         let popVibration = SystemSoundID(1520)
         AudioServicesPlaySystemSound(popVibration)
         if interval.isActive {
@@ -104,24 +102,24 @@ extension TimerViewController {
             interval.startTimer()
         }
     }
-    
-    func updateLabelTime(with seconds: TimeInterval) {
+
+    public func updateLabelTime(with seconds: TimeInterval) {
         guard seconds <= interval.targetSeconds else { return }
         let date = Date(timeIntervalSince1970: interval.targetSeconds - seconds)
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
         labelTime.text = dateFormatter.string(from: date)
     }
-    
-    func applyNewSetting() {
+
+    public func applyNewSetting() {
         if interval.isActive == false {
             applyNewSettingForInterval()
         }
-        
+
         let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
-    
+
     func applyNewSettingForInterval() {
         if interval is FocusInterval {
             interval = FocusInterval(intervalDelegate: self)
@@ -135,8 +133,9 @@ extension TimerViewController {
 }
 
 // MARK: Resetting
+
 extension TimerViewController {
-    func resetInterval() {
+    public func resetInterval() {
         if interval is FocusInterval {
             if (currentCycleCount + 1) % cycleCountForLongBreak == 0 {
                 interval = LongBreakInterval(intervalDelegate: self)
@@ -171,7 +170,7 @@ extension TimerViewController: UNUserNotificationCenterDelegate {
         }
         completionHandler()
     }
-    
+
     public func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound, .badge])
     }
