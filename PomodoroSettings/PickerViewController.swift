@@ -17,7 +17,7 @@ public class PickerViewController: UIViewController, PickerUpdater {
         super.viewDidLoad()
         pickerView.dataSource = self
         pickerView.delegate = self
-        guard let defaultAmount = retreiveAmount(for: settingCell.content, from: UserDefaults.standard) else { return }
+        guard let defaultAmount = retreiveAmount(for: settingCell.content, from: UserDefaults(suiteName: "group.pomodoro.com")!) else { return }
         guard let defaultRow = settingCell.content.rowFor(defaultAmount) else { return }
         pickerView.selectRow(defaultRow, inComponent: 0, animated: false)
     }

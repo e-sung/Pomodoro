@@ -10,7 +10,7 @@ import Foundation
 
 public class LongBreakInterval: BreakInterval {
     public override var targetMinute: TimeInterval {
-        let longBreakAmount = retreiveAmount(for: .longBreakTime, from: UserDefaults.standard)!
+        let longBreakAmount = retreiveAmount(for: .longBreakTime, from: UserDefaults(suiteName: "group.pomodoro.com")!)!
         return TimeInterval(exactly: longBreakAmount)!
     }
 }

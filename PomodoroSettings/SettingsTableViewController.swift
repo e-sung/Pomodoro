@@ -40,7 +40,7 @@ public class SettingsTableViewController: UITableViewController {
     }
 
     func update(_ cell: AmountSettingCell) {
-        var amount = retreiveAmount(for: cell.content, from: UserDefaults.standard)
+        var amount = retreiveAmount(for: cell.content, from: UserDefaults(suiteName: "group.pomodoro.com")!)
         if amount == 0, let defaultValue = cell.content.defaultValue as? Int {
             amount = defaultValue
         }
@@ -49,7 +49,7 @@ public class SettingsTableViewController: UITableViewController {
     }
 
     func setUp(_ cell: ToggleSettingCell) {
-        var savedBool = retreiveBool(for: cell.content, from: UserDefaults.standard)
+        var savedBool = retreiveBool(for: cell.content, from: UserDefaults(suiteName: "group.pomodoro.com")!)
         if savedBool == nil {
             savedBool = cell.content.defaultValue as? Bool
         }

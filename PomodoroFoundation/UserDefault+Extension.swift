@@ -8,6 +8,10 @@
 
 import Foundation
 
+extension UserDefaults {
+    public static var shared: UserDefaults = UserDefaults(suiteName: "group.pomodoro.com")!
+}
+
 public func saveCycles(_ cycle: Int, date: Date = Date(), to userDefault: UserDefaults) {
     userDefault.set(cycle, forKey: "cycle")
     userDefault.set(date, forKey: "lastestCycleDate")
@@ -75,7 +79,7 @@ public func retreiveInterval(from userDefault: UserDefaults) -> Interval? {
 }
 
 public var isDevMode: Bool {
-    return retreiveBool(for: .devMode, from: UserDefaults.standard) ?? false
+    return retreiveBool(for: .devMode, from: UserDefaults(suiteName: "group.pomodoro.com")!) ?? false
 }
 
 public func resetIntervalContext(on userDefault: UserDefaults) {

@@ -18,7 +18,7 @@ public class AmountSettingCell: UITableViewCell {
 
     public func update(for amount: Int) {
         amountLabel.text = content.formattedString(given: amount)
-        save(amount, for: content, to: UserDefaults.standard)
+        save(amount, for: content, to: UserDefaults(suiteName: "group.pomodoro.com")!)
     }
 }
 
@@ -29,7 +29,7 @@ public class ToggleSettingCell: UITableViewCell {
     }
 
     @IBAction func switchToggled(_ sender: UISwitch) {
-        save(sender.isOn, for: content, to: UserDefaults.standard)
+        save(sender.isOn, for: content, to: UserDefaults(suiteName: "group.pomodoro.com")!)
     }
 
     public func setUp(for value: Bool) {

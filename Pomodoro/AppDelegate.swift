@@ -29,10 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_: UIApplication) {
-        saveDateBackgroundEntered(Date(), to: UserDefaults.standard)
+        saveDateBackgroundEntered(Date(), to: UserDefaults.shared)
         let timerViewController = MainTimerViewController.shared
         if let interval = timerViewController.interval {
-            saveIntervalContext(of: interval, to: UserDefaults.standard)
+            saveIntervalContext(of: interval, to: UserDefaults.shared)
         }
 
         registerBackgroundTimer()
@@ -45,14 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         let timerViewController = MainTimerViewController.shared
         guard let interval = timerViewController.interval else { return }
-        if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard),
-            let isEnhancedFocusMode = retreiveBool(for: .enhancedFocusMode, from: UserDefaults.standard),
+        if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.shared),
+            let isEnhancedFocusMode = retreiveBool(for: .enhancedFocusMode, from: UserDefaults.shared),
             isEnhancedFocusMode == false,
             interval.isActive == true {
             let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
             interval.elapsedSeconds += timeIntervalSinceBackground
         }
-        resetIntervalContext(on: UserDefaults.standard)
+        resetIntervalContext(on: UserDefaults.shared)
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
     }

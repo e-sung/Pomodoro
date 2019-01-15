@@ -13,7 +13,7 @@ open class TimerViewController: UIViewController, IntervalDelegate {
     public var interval: Interval! = IntervalManager.shared
     public var notificationManager: NotificationManager!
     public var maxCycleCount: Int {
-        return retreiveAmount(for: .target, from: UserDefaults.standard)!
+        return retreiveAmount(for: .target, from: UserDefaults(suiteName: "group.pomodoro.com")!)!
     }
 
     public var currentCycleCount = 0
@@ -30,7 +30,7 @@ open class TimerViewController: UIViewController, IntervalDelegate {
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setUpFonts()
-        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
+        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults(suiteName: "group.pomodoro.com")!)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
 
@@ -59,7 +59,7 @@ open class TimerViewController: UIViewController, IntervalDelegate {
 
         if finisher == .time, interval is BreakInterval {
             currentCycleCount += 1
-            saveCycles(currentCycleCount, to: UserDefaults.standard)
+            saveCycles(currentCycleCount, to: UserDefaults(suiteName: "group.pomodoro.com")!)
         }
 
         resetInterval()
@@ -72,16 +72,16 @@ open class TimerViewController: UIViewController, IntervalDelegate {
 extension TimerViewController {
     func setUpInitialValue() {
         notificationManager = NotificationManager(delegate: self)
-        if let savedInterval = retreiveInterval(from: UserDefaults.standard) {
+        if let savedInterval = retreiveInterval(from: UserDefaults(suiteName: "group.pomodoro.com")!) {
             interval = savedInterval
             interval.delegate = self
         } else {
             interval = FocusInterval(intervalDelegate: self)
         }
 
-        resetIntervalContext(on: UserDefaults.standard)
+        resetIntervalContext(on: UserDefaults(suiteName: "group.pomodoro.com")!)
         resetCycleIfDayHasPassed()
-        currentCycleCount = retreiveCycle(from: UserDefaults.standard)
+        currentCycleCount = retreiveCycle(from: UserDefaults(suiteName: "group.pomodoro.com")!)
     }
 
     func setUpFonts() {
@@ -117,7 +117,7 @@ extension TimerViewController {
             applyNewSettingForInterval()
         }
 
-        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
+        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults(suiteName: "group.pomodoro.com")!)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
 
@@ -149,10 +149,10 @@ extension TimerViewController {
     }
 
     func resetCycleIfDayHasPassed() {
-        let latestCycleDate = retreiveLatestCycleDate(from: UserDefaults.standard)
+        let latestCycleDate = retreiveLatestCycleDate(from: UserDefaults(suiteName: "group.pomodoro.com")!)
         if latestCycleDate.isYesterday {
             currentCycleCount = 0
-            saveCycles(currentCycleCount, date: Date(), to: UserDefaults.standard)
+            saveCycles(currentCycleCount, date: Date(), to: UserDefaults(suiteName: "group.pomodoro.com")!)
         }
     }
 }

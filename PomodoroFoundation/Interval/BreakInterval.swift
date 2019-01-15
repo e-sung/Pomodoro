@@ -27,7 +27,7 @@ public class BreakInterval: NSObject, Interval {
     public var elapsedSeconds: TimeInterval = 0
 
     public var targetMinute: TimeInterval {
-        let breakTimeAmount = retreiveAmount(for: .breakTime, from: UserDefaults.standard)!
+        let breakTimeAmount = retreiveAmount(for: .breakTime, from: UserDefaults(suiteName: "group.pomodoro.com")!)!
         return TimeInterval(exactly: breakTimeAmount)!
     }
 
