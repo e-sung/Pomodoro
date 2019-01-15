@@ -14,7 +14,7 @@
         <!--timer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainTimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,10 +164,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="ojq-on-Bqu"/>
                                 <exclude reference="Kno-1E-lv9"/>
                                 <exclude reference="ixK-8c-Vct"/>
                                 <exclude reference="tpo-98-gQk"/>
+                                <exclude reference="ojq-on-Bqu"/>
                                 <exclude reference="7ph-cJ-OOY"/>
                                 <exclude reference="CLj-fV-FBc"/>
                                 <exclude reference="D5F-GA-jif"/>

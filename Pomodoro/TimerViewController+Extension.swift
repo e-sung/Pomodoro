@@ -12,7 +12,7 @@ import UIKit
 import UserNotifications
 
 func registerBackgroundTimer() {
-    let timerViewController = TimerViewController.shared
+    let timerViewController = MainTimerViewController.shared
     guard let interval = timerViewController.interval, interval.isActive else { return }
 
     let remainingTime = interval.targetSeconds - interval.elapsedSeconds

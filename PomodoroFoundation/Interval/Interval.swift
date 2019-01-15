@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import UserNotifications
 
+public class IntervalManager {
+    public static var shared: Interval?
+}
+
 public protocol IntervalDelegate: class {
     func timeElapsed(_ seconds: TimeInterval)
     func intervalFinished(by finisher: IntervalFinisher)

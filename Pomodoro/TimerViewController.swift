@@ -1,11 +1,3 @@
-//
-//  TimerViewController.swift
-//  Pomodoro
-//
-//  Created by 류성두 on 22/12/2018.
-//  Copyright © 2018 Sungdoo. All rights reserved.
-//
-
 import AudioToolbox
 import Foundation
 import HGCircularSlider
@@ -14,193 +6,56 @@ import PomodoroSettings
 import UIKit
 import UserNotifications
 
-public class TimerViewController: UIViewController {
-    // MARK: IBOutlets
-
-    @IBOutlet var mainSlider: CircularSlider!
+public class TimerViewController: UIViewController, IntervalDelegate {
+    // MAKR: Views
     @IBOutlet var labelTime: UILabel!
-    @IBOutlet var labelIntervalCount: UILabel!
-    @IBOutlet var rippleButton: RippleButton!
-    @IBOutlet var imageViewEggWhite: UIImageView!
 
     // MARK: Properties
 
-    var interval: Interval!
-    var maxCycleCount: Int {
+    public var interval: Interval! = IntervalManager.shared
+    public var notificationManager: NotificationManager!
+    public var maxCycleCount: Int {
         return retreiveAmount(for: .target, from: UserDefaults.standard)!
     }
 
-    var currentCycleCount = 0
-    var cycleCountForLongBreak = 3
-    var notificationManager: NotificationManager!
+    public var currentCycleCount = 0
+    public var cycleCountForLongBreak = 3
 
-    public static var shared: TimerViewController {
-        let application = UIApplication.shared
-        let tabBarController = application.keyWindow?.rootViewController as? UITabBarController
-        guard let timerViewController = tabBarController?
-            .viewControllers?
-            .compactMap({ $0 as? TimerViewController })
-            .first else {
-            fatalError("Couldn't Load TimerViewController.")
-        }
-        return timerViewController
-    }
-
-    // MARK: LifeCycle
+    // MARK: UIViewController
 
     public override func viewDidLoad() {
         super.viewDidLoad()
         setUpInitialValue()
-        rippleButton.buttonCornerRadius = Float(mainSlider.frame.width / 2)
         refreshViews(with: interval)
-        tabBarController?.delegate = self
     }
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setUpFonts()
-
         let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
-    }
-
-    public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.willTransition(to: newCollection, with: coordinator)
-
-        coordinator.animate(alongsideTransition: { [weak self] _ in
-            guard let strongSelf = self else { return }
-            var alphaOfEggWhite: CGFloat = 0
-            if newCollection.verticalSizeClass == .compact {
-                self?.mainSlider.trackFillColor = .clear
-            } else {
-                alphaOfEggWhite = 1
-                self?.mainSlider.trackFillColor = strongSelf.interval.themeColor.trackColor
-            }
-
-            self?.imageViewEggWhite.alpha = alphaOfEggWhite
-            self?.mainSlider.setNeedsDisplay()
-
-        }, completion: { [weak self] _ in
-            self?.setUpFonts()
-        })
     }
 
     public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+        setUpFonts()
     }
 
-    // MARK: IBAction
-
-    @IBAction func eggYellowClicked(_: Any) {
-        startOrStopTimer()
-    }
-
-    func startOrStopTimer() {
-        let popVibration = SystemSoundID(1520)
-        AudioServicesPlaySystemSound(popVibration)
-        if interval.isActive {
-            interval.pauseTimer()
-        } else {
-            resetCycleIfDayHasPassed()
-            interval.startTimer()
-        }
-    }
-
-    func applyNewSetting() {
-        if interval.isActive == false {
-            applyNewSettingForInterval()
-        }
-
-        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
-        UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
-    }
-
-    func applyNewSettingForInterval() {
-        if interval is FocusInterval {
-            interval = FocusInterval(intervalDelegate: self)
-        } else if interval is BreakInterval {
-            interval = BreakInterval(intervalDelegate: self)
-        } else if interval is LongBreakInterval {
-            interval = LongBreakInterval(intervalDelegate: self)
-        }
-        refreshViews(with: interval)
-    }
-
-    func setUpFonts() {
-        let currentFontSize = labelTime.font.pointSize
-        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .light)
-    }
-}
-
-// MARK: SetUp
-
-extension TimerViewController {
-    func setUpInitialValue() {
-        notificationManager = NotificationManager(delegate: self)
-        if let savedInterval = retreiveInterval(from: UserDefaults.standard) {
-            interval = savedInterval
-            interval.delegate = self
-        } else {
-            interval = FocusInterval(intervalDelegate: self)
-        }
-
-        resetIntervalContext(on: UserDefaults.standard)
-        resetCycleIfDayHasPassed()
-        currentCycleCount = retreiveCycle(from: UserDefaults.standard)
-    }
-
-    func resetCycleIfDayHasPassed() {
-        let latestCycleDate = retreiveLatestCycleDate(from: UserDefaults.standard)
-        if latestCycleDate.isYesterday {
-            currentCycleCount = 0
-            saveCycles(currentCycleCount, date: Date(), to: UserDefaults.standard)
-        }
-    }
-
-    func refreshViews(with interval: Interval) {
-        updateMainSlider(with: interval)
+    // MARK: Public Functions
+    
+    public func refreshViews(with interval: Interval) {
         UIView.animate(withDuration: 0.5, animations: { [weak self] in
             self?.view.backgroundColor = interval.themeColor.backgroundColor
         })
-
         updateLabelTime(with: interval.elapsedSeconds)
-
-        labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
-    }
-}
-
-// MARK: Update
-
-extension TimerViewController {
-    func updateMainSlider(with interval: Interval) {
-        mainSlider.maximumValue = CGFloat(interval.targetSeconds)
-        if traitCollection.verticalSizeClass == .compact {
-            mainSlider.trackFillColor = .clear
-        } else {
-            mainSlider.trackFillColor = interval.themeColor.trackColor
-        }
-        updateMainSlider(to: interval.elapsedSeconds)
-        mainSlider.setNeedsDisplay()
     }
 
-    func updateMainSlider(to time: TimeInterval) {
-        let point = CGFloat(time)
-        mainSlider.endPointValue = point
-        mainSlider.layoutIfNeeded()
+    // MARK: IntervalDelegate
+
+    public func timeElapsed(_ seconds: TimeInterval) {
+        updateLabelTime(with: seconds)
     }
 
-    func updateLabelTime(with seconds: TimeInterval) {
-        guard seconds <= interval.targetSeconds else { return }
-        let date = Date(timeIntervalSince1970: interval.targetSeconds - seconds)
-        let dateFormatter = DateFormatter()
-        dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
-        labelTime.text = dateFormatter.string(from: date)
-    }
-}
-
-// MARK: IntervalDelegate
-
-extension TimerViewController: IntervalDelegate {
     public func intervalFinished(by finisher: IntervalFinisher) {
         notificationManager.publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
 
@@ -212,7 +67,75 @@ extension TimerViewController: IntervalDelegate {
         resetInterval()
         refreshViews(with: interval)
     }
+}
 
+// MARK: SetUp
+extension TimerViewController {
+    func setUpInitialValue() {
+        notificationManager = NotificationManager(delegate: self)
+        if let savedInterval = retreiveInterval(from: UserDefaults.standard) {
+            interval = savedInterval
+            interval.delegate = self
+        } else {
+            interval = FocusInterval(intervalDelegate: self)
+        }
+        
+        resetIntervalContext(on: UserDefaults.standard)
+        resetCycleIfDayHasPassed()
+        currentCycleCount = retreiveCycle(from: UserDefaults.standard)
+    }
+    
+    func setUpFonts() {
+        let currentFontSize = labelTime.font.pointSize
+        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .light)
+    }
+}
+
+// MARK: Update
+
+extension TimerViewController {
+    func startOrStopTimer() {
+        let popVibration = SystemSoundID(1520)
+        AudioServicesPlaySystemSound(popVibration)
+        if interval.isActive {
+            interval.pauseTimer()
+        } else {
+            resetCycleIfDayHasPassed()
+            interval.startTimer()
+        }
+    }
+    
+    func updateLabelTime(with seconds: TimeInterval) {
+        guard seconds <= interval.targetSeconds else { return }
+        let date = Date(timeIntervalSince1970: interval.targetSeconds - seconds)
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
+        labelTime.text = dateFormatter.string(from: date)
+    }
+    
+    func applyNewSetting() {
+        if interval.isActive == false {
+            applyNewSettingForInterval()
+        }
+        
+        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.standard)
+        UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
+    }
+    
+    func applyNewSettingForInterval() {
+        if interval is FocusInterval {
+            interval = FocusInterval(intervalDelegate: self)
+        } else if interval is BreakInterval {
+            interval = BreakInterval(intervalDelegate: self)
+        } else if interval is LongBreakInterval {
+            interval = LongBreakInterval(intervalDelegate: self)
+        }
+        refreshViews(with: interval)
+    }
+}
+
+// MARK: Resetting
+extension TimerViewController {
     func resetInterval() {
         if interval is FocusInterval {
             if (currentCycleCount + 1) % cycleCountForLongBreak == 0 {
@@ -225,19 +148,12 @@ extension TimerViewController: IntervalDelegate {
         }
     }
 
-    public func timeElapsed(_ seconds: TimeInterval) {
-        updateLabelTime(with: seconds)
-        updateMainSlider(to: seconds)
-    }
-}
-
-extension TimerViewController: UITabBarControllerDelegate {
-    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect _: UIViewController) -> Bool {
-        let selectedNavigationController = tabBarController.selectedViewController as? UINavigationController
-        if selectedNavigationController?.topViewController is SettingsTableViewController {
-            applyNewSetting()
+    func resetCycleIfDayHasPassed() {
+        let latestCycleDate = retreiveLatestCycleDate(from: UserDefaults.standard)
+        if latestCycleDate.isYesterday {
+            currentCycleCount = 0
+            saveCycles(currentCycleCount, date: Date(), to: UserDefaults.standard)
         }
-        return true
     }
 }
 
@@ -255,7 +171,7 @@ extension TimerViewController: UNUserNotificationCenterDelegate {
         }
         completionHandler()
     }
-
+    
     public func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound, .badge])
     }

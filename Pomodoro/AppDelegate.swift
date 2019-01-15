@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_: UIApplication) {
         saveDateBackgroundEntered(Date(), to: UserDefaults.standard)
-        let timerViewController = TimerViewController.shared
+        let timerViewController = MainTimerViewController.shared
         if let interval = timerViewController.interval {
             saveIntervalContext(of: interval, to: UserDefaults.standard)
         }
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        let timerViewController = TimerViewController.shared
+        let timerViewController = MainTimerViewController.shared
         guard let interval = timerViewController.interval else { return }
         if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.standard),
             let isEnhancedFocusMode = retreiveBool(for: .enhancedFocusMode, from: UserDefaults.standard),
