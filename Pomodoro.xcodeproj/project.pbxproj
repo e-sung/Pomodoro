@@ -13,9 +13,14 @@
 		573947069AA98EF34B3762BD /* Pods_PomodoroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101F9904C4E8F233CC2A58C4 /* Pods_PomodoroTests.framework */; };
 		6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */; };
 		AB85875DAEB0C86F6C3B199F /* Pods_SettingsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0830BEE4EDED18599049A33F /* Pods_SettingsApp.framework */; };
-		F0006EA621EDDFCB00307F88 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0006EA421EDD8CF00307F88 /* TimerViewController.swift */; };
-		F0006EA721EDE01A00307F88 /* TimerViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */; };
-		F03E12DF21E36423003C2129 /* RippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12DE21E36423003C2129 /* RippleButton.swift */; };
+		F0006EB121EDE11F00307F88 /* PomodoroUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F0006EAF21EDE11F00307F88 /* PomodoroUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0006EB421EDE11F00307F88 /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
+		F0006EB521EDE11F00307F88 /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0006EB921EDE13300307F88 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087250D21CF1264007EB27F /* DesignableView.swift */; };
+		F0006EBB21EDE13300307F88 /* RippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12DE21E36423003C2129 /* RippleButton.swift */; };
+		F0006EBC21EDE13300307F88 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0006EA421EDD8CF00307F88 /* TimerViewController.swift */; };
+		F0006EBD21EDE20400307F88 /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* BackgroundTimer.swift */; };
+		F0006EBE21EDE2AD00307F88 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F03E12E121E44BC1003C2129 /* NumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */; };
 		F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA321CE5AD900EDB65F /* AppDelegate.swift */; };
 		F0843CA621CE5AD900EDB65F /* MainTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */; };
@@ -25,7 +30,6 @@
 		F0843CB121CE5ADA00EDB65F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAF21CE5ADA00EDB65F /* LaunchScreen.storyboard */; };
 		F0843CBC21CE5ADA00EDB65F /* PomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CBB21CE5ADA00EDB65F /* PomodoroTests.swift */; };
 		F0843CC721CE5ADA00EDB65F /* PomodoroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CC621CE5ADA00EDB65F /* PomodoroUITests.swift */; };
-		F087250E21CF1264007EB27F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087250D21CF1264007EB27F /* DesignableView.swift */; };
 		F087252921CF6719007EB27F /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F087253021CF6719007EB27F /* FocusIntervalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087252F21CF6719007EB27F /* FocusIntervalTests.swift */; };
 		F087253221CF6719007EB27F /* PomodoroFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = F087252221CF6719007EB27F /* PomodoroFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -73,6 +77,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F0006EB221EDE11F00307F88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0006EAC21EDE11F00307F88;
+			remoteInfo = PomodoroUIKit;
+		};
 		F0843CB821CE5ADA00EDB65F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
@@ -160,6 +171,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F0D89DF021D8D32B0011A0B7 /* PomodoroSettings.framework in Embed Frameworks */,
+				F0006EB521EDE11F00307F88 /* PomodoroUIKit.framework in Embed Frameworks */,
 				F087253621CF6719007EB27F /* PomodoroFoundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -198,6 +210,9 @@
 		D7C15C8413C987C653EF257D /* Pods-PomodoroSettings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroSettings.release.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroSettings/Pods-PomodoroSettings.release.xcconfig"; sourceTree = "<group>"; };
 		D8C23AD2B0B8500DE144002D /* Pods-SettingsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsApp/Pods-SettingsApp.release.xcconfig"; sourceTree = "<group>"; };
 		F0006EA421EDD8CF00307F88 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PomodoroUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0006EAF21EDE11F00307F88 /* PomodoroUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PomodoroUIKit.h; sourceTree = "<group>"; };
+		F0006EB021EDE11F00307F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F03E12DE21E36423003C2129 /* RippleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleButton.swift; sourceTree = "<group>"; };
 		F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExtensionTests.swift; sourceTree = "<group>"; };
 		F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,7 +250,7 @@
 		F0880AA121D72AB3008AE79F /* NotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManagerTests.swift; sourceTree = "<group>"; };
 		F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTimeTests.swift; sourceTree = "<group>"; };
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
-		F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerViewController+Extension.swift"; sourceTree = "<group>"; };
+		F09422EB21D2F60700134C63 /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		F0D52F6621E8A8C900EFA205 /* SettingContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentTests.swift; sourceTree = "<group>"; };
 		F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
@@ -263,10 +278,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F0006EAA21EDE11F00307F88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0006EBE21EDE2AD00307F88 /* PomodoroFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0843C9D21CE5AD900EDB65F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0006EB421EDE11F00307F88 /* PomodoroUIKit.framework in Frameworks */,
 				F0D89DEF21D8D32B0011A0B7 /* PomodoroSettings.framework in Frameworks */,
 				F087253521CF6719007EB27F /* PomodoroFoundation.framework in Frameworks */,
 				6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */,
@@ -355,6 +379,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F0006EAE21EDE11F00307F88 /* PomodoroUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				F0006EAF21EDE11F00307F88 /* PomodoroUIKit.h */,
+				F0006EA421EDD8CF00307F88 /* TimerViewController.swift */,
+				F087250D21CF1264007EB27F /* DesignableView.swift */,
+				F03E12DE21E36423003C2129 /* RippleButton.swift */,
+				F0006EB021EDE11F00307F88 /* Info.plist */,
+			);
+			path = PomodoroUIKit;
+			sourceTree = "<group>";
+		};
 		F0843C9721CE5AD900EDB65F = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +403,7 @@
 				F0D89DE821D8D32B0011A0B7 /* PomodoroSettingsTests */,
 				F0D89E0321D8D6D80011A0B7 /* SettingsApp */,
 				F0D89E2321D8D6DA0011A0B7 /* SettingsAppUITests */,
+				F0006EAE21EDE11F00307F88 /* PomodoroUIKit */,
 				F0843CA121CE5AD900EDB65F /* Products */,
 				FFD2E382A03C8A4D78114878 /* Pods */,
 				647AC616D0FE392B89E1E767 /* Frameworks */,
@@ -385,6 +422,7 @@
 				F0D89DE221D8D32B0011A0B7 /* PomodoroSettingsTests.xctest */,
 				F0D89E0221D8D6D80011A0B7 /* SettingsApp.app */,
 				F0D89E2021D8D6DA0011A0B7 /* SettingsAppUITests.xctest */,
+				F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -394,10 +432,6 @@
 			children = (
 				F0843CA321CE5AD900EDB65F /* AppDelegate.swift */,
 				F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */,
-				F0006EA421EDD8CF00307F88 /* TimerViewController.swift */,
-				F09422EB21D2F60700134C63 /* TimerViewController+Extension.swift */,
-				F087250D21CF1264007EB27F /* DesignableView.swift */,
-				F03E12DE21E36423003C2129 /* RippleButton.swift */,
 				F0843CA721CE5AD900EDB65F /* Main.storyboard */,
 				F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */,
 				F0843CAF21CE5ADA00EDB65F /* LaunchScreen.storyboard */,
@@ -435,6 +469,7 @@
 				F0D89DCB21D899160011A0B7 /* UserDefault+Extension.swift */,
 				F09422E921D2476600134C63 /* StandardTime.swift */,
 				F0880A9B21D67EE7008AE79F /* NotificationManager.swift */,
+				F09422EB21D2F60700134C63 /* BackgroundTimer.swift */,
 				F087251321CF5FAE007EB27F /* NSObject+Extension.swift */,
 				F087252221CF6719007EB27F /* PomodoroFoundation.h */,
 				F087252321CF6719007EB27F /* Info.plist */,
@@ -535,6 +570,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		F0006EA821EDE11F00307F88 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0006EB121EDE11F00307F88 /* PomodoroUIKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F087251B21CF6719007EB27F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,6 +597,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		F0006EAC21EDE11F00307F88 /* PomodoroUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0006EB621EDE11F00307F88 /* Build configuration list for PBXNativeTarget "PomodoroUIKit" */;
+			buildPhases = (
+				F0006EA821EDE11F00307F88 /* Headers */,
+				F0006EA921EDE11F00307F88 /* Sources */,
+				F0006EAA21EDE11F00307F88 /* Frameworks */,
+				F0006EAB21EDE11F00307F88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PomodoroUIKit;
+			productName = PomodoroUIKit;
+			productReference = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		F0843C9F21CE5AD900EDB65F /* Pomodoro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0843CCB21CE5ADA00EDB65F /* Build configuration list for PBXNativeTarget "Pomodoro" */;
@@ -571,6 +632,7 @@
 			dependencies = (
 				F087253421CF6719007EB27F /* PBXTargetDependency */,
 				F0D89DEE21D8D32B0011A0B7 /* PBXTargetDependency */,
+				F0006EB321EDE11F00307F88 /* PBXTargetDependency */,
 			);
 			name = Pomodoro;
 			productName = Pomodoro;
@@ -740,6 +802,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Sungdoo;
 				TargetAttributes = {
+					F0006EAC21EDE11F00307F88 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					F0843C9F21CE5AD900EDB65F = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -796,11 +861,19 @@
 				F0D89DE121D8D32B0011A0B7 /* PomodoroSettingsTests */,
 				F0D89E0121D8D6D80011A0B7 /* SettingsApp */,
 				F0D89E1F21D8D6DA0011A0B7 /* SettingsAppUITests */,
+				F0006EAC21EDE11F00307F88 /* PomodoroUIKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F0006EAB21EDE11F00307F88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0843C9E21CE5AD900EDB65F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1049,14 +1122,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F0006EA921EDE11F00307F88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0006EBC21EDE13300307F88 /* TimerViewController.swift in Sources */,
+				F0006EBB21EDE13300307F88 /* RippleButton.swift in Sources */,
+				F0006EB921EDE13300307F88 /* DesignableView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0843C9C21CE5AD900EDB65F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F087250E21CF1264007EB27F /* DesignableView.swift in Sources */,
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
 				F0843CA621CE5AD900EDB65F /* MainTimerViewController.swift in Sources */,
-				F03E12DF21E36423003C2129 /* RippleButton.swift in Sources */,
 				F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1085,14 +1166,13 @@
 				F0880A9C21D67EE7008AE79F /* NotificationManager.swift in Sources */,
 				F087253F21CF6731007EB27F /* PermissionManager.swift in Sources */,
 				F087254221CF6731007EB27F /* BreakInterval.swift in Sources */,
-				F0006EA621EDDFCB00307F88 /* TimerViewController.swift in Sources */,
 				F087253E21CF6731007EB27F /* Interval.swift in Sources */,
 				F0D89DD421D8D2690011A0B7 /* UserDefault+Extension.swift in Sources */,
 				F0D89E3A21D90D820011A0B7 /* SettingContent.swift in Sources */,
-				F0006EA721EDE01A00307F88 /* TimerViewController+Extension.swift in Sources */,
 				F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */,
 				F087254021CF6731007EB27F /* NSObject+Extension.swift in Sources */,
 				F0D89DD321D8D1DA0011A0B7 /* Double+Extension.swift in Sources */,
+				F0006EBD21EDE20400307F88 /* BackgroundTimer.swift in Sources */,
 				F087254121CF6731007EB27F /* FocusInterval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1151,6 +1231,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F0006EB321EDE11F00307F88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
+			targetProxy = F0006EB221EDE11F00307F88 /* PBXContainerItemProxy */;
+		};
 		F0843CB921CE5ADA00EDB65F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F0843C9F21CE5AD900EDB65F /* Pomodoro */;
@@ -1244,6 +1329,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F0006EB721EDE11F00307F88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PomodoroUIKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F0006EB821EDE11F00307F88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PomodoroUIKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		F0843CC921CE5ADA00EDB65F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1767,6 +1910,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F0006EB621EDE11F00307F88 /* Build configuration list for PBXNativeTarget "PomodoroUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0006EB721EDE11F00307F88 /* Debug */,
+				F0006EB821EDE11F00307F88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F0843C9B21CE5AD900EDB65F /* Build configuration list for PBXProject "Pomodoro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

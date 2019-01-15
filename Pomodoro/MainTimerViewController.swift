@@ -11,6 +11,7 @@ import Foundation
 import HGCircularSlider
 import PomodoroFoundation
 import PomodoroSettings
+import PomodoroUIKit
 import UIKit
 import UserNotifications
 

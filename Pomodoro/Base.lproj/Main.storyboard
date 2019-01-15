@@ -93,7 +93,7 @@
                                     <constraint firstAttribute="width" secondItem="aEs-Ou-jv6" secondAttribute="height" multiplier="1:1" id="2kU-Jb-1Bh"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ol-b31" customClass="RippleButton" customModule="Pomodoro" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ol-b31" customClass="RippleButton" customModule="PomodoroUIKit">
                                 <rect key="frame" x="60" y="147.5" width="255" height="255"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">

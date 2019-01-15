@@ -8,6 +8,7 @@
 
 import CoreData
 import PomodoroFoundation
+import PomodoroUIKit
 import UIKit
 import UserNotifications
 

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @IBDesignable
-class DesignableView: UIView {
+public class DesignableView: UIView {
     @IBInspectable var cornerRadius: Double {
         get {
             return Double(layer.cornerRadius)

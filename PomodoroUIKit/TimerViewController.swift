@@ -1,5 +1,6 @@
 import AudioToolbox
 import Foundation
+import PomodoroFoundation
 import UIKit
 import UserNotifications
 
