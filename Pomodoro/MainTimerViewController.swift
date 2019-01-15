@@ -45,6 +45,12 @@ public class MainTimerViewController: TimerViewController {
         rippleButton.buttonCornerRadius = Float(mainSlider.frame.width / 2)
     }
 
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.shared)
+        UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
+    }
+
     public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
 
@@ -72,6 +78,12 @@ public class MainTimerViewController: TimerViewController {
     public override func timeElapsed(_ seconds: TimeInterval) {
         super.timeElapsed(seconds)
         updateMainSlider(to: seconds)
+    }
+
+    public override func applyNewSetting() {
+        super.applyNewSetting()
+        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.shared)
+        UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
 
     // MARK: IBAction

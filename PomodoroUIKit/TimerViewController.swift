@@ -30,8 +30,6 @@ open class TimerViewController: UIViewController, IntervalDelegate {
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setUpFonts()
-        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults(suiteName: "group.pomodoro.com")!)
-        UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
 
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -112,13 +110,10 @@ extension TimerViewController {
         labelTime.text = dateFormatter.string(from: date)
     }
 
-    public func applyNewSetting() {
+    @objc open func applyNewSetting() {
         if interval.isActive == false {
             applyNewSettingForInterval()
         }
-
-        let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults(suiteName: "group.pomodoro.com")!)
-        UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
 
     func applyNewSettingForInterval() {

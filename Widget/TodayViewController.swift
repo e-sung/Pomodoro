@@ -18,8 +18,13 @@ class TodayViewController: TimerViewController, NCWidgetProviding {
         }
     }
 
+    @IBAction func playPauseButtonClicked(_: UIButton) {
+        startOrStopTimer()
+    }
+
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
+        print(NCUpdateResult.failed)
 
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
