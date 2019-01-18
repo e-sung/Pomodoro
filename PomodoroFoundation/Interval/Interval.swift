@@ -46,6 +46,14 @@ extension Interval {
         return timer.isValid
     }
 
+    public func startOrPauseTimer() {
+        if isActive {
+            pauseTimer()
+        } else {
+            startTimer()
+        }
+    }
+
     public func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] _ in
             guard let strongSelf = self else { return }

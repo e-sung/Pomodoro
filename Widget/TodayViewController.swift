@@ -12,14 +12,13 @@ import PomodoroUIKit
 import UIKit
 
 class TodayViewController: TimerViewController, NCWidgetProviding {
-    override func viewDidLoad() {
-        if interval == nil {
-            super.viewDidLoad()
-        }
+    @IBAction func playPauseButtonClicked(_: UIButton) {
+        extensionContext?.open(URL(string: "sdpomodoro://todayWidget/playOrPause")!, completionHandler: nil)
     }
 
-    @IBAction func playPauseButtonClicked(_: UIButton) {
-        startOrStopTimer()
+    @IBAction func backroundTapped(_: UITapGestureRecognizer) {
+        saveIntervalContext(of: interval, to: UserDefaults.shared)
+        extensionContext?.open(URL(string: "sdpomodoro://todayWidget")!, completionHandler: nil)
     }
 
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

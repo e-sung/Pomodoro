@@ -13,10 +13,15 @@ import UIKit
 import UserNotifications
 
 var dateBackgroundEnter: Date?
+var hasOpenedByWidgetPlayPauseButton = false
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    func application(_: UIApplication, open url: URL, options _: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        hasOpenedByWidgetPlayPauseButton = url.absoluteString.has("playOrPause")
+        return true
+    }
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -51,7 +56,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             interval.isActive == true {
             let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
             interval.elapsedSeconds += timeIntervalSinceBackground
+        } else if hasOpenedByWidgetPlayPauseButton, let widgetInterval = retreiveInterval(from: UserDefaults.shared) {
+            interval.elapsedSeconds = widgetInterval.elapsedSeconds
+            interval.startOrPauseTimer()
+            hasOpenedByWidgetPlayPauseButton = false
         }
+
         resetIntervalContext(on: UserDefaults.shared)
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()

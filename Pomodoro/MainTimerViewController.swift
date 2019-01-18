@@ -47,6 +47,12 @@ public class MainTimerViewController: TimerViewController {
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+        if hasOpenedByWidgetPlayPauseButton {
+            interval.startOrPauseTimer()
+            hasOpenedByWidgetPlayPauseButton = false
+        }
+
         let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.shared)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
     }
