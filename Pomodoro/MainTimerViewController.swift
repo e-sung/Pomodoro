@@ -77,8 +77,9 @@ public class MainTimerViewController: TimerViewController {
 
     public override func refreshViews(with interval: Interval) {
         super.refreshViews(with: interval)
-        updateMainSlider(with: interval)
+        refreshMainSlider(with: interval)
         labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
+        setAccessibilityHintOfLabelIntervalCount()
     }
 
     public override func timeElapsed(_ seconds: TimeInterval) {
@@ -96,13 +97,14 @@ public class MainTimerViewController: TimerViewController {
 
     @IBAction func eggYellowClicked(_: Any) {
         startOrStopTimer()
+        setAccessiblityHintOfRippleButton(given: interval)
     }
 }
 
 // MARK: Update
 
 extension MainTimerViewController {
-    func updateMainSlider(with interval: Interval) {
+    func refreshMainSlider(with interval: Interval) {
         mainSlider.maximumValue = CGFloat(interval.targetSeconds)
         if traitCollection.verticalSizeClass == .compact {
             mainSlider.trackFillColor = .clear
@@ -110,6 +112,7 @@ extension MainTimerViewController {
             mainSlider.trackFillColor = interval.themeColor.trackColor
         }
         updateMainSlider(to: interval.elapsedSeconds)
+        setAccessiblityHintOfRippleButton(given: interval)
         mainSlider.setNeedsDisplay()
     }
 
@@ -117,6 +120,23 @@ extension MainTimerViewController {
         let point = CGFloat(time)
         mainSlider.endPointValue = point
         mainSlider.layoutIfNeeded()
+    }
+
+    func setAccessiblityHintOfRippleButton(given interval: Interval) {
+        if interval.isActive {
+            rippleButton.accessibilityHint = "타이머가 진행중입니다. 다시 누르면 타이머를 멈춥니다."
+        } else {
+            rippleButton.accessibilityHint = "타이머가 멈춰 있습니다. 다시 누르면 타이머를 시작합니다."
+        }
+    }
+
+    func setAccessibilityHintOfLabelIntervalCount() {
+        let goalFormatString = NSLocalizedString("cycle goal accessibility hint", comment: "")
+        let goalString = String.localizedStringWithFormat(goalFormatString, maxCycleCount)
+
+        let completedCycleFormatString = NSLocalizedString("completed cycle accessibility hint", comment: "")
+        let completedCycleString = String.localizedStringWithFormat(completedCycleFormatString, currentCycleCount)
+        labelIntervalCount.accessibilityLabel = goalString + ". " + completedCycleString
     }
 }
 

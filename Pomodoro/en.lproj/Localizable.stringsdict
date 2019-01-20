@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>completed cycle accessibility hint</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v2_current_cycle@</string>
+		<key>v2_current_cycle</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>other</key>
+			<string>Completed: %u </string>
+		</dict>
+	</dict>
+	<key>cycle goal accessibility hint</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v1_cycle_target@</string>
+		<key>v1_cycle_target</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>one</key>
+			<string>Goal : One Pomodoro Cycle</string>
+			<key>other</key>
+			<string>Goal :  %u Pomodoro Cycles</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

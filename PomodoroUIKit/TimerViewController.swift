@@ -6,7 +6,7 @@ import UserNotifications
 
 open class TimerViewController: UIViewController, IntervalDelegate {
     // MAKR: Views
-    @IBOutlet var labelTime: UILabel!
+    @IBOutlet public var labelTime: UILabel!
 
     // MARK: Properties
 
@@ -108,6 +108,14 @@ extension TimerViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("mm:ss")
         labelTime.text = dateFormatter.string(from: date)
+
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.allowedUnits = [.minute, .second]
+        formatter.string(from: date.timeIntervalSince1970)
+
+        labelTime.accessibilityLabel = NSLocalizedString("remainingTime", comment: "")
+            + formatter.string(from: date.timeIntervalSince1970)!
     }
 
     @objc open func applyNewSetting() {

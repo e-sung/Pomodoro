@@ -20,6 +20,8 @@
 		F0006EBD21EDE20400307F88 /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* BackgroundTimer.swift */; };
 		F0006EBE21EDE2AD00307F88 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F038205221F2202C000ACFD0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038205121F2202C000ACFD0 /* String+Extension.swift */; };
+		F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F038208721F496C8000ACFD0 /* Localizable.stringsdict */; };
+		F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F038208D21F4A486000ACFD0 /* Localizable.strings */; };
 		F03E12E121E44BC1003C2129 /* NumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */; };
 		F06BEC3E21EDE46500A45E08 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06BEC3D21EDE46500A45E08 /* TodayViewController.swift */; };
 		F06BEC4121EDE46500A45E08 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06BEC3F21EDE46500A45E08 /* MainInterface.storyboard */; };
@@ -238,6 +240,15 @@
 		F0006EAF21EDE11F00307F88 /* PomodoroUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PomodoroUIKit.h; sourceTree = "<group>"; };
 		F0006EB021EDE11F00307F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F038205121F2202C000ACFD0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		F038207C21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		F038207D21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F038207E21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Settings.strings; sourceTree = "<group>"; };
+		F038207F21F47CE8000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F038208021F47CE8000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		F038208621F496C8000ACFD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		F038208821F49B3B000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ko; path = ko.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		F038208C21F4A486000ACFD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F038208E21F4A488000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F03E12DE21E36423003C2129 /* RippleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleButton.swift; sourceTree = "<group>"; };
 		F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExtensionTests.swift; sourceTree = "<group>"; };
 		F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.debug.xcconfig"; sourceTree = "<group>"; };
@@ -511,6 +522,8 @@
 				F0843CAF21CE5ADA00EDB65F /* LaunchScreen.storyboard */,
 				F0843CB221CE5ADA00EDB65F /* Info.plist */,
 				F0843CAA21CE5AD900EDB65F /* Pomodoro.xcdatamodeld */,
+				F038208721F496C8000ACFD0 /* Localizable.stringsdict */,
+				F038208D21F4A486000ACFD0 /* Localizable.strings */,
 			);
 			path = Pomodoro;
 			sourceTree = "<group>";
@@ -949,6 +962,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = F0843C9721CE5AD900EDB65F;
 			productRefGroup = F0843CA121CE5AD900EDB65F /* Products */;
@@ -994,7 +1008,9 @@
 			files = (
 				F0843CB121CE5ADA00EDB65F /* LaunchScreen.storyboard in Resources */,
 				F0843CA921CE5AD900EDB65F /* Main.storyboard in Resources */,
+				F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */,
 				F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */,
+				F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */,
 				F0D89E3021D8D7170011A0B7 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1422,10 +1438,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F038208721F496C8000ACFD0 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F038208621F496C8000ACFD0 /* en */,
+				F038208821F49B3B000ACFD0 /* ko */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+		F038208D21F4A486000ACFD0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F038208C21F4A486000ACFD0 /* en */,
+				F038208E21F4A488000ACFD0 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F06BEC3F21EDE46500A45E08 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F06BEC4021EDE46500A45E08 /* Base */,
+				F038208021F47CE8000ACFD0 /* ko */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -1434,6 +1469,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F0843CA821CE5AD900EDB65F /* Base */,
+				F038207C21F47CE7000ACFD0 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1442,6 +1478,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F0843CB021CE5ADA00EDB65F /* Base */,
+				F038207D21F47CE7000ACFD0 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1450,6 +1487,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F0D89E0921D8D6D80011A0B7 /* Base */,
+				F038207E21F47CE7000ACFD0 /* ko */,
 			);
 			name = Settings.storyboard;
 			sourceTree = "<group>";
@@ -1458,6 +1496,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F0D89E0E21D8D6DA0011A0B7 /* Base */,
+				F038207F21F47CE8000ACFD0 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1571,6 +1610,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1632,6 +1672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
