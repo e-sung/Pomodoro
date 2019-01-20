@@ -7,3 +7,6 @@
 */
 
 remainingTime = "남은 시간 : ";
+
+timerPaused = "타이머 멈춰있음.";
+timerRunning = "타이머 진행중.";

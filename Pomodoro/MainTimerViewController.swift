@@ -124,9 +124,9 @@ extension MainTimerViewController {
 
     func setAccessiblityHintOfRippleButton(given interval: Interval) {
         if interval.isActive {
-            rippleButton.accessibilityHint = "타이머가 진행중입니다. 다시 누르면 타이머를 멈춥니다."
+            rippleButton.accessibilityHint = NSLocalizedString("timerRunning", comment: "")
         } else {
-            rippleButton.accessibilityHint = "타이머가 멈춰 있습니다. 다시 누르면 타이머를 시작합니다."
+            rippleButton.accessibilityHint = NSLocalizedString("timerPaused", comment: "")
         }
     }
 
