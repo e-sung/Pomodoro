@@ -28,6 +28,7 @@ public class SettingsTableViewController: UITableViewController {
         if let nextVC = segue.destination as? PickerUpdater,
             let cellToUpdate = sender as? AmountSettingCell {
             nextVC.settingCell = cellToUpdate
+            nextVC.pickerTitle = cellToUpdate.titleLabel?.text
         }
     }
 

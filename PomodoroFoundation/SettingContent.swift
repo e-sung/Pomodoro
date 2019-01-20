@@ -42,9 +42,12 @@ public enum SettingContent: String {
 
     public func formattedString(given amount: Int) -> String? {
         switch self {
-        // TODO: Localize!
-        case .target: return "\(amount) intervals"
-        case .cycleForLongBreak: return "\(amount) cycles"
+        case .target:
+            let format = NSLocalizedString("cycle a day", comment: "")
+            return String.localizedStringWithFormat(format, amount)
+        case .cycleForLongBreak:
+            let format = NSLocalizedString("cycle after", comment: "")
+            return String.localizedStringWithFormat(format, amount)
         case .focusTime, .breakTime, .longBreakTime:
             return isDevMode ? amount.secondString : amount.minuteString
         default: return nil

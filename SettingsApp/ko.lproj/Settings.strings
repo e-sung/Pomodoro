@@ -8,56 +8,68 @@
 "4HW-nb-Icr.headerTitle" = "Developer Mode";
 
 /* Class = "UILabel"; text = "10 intervals per day"; ObjectID = "6k3-aY-KeI"; */
-"6k3-aY-KeI.text" = "10 intervals per day";
+"6k3-aY-KeI.text" = "하루에 10 회";
 
 /* Class = "UILabel"; text = "25 min"; ObjectID = "8bL-QF-UFN"; */
-"8bL-QF-UFN.text" = "25 min";
+"8bL-QF-UFN.text" = "25 분";
 
 /* Class = "UINavigationItem"; title = "Setting"; ObjectID = "9OE-Zi-TI3"; */
-"9OE-Zi-TI3.title" = "Setting";
+"9OE-Zi-TI3.title" = "설정";
 
 /* Class = "UILabel"; text = "Dev Mode"; ObjectID = "aHq-YK-gmO"; */
 "aHq-YK-gmO.text" = "Dev Mode";
 
 /* Class = "UILabel"; text = "Break Interval"; ObjectID = "C5o-z3-2rb"; */
-"C5o-z3-2rb.text" = "Break Interval";
+"C5o-z3-2rb.text" = "휴식 할 시간";
 
 /* Class = "UILabel"; text = "Ehnahced Focus Mode"; ObjectID = "de1-AY-qgq"; */
-"de1-AY-qgq.text" = "Ehnahced Focus Mode";
+"de1-AY-qgq.text" = "집중집중 모드";
 
 /* Class = "UILabel"; text = "5 min"; ObjectID = "dYI-fm-Mv6"; */
-"dYI-fm-Mv6.text" = "5 min";
+"dYI-fm-Mv6.text" = "5 분";
+
+/* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "E0h-4S-0bV"; */
+"E0h-4S-0bV.accessibilityHint" = "더블 탭 하여 값을 바꾸실 수 있습니다.";
 
 /* Class = "UITabBarItem"; title = "Setting"; ObjectID = "fCM-yK-58y"; */
-"fCM-yK-58y.title" = "Setting";
+"fCM-yK-58y.title" = "설정";
 
 /* Class = "UILabel"; text = "Focus Interval"; ObjectID = "fJd-L9-vKz"; */
-"fJd-L9-vKz.text" = "Focus Interval";
+"fJd-L9-vKz.text" = "집중 할 시간";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Flf-Tr-1Uu"; */
-"Flf-Tr-1Uu.normalTitle" = "Cancel";
+"Flf-Tr-1Uu.normalTitle" = "취소";
 
 /* Class = "UILabel"; text = "Long Break Interval"; ObjectID = "hBy-aH-aC1"; */
-"hBy-aH-aC1.text" = "Long Break Interval";
+"hBy-aH-aC1.text" = "길게 쉴 시간";
 
 /* Class = "UILabel"; text = "Never Sleep"; ObjectID = "HVr-XB-gsQ"; */
-"HVr-XB-gsQ.text" = "Never Sleep";
+"HVr-XB-gsQ.text" = "화면 끔 방지";
 
 /* Class = "UITableViewSection"; headerTitle = "Mode"; ObjectID = "IYp-Qa-I2i"; */
 "IYp-Qa-I2i.headerTitle" = "Mode";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "JeV-RZ-02j"; */
-"JeV-RZ-02j.normalTitle" = "Done";
+"JeV-RZ-02j.normalTitle" = "완료";
+
+/* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "m0o-Vv-D7S"; */
+"m0o-Vv-D7S.accessibilityHint" = "더블 탭 하여 값을 바꾸실 수 있습니다.";
 
 /* Class = "UITableViewSection"; headerTitle = "Basics"; ObjectID = "n4J-2h-7cO"; */
-"n4J-2h-7cO.headerTitle" = "Basics";
+"n4J-2h-7cO.headerTitle" = "기본 항목";
 
 /* Class = "UILabel"; text = "Count time only when clock is visible"; ObjectID = "pki-Wb-r14"; */
-"pki-Wb-r14.text" = "Count time only when clock is visible";
+"pki-Wb-r14.text" = "다른 앱을 켜고 있는 시간은 카운트하지 않습니다.";
 
 /* Class = "UILabel"; text = "Long Break After"; ObjectID = "Q4h-eJ-dZU"; */
-"Q4h-eJ-dZU.text" = "Long Break After";
+"Q4h-eJ-dZU.text" = "언제 길게 쉴까요?";
+
+/* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "qcy-rt-YTb"; */
+"qcy-rt-YTb.accessibilityHint" = "더블 탭 하여 값을 바꾸실 수 있습니다.";
+
+/* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "ri4-UQ-hVn"; */
+"ri4-UQ-hVn.accessibilityHint" = "더블 탭 하여 값을 바꾸실 수 있습니다.";
 
 /* Class = "UILabel"; text = "Target"; ObjectID = "tzY-ZG-wYf"; */
-"tzY-ZG-wYf.text" = "Target";
+"tzY-ZG-wYf.text" = "목표";
 

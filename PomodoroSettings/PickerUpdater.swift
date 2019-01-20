@@ -13,4 +13,5 @@ import UIKit
 protocol PickerUpdater: class {
     var pickerView: UIPickerView! { get }
     var settingCell: AmountSettingCell! { get set }
+    var pickerTitle: String? { get set }
 }

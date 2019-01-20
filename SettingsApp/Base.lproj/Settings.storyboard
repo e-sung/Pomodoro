@@ -50,7 +50,7 @@
                                                 <constraint firstItem="8bL-QF-UFN" firstAttribute="trailing" secondItem="qtv-UU-Yy3" secondAttribute="trailingMargin" id="zIw-df-V31"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="focusIntervalSetting">
+                                        <accessibility key="accessibilityConfiguration" hint="double tap to edit value" identifier="focusIntervalSetting">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                         <connections>
@@ -89,7 +89,9 @@
                                                 <constraint firstItem="dYI-fm-Mv6" firstAttribute="top" secondItem="Bee-14-68g" secondAttribute="topMargin" id="ztY-wX-iJE"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="breakIntervalSetting"/>
+                                        <accessibility key="accessibilityConfiguration" hint="double tap to edit value" identifier="breakIntervalSetting">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="amountLabel" destination="dYI-fm-Mv6" id="139-nE-Wlu"/>
                                             <outlet property="titleLabel" destination="C5o-z3-2rb" id="pg4-Y0-MXU"/>
@@ -126,7 +128,9 @@
                                                 <constraint firstItem="0cd-aT-D7P" firstAttribute="top" secondItem="QKo-1H-dGR" secondAttribute="topMargin" id="d8v-1o-coD"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="longBreakIntervalSetting"/>
+                                        <accessibility key="accessibilityConfiguration" hint="double tap to edit value" identifier="longBreakIntervalSetting">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="amountLabel" destination="0cd-aT-D7P" id="ZkA-ib-V2W"/>
                                             <outlet property="titleLabel" destination="hBy-aH-aC1" id="uMX-fs-oos"/>
@@ -140,14 +144,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Break After" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-eJ-dZU">
-                                                    <rect key="frame" x="16" y="11" width="265.5" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Long Break" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-eJ-dZU">
+                                                    <rect key="frame" x="16" y="11" width="223.5" height="22"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="3 cycles" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hJ-ru-pHQ">
-                                                    <rect key="frame" x="295.5" y="11" width="63.5" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="After 3 cycles" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hJ-ru-pHQ">
+                                                    <rect key="frame" x="253.5" y="11" width="105.5" height="22"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -163,7 +167,9 @@
                                                 <constraint firstItem="Q4h-eJ-dZU" firstAttribute="top" secondItem="g0C-8W-kwR" secondAttribute="topMargin" id="sdr-VJ-aKs"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="cycleForLongBreakSetting"/>
+                                        <accessibility key="accessibilityConfiguration" hint="double tap to edit value" identifier="cycleForLongBreakSetting">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="amountLabel" destination="3hJ-ru-pHQ" id="PRp-is-dRR"/>
                                             <outlet property="titleLabel" destination="Q4h-eJ-dZU" id="g1S-0c-FTW"/>
@@ -200,7 +206,9 @@
                                                 <constraint firstItem="6k3-aY-KeI" firstAttribute="trailing" secondItem="JsK-mh-E7g" secondAttribute="trailingMargin" id="znW-jn-fpO"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="targetSetting"/>
+                                        <accessibility key="accessibilityConfiguration" hint="double tap to edit value" identifier="targetSetting">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="amountLabel" destination="6k3-aY-KeI" id="Hhz-20-FLE"/>
                                             <outlet property="titleLabel" destination="tzY-ZG-wYf" id="jHh-yX-2o6"/>
@@ -372,7 +380,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daH-BX-ZCX" customClass="DesignableView" customModule="Pomodoro" customModuleProvider="target">
-                                <rect key="frame" x="28" y="437" width="319" height="216"/>
+                                <rect key="frame" x="28" y="387" width="319" height="201"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ps-C1-jbh">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="216"/>
@@ -383,8 +391,8 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="8Ps-C1-jbh" secondAttribute="trailing" id="LOa-Ne-Dxb"/>
                                     <constraint firstItem="8Ps-C1-jbh" firstAttribute="leading" secondItem="daH-BX-ZCX" secondAttribute="leading" id="P40-gA-axL"/>
-                                    <constraint firstAttribute="bottom" secondItem="8Ps-C1-jbh" secondAttribute="bottom" id="Zap-gg-POx"/>
                                     <constraint firstItem="8Ps-C1-jbh" firstAttribute="top" secondItem="daH-BX-ZCX" secondAttribute="top" id="cY0-V6-8T5"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Ps-C1-jbh" secondAttribute="bottom" constant="-15" id="v2h-kv-lwY"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -393,33 +401,37 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAI-5V-MJB" customClass="DesignableView" customModule="Pomodoro" customModuleProvider="target">
-                                <rect key="frame" x="28" y="399" width="319" height="30"/>
+                                <rect key="frame" x="28" y="342.5" width="319" height="36.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flf-Tr-1Uu">
-                                        <rect key="frame" x="7" y="0.0" width="48" height="30"/>
-                                        <state key="normal" title="Cancel"/>
-                                        <connections>
-                                            <action selector="cancelButtonClicked:" destination="vZM-ox-4fB" eventType="touchUpInside" id="3f1-5J-Qhj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeV-RZ-02j">
-                                        <rect key="frame" x="275" y="0.0" width="37" height="30"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="done button"/>
-                                        <state key="normal" title="Done"/>
-                                        <connections>
-                                            <action selector="doneButtonClicked:" destination="vZM-ox-4fB" eventType="touchUpInside" id="eD8-LI-1LP"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SwP-mY-fdf">
+                                        <rect key="frame" x="7" y="2" width="305" height="33"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Flf-Tr-1Uu">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="33"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelButtonClicked:" destination="vZM-ox-4fB" eventType="touchUpInside" id="3f1-5J-Qhj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeV-RZ-02j">
+                                                <rect key="frame" x="263" y="0.0" width="42" height="33"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="done button"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="doneButtonClicked:" destination="vZM-ox-4fB" eventType="touchUpInside" id="eD8-LI-1LP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Flf-Tr-1Uu" firstAttribute="top" secondItem="WAI-5V-MJB" secondAttribute="top" id="8uQ-jd-gjU"/>
-                                    <constraint firstAttribute="bottom" secondItem="Flf-Tr-1Uu" secondAttribute="bottom" id="CV1-ng-D3h"/>
-                                    <constraint firstAttribute="bottom" secondItem="JeV-RZ-02j" secondAttribute="bottom" id="IYs-Eu-izC"/>
-                                    <constraint firstItem="Flf-Tr-1Uu" firstAttribute="leading" secondItem="WAI-5V-MJB" secondAttribute="leading" constant="7" id="UYl-hL-64T"/>
-                                    <constraint firstItem="JeV-RZ-02j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Flf-Tr-1Uu" secondAttribute="trailing" constant="14" id="iFv-Js-tfP"/>
-                                    <constraint firstItem="JeV-RZ-02j" firstAttribute="top" secondItem="WAI-5V-MJB" secondAttribute="top" id="omQ-kN-lxY"/>
-                                    <constraint firstAttribute="trailing" secondItem="JeV-RZ-02j" secondAttribute="trailing" constant="7" id="zka-iK-S3V"/>
+                                    <constraint firstAttribute="height" secondItem="SwP-mY-fdf" secondAttribute="height" multiplier="1.1" id="AY4-oX-mjX"/>
+                                    <constraint firstItem="SwP-mY-fdf" firstAttribute="centerY" secondItem="WAI-5V-MJB" secondAttribute="centerY" id="Bom-tf-xhR"/>
+                                    <constraint firstItem="SwP-mY-fdf" firstAttribute="leading" secondItem="WAI-5V-MJB" secondAttribute="leading" constant="7" id="T2Y-4P-Z0v"/>
+                                    <constraint firstAttribute="trailing" secondItem="SwP-mY-fdf" secondAttribute="trailing" constant="7" id="f1V-tR-rZq"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -429,21 +441,32 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="8Ps-C1-jbh" firstAttribute="top" secondItem="WAI-5V-MJB" secondAttribute="bottom" constant="8" id="1FH-OZ-n4m"/>
                             <constraint firstItem="daH-BX-ZCX" firstAttribute="leading" secondItem="50X-2T-TNG" secondAttribute="leading" constant="28" id="U2c-Xy-c5c"/>
-                            <constraint firstAttribute="bottom" secondItem="daH-BX-ZCX" secondAttribute="bottom" constant="14" id="oIq-u2-3tq"/>
+                            <constraint firstItem="8Ps-C1-jbh" firstAttribute="bottom" secondItem="50X-2T-TNG" secondAttribute="bottom" constant="-15" id="Vq4-GC-h4W"/>
                             <constraint firstItem="50X-2T-TNG" firstAttribute="trailing" secondItem="daH-BX-ZCX" secondAttribute="trailing" constant="28" id="pD5-NC-xnI"/>
                             <constraint firstItem="WAI-5V-MJB" firstAttribute="trailing" secondItem="8Ps-C1-jbh" secondAttribute="trailing" id="pgT-KT-kSA"/>
                             <constraint firstItem="WAI-5V-MJB" firstAttribute="leading" secondItem="8Ps-C1-jbh" secondAttribute="leading" id="sfO-MU-6oF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="50X-2T-TNG"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0Aa-eh-JdA" appends="YES" id="RKX-Yv-dU8"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="buttonCancel" destination="Flf-Tr-1Uu" id="3EW-V7-49b"/>
+                        <outlet property="buttonDone" destination="JeV-RZ-02j" id="6r4-GX-IRB"/>
                         <outlet property="pickerView" destination="8Ps-C1-jbh" id="cjG-u8-Q41"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAd-1G-VOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0Aa-eh-JdA">
+                    <connections>
+                        <action selector="cancelButtonClicked:" destination="vZM-ox-4fB" id="7KQ-zU-ac6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3576.8000000000002" y="130.88455772113943"/>
         </scene>

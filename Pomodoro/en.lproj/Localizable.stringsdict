@@ -2,6 +2,62 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>cycle a day</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v_cycle_a_day@</string>
+		<key>v_cycle_a_day</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>other</key>
+			<string>%u cycles per day</string>
+			<key>one</key>
+			<string>1 cycle per day</string>
+		</dict>
+	</dict>
+	<key>cycle after</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v_cycle_after@</string>
+		<key>v_cycle_after</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>other</key>
+			<string>After %u Cycles</string>
+			<key>one</key>
+			<string>After 1 Cycle</string>
+		</dict>
+	</dict>
+	<key>cycles</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v_cycles@</string>
+		<key>v_cycles</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>other</key>
+			<string>%u cycles</string>
+			<key>many</key>
+			<string>%u cycles</string>
+			<key>few</key>
+			<string>%u cycles</string>
+			<key>two</key>
+			<string>%u cycles</string>
+			<key>one</key>
+			<string>one cycle</string>
+			<key>zero</key>
+			<string>zero cycle</string>
+		</dict>
+	</dict>
 	<key>completed cycle accessibility hint</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>

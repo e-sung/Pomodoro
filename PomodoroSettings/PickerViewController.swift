@@ -11,8 +11,11 @@ import UIKit
 
 public class PickerViewController: UIViewController, PickerUpdater {
     weak var settingCell: AmountSettingCell!
-
     @IBOutlet var pickerView: UIPickerView!
+    @IBOutlet var buttonDone: UIButton!
+    @IBOutlet var buttonCancel: UIButton!
+    var pickerTitle: String?
+
     public override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.dataSource = self
@@ -20,9 +23,10 @@ public class PickerViewController: UIViewController, PickerUpdater {
         guard let defaultAmount = retreiveAmount(for: settingCell.content, from: UserDefaults(suiteName: "group.pomodoro.com")!) else { return }
         guard let defaultRow = settingCell.content.rowFor(defaultAmount) else { return }
         pickerView.selectRow(defaultRow, inComponent: 0, animated: false)
+        view.accessibilityElements = [pickerView, buttonDone, buttonCancel]
     }
 
-    @IBAction func cancelButtonClicked(_: UIButton) {
+    @IBAction func cancelButtonClicked(_: Any) {
         close()
     }
 
