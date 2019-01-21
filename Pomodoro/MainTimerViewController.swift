@@ -83,12 +83,27 @@ public class MainTimerViewController: TimerViewController {
     public override func refreshViews(with interval: Interval) {
         super.refreshViews(with: interval)
         refreshMainSlider(with: interval)
-        
         showOrHideDashboardLabels(given: traitCollection.verticalSizeClass)
         labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
+        updateLabelTimeFocusedTodayContent()
         setAccessibilityHintOfLabelIntervalCount()
     }
     
+    func updateLabelTimeFocusedTodayContent() {
+        let focusMinute = Int(FocusInterval().targetMinute).minuteString
+        let focusCycle = currentCycleCount + 1
+        let totalTimeInterval = FocusInterval().targetSeconds * Double(focusCycle)
+        
+        let dateComponentFormatter = DateComponentsFormatter()
+        dateComponentFormatter.formattingContext = .middleOfSentence
+        dateComponentFormatter.unitsStyle = .short
+        dateComponentFormatter.allowedUnits = [.hour, .minute]
+        
+        let totalTimeString = dateComponentFormatter.string(from: totalTimeInterval)!
+        labelTimeFocusedTodayContent.text = "\(focusMinute) × \(focusCycle) = \(totalTimeString)"
+
+    }
+
     func showOrHideDashboardLabels(given verticalSizeClass: UIUserInterfaceSizeClass) {
         if verticalSizeClass == .compact {
             dashboardLabels.forEach({ $0.isHidden = (interval is FocusInterval) })
