@@ -24,6 +24,9 @@ public class PickerViewController: UIViewController, PickerUpdater {
         guard let defaultRow = settingCell.content.rowFor(defaultAmount) else { return }
         pickerView.selectRow(defaultRow, inComponent: 0, animated: false)
         view.accessibilityElements = [pickerView, buttonDone, buttonCancel]
+        if UIAccessibility.isReduceTransparencyEnabled {
+            view.backgroundColor = .gray
+        }
     }
 
     @IBAction func cancelButtonClicked(_: Any) {
