@@ -65,6 +65,12 @@ extension PickerViewController: UIPickerViewDataSource {
 extension PickerViewController: UIPickerViewDelegate {
     public func pickerView(_: UIPickerView, titleForRow row: Int, forComponent _: Int) -> String? {
         guard let amount = settingCell.content.amount(for: row) else { return nil }
-        return settingCell.content.formattedString(given: amount)
+        switch settingCell.content {
+        case .cycleForLongBreak, .target:
+            let format = NSLocalizedString("cycles", comment: "")
+            return String.localizedStringWithFormat(format, amount)
+        default:
+            return settingCell.content.formattedString(given: amount)
+        }
     }
 }
