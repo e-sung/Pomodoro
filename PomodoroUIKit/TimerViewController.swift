@@ -32,9 +32,11 @@ open class TimerViewController: UIViewController, IntervalDelegate {
         setUpFonts()
     }
 
-    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        setUpFonts()
+    open override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        coordinator.animate(alongsideTransition: nil, completion: { [weak self] _ in
+            self?.setUpFonts()
+        })
     }
 
     // MARK: Public Functions

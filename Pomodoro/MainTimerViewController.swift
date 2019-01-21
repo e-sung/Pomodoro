@@ -64,10 +64,10 @@ public class MainTimerViewController: TimerViewController {
     public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
 
+        dashboardLabels.forEach({ $0.alpha = CGFloat.leastNonzeroMagnitude })
         coordinator.animate(alongsideTransition: { [weak self] _ in
             guard let strongSelf = self else { return }
             var alphaOfEggWhite: CGFloat = 0
-            self?.showOrHideDashboardLabels(given: newCollection.verticalSizeClass)
             if newCollection.verticalSizeClass == .compact {
                 self?.mainSlider.trackFillColor = .clear
             } else {
@@ -77,6 +77,8 @@ public class MainTimerViewController: TimerViewController {
 
             self?.imageViewEggWhite.alpha = alphaOfEggWhite
             self?.mainSlider.setNeedsDisplay()
+        }, completion: { [weak self] _ in
+            self?.showOrHideDashboardLabels(given: newCollection.verticalSizeClass)
         })
     }
 
@@ -88,25 +90,28 @@ public class MainTimerViewController: TimerViewController {
         updateLabelTimeFocusedTodayContent()
         setAccessibilityHintOfLabelIntervalCount()
     }
-    
+
     func updateLabelTimeFocusedTodayContent() {
         let focusMinute = Int(FocusInterval().targetMinute).minuteString
         let focusCycle = currentCycleCount + 1
         let totalTimeInterval = FocusInterval().targetSeconds * Double(focusCycle)
-        
+
         let dateComponentFormatter = DateComponentsFormatter()
         dateComponentFormatter.formattingContext = .middleOfSentence
         dateComponentFormatter.unitsStyle = .short
         dateComponentFormatter.allowedUnits = [.hour, .minute]
-        
+
         let totalTimeString = dateComponentFormatter.string(from: totalTimeInterval)!
         labelTimeFocusedTodayContent.text = "\(focusMinute) × \(focusCycle) = \(totalTimeString)"
-
     }
 
     func showOrHideDashboardLabels(given verticalSizeClass: UIUserInterfaceSizeClass) {
         if verticalSizeClass == .compact {
             dashboardLabels.forEach({ $0.isHidden = (interval is FocusInterval) })
+            dashboardLabels.forEach({ $0.alpha = CGFloat.leastNonzeroMagnitude })
+            UIView.animate(withDuration: 0.4, animations: { [weak self] in
+                self?.dashboardLabels.forEach({ $0.alpha = 1 })
+            })
         } else {
             dashboardLabels.forEach({ $0.isHidden = true })
         }
