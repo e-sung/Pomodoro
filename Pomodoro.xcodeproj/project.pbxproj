@@ -478,15 +478,9 @@
 			isa = PBXGroup;
 			children = (
 				F0843CA221CE5AD900EDB65F /* Pomodoro */,
-				F0843CBA21CE5ADA00EDB65F /* PomodoroTests */,
-				F0843CC521CE5ADA00EDB65F /* PomodoroUITests */,
 				F087252121CF6719007EB27F /* PomodoroFoundation */,
-				F087252E21CF6719007EB27F /* PomodoroFoundationTests */,
-				F0D89DDB21D8D32B0011A0B7 /* PomodoroSettings */,
-				F0D89DE821D8D32B0011A0B7 /* PomodoroSettingsTests */,
-				F0D89E0321D8D6D80011A0B7 /* SettingsApp */,
-				F0D89E2321D8D6DA0011A0B7 /* SettingsAppUITests */,
 				F0006EAE21EDE11F00307F88 /* PomodoroUIKit */,
+				F0D89DDB21D8D32B0011A0B7 /* PomodoroSettings */,
 				F06BEC3C21EDE46500A45E08 /* Widget */,
 				F0843CA121CE5AD900EDB65F /* Products */,
 				FFD2E382A03C8A4D78114878 /* Pods */,
@@ -515,6 +509,8 @@
 		F0843CA221CE5AD900EDB65F /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				F0843CBA21CE5ADA00EDB65F /* PomodoroTests */,
+				F0843CC521CE5ADA00EDB65F /* PomodoroUITests */,
 				F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */,
 				F0843CA321CE5AD900EDB65F /* AppDelegate.swift */,
 				F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */,
@@ -550,6 +546,7 @@
 		F087252121CF6719007EB27F /* PomodoroFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				F087252E21CF6719007EB27F /* PomodoroFoundationTests */,
 				F087254921CF7192007EB27F /* Interval */,
 				F038205321F22484000ACFD0 /* Extension */,
 				F038205421F2249B000ACFD0 /* Singletons */,
@@ -592,6 +589,8 @@
 		F0D89DDB21D8D32B0011A0B7 /* PomodoroSettings */ = {
 			isa = PBXGroup;
 			children = (
+				F0D89E0321D8D6D80011A0B7 /* SettingsApp */,
+				F0D89DE821D8D32B0011A0B7 /* PomodoroSettingsTests */,
 				F0D89DCF21D8CF4A0011A0B7 /* PickerUpdater.swift */,
 				F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */,
 				F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */,
@@ -614,6 +613,7 @@
 		F0D89E0321D8D6D80011A0B7 /* SettingsApp */ = {
 			isa = PBXGroup;
 			children = (
+				F0D89E2321D8D6DA0011A0B7 /* SettingsAppUITests */,
 				F0D89E0421D8D6D80011A0B7 /* AppDelegate.swift */,
 				F0D89E0621D8D6D80011A0B7 /* ViewController.swift */,
 				F0D89E0821D8D6D80011A0B7 /* Settings.storyboard */,
