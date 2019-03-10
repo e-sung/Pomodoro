@@ -19,40 +19,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0g7-x8-gBi" userLabel="SectinoSeperator">
-                                <rect key="frame" x="0.0" y="92" width="375" height="28"/>
+                                <rect key="frame" x="0.0" y="98" width="375" height="28"/>
                                 <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="Nqr-lt-rfD"/>
                                 </constraints>
                             </view>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="He8-oq-pao">
-                                <rect key="frame" x="0.0" y="90" width="375" height="2"/>
+                                <rect key="frame" x="0.0" y="96" width="375" height="2"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="progressTintColor" red="0.96991807222366333" green="0.8094518780708313" blue="0.27433031797409058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="수학문제 풀기" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lgf-Ra-pAL" userLabel="labelCurrentTask">
-                                <rect key="frame" x="14" y="52" width="347" height="24"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="지금 하고 있는 일을 적으세요" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AXi-bg-wp8">
+                                <rect key="frame" x="14" y="34" width="347" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" smartInsertDeleteType="yes"/>
-                            </textField>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="지금 하고 있는 일을 적으세요"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.97647058823529409" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lgf-Ra-pAL" secondAttribute="trailing" constant="14" id="18s-kB-Qjn"/>
-                            <constraint firstItem="lgf-Ra-pAL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="Cj6-6w-whd"/>
+                            <constraint firstItem="AXi-bg-wp8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="HP0-vp-VwB"/>
                             <constraint firstItem="He8-oq-pao" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IxN-EE-inL"/>
                             <constraint firstItem="0g7-x8-gBi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JJw-qO-mU0"/>
                             <constraint firstItem="0g7-x8-gBi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P5t-xb-ola"/>
-                            <constraint firstItem="lgf-Ra-pAL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="TU6-Ng-wmu"/>
                             <constraint firstItem="0g7-x8-gBi" firstAttribute="top" secondItem="He8-oq-pao" secondAttribute="bottom" id="ZTD-uV-3Lz"/>
-                            <constraint firstItem="He8-oq-pao" firstAttribute="top" secondItem="lgf-Ra-pAL" secondAttribute="bottom" constant="14" id="ZtZ-Qe-NUR"/>
                             <constraint firstAttribute="trailing" secondItem="He8-oq-pao" secondAttribute="trailing" id="diB-6g-m5X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AXi-bg-wp8" secondAttribute="trailing" constant="14" id="fcr-0M-Ct3"/>
+                            <constraint firstItem="He8-oq-pao" firstAttribute="top" secondItem="AXi-bg-wp8" secondAttribute="bottom" constant="14" id="r2D-5r-NZO"/>
+                            <constraint firstItem="AXi-bg-wp8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="rxM-RC-e3f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="titleTextView" destination="AXi-bg-wp8" id="Nqp-iM-KWr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

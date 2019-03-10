@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import PomodoroFoundation
+import PomodoroUIKit
 
 class TimelineViewController: UIViewController {
-
+    @IBOutlet var titleTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        hideKeyboardWhenTappedAround()
+        titleTextView.text = ""
+        
     }
 
 

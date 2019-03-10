@@ -1,16 +1,20 @@
 PODS:
   - HGCircularSlider (2.0.0)
+  - "UITextView+Placeholder (1.2.1)"
 
 DEPENDENCIES:
   - HGCircularSlider
+  - "UITextView+Placeholder"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - HGCircularSlider
+    - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
   HGCircularSlider: 92e2ee098c814709f455b8f46cd9008147f6a869
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: 11b4b2265da9403fba9925fd6b39aa3e86ca9e23
+PODFILE CHECKSUM: 6b9587e8abb0e9e42ab3ef33573a74ff6cc6003e
 
 COCOAPODS: 1.5.3

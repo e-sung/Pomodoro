@@ -31,3 +31,8 @@ end
 target 'SettingsApp' do
   use_frameworks!
 end
+
+target 'TimeLine' do
+  use_frameworks!
+  pod 'UITextView+Placeholder'
+end
