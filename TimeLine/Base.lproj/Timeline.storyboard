@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BTw-69-Pmv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,60 +11,83 @@
     </dependencies>
     <scenes>
         <!--Timeline View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="19O-km-rkG">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TimelineViewController" customModule="TimeLine" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BTw-69-Pmv" customClass="TimelineViewController" customModule="TimeLine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kWo-P5-cSb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0g7-x8-gBi" userLabel="SectinoSeperator">
-                                <rect key="frame" x="0.0" y="98" width="375" height="28"/>
-                                <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="Nqr-lt-rfD"/>
-                                </constraints>
-                            </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="He8-oq-pao">
-                                <rect key="frame" x="0.0" y="96" width="375" height="2"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QCn-R0-chO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="progressTintColor" red="0.96991807222366333" green="0.8094518780708313" blue="0.27433031797409058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </progressView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="지금 하고 있는 일을 적으세요" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AXi-bg-wp8">
-                                <rect key="frame" x="14" y="34" width="347" height="48"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="지금 하고 있는 일을 적으세요"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Avs-Ma-hbd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="지금 하고 있는 일을 적으세요" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zuk-Ln-nQF">
+                                            <rect key="frame" x="14" y="14" width="347" height="57"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="지금 하고 있는 일을 적으세요"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Zuk-Ln-nQF" firstAttribute="top" secondItem="Avs-Ma-hbd" secondAttribute="top" constant="14" id="AGW-ch-A6r"/>
+                                        <constraint firstAttribute="bottom" secondItem="Zuk-Ln-nQF" secondAttribute="bottom" constant="14" id="Dhf-wQ-rsQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="Zuk-Ln-nQF" secondAttribute="trailing" constant="14" id="is5-lM-lGI"/>
+                                        <constraint firstItem="Zuk-Ln-nQF" firstAttribute="leading" secondItem="Avs-Ma-hbd" secondAttribute="leading" constant="14" id="wJU-Ii-uFb"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="progressCell" rowHeight="54" id="rcu-hR-J6o">
+                                        <rect key="frame" x="0.0" y="113" width="375" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rcu-hR-J6o" id="fVQ-5o-ko4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="irl-3d-VSk">
+                                                    <rect key="frame" x="0.0" y="51.5" width="375" height="2"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="progressTintColor" red="0.96991807220000004" green="0.80945187809999997" blue="0.27433031800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </progressView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="irl-3d-VSk" secondAttribute="trailing" id="JYv-kF-jm0"/>
+                                                <constraint firstAttribute="bottom" secondItem="irl-3d-VSk" secondAttribute="bottom" id="VJI-Ra-9Dw"/>
+                                                <constraint firstItem="irl-3d-VSk" firstAttribute="leading" secondItem="fVQ-5o-ko4" secondAttribute="leading" id="d0q-zi-z6A"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.97647058823529409" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99553269147872925" green="0.97759991884231567" blue="0.90587311983108521" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="AXi-bg-wp8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="HP0-vp-VwB"/>
-                            <constraint firstItem="He8-oq-pao" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IxN-EE-inL"/>
-                            <constraint firstItem="0g7-x8-gBi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JJw-qO-mU0"/>
-                            <constraint firstItem="0g7-x8-gBi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P5t-xb-ola"/>
-                            <constraint firstItem="0g7-x8-gBi" firstAttribute="top" secondItem="He8-oq-pao" secondAttribute="bottom" id="ZTD-uV-3Lz"/>
-                            <constraint firstAttribute="trailing" secondItem="He8-oq-pao" secondAttribute="trailing" id="diB-6g-m5X"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AXi-bg-wp8" secondAttribute="trailing" constant="14" id="fcr-0M-Ct3"/>
-                            <constraint firstItem="He8-oq-pao" firstAttribute="top" secondItem="AXi-bg-wp8" secondAttribute="bottom" constant="14" id="r2D-5r-NZO"/>
-                            <constraint firstItem="AXi-bg-wp8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="rxM-RC-e3f"/>
+                            <constraint firstItem="8oD-nb-jv1" firstAttribute="trailing" secondItem="QCn-R0-chO" secondAttribute="trailing" id="BC7-HJ-nbt"/>
+                            <constraint firstItem="QCn-R0-chO" firstAttribute="leading" secondItem="8oD-nb-jv1" secondAttribute="leading" id="OfO-uw-BJt"/>
+                            <constraint firstItem="8oD-nb-jv1" firstAttribute="bottom" secondItem="QCn-R0-chO" secondAttribute="bottom" id="n1k-wv-TIH"/>
+                            <constraint firstItem="QCn-R0-chO" firstAttribute="top" secondItem="8oD-nb-jv1" secondAttribute="top" id="vvR-XN-8pX"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="8oD-nb-jv1"/>
                     </view>
                     <connections>
-                        <outlet property="titleTextView" destination="AXi-bg-wp8" id="Nqp-iM-KWr"/>
+                        <outlet property="tableView" destination="QCn-R0-chO" id="avm-r9-Etd"/>
+                        <outlet property="titleTextView" destination="Zuk-Ln-nQF" id="pvY-G9-c4D"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbY-2D-LFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="132.68365817091455"/>
+            <point key="canvasLocation" x="831.20000000000005" y="128.18590704647679"/>
         </scene>
     </scenes>
 </document>
