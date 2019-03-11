@@ -1,14 +1,14 @@
 //
-//  TimeLineUITests.swift
-//  TimeLineUITests
+//  TimeLineAppUITests.swift
+//  TimeLineAppUITests
 //
-//  Created by 류성두 on 11/02/2019.
+//  Created by 류성두 on 11/03/2019.
 //  Copyright © 2019 Sungdoo. All rights reserved.
 //
 
 import XCTest
 
-class TimeLineUITests: XCTestCase {
+class TimeLineAppUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

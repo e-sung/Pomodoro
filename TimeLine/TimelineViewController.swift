@@ -10,39 +10,44 @@ import UIKit
 import PomodoroFoundation
 import PomodoroUIKit
 
-class TimelineViewController: UIViewController {
+open class TimelineViewController: UIViewController {
     @IBOutlet var titleTextView: UITextView!
     @IBOutlet var tableView: UITableView!
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-        titleTextView.text = ""
+//        titleTextView.text = ""
         tableView.dataSource = self
         tableView.delegate = self
-
+        let cellNib = UINib(nibName: TimeLineCell.className, bundle: Bundle(for: TimeLineCell.self))
+        tableView.register(cellNib, forCellReuseIdentifier: TimeLineCell.className)
     }
+    
 }
 
 extension TimelineViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.backgroundColor = .clear
-        cell.contentView.backgroundColor = .clear
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TimeLineCell.className) as! TimeLineCell
+        cell.isLastItem = indexPath.row == 2
         return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
 extension TimelineViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView(frame: CGRect.zero)
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "progressCell")
         return cell
     }

@@ -13,21 +13,12 @@
 		573947069AA98EF34B3762BD /* Pods_PomodoroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101F9904C4E8F233CC2A58C4 /* Pods_PomodoroTests.framework */; };
 		6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */; };
 		AB85875DAEB0C86F6C3B199F /* Pods_SettingsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0830BEE4EDED18599049A33F /* Pods_SettingsApp.framework */; };
-		B69CD40C89156015CB213F7F /* Pods_TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813C5E24848650E06431EA07 /* Pods_TimeLine.framework */; };
 		F0006EB121EDE11F00307F88 /* PomodoroUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F0006EAF21EDE11F00307F88 /* PomodoroUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0006EB921EDE13300307F88 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087250D21CF1264007EB27F /* DesignableView.swift */; };
 		F0006EBB21EDE13300307F88 /* RippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12DE21E36423003C2129 /* RippleButton.swift */; };
 		F0006EBC21EDE13300307F88 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0006EA421EDD8CF00307F88 /* TimerViewController.swift */; };
 		F0006EBD21EDE20400307F88 /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* BackgroundTimer.swift */; };
 		F0006EBE21EDE2AD00307F88 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
-		F01A200222118A7B001ECF23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A200122118A7B001ECF23 /* AppDelegate.swift */; };
-		F01A200422118A7B001ECF23 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A200322118A7B001ECF23 /* TimelineViewController.swift */; };
-		F01A200722118A7B001ECF23 /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F01A200522118A7B001ECF23 /* Timeline.storyboard */; };
-		F01A200A22118A7B001ECF23 /* TimeLine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F01A200822118A7B001ECF23 /* TimeLine.xcdatamodeld */; };
-		F01A200C22118A7C001ECF23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F01A200B22118A7C001ECF23 /* Assets.xcassets */; };
-		F01A200F22118A7C001ECF23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F01A200D22118A7C001ECF23 /* LaunchScreen.storyboard */; };
-		F01A201A22118A7C001ECF23 /* TimeLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A201922118A7C001ECF23 /* TimeLineTests.swift */; };
-		F01A202522118A7D001ECF23 /* TimeLineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A202422118A7D001ECF23 /* TimeLineUITests.swift */; };
 		F038205221F2202C000ACFD0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038205121F2202C000ACFD0 /* String+Extension.swift */; };
 		F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F038208721F496C8000ACFD0 /* Localizable.stringsdict */; };
 		F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F038208D21F4A486000ACFD0 /* Localizable.strings */; };
@@ -43,11 +34,6 @@
 		F06BEC5821EE0FA100A45E08 /* PomodoroSettings.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0D89DDA21D8D32B0011A0B7 /* PomodoroSettings.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F06BEC5C21EE0FA100A45E08 /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0775F362234DDB4003CF712 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0775F352234DDB4003CF712 /* UIViewController+Extension.swift */; };
-		F0775F372234DDED003CF712 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
-		F0775F382234DDED003CF712 /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F0775F3B2234DDED003CF712 /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
-		F0775F3C2234DDED003CF712 /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F0775F402234E1DA003CF712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA321CE5AD900EDB65F /* AppDelegate.swift */; };
 		F0843CA621CE5AD900EDB65F /* MainTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */; };
 		F0843CA921CE5AD900EDB65F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0843CA721CE5AD900EDB65F /* Main.storyboard */; };
@@ -72,6 +58,30 @@
 		F0880AA221D72AB3008AE79F /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA121D72AB3008AE79F /* NotificationManagerTests.swift */; };
 		F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
 		F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */; };
+		F0BA0DD022367B51004CD72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DCF22367B51004CD72C /* AppDelegate.swift */; };
+		F0BA0DD522367B51004CD72C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD322367B51004CD72C /* Main.storyboard */; };
+		F0BA0DD722367B53004CD72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD622367B53004CD72C /* Assets.xcassets */; };
+		F0BA0DDA22367B53004CD72C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD822367B53004CD72C /* LaunchScreen.storyboard */; };
+		F0BA0DE522367B53004CD72C /* TimeLineAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DE422367B53004CD72C /* TimeLineAppUITests.swift */; };
+		F0BA0DEF22367B74004CD72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
+		F0BA0DFE22367BB6004CD72C /* TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; };
+		F0BA0E0522367BB6004CD72C /* TimeLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0E0422367BB6004CD72C /* TimeLineTests.swift */; };
+		F0BA0E0722367BB6004CD72C /* TimeLine.h in Headers */ = {isa = PBXBuildFile; fileRef = F0BA0DF722367BB6004CD72C /* TimeLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0BA0E0A22367BB6004CD72C /* TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; };
+		F0BA0E0B22367BB6004CD72C /* TimeLine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0BA0E1222367BCB004CD72C /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A200322118A7B001ECF23 /* TimelineViewController.swift */; };
+		F0BA0E1322367BCB004CD72C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DC722367AB9004CD72C /* History.swift */; };
+		F0BA0E1422367BCB004CD72C /* TimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DC3223674E2004CD72C /* TimeLineCell.swift */; };
+		F0BA0E1522367C29004CD72C /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
+		F0BA0E1622367C29004CD72C /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
+		F0BA0E1722367DAE004CD72C /* TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; };
+		F0BA0E1822367DAE004CD72C /* TimeLine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0BA0E1C22367DCE004CD72C /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
+		F0BA0E1D22367DCE004CD72C /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0BA0E2022367DCF004CD72C /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
+		F0BA0E2122367DCF004CD72C /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0BA0E2422367DFB004CD72C /* TimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */; };
+		F0BA0E2522368145004CD72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F0D52F6721E8A8C900EFA205 /* SettingContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D52F6621E8A8C900EFA205 /* SettingContentTests.swift */; };
 		F0D89DD321D8D1DA0011A0B7 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC921D88C020011A0B7 /* Double+Extension.swift */; };
 		F0D89DD421D8D2690011A0B7 /* UserDefault+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DCB21D899160011A0B7 /* UserDefault+Extension.swift */; };
@@ -101,20 +111,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F01A201622118A7C001ECF23 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F01A1FFE22118A7B001ECF23;
-			remoteInfo = TimeLine;
-		};
-		F01A202122118A7D001ECF23 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F01A1FFE22118A7B001ECF23;
-			remoteInfo = TimeLine;
-		};
 		F06BEC4321EDE46500A45E08 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
@@ -137,20 +133,6 @@
 			remoteInfo = PomodoroSettings;
 		};
 		F06BEC5D21EE0FA100A45E08 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F0006EAC21EDE11F00307F88;
-			remoteInfo = PomodoroUIKit;
-		};
-		F0775F392234DDED003CF712 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F087251F21CF6719007EB27F;
-			remoteInfo = PomodoroFoundation;
-		};
-		F0775F3D2234DDED003CF712 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
 			proxyType = 1;
@@ -184,6 +166,55 @@
 			proxyType = 1;
 			remoteGlobalIDString = F0843C9F21CE5AD900EDB65F;
 			remoteInfo = Pomodoro;
+		};
+		F0BA0DE122367B53004CD72C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0BA0DCC22367B51004CD72C;
+			remoteInfo = TimeLineApp;
+		};
+		F0BA0DFF22367BB6004CD72C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0BA0DF422367BB6004CD72C;
+			remoteInfo = TimeLine;
+		};
+		F0BA0E0122367BB6004CD72C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0843C9F21CE5AD900EDB65F;
+			remoteInfo = Pomodoro;
+		};
+		F0BA0E0822367BB6004CD72C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0BA0DF422367BB6004CD72C;
+			remoteInfo = TimeLine;
+		};
+		F0BA0E1922367DAE004CD72C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0BA0DF422367BB6004CD72C;
+			remoteInfo = TimeLine;
+		};
+		F0BA0E1E22367DCE004CD72C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F087251F21CF6719007EB27F;
+			remoteInfo = PomodoroFoundation;
+		};
+		F0BA0E2222367DCF004CD72C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0006EAC21EDE11F00307F88;
+			remoteInfo = PomodoroUIKit;
 		};
 		F0D89DE421D8D32B0011A0B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -241,20 +272,22 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F06BEC5821EE0FA100A45E08 /* PomodoroSettings.framework in Embed Frameworks */,
+				F0BA0E0B22367BB6004CD72C /* TimeLine.framework in Embed Frameworks */,
 				F06BEC5C21EE0FA100A45E08 /* PomodoroUIKit.framework in Embed Frameworks */,
 				F06BEC5421EE0FA100A45E08 /* PomodoroFoundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F0775F3F2234DDEE003CF712 /* Embed Frameworks */ = {
+		F0BA0E1B22367DAE004CD72C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F0775F3C2234DDED003CF712 /* PomodoroUIKit.framework in Embed Frameworks */,
-				F0775F382234DDED003CF712 /* PomodoroFoundation.framework in Embed Frameworks */,
+				F0BA0E1D22367DCE004CD72C /* PomodoroFoundation.framework in Embed Frameworks */,
+				F0BA0E2122367DCF004CD72C /* PomodoroUIKit.framework in Embed Frameworks */,
+				F0BA0E1822367DAE004CD72C /* TimeLine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,20 +331,7 @@
 		F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PomodoroUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0006EAF21EDE11F00307F88 /* PomodoroUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PomodoroUIKit.h; sourceTree = "<group>"; };
 		F0006EB021EDE11F00307F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F01A1FFF22118A7B001ECF23 /* TimeLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F01A200122118A7B001ECF23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F01A200322118A7B001ECF23 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
-		F01A200622118A7B001ECF23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Timeline.storyboard; sourceTree = "<group>"; };
-		F01A200922118A7B001ECF23 /* TimeLine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeLine.xcdatamodel; sourceTree = "<group>"; };
-		F01A200B22118A7C001ECF23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F01A200E22118A7C001ECF23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F01A201022118A7C001ECF23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F01A201522118A7C001ECF23 /* TimeLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F01A201922118A7C001ECF23 /* TimeLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTests.swift; sourceTree = "<group>"; };
-		F01A201B22118A7C001ECF23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F01A202022118A7C001ECF23 /* TimeLineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F01A202422118A7D001ECF23 /* TimeLineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineUITests.swift; sourceTree = "<group>"; };
-		F01A202622118A7D001ECF23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F038205121F2202C000ACFD0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F038207C21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		F038207D21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -368,6 +388,24 @@
 		F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTimeTests.swift; sourceTree = "<group>"; };
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
 		F09422EB21D2F60700134C63 /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
+		F0BA0DC3223674E2004CD72C /* TimeLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineCell.swift; sourceTree = "<group>"; };
+		F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeLineCell.xib; sourceTree = "<group>"; };
+		F0BA0DC722367AB9004CD72C /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		F0BA0DCD22367B51004CD72C /* TimeLineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0BA0DCF22367B51004CD72C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0BA0DD422367B51004CD72C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0BA0DD622367B53004CD72C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0BA0DD922367B53004CD72C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0BA0DDB22367B53004CD72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0BA0DE022367B53004CD72C /* TimeLineAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLineAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0BA0DE422367B53004CD72C /* TimeLineAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineAppUITests.swift; sourceTree = "<group>"; };
+		F0BA0DE622367B53004CD72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0BA0DF522367BB6004CD72C /* TimeLine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeLine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0BA0DF722367BB6004CD72C /* TimeLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeLine.h; sourceTree = "<group>"; };
+		F0BA0DF822367BB6004CD72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0BA0DFD22367BB6004CD72C /* TimeLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0BA0E0422367BB6004CD72C /* TimeLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTests.swift; sourceTree = "<group>"; };
+		F0BA0E0622367BB6004CD72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0D52F6621E8A8C900EFA205 /* SettingContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentTests.swift; sourceTree = "<group>"; };
 		F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
@@ -403,30 +441,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F01A1FFC22118A7B001ECF23 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0775F3B2234DDED003CF712 /* PomodoroUIKit.framework in Frameworks */,
-				F0775F372234DDED003CF712 /* PomodoroFoundation.framework in Frameworks */,
-				B69CD40C89156015CB213F7F /* Pods_TimeLine.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F01A201222118A7C001ECF23 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F01A201D22118A7C001ECF23 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F06BEC3621EDE46500A45E08 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */,
+				F0BA0E0A22367BB6004CD72C /* TimeLine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +489,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				F087252921CF6719007EB27F /* PomodoroFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DCA22367B51004CD72C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BA0E1C22367DCE004CD72C /* PomodoroFoundation.framework in Frameworks */,
+				F0BA0E2022367DCF004CD72C /* PomodoroUIKit.framework in Frameworks */,
+				F0BA0E1722367DAE004CD72C /* TimeLine.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DDD22367B53004CD72C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DF222367BB6004CD72C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BA0E1522367C29004CD72C /* PomodoroFoundation.framework in Frameworks */,
+				F0BA0E1622367C29004CD72C /* PomodoroUIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DFA22367BB6004CD72C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BA0DFE22367BB6004CD72C /* TimeLine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,40 +591,6 @@
 			path = PomodoroUIKit;
 			sourceTree = "<group>";
 		};
-		F01A200022118A7B001ECF23 /* TimeLine */ = {
-			isa = PBXGroup;
-			children = (
-				F01A201822118A7C001ECF23 /* TimeLineTests */,
-				F01A202322118A7D001ECF23 /* TimeLineUITests */,
-				F01A200122118A7B001ECF23 /* AppDelegate.swift */,
-				F01A200322118A7B001ECF23 /* TimelineViewController.swift */,
-				F01A200522118A7B001ECF23 /* Timeline.storyboard */,
-				F01A200B22118A7C001ECF23 /* Assets.xcassets */,
-				F01A200D22118A7C001ECF23 /* LaunchScreen.storyboard */,
-				F01A201022118A7C001ECF23 /* Info.plist */,
-				F01A200822118A7B001ECF23 /* TimeLine.xcdatamodeld */,
-			);
-			path = TimeLine;
-			sourceTree = "<group>";
-		};
-		F01A201822118A7C001ECF23 /* TimeLineTests */ = {
-			isa = PBXGroup;
-			children = (
-				F01A201922118A7C001ECF23 /* TimeLineTests.swift */,
-				F01A201B22118A7C001ECF23 /* Info.plist */,
-			);
-			path = TimeLineTests;
-			sourceTree = "<group>";
-		};
-		F01A202322118A7D001ECF23 /* TimeLineUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F01A202422118A7D001ECF23 /* TimeLineUITests.swift */,
-				F01A202622118A7D001ECF23 /* Info.plist */,
-			);
-			path = TimeLineUITests;
-			sourceTree = "<group>";
-		};
 		F038205321F22484000ACFD0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -615,7 +630,9 @@
 				F0006EAE21EDE11F00307F88 /* PomodoroUIKit */,
 				F0D89DDB21D8D32B0011A0B7 /* PomodoroSettings */,
 				F06BEC3C21EDE46500A45E08 /* Widget */,
-				F01A200022118A7B001ECF23 /* TimeLine */,
+				F0BA0DCE22367B51004CD72C /* TimeLineApp */,
+				F0BA0DF622367BB6004CD72C /* TimeLine */,
+				F0BA0E0322367BB6004CD72C /* TimeLineTests */,
 				F0843CA121CE5AD900EDB65F /* Products */,
 				FFD2E382A03C8A4D78114878 /* Pods */,
 				647AC616D0FE392B89E1E767 /* Frameworks */,
@@ -636,9 +653,10 @@
 				F0D89E2021D8D6DA0011A0B7 /* SettingsAppUITests.xctest */,
 				F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */,
 				F06BEC3921EDE46500A45E08 /* Widget.appex */,
-				F01A1FFF22118A7B001ECF23 /* TimeLine.app */,
-				F01A201522118A7C001ECF23 /* TimeLineTests.xctest */,
-				F01A202022118A7C001ECF23 /* TimeLineUITests.xctest */,
+				F0BA0DCD22367B51004CD72C /* TimeLineApp.app */,
+				F0BA0DE022367B53004CD72C /* TimeLineAppUITests.xctest */,
+				F0BA0DF522367BB6004CD72C /* TimeLine.framework */,
+				F0BA0DFD22367BB6004CD72C /* TimeLineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -721,6 +739,50 @@
 				F0880A9D21D71FBD008AE79F /* LongBreakInterval.swift */,
 			);
 			path = Interval;
+			sourceTree = "<group>";
+		};
+		F0BA0DCE22367B51004CD72C /* TimeLineApp */ = {
+			isa = PBXGroup;
+			children = (
+				F0BA0DE322367B53004CD72C /* TimeLineAppUITests */,
+				F0BA0DCF22367B51004CD72C /* AppDelegate.swift */,
+				F0BA0DD322367B51004CD72C /* Main.storyboard */,
+				F0BA0DD622367B53004CD72C /* Assets.xcassets */,
+				F0BA0DD822367B53004CD72C /* LaunchScreen.storyboard */,
+				F0BA0DDB22367B53004CD72C /* Info.plist */,
+			);
+			path = TimeLineApp;
+			sourceTree = "<group>";
+		};
+		F0BA0DE322367B53004CD72C /* TimeLineAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F0BA0DE422367B53004CD72C /* TimeLineAppUITests.swift */,
+				F0BA0DE622367B53004CD72C /* Info.plist */,
+			);
+			path = TimeLineAppUITests;
+			sourceTree = "<group>";
+		};
+		F0BA0DF622367BB6004CD72C /* TimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				F0BA0DC722367AB9004CD72C /* History.swift */,
+				F01A200322118A7B001ECF23 /* TimelineViewController.swift */,
+				F0BA0DC3223674E2004CD72C /* TimeLineCell.swift */,
+				F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */,
+				F0BA0DF722367BB6004CD72C /* TimeLine.h */,
+				F0BA0DF822367BB6004CD72C /* Info.plist */,
+			);
+			path = TimeLine;
+			sourceTree = "<group>";
+		};
+		F0BA0E0322367BB6004CD72C /* TimeLineTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0BA0E0422367BB6004CD72C /* TimeLineTests.swift */,
+				F0BA0E0622367BB6004CD72C /* Info.plist */,
+			);
+			path = TimeLineTests;
 			sourceTree = "<group>";
 		};
 		F0D89DDB21D8D32B0011A0B7 /* PomodoroSettings */ = {
@@ -810,6 +872,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0BA0DF022367BB6004CD72C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BA0E0722367BB6004CD72C /* TimeLine.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0D89DD521D8D32B0011A0B7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -838,64 +908,6 @@
 			productName = PomodoroUIKit;
 			productReference = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		F01A1FFE22118A7B001ECF23 /* TimeLine */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F01A202D22118A7D001ECF23 /* Build configuration list for PBXNativeTarget "TimeLine" */;
-			buildPhases = (
-				DB7A577F3893BE754A82CA69 /* [CP] Check Pods Manifest.lock */,
-				F01A1FFB22118A7B001ECF23 /* Sources */,
-				F01A1FFC22118A7B001ECF23 /* Frameworks */,
-				F01A1FFD22118A7B001ECF23 /* Resources */,
-				F0775F3F2234DDEE003CF712 /* Embed Frameworks */,
-				F42061D1D7F8D69C8C914CFF /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F0775F3A2234DDED003CF712 /* PBXTargetDependency */,
-				F0775F3E2234DDED003CF712 /* PBXTargetDependency */,
-			);
-			name = TimeLine;
-			productName = TimeLine;
-			productReference = F01A1FFF22118A7B001ECF23 /* TimeLine.app */;
-			productType = "com.apple.product-type.application";
-		};
-		F01A201422118A7C001ECF23 /* TimeLineTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F01A202E22118A7D001ECF23 /* Build configuration list for PBXNativeTarget "TimeLineTests" */;
-			buildPhases = (
-				F01A201122118A7C001ECF23 /* Sources */,
-				F01A201222118A7C001ECF23 /* Frameworks */,
-				F01A201322118A7C001ECF23 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F01A201722118A7C001ECF23 /* PBXTargetDependency */,
-			);
-			name = TimeLineTests;
-			productName = TimeLineTests;
-			productReference = F01A201522118A7C001ECF23 /* TimeLineTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F01A201F22118A7C001ECF23 /* TimeLineUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F01A202F22118A7D001ECF23 /* Build configuration list for PBXNativeTarget "TimeLineUITests" */;
-			buildPhases = (
-				F01A201C22118A7C001ECF23 /* Sources */,
-				F01A201D22118A7C001ECF23 /* Frameworks */,
-				F01A201E22118A7C001ECF23 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F01A202222118A7D001ECF23 /* PBXTargetDependency */,
-			);
-			name = TimeLineUITests;
-			productName = TimeLineUITests;
-			productReference = F01A202022118A7C001ECF23 /* TimeLineUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		F06BEC3821EDE46500A45E08 /* Widget */ = {
 			isa = PBXNativeTarget;
@@ -934,6 +946,7 @@
 				F06BEC5621EE0FA100A45E08 /* PBXTargetDependency */,
 				F06BEC5A21EE0FA100A45E08 /* PBXTargetDependency */,
 				F06BEC5E21EE0FA100A45E08 /* PBXTargetDependency */,
+				F0BA0E0922367BB6004CD72C /* PBXTargetDependency */,
 			);
 			name = Pomodoro;
 			productName = Pomodoro;
@@ -1014,6 +1027,82 @@
 			name = PomodoroFoundationTests;
 			productName = PomodoroFoundationTests;
 			productReference = F087252821CF6719007EB27F /* PomodoroFoundationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F0BA0DCC22367B51004CD72C /* TimeLineApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0BA0DE722367B53004CD72C /* Build configuration list for PBXNativeTarget "TimeLineApp" */;
+			buildPhases = (
+				F0BA0DC922367B51004CD72C /* Sources */,
+				F0BA0DCA22367B51004CD72C /* Frameworks */,
+				F0BA0DCB22367B51004CD72C /* Resources */,
+				F0BA0E1B22367DAE004CD72C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0BA0E1A22367DAE004CD72C /* PBXTargetDependency */,
+				F0BA0E1F22367DCE004CD72C /* PBXTargetDependency */,
+				F0BA0E2322367DCF004CD72C /* PBXTargetDependency */,
+			);
+			name = TimeLineApp;
+			productName = TimeLineApp;
+			productReference = F0BA0DCD22367B51004CD72C /* TimeLineApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F0BA0DDF22367B53004CD72C /* TimeLineAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0BA0DEA22367B53004CD72C /* Build configuration list for PBXNativeTarget "TimeLineAppUITests" */;
+			buildPhases = (
+				F0BA0DDC22367B53004CD72C /* Sources */,
+				F0BA0DDD22367B53004CD72C /* Frameworks */,
+				F0BA0DDE22367B53004CD72C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0BA0DE222367B53004CD72C /* PBXTargetDependency */,
+			);
+			name = TimeLineAppUITests;
+			productName = TimeLineAppUITests;
+			productReference = F0BA0DE022367B53004CD72C /* TimeLineAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F0BA0DF422367BB6004CD72C /* TimeLine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0BA0E0C22367BB6004CD72C /* Build configuration list for PBXNativeTarget "TimeLine" */;
+			buildPhases = (
+				F0BA0DF022367BB6004CD72C /* Headers */,
+				F0BA0DF122367BB6004CD72C /* Sources */,
+				F0BA0DF222367BB6004CD72C /* Frameworks */,
+				F0BA0DF322367BB6004CD72C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeLine;
+			productName = TimeLine;
+			productReference = F0BA0DF522367BB6004CD72C /* TimeLine.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F0BA0DFC22367BB6004CD72C /* TimeLineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0BA0E0F22367BB6004CD72C /* Build configuration list for PBXNativeTarget "TimeLineTests" */;
+			buildPhases = (
+				F0BA0DF922367BB6004CD72C /* Sources */,
+				F0BA0DFA22367BB6004CD72C /* Frameworks */,
+				F0BA0DFB22367BB6004CD72C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0BA0E0022367BB6004CD72C /* PBXTargetDependency */,
+				F0BA0E0222367BB6004CD72C /* PBXTargetDependency */,
+			);
+			name = TimeLineTests;
+			productName = TimeLineTests;
+			productReference = F0BA0DFD22367BB6004CD72C /* TimeLineTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F0D89DD921D8D32B0011A0B7 /* PomodoroSettings */ = {
@@ -1106,17 +1195,6 @@
 					F0006EAC21EDE11F00307F88 = {
 						CreatedOnToolsVersion = 10.1;
 					};
-					F01A1FFE22118A7B001ECF23 = {
-						CreatedOnToolsVersion = 10.1;
-					};
-					F01A201422118A7C001ECF23 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = F01A1FFE22118A7B001ECF23;
-					};
-					F01A201F22118A7C001ECF23 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = F01A1FFE22118A7B001ECF23;
-					};
 					F06BEC3821EDE46500A45E08 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -1145,6 +1223,20 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					F087252721CF6719007EB27F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F0843C9F21CE5AD900EDB65F;
+					};
+					F0BA0DCC22367B51004CD72C = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F0BA0DDF22367B53004CD72C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F0BA0DCC22367B51004CD72C;
+					};
+					F0BA0DF422367BB6004CD72C = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F0BA0DFC22367BB6004CD72C = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = F0843C9F21CE5AD900EDB65F;
 					};
@@ -1189,9 +1281,10 @@
 				F0D89E0121D8D6D80011A0B7 /* SettingsApp */,
 				F0D89E1F21D8D6DA0011A0B7 /* SettingsAppUITests */,
 				F0006EAC21EDE11F00307F88 /* PomodoroUIKit */,
-				F01A1FFE22118A7B001ECF23 /* TimeLine */,
-				F01A201422118A7C001ECF23 /* TimeLineTests */,
-				F01A201F22118A7C001ECF23 /* TimeLineUITests */,
+				F0BA0DCC22367B51004CD72C /* TimeLineApp */,
+				F0BA0DDF22367B53004CD72C /* TimeLineAppUITests */,
+				F0BA0DF422367BB6004CD72C /* TimeLine */,
+				F0BA0DFC22367BB6004CD72C /* TimeLineTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1202,31 +1295,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F01A1FFD22118A7B001ECF23 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F01A200F22118A7C001ECF23 /* LaunchScreen.storyboard in Resources */,
-				F01A200C22118A7C001ECF23 /* Assets.xcassets in Resources */,
-				F0775F402234E1DA003CF712 /* Assets.xcassets in Resources */,
-				F01A200722118A7B001ECF23 /* Timeline.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F01A201322118A7C001ECF23 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F01A201E22118A7C001ECF23 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1276,6 +1344,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F087252621CF6719007EB27F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DCB22367B51004CD72C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BA0DDA22367B53004CD72C /* LaunchScreen.storyboard in Resources */,
+				F0BA0DD722367B53004CD72C /* Assets.xcassets in Resources */,
+				F0BA0DEF22367B74004CD72C /* Assets.xcassets in Resources */,
+				F0BA0DD522367B51004CD72C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DDE22367B53004CD72C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DF322367BB6004CD72C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BA0E2522368145004CD72C /* Assets.xcassets in Resources */,
+				F0BA0E2422367DFB004CD72C /* TimeLineCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DFB22367BB6004CD72C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1448,28 +1550,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DB7A577F3893BE754A82CA69 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TimeLine-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F02C786521E4F27D00C9E21C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1509,28 +1589,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F42061D1D7F8D69C8C914CFF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TimeLine/Pods-TimeLine-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLine/Pods-TimeLine-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1542,32 +1600,6 @@
 				F0006EBC21EDE13300307F88 /* TimerViewController.swift in Sources */,
 				F0006EBB21EDE13300307F88 /* RippleButton.swift in Sources */,
 				F0006EB921EDE13300307F88 /* DesignableView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F01A1FFB22118A7B001ECF23 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F01A200A22118A7B001ECF23 /* TimeLine.xcdatamodeld in Sources */,
-				F01A200422118A7B001ECF23 /* TimelineViewController.swift in Sources */,
-				F01A200222118A7B001ECF23 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F01A201122118A7C001ECF23 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F01A201A22118A7C001ECF23 /* TimeLineTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F01A201C22118A7C001ECF23 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F01A202522118A7D001ECF23 /* TimeLineUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1640,6 +1672,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0BA0DC922367B51004CD72C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BA0DD022367B51004CD72C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DDC22367B53004CD72C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BA0DE522367B53004CD72C /* TimeLineAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DF122367BB6004CD72C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BA0E1422367BCB004CD72C /* TimeLineCell.swift in Sources */,
+				F0BA0E1322367BCB004CD72C /* History.swift in Sources */,
+				F0BA0E1222367BCB004CD72C /* TimelineViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0BA0DF922367BB6004CD72C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0BA0E0522367BB6004CD72C /* TimeLineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0D89DD621D8D32B0011A0B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1679,16 +1745,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F01A201722118A7C001ECF23 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F01A1FFE22118A7B001ECF23 /* TimeLine */;
-			targetProxy = F01A201622118A7C001ECF23 /* PBXContainerItemProxy */;
-		};
-		F01A202222118A7D001ECF23 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F01A1FFE22118A7B001ECF23 /* TimeLine */;
-			targetProxy = F01A202122118A7D001ECF23 /* PBXContainerItemProxy */;
-		};
 		F06BEC4421EDE46500A45E08 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F06BEC3821EDE46500A45E08 /* Widget */;
@@ -1709,16 +1765,6 @@
 			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
 			targetProxy = F06BEC5D21EE0FA100A45E08 /* PBXContainerItemProxy */;
 		};
-		F0775F3A2234DDED003CF712 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F087251F21CF6719007EB27F /* PomodoroFoundation */;
-			targetProxy = F0775F392234DDED003CF712 /* PBXContainerItemProxy */;
-		};
-		F0775F3E2234DDED003CF712 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
-			targetProxy = F0775F3D2234DDED003CF712 /* PBXContainerItemProxy */;
-		};
 		F0843CB921CE5ADA00EDB65F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F0843C9F21CE5AD900EDB65F /* Pomodoro */;
@@ -1738,6 +1784,41 @@
 			isa = PBXTargetDependency;
 			target = F0843C9F21CE5AD900EDB65F /* Pomodoro */;
 			targetProxy = F087252C21CF6719007EB27F /* PBXContainerItemProxy */;
+		};
+		F0BA0DE222367B53004CD72C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0BA0DCC22367B51004CD72C /* TimeLineApp */;
+			targetProxy = F0BA0DE122367B53004CD72C /* PBXContainerItemProxy */;
+		};
+		F0BA0E0022367BB6004CD72C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0BA0DF422367BB6004CD72C /* TimeLine */;
+			targetProxy = F0BA0DFF22367BB6004CD72C /* PBXContainerItemProxy */;
+		};
+		F0BA0E0222367BB6004CD72C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0843C9F21CE5AD900EDB65F /* Pomodoro */;
+			targetProxy = F0BA0E0122367BB6004CD72C /* PBXContainerItemProxy */;
+		};
+		F0BA0E0922367BB6004CD72C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0BA0DF422367BB6004CD72C /* TimeLine */;
+			targetProxy = F0BA0E0822367BB6004CD72C /* PBXContainerItemProxy */;
+		};
+		F0BA0E1A22367DAE004CD72C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0BA0DF422367BB6004CD72C /* TimeLine */;
+			targetProxy = F0BA0E1922367DAE004CD72C /* PBXContainerItemProxy */;
+		};
+		F0BA0E1F22367DCE004CD72C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F087251F21CF6719007EB27F /* PomodoroFoundation */;
+			targetProxy = F0BA0E1E22367DCE004CD72C /* PBXContainerItemProxy */;
+		};
+		F0BA0E2322367DCF004CD72C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
+			targetProxy = F0BA0E2222367DCF004CD72C /* PBXContainerItemProxy */;
 		};
 		F0D89DE521D8D32B0011A0B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1767,22 +1848,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F01A200522118A7B001ECF23 /* Timeline.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F01A200622118A7B001ECF23 /* Base */,
-			);
-			name = Timeline.storyboard;
-			sourceTree = "<group>";
-		};
-		F01A200D22118A7C001ECF23 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F01A200E22118A7C001ECF23 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		F038208721F496C8000ACFD0 /* Localizable.stringsdict */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1828,6 +1893,22 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		F0BA0DD322367B51004CD72C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0BA0DD422367B51004CD72C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0BA0DD822367B53004CD72C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0BA0DD922367B53004CD72C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		F0D89E0821D8D6D80011A0B7 /* Settings.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1857,7 +1938,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7KT5X239S9;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1887,7 +1968,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7KT5X239S9;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1906,130 +1987,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F01A202722118A7D001ECF23 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1FB4F20DD28D948771C454E /* Pods-TimeLine.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = TimeLine/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLine;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		F01A202822118A7D001ECF23 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24A49FD54A7BCD2A3751E145 /* Pods-TimeLine.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = TimeLine/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLine;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		F01A202922118A7D001ECF23 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2742L244BA;
-				INFOPLIST_FILE = TimeLineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLineTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeLine.app/TimeLine";
-			};
-			name = Debug;
-		};
-		F01A202A22118A7D001ECF23 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2742L244BA;
-				INFOPLIST_FILE = TimeLineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLineTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeLine.app/TimeLine";
-			};
-			name = Release;
-		};
-		F01A202B22118A7D001ECF23 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2742L244BA;
-				INFOPLIST_FILE = TimeLineUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLineUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TimeLine;
-			};
-			name = Debug;
-		};
-		F01A202C22118A7D001ECF23 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2742L244BA;
-				INFOPLIST_FILE = TimeLineUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLineUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TimeLine;
 			};
 			name = Release;
 		};
@@ -2332,7 +2289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7KT5X239S9;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2363,7 +2320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7KT5X239S9;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2418,6 +2375,184 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroFoundationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Pomodoro";
+			};
+			name = Release;
+		};
+		F0BA0DE822367B53004CD72C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				INFOPLIST_FILE = TimeLineApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLineApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0BA0DE922367B53004CD72C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				INFOPLIST_FILE = TimeLineApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLineApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F0BA0DEB22367B53004CD72C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				INFOPLIST_FILE = TimeLineAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLineAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TimeLineApp;
+			};
+			name = Debug;
+		};
+		F0BA0DEC22367B53004CD72C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				INFOPLIST_FILE = TimeLineAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLineAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TimeLineApp;
+			};
+			name = Release;
+		};
+		F0BA0E0D22367BB6004CD72C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TimeLine/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLine;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F0BA0E0E22367BB6004CD72C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TimeLine/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLine;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F0BA0E1022367BB6004CD72C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				INFOPLIST_FILE = TimeLineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLineTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Pomodoro";
+			};
+			name = Debug;
+		};
+		F0BA0E1122367BB6004CD72C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				INFOPLIST_FILE = TimeLineTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.TimeLineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2536,6 +2671,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = SettingsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2556,6 +2692,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = SettingsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2615,33 +2752,6 @@
 			buildConfigurations = (
 				F0006EB721EDE11F00307F88 /* Debug */,
 				F0006EB821EDE11F00307F88 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F01A202D22118A7D001ECF23 /* Build configuration list for PBXNativeTarget "TimeLine" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F01A202722118A7D001ECF23 /* Debug */,
-				F01A202822118A7D001ECF23 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F01A202E22118A7D001ECF23 /* Build configuration list for PBXNativeTarget "TimeLineTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F01A202922118A7D001ECF23 /* Debug */,
-				F01A202A22118A7D001ECF23 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F01A202F22118A7D001ECF23 /* Build configuration list for PBXNativeTarget "TimeLineUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F01A202B22118A7D001ECF23 /* Debug */,
-				F01A202C22118A7D001ECF23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2709,6 +2819,42 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F0BA0DE722367B53004CD72C /* Build configuration list for PBXNativeTarget "TimeLineApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0BA0DE822367B53004CD72C /* Debug */,
+				F0BA0DE922367B53004CD72C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0BA0DEA22367B53004CD72C /* Build configuration list for PBXNativeTarget "TimeLineAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0BA0DEB22367B53004CD72C /* Debug */,
+				F0BA0DEC22367B53004CD72C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0BA0E0C22367BB6004CD72C /* Build configuration list for PBXNativeTarget "TimeLine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0BA0E0D22367BB6004CD72C /* Debug */,
+				F0BA0E0E22367BB6004CD72C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0BA0E0F22367BB6004CD72C /* Build configuration list for PBXNativeTarget "TimeLineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0BA0E1022367BB6004CD72C /* Debug */,
+				F0BA0E1122367BB6004CD72C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F0D89DF121D8D32B0011A0B7 /* Build configuration list for PBXNativeTarget "PomodoroSettings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2748,16 +2894,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F01A200822118A7B001ECF23 /* TimeLine.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F01A200922118A7B001ECF23 /* TimeLine.xcdatamodel */,
-			);
-			currentVersion = F01A200922118A7B001ECF23 /* TimeLine.xcdatamodel */;
-			path = TimeLine.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		F0843CAA21CE5AD900EDB65F /* Pomodoro.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
