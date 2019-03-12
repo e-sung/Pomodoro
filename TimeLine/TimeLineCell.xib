@@ -102,6 +102,9 @@
                 <outlet property="labelContent" destination="p7f-hS-zdC" id="CAP-mT-kfa"/>
                 <outlet property="labelTime" destination="MJC-FL-aJj" id="iNE-TK-pqM"/>
                 <outlet property="labelTitle" destination="qTU-0y-WX1" id="qiR-pa-3xa"/>
+                <outletCollection property="labels" destination="MJC-FL-aJj" collectionClass="NSMutableArray" id="dbc-yy-lCw"/>
+                <outletCollection property="labels" destination="qTU-0y-WX1" collectionClass="NSMutableArray" id="iM7-a1-Oiz"/>
+                <outletCollection property="labels" destination="p7f-hS-zdC" collectionClass="NSMutableArray" id="kGb-df-NlN"/>
             </connections>
             <point key="canvasLocation" x="152.80000000000001" y="215.44227886056973"/>
         </tableViewCell>

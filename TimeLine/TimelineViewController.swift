@@ -34,7 +34,10 @@ extension TimelineViewController: UITableViewDataSource {
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TimeLineCell.className) as! TimeLineCell
-        cell.isLastItem = indexPath.row == 2
+
+        let historyItem = History(title: "asdf", content: "content content", startTime: Date(), endTime: Date())
+        cell.update(with: historyItem, isLast: indexPath.row == 2)
+
         return cell
     }
     

@@ -11,10 +11,19 @@ import Foundation
 public struct History: Codable {
     public var title: String
     public var content: String
-    public var time: Date
-    public init(title: String, content: String, time: Date) {
+    public var startTime: Date
+    public var endTime: Date
+    public var durationStr: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("HH:mm")
+        let startStr = dateFormatter.string(from: startTime)
+        let endStr = dateFormatter.string(from: endTime)
+        return "\(startStr) - \(endStr)"
+    }
+    public init(title: String, content: String, startTime: Date, endTime: Date) {
         self.title = title
         self.content = content
-        self.time = time
+        self.startTime = startTime
+        self.endTime = endTime
     }
 }
