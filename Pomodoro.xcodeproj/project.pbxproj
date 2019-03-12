@@ -11,8 +11,10 @@
 		05DF4762513D38F4CDA3DFE9 /* Pods_PomodoroSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D45DD12ED7CDEE768CA16D /* Pods_PomodoroSettings.framework */; };
 		08A257C018DB2A285D13C78D /* Pods_PomodoroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B232AA18176BBF4A01EF1D2 /* Pods_PomodoroUITests.framework */; };
 		573947069AA98EF34B3762BD /* Pods_PomodoroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101F9904C4E8F233CC2A58C4 /* Pods_PomodoroTests.framework */; };
+		5B19C3746C1E3C2F5D55457A /* Pods_TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813C5E24848650E06431EA07 /* Pods_TimeLine.framework */; };
 		6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */; };
 		AB85875DAEB0C86F6C3B199F /* Pods_SettingsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0830BEE4EDED18599049A33F /* Pods_SettingsApp.framework */; };
+		AED15478B1C599802BB849EE /* Pods_TimeLineApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B17B64862F4569BED2118DF /* Pods_TimeLineApp.framework */; };
 		F0006EB121EDE11F00307F88 /* PomodoroUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F0006EAF21EDE11F00307F88 /* PomodoroUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0006EB921EDE13300307F88 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087250D21CF1264007EB27F /* DesignableView.swift */; };
 		F0006EBB21EDE13300307F88 /* RippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12DE21E36423003C2129 /* RippleButton.swift */; };
@@ -313,6 +315,8 @@
 		101F9904C4E8F233CC2A58C4 /* Pods_PomodoroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PomodoroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pomodoro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A49FD54A7BCD2A3751E145 /* Pods-TimeLine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLine.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLine/Pods-TimeLine.release.xcconfig"; sourceTree = "<group>"; };
+		2B17B64862F4569BED2118DF /* Pods_TimeLineApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLineApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C87EA14F9748297D16B2407 /* Pods-TimeLineApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLineApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLineApp/Pods-TimeLineApp.release.xcconfig"; sourceTree = "<group>"; };
 		34D45DD12ED7CDEE768CA16D /* Pods_PomodoroSettings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PomodoroSettings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B232AA18176BBF4A01EF1D2 /* Pods_PomodoroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PomodoroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		404297A8360FE5548B149134 /* Pods-Pomodoro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pomodoro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pomodoro/Pods-Pomodoro.release.xcconfig"; sourceTree = "<group>"; };
@@ -324,6 +328,7 @@
 		C1FB4F20DD28D948771C454E /* Pods-TimeLine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLine/Pods-TimeLine.debug.xcconfig"; sourceTree = "<group>"; };
 		C8F1430DB452919F67A53A2C /* Pods-Pomodoro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pomodoro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pomodoro/Pods-Pomodoro.debug.xcconfig"; sourceTree = "<group>"; };
 		CD57ABA303B8C406A0690B5A /* Pods-PomodoroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroTests/Pods-PomodoroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D09835FD512FB61F03791802 /* Pods-TimeLineApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLineApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLineApp/Pods-TimeLineApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D2DA2121686A49505BF6A637 /* Pods-PomodoroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroUITests/Pods-PomodoroUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D7C15C8413C987C653EF257D /* Pods-PomodoroSettings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroSettings.release.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroSettings/Pods-PomodoroSettings.release.xcconfig"; sourceTree = "<group>"; };
 		D8C23AD2B0B8500DE144002D /* Pods-SettingsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SettingsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SettingsApp/Pods-SettingsApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -499,6 +504,7 @@
 				F0BA0E1C22367DCE004CD72C /* PomodoroFoundation.framework in Frameworks */,
 				F0BA0E2022367DCF004CD72C /* PomodoroUIKit.framework in Frameworks */,
 				F0BA0E1722367DAE004CD72C /* TimeLine.framework in Frameworks */,
+				AED15478B1C599802BB849EE /* Pods_TimeLineApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +521,7 @@
 			files = (
 				F0BA0E1522367C29004CD72C /* PomodoroFoundation.framework in Frameworks */,
 				F0BA0E1622367C29004CD72C /* PomodoroUIKit.framework in Frameworks */,
+				5B19C3746C1E3C2F5D55457A /* Pods_TimeLine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +581,7 @@
 				34D45DD12ED7CDEE768CA16D /* Pods_PomodoroSettings.framework */,
 				F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */,
 				813C5E24848650E06431EA07 /* Pods_TimeLine.framework */,
+				2B17B64862F4569BED2118DF /* Pods_TimeLineApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -849,6 +857,8 @@
 				D7C15C8413C987C653EF257D /* Pods-PomodoroSettings.release.xcconfig */,
 				C1FB4F20DD28D948771C454E /* Pods-TimeLine.debug.xcconfig */,
 				24A49FD54A7BCD2A3751E145 /* Pods-TimeLine.release.xcconfig */,
+				D09835FD512FB61F03791802 /* Pods-TimeLineApp.debug.xcconfig */,
+				2C87EA14F9748297D16B2407 /* Pods-TimeLineApp.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1033,10 +1043,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0BA0DE722367B53004CD72C /* Build configuration list for PBXNativeTarget "TimeLineApp" */;
 			buildPhases = (
+				F13E7DA86CC9482551DCE79A /* [CP] Check Pods Manifest.lock */,
 				F0BA0DC922367B51004CD72C /* Sources */,
 				F0BA0DCA22367B51004CD72C /* Frameworks */,
 				F0BA0DCB22367B51004CD72C /* Resources */,
 				F0BA0E1B22367DAE004CD72C /* Embed Frameworks */,
+				13D1C4B4C66BF48946222D7C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1072,6 +1084,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0BA0E0C22367BB6004CD72C /* Build configuration list for PBXNativeTarget "TimeLine" */;
 			buildPhases = (
+				27FF684A5E58723C7913FF28 /* [CP] Check Pods Manifest.lock */,
 				F0BA0DF022367BB6004CD72C /* Headers */,
 				F0BA0DF122367BB6004CD72C /* Sources */,
 				F0BA0DF222367BB6004CD72C /* Frameworks */,
@@ -1418,6 +1431,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		13D1C4B4C66BF48946222D7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TimeLineApp/Pods-TimeLineApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLineApp/Pods-TimeLineApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		273C800FE47BD77708704944 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1428,16 +1465,42 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pomodoro/Pods-Pomodoro-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HGCircularSlider/HGCircularSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGCircularSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pomodoro/Pods-Pomodoro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27FF684A5E58723C7913FF28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeLine-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2AC7450BFC8EAD539C8C3829 /* [CP] Check Pods Manifest.lock */ = {
@@ -1566,6 +1629,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"$BITRISE_PROJECT_PATH\" = \"Pomodoro.xcworkspace\" ]\nthen\necho \"Don't run SwiftFormat/Lint on CI server\"\nelse \nswiftformat .\nswiftlint\nfi\n\n\n";
+		};
+		F13E7DA86CC9482551DCE79A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeLineApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		F3C295728816B44AF24A382A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2384,8 +2469,9 @@
 		};
 		F0BA0DE822367B53004CD72C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D09835FD512FB61F03791802 /* Pods-TimeLineApp.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
@@ -2404,8 +2490,9 @@
 		};
 		F0BA0DE922367B53004CD72C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C87EA14F9748297D16B2407 /* Pods-TimeLineApp.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
@@ -2464,6 +2551,7 @@
 		};
 		F0BA0E0D22367BB6004CD72C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1FB4F20DD28D948771C454E /* Pods-TimeLine.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -2493,6 +2581,7 @@
 		};
 		F0BA0E0E22367BB6004CD72C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24A49FD54A7BCD2A3751E145 /* Pods-TimeLine.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

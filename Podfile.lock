@@ -1,9 +1,11 @@
 PODS:
   - HGCircularSlider (2.0.0)
+  - Spring (1.0.6)
   - "UITextView+Placeholder (1.2.1)"
 
 DEPENDENCIES:
   - HGCircularSlider
+  - Spring (from `https://github.com/MengTo/Spring.git`)
   - "UITextView+Placeholder"
 
 SPEC REPOS:
@@ -11,10 +13,20 @@ SPEC REPOS:
     - HGCircularSlider
     - "UITextView+Placeholder"
 
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: fafd0b2e8d4d46405bd86fa7ba84bb7f73a20b13
+    :git: https://github.com/MengTo/Spring.git
+
 SPEC CHECKSUMS:
   HGCircularSlider: 92e2ee098c814709f455b8f46cd9008147f6a869
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: 6b9587e8abb0e9e42ab3ef33573a74ff6cc6003e
+PODFILE CHECKSUM: ac9a651a9b65d5e062a4f3b6fdc25a7d52c50eaf
 
 COCOAPODS: 1.5.3

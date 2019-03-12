@@ -20,6 +20,7 @@ open class TimelineViewController: UIViewController {
 //        titleTextView.text = ""
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
         let cellNib = UINib(nibName: TimeLineCell.className, bundle: Bundle(for: TimeLineCell.self))
         tableView.register(cellNib, forCellReuseIdentifier: TimeLineCell.className)
     }

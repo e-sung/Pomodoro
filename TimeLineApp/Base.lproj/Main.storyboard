@@ -55,23 +55,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sNh-bq-Afm">
-                                                    <rect key="frame" x="0.0" y="51.5" width="375" height="2"/>
+                                                    <rect key="frame" x="0.0" y="37.5" width="375" height="2"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="progressTintColor" red="0.96991807220000004" green="0.80945187809999997" blue="0.27433031800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </progressView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.99607843137254903" green="0.97647058823529409" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstItem="sNh-bq-Afm" firstAttribute="leading" secondItem="QEr-kR-Z1A" secondAttribute="leading" id="CXd-3c-LSB"/>
                                                 <constraint firstAttribute="trailing" secondItem="sNh-bq-Afm" secondAttribute="trailing" id="psd-az-RJH"/>
-                                                <constraint firstAttribute="bottom" secondItem="sNh-bq-Afm" secondAttribute="bottom" id="xk5-c7-g9R"/>
+                                                <constraint firstAttribute="bottom" secondItem="sNh-bq-Afm" secondAttribute="bottom" constant="14" id="xk5-c7-g9R"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.99553269150000001" green="0.97759991879999997" blue="0.90587311979999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.97647058823529409" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="07g-Yu-f6T" firstAttribute="bottom" secondItem="cg4-eF-7wr" secondAttribute="bottom" id="4ta-ZF-Nfk"/>
                             <constraint firstItem="07g-Yu-f6T" firstAttribute="trailing" secondItem="cg4-eF-7wr" secondAttribute="trailing" id="JKt-Q2-Ai2"/>

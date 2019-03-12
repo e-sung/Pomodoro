@@ -14,34 +14,23 @@ open class TimeLineCell: UITableViewCell {
     @IBOutlet private var labelContent: UILabel!
     @IBOutlet private var labelTime: UILabel!
     @IBOutlet var heightOfArrow: NSLayoutConstraint!
+    var heightArrowConstantFromIB: CGFloat!
     
     var isLastItem = false {
         didSet {
-            setNeedsLayout()
+            if isLastItem {
+                heightOfArrow.constant = CGFloat.leastNonzeroMagnitude
+            }
+            else {
+                heightOfArrow.constant = heightArrowConstantFromIB
+            }
         }
     }
     
-//    var history: History? {
-//        didSet {
-//            setNeedsLayout()
-//        }
-//    }
-//    
-    open override func layoutSubviews() {
-        super.layoutSubviews()
-        if isLastItem {
-            heightOfArrow.constant = CGFloat.leastNonzeroMagnitude
-        }
-        else {
-            heightOfArrow.constant = 40
-        }
-//        guard let history = history  else { return }
-//        labelTitle.text = history.title
-//        labelContent.text = history.content
-//        labelTime.text = DateFormatter.localizedString(from: history.time,
-//                                                       dateStyle: .none,
-//                                                       timeStyle: .short)
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        heightArrowConstantFromIB = heightOfArrow.constant
+        selectionStyle = .none
     }
-//
 
 }

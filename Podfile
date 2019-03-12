@@ -35,4 +35,12 @@ end
 target 'TimeLine' do
   use_frameworks!
   pod 'UITextView+Placeholder'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 end
+
+target 'TimeLineApp' do
+  use_frameworks!
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+end
+
+inhibit_all_warnings!
