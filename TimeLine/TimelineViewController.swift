@@ -13,11 +13,16 @@ import PomodoroUIKit
 open class TimelineViewController: UIViewController {
     @IBOutlet var titleTextView: UITextView!
     @IBOutlet var tableView: UITableView!
-    
+    public var historyList:[History] = [] {
+        didSet {
+            historyList.sort(by: { $0.startTime > $1.startTime })
+            tableView.reloadData()
+        }
+    }
     open override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-//        titleTextView.text = ""
+        titleTextView.text = ""
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -29,14 +34,14 @@ open class TimelineViewController: UIViewController {
 
 extension TimelineViewController: UITableViewDataSource {
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return historyList.count
     }
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TimeLineCell.className) as! TimeLineCell
-
-        let historyItem = History(title: "asdf", content: "content content", startTime: Date(), endTime: Date())
-        cell.update(with: historyItem, isLast: indexPath.row == 2)
+        let isLastIndex = (indexPath.row == historyList.count - 1)
+        let history = historyList[indexPath.row]
+        cell.update(with: history, isLast: isLastIndex)
 
         return cell
     }

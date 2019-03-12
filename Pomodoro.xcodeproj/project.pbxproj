@@ -107,6 +107,7 @@
 		F0D89E3621D8D7D90011A0B7 /* PomodoroSettings.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0D89DDA21D8D32B0011A0B7 /* PomodoroSettings.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0D89E3A21D90D820011A0B7 /* SettingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DD121D8D1BA0011A0B7 /* SettingContent.swift */; };
 		F0D89E3B21D90E390011A0B7 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
+		F0D985F12237CF39006D2A08 /* MockTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D985F02237CF39006D2A08 /* MockTimeLineViewController.swift */; };
 		F0EF230D21EE161C00338D51 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F0EF230E21EE161C00338D51 /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
 		F0EF230F21EE164D00338D51 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */; };
@@ -435,6 +436,7 @@
 		F0D89E2021D8D6DA0011A0B7 /* SettingsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SettingsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D89E2421D8D6DA0011A0B7 /* SettingsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppUITests.swift; sourceTree = "<group>"; };
 		F0D89E2621D8D6DA0011A0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0D985F02237CF39006D2A08 /* MockTimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimeLineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -758,6 +760,7 @@
 				F0BA0DD622367B53004CD72C /* Assets.xcassets */,
 				F0BA0DD822367B53004CD72C /* LaunchScreen.storyboard */,
 				F0BA0DDB22367B53004CD72C /* Info.plist */,
+				F0D985F02237CF39006D2A08 /* MockTimeLineViewController.swift */,
 			);
 			path = TimeLineApp;
 			sourceTree = "<group>";
@@ -1441,6 +1444,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TimeLineApp/Pods-TimeLineApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/LoremIpsum-iOS/LoremIpsum_iOS.framework",
 				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1448,6 +1452,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LoremIpsum_iOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1761,6 +1766,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D985F12237CF39006D2A08 /* MockTimeLineViewController.swift in Sources */,
 				F0BA0DD022367B51004CD72C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,16 +1,19 @@
 PODS:
   - HGCircularSlider (2.0.0)
+  - LoremIpsum-iOS (0.1.0)
   - Spring (1.0.6)
   - "UITextView+Placeholder (1.2.1)"
 
 DEPENDENCIES:
   - HGCircularSlider
+  - LoremIpsum-iOS
   - Spring (from `https://github.com/MengTo/Spring.git`)
   - "UITextView+Placeholder"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - HGCircularSlider
+    - LoremIpsum-iOS
     - "UITextView+Placeholder"
 
 EXTERNAL SOURCES:
@@ -24,9 +27,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   HGCircularSlider: 92e2ee098c814709f455b8f46cd9008147f6a869
+  LoremIpsum-iOS: af893c224373862f1f4b4d12a92afab43501e745
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: ac9a651a9b65d5e062a4f3b6fdc25a7d52c50eaf
+PODFILE CHECKSUM: d15735cb063e0da394430411767a3085cf0ebbd0
 
 COCOAPODS: 1.5.3

@@ -41,6 +41,7 @@ end
 target 'TimeLineApp' do
   use_frameworks!
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  pod "LoremIpsum-iOS"
 end
 
 inhibit_all_warnings!
