@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세부적인 내용은 이러하였다. 세부적인 내용은 이러하였다. 세부적인 내용은 이러하였다. 세부적인 내용은 이러하였다. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7f-hS-zdC">
-                                <rect key="frame" x="14" y="74" width="297" height="65.5"/>
+                                <rect key="frame" x="14" y="74" width="283" height="65.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -45,9 +45,9 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="p7f-hS-zdC" secondAttribute="bottom" constant="14" id="49e-iU-a0h"/>
                             <constraint firstItem="MJC-FL-aJj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qTU-0y-WX1" secondAttribute="trailing" constant="14" id="4mz-zZ-lrp"/>
-                            <constraint firstAttribute="trailing" secondItem="p7f-hS-zdC" secondAttribute="trailing" id="6g4-5g-i4T"/>
                             <constraint firstItem="p7f-hS-zdC" firstAttribute="top" secondItem="qTU-0y-WX1" secondAttribute="bottom" constant="14" id="C9v-he-gZt"/>
                             <constraint firstItem="MJC-FL-aJj" firstAttribute="top" secondItem="nlS-Sv-77c" secondAttribute="top" constant="14" id="LW6-Ri-WrB"/>
+                            <constraint firstItem="p7f-hS-zdC" firstAttribute="trailing" secondItem="MJC-FL-aJj" secondAttribute="trailing" id="OL7-3A-asR"/>
                             <constraint firstItem="qTU-0y-WX1" firstAttribute="leading" secondItem="nlS-Sv-77c" secondAttribute="leading" constant="14" id="UbL-30-mDN"/>
                             <constraint firstItem="p7f-hS-zdC" firstAttribute="leading" secondItem="qTU-0y-WX1" secondAttribute="leading" id="a6A-Qs-4ak"/>
                             <constraint firstAttribute="trailing" secondItem="MJC-FL-aJj" secondAttribute="trailing" constant="14" id="jgd-1S-s3O"/>
