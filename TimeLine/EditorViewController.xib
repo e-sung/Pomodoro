@@ -33,7 +33,7 @@
                         <constraint firstAttribute="height" constant="33" id="dsE-cx-gKa"/>
                     </constraints>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="제목"/>
                     </userDefinedRuntimeAttributes>
@@ -42,7 +42,7 @@
                     <rect key="frame" x="16" y="73" width="343" height="594"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8D-oy-vIo" customClass="DesignableView" customModule="PomodoroUIKit">
                     <rect key="frame" x="20" y="61" width="363" height="4"/>

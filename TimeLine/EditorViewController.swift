@@ -15,6 +15,8 @@ public protocol EditorViewControllerDelegate: class {
 }
 
 open class EditorViewController: UIViewController {
+    
+    var history:History?
 
     @IBOutlet var titleTextView: UITextView!
     @IBOutlet var bodyTextView: UITextView!
@@ -35,6 +37,8 @@ open class EditorViewController: UIViewController {
 
         titleTextView.delegate = self
         bodyTextView.delegate = self
+        titleTextView.text = history?.title
+        bodyTextView.text = history?.content
         bodyTextView.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: bodyTextView.font!)
         adjustHeight(of: titleTextView, with: heightOfTitleView)
         RxKeyboard.instance.visibleHeight.asObservable().bind(onNext: { [weak self] height in
@@ -49,6 +53,12 @@ open class EditorViewController: UIViewController {
         .disposed(by: disposeBag)
     }
     
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "Edit History"
+    }
+    
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         delegate?.itemDidChange(titleTextView.text, body: bodyTextView.text)
@@ -58,28 +68,11 @@ open class EditorViewController: UIViewController {
 extension EditorViewController: UITextViewDelegate {
     open func textViewDidChange(_ textView: UITextView) {
         if textView === titleTextView {
-            if textView.text.last == "\n" {
+            if textView.text.has("\n") {
                 bodyTextView.becomeFirstResponder()
                 textView.text = textView.text.replace(from: "\n", to: "")
             }
             adjustHeight(of: textView, with: heightOfTitleView, duration: 0.5)
-        }
-        else if textView === bodyTextView {
-            if textView.text.last == "\n" {
-                textView.resignFirstResponder()
-            }
-            else {
-                topConstraint.constant = -1 * (titleTextView.frame.height + 14 + UIApplication.shared.statusBarFrame.height)
-                UIView.animate(withDuration: 0.5, animations: { [weak self] in
-                    self?.view.layoutIfNeeded()
-                })
-            }
-        }
-    }
-    
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 0 {
-            view.endEditing(true)
         }
     }
 

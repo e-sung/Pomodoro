@@ -30,6 +30,18 @@ open class TimelineViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: TimeLineCell.className)
     }
     
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let editVC = segue.destination as? EditorViewController, let sender = sender as? TimeLineCell {
+            editVC.delegate = sender
+            editVC.history = sender.history
+        }
+    }
+    
 }
 
 extension TimelineViewController: UITableViewDataSource {
@@ -42,7 +54,6 @@ extension TimelineViewController: UITableViewDataSource {
         let isLastIndex = (indexPath.row == historyList.count - 1)
         let history = historyList[indexPath.row]
         cell.update(with: history, isLast: isLastIndex)
-
         return cell
     }
     
@@ -52,6 +63,12 @@ extension TimelineViewController: UITableViewDataSource {
 }
 
 extension TimelineViewController: UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? TimeLineCell else { return }
+        performSegue(withIdentifier: "showEditVC", sender: cell)
+    }
+    
     open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView(frame: CGRect.zero)
     }
