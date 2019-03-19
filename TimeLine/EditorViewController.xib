@@ -17,6 +17,7 @@
                 <outlet property="heightOfBodyTextView" destination="ilu-g7-0Rm" id="bhJ-gV-UL2"/>
                 <outlet property="heightOfTitleView" destination="dsE-cx-gKa" id="5ml-WD-7Hs"/>
                 <outlet property="titleTextView" destination="Chp-4f-w0w" id="y12-7A-WDl"/>
+                <outlet property="topConstraint" destination="WG1-du-2K6" id="fDt-P6-3re"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
