@@ -10,6 +10,10 @@ import UIKit
 import RxKeyboard
 import RxSwift
 
+public protocol EditorViewControllerDelegate: class {
+    func itemDidChange(_ title: String, body: String)
+}
+
 open class EditorViewController: UIViewController {
 
     @IBOutlet var titleTextView: UITextView!
@@ -19,6 +23,7 @@ open class EditorViewController: UIViewController {
     @IBOutlet var bottomConstraint: NSLayoutConstraint!
     @IBOutlet var topConstraint: NSLayoutConstraint!
     var disposeBag = DisposeBag()
+    public weak var delegate: EditorViewControllerDelegate?
     
     open override func loadView() {
         Bundle(for: EditorViewController.self).loadNibNamed(EditorViewController.className,
@@ -43,6 +48,11 @@ open class EditorViewController: UIViewController {
         })
         .disposed(by: disposeBag)
     }
+    
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.itemDidChange(titleTextView.text, body: bodyTextView.text)
+    }
 }
 
 extension EditorViewController: UITextViewDelegate {
@@ -55,13 +65,18 @@ extension EditorViewController: UITextViewDelegate {
             adjustHeight(of: textView, with: heightOfTitleView, duration: 0.5)
         }
         else if textView === bodyTextView {
-            topConstraint.constant = -1 * (titleTextView.frame.height + 14 + UIApplication.shared.statusBarFrame.height)
-            UIView.animate(withDuration: 0.5, animations: { [weak self] in
-                self?.view.layoutIfNeeded()
-            })
+            if textView.text.last == "\n" {
+                textView.resignFirstResponder()
+            }
+            else {
+                topConstraint.constant = -1 * (titleTextView.frame.height + 14 + UIApplication.shared.statusBarFrame.height)
+                UIView.animate(withDuration: 0.5, animations: { [weak self] in
+                    self?.view.layoutIfNeeded()
+                })
+            }
         }
     }
-
+    
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0 {
             view.endEditing(true)
