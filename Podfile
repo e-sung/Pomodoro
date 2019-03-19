@@ -36,6 +36,7 @@ target 'TimeLine' do
   use_frameworks!
   pod 'UITextView+Placeholder'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  pod 'RxKeyboard'
 end
 
 target 'TimeLineApp' do

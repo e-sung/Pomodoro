@@ -84,6 +84,8 @@
 		F0BA0E2122367DCF004CD72C /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0BA0E2422367DFB004CD72C /* TimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */; };
 		F0BA0E2522368145004CD72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
+		F0D0C806223FB528001D81B7 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0C804223FB528001D81B7 /* EditorViewController.swift */; };
+		F0D0C807223FB528001D81B7 /* EditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D0C805223FB528001D81B7 /* EditorViewController.xib */; };
 		F0D52F6721E8A8C900EFA205 /* SettingContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D52F6621E8A8C900EFA205 /* SettingContentTests.swift */; };
 		F0D89DD321D8D1DA0011A0B7 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC921D88C020011A0B7 /* Double+Extension.swift */; };
 		F0D89DD421D8D2690011A0B7 /* UserDefault+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DCB21D899160011A0B7 /* UserDefault+Extension.swift */; };
@@ -412,6 +414,8 @@
 		F0BA0DFD22367BB6004CD72C /* TimeLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BA0E0422367BB6004CD72C /* TimeLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTests.swift; sourceTree = "<group>"; };
 		F0BA0E0622367BB6004CD72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0D0C804223FB528001D81B7 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		F0D0C805223FB528001D81B7 /* EditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditorViewController.xib; sourceTree = "<group>"; };
 		F0D52F6621E8A8C900EFA205 /* SettingContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentTests.swift; sourceTree = "<group>"; };
 		F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
@@ -783,6 +787,8 @@
 				F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */,
 				F0BA0DF722367BB6004CD72C /* TimeLine.h */,
 				F0BA0DF822367BB6004CD72C /* Info.plist */,
+				F0D0C804223FB528001D81B7 /* EditorViewController.swift */,
+				F0D0C805223FB528001D81B7 /* EditorViewController.xib */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -1388,6 +1394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D0C807223FB528001D81B7 /* EditorViewController.xib in Resources */,
 				F0BA0E2522368145004CD72C /* Assets.xcassets in Resources */,
 				F0BA0E2422367DFB004CD72C /* TimeLineCell.xib in Resources */,
 			);
@@ -1445,6 +1452,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TimeLineApp/Pods-TimeLineApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/LoremIpsum-iOS/LoremIpsum_iOS.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1453,6 +1464,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LoremIpsum_iOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKeyboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1470,6 +1485,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pomodoro/Pods-Pomodoro-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HGCircularSlider/HGCircularSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 			);
@@ -1478,6 +1497,10 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGCircularSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKeyboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 			);
@@ -1786,6 +1809,7 @@
 				F0BA0E1422367BCB004CD72C /* TimeLineCell.swift in Sources */,
 				F0BA0E1322367BCB004CD72C /* History.swift in Sources */,
 				F0BA0E1222367BCB004CD72C /* TimelineViewController.swift in Sources */,
+				F0D0C806223FB528001D81B7 /* EditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
