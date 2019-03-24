@@ -24,10 +24,9 @@ class MockTimeLineViewController: TimelineViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let historyMOs = try! context.fetch(HistoryMO.fetchRequest())
-        let histories = historyMOs.compactMap({ $0 as? HistoryMO }).compactMap({
-            return History(title: $0.title!, content: $0.content!, startTime: Date(), endTime: Date())
-        })
-        self.historyList = histories
+        historyList = historyMOs
+            .compactMap({ $0 as? HistoryMO })
+            .compactMap({ return History(with: $0) })
     }
     
     @IBAction func buttonFloatClicked(_ sender: UIButton) {
@@ -37,8 +36,7 @@ class MockTimeLineViewController: TimelineViewController {
         historyList.append(historyItem)
         
         let historyMO = HistoryMO(entity: HistoryMO.entity(), insertInto: context)
-        historyMO.title = title
-        historyMO.content = content
+        historyMO.setUp(with: historyItem)
         appDelegate.saveContext()
     }
 

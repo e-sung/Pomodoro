@@ -26,4 +26,11 @@ public struct History: Codable {
         self.startTime = startTime
         self.endTime = endTime
     }
+    
+    public init(with managedObject: HistoryMO) {
+        self.title = managedObject.title ?? ""
+        self.content = managedObject.content ?? ""
+        self.startTime = managedObject.startDate as Date? ?? Date()
+        self.endTime = managedObject.endDate as Date? ?? Date()
+    }
 }

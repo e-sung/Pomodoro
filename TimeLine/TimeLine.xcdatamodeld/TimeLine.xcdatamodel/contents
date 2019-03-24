@@ -2,9 +2,11 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="HistoryMO" representedClassName="HistoryMO" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="HistoryMO" positionX="-45" positionY="0" width="128" height="75"/>
+        <element name="HistoryMO" positionX="-45" positionY="0" width="128" height="105"/>
     </elements>
 </model>

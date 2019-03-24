@@ -18,5 +18,7 @@ extension HistoryMO {
 
     @NSManaged public var title: String?
     @NSManaged public var content: String?
+    @NSManaged public var startDate: NSDate?
+    @NSManaged public var endDate: NSDate?
 
 }
