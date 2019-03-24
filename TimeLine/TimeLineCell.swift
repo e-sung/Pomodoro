@@ -10,7 +10,7 @@ import UIKit
 
 open class TimeLineCell: UITableViewCell {
     
-    public var history: History?
+    public var history: HistoryMO?
     @IBOutlet private var labelTitle: UILabel!
     @IBOutlet private var labelContent: UILabel!
     @IBOutlet private var labelTime: UILabel!
@@ -20,7 +20,7 @@ open class TimeLineCell: UITableViewCell {
 
     var isLastItem = false
     
-    open func update(with history: History, isLast: Bool) {
+    open func update(with history: HistoryMO, isLast: Bool) {
         update(isLastItem: isLast)
         update(with: history)
     }
@@ -34,7 +34,7 @@ open class TimeLineCell: UITableViewCell {
         }
     }
     
-    func update(with history: History) {
+    func update(with history: HistoryMO) {
         isHidden = false
         self.history = history
         labelTitle.text = history.title

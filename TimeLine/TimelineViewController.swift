@@ -40,7 +40,7 @@ open class TimelineViewController: UIViewController {
     open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let editVC = segue.destination as? EditorViewController, let sender = sender as? TimeLineCell {
             editVC.delegate = sender
-            editVC.history = sender.history
+//            editVC.history = sender.history
         }
     }
     
@@ -55,7 +55,7 @@ extension TimelineViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: TimeLineCell.className) as! TimeLineCell
         let isLastIndex = (indexPath.row == historyList.count - 1)
         let history = historyList[indexPath.row]
-        cell.update(with: history, isLast: isLastIndex)
+//        cell.update(with: history, isLast: isLastIndex)
         return cell
     }
     

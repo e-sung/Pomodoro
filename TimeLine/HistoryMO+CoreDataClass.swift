@@ -21,4 +21,13 @@ public class HistoryMO: NSManagedObject {
         self.startDate = history.startTime as NSDate
         self.endDate = history.endTime as NSDate
     }
+    
+    public var durationStr: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("HH:mm")
+        guard let startTime = startDate as Date?, let endTime = endDate as Date? else { return "" }
+        let startStr = dateFormatter.string(from: startTime)
+        let endStr = dateFormatter.string(from: endTime)
+        return "\(startStr) - \(endStr)"
+    }
 }
