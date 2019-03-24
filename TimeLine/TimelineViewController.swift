@@ -14,11 +14,6 @@ open class TimelineViewController: UIViewController {
     @IBOutlet public var titleTextView: UITextView!
     @IBOutlet public var tableView: UITableView!
     public var fetchedHistories: [HistoryMO] = []
-    public var historyList:[History] {
-        return fetchedHistories
-            .compactMap({ History(with: $0) })
-            .sorted(by: { $0.startTime > $1.startTime })
-    }
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,14 +43,14 @@ open class TimelineViewController: UIViewController {
 
 extension TimelineViewController: UITableViewDataSource {
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return historyList.count
+        return fetchedHistories.count
     }
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TimeLineCell.className) as! TimeLineCell
-        let isLastIndex = (indexPath.row == historyList.count - 1)
-        let history = historyList[indexPath.row]
-//        cell.update(with: history, isLast: isLastIndex)
+        let isLastIndex = (indexPath.row == fetchedHistories.count - 1)
+        let history = fetchedHistories[indexPath.row]
+        cell.update(with: history, isLast: isLastIndex)
         return cell
     }
     
