@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="1976.8" y="122.78860569715144"/>
         </scene>
-        <!--Editor View Controller-->
+        <!--Mock Edit View Controller-->
         <scene sceneID="pyy-BB-UJf">
             <objects>
-                <viewController id="Il5-R8-C3p" customClass="EditorViewController" customModule="TimeLine" sceneMemberID="viewController"/>
+                <viewController id="Il5-R8-C3p" customClass="MockEditViewController" customModule="TimeLineApp" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vyx-Ev-EjL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2828" y="122.78860569715144"/>

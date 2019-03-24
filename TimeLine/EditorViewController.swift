@@ -16,10 +16,10 @@ public protocol EditorViewControllerDelegate: class {
 
 open class EditorViewController: UIViewController {
     
-    var history:HistoryMO?
+    public var history:HistoryMO?
 
-    @IBOutlet var titleTextView: UITextView!
-    @IBOutlet var bodyTextView: UITextView!
+    @IBOutlet public var titleTextView: UITextView!
+    @IBOutlet public var bodyTextView: UITextView!
     @IBOutlet var heightOfTitleView: NSLayoutConstraint!
     @IBOutlet var heightOfBodyTextView: NSLayoutConstraint!
     @IBOutlet var bottomConstraint: NSLayoutConstraint!
@@ -40,6 +40,7 @@ open class EditorViewController: UIViewController {
         titleTextView.text = history?.title
         bodyTextView.text = history?.content
         bodyTextView.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: bodyTextView.font!)
+        
         adjustHeight(of: titleTextView, with: heightOfTitleView)
         RxKeyboard.instance.visibleHeight.asObservable().bind(onNext: { [weak self] height in
             self?.bottomConstraint.constant = height
@@ -57,11 +58,24 @@ open class EditorViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Edit History"
+        navigationController?.navigationBar.topItem?.title = ""
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonClicked(_:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonClicked(_:)))
+        navigationController?.navigationBar.tintColor = UIColor(white: 0.1, alpha: 1)
+
     }
     
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         delegate?.itemDidChange(titleTextView.text, body: bodyTextView.text)
+    }
+    
+    @objc open func cancelButtonClicked(_ sender: Any?) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc open func doneButtonClicked(_ sender: Any?) {
+        navigationController?.popViewController(animated: true)
     }
 }
 
