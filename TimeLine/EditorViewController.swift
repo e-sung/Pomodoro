@@ -16,7 +16,7 @@ public protocol EditorViewControllerDelegate: class {
 
 open class EditorViewController: UIViewController {
     
-    var history:History?
+    var history:HistoryMO?
 
     @IBOutlet var titleTextView: UITextView!
     @IBOutlet var bodyTextView: UITextView!
