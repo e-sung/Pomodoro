@@ -39,16 +39,16 @@
                     </userDefinedRuntimeAttributes>
                 </textView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t6u-ul-IJh">
-                    <rect key="frame" x="16" y="73" width="343" height="594"/>
+                    <rect key="frame" x="16" y="71" width="343" height="596"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8D-oy-vIo" customClass="DesignableView" customModule="PomodoroUIKit">
-                    <rect key="frame" x="20" y="61" width="363" height="4"/>
+                    <rect key="frame" x="20" y="61" width="363" height="2"/>
                     <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="4" id="8Qe-IG-3nj"/>
+                        <constraint firstAttribute="height" constant="2" id="8Qe-IG-3nj"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

@@ -23,21 +23,20 @@ class MockTimeLineViewController: TimelineViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let historyMOs = try! context.fetch(HistoryMO.fetchRequest())
-        historyList = historyMOs
-            .compactMap({ $0 as? HistoryMO })
-            .compactMap({ return History(with: $0) })
+        fetchedHistories = try! context.fetch(HistoryMO.fetchRequest())
+        tableView.reloadData()
     }
     
     @IBAction func buttonFloatClicked(_ sender: UIButton) {
         let title = LoremIpsum.generateRandomWords(withLength: UInt.random(in: 1...5))!
         let content = LoremIpsum.generateRandomWords(withLength: UInt.random(in: 10...50))!
         let historyItem = History(title: title, content: content, startTime: Date(), endTime: Date())
-        historyList.append(historyItem)
-        
+
         let historyMO = HistoryMO(entity: HistoryMO.entity(), insertInto: context)
         historyMO.setUp(with: historyItem)
         appDelegate.saveContext()
+        fetchedHistories.append(historyMO)
+        tableView.reloadData()
     }
 
 }

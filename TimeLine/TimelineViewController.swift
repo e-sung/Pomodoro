@@ -11,14 +11,15 @@ import PomodoroFoundation
 import PomodoroUIKit
 
 open class TimelineViewController: UIViewController {
-    @IBOutlet var titleTextView: UITextView!
-    @IBOutlet var tableView: UITableView!
-    public var historyList:[History] = [] {
-        didSet {
-            historyList.sort(by: { $0.startTime > $1.startTime })
-            tableView.reloadData()
-        }
+    @IBOutlet public var titleTextView: UITextView!
+    @IBOutlet public var tableView: UITableView!
+    public var fetchedHistories: [HistoryMO] = []
+    public var historyList:[History] {
+        return fetchedHistories
+            .compactMap({ History(with: $0) })
+            .sorted(by: { $0.startTime > $1.startTime })
     }
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
