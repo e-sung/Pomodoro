@@ -40,6 +40,7 @@ open class EditorViewController: UIViewController {
         titleTextView.text = history?.title
         bodyTextView.text = history?.content
         bodyTextView.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: bodyTextView.font!)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         adjustHeight(of: titleTextView, with: heightOfTitleView)
         RxKeyboard.instance.visibleHeight.asObservable().bind(onNext: { [weak self] height in
@@ -58,7 +59,6 @@ open class EditorViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
         navigationItem.title = "Edit History"
-        navigationController?.navigationBar.topItem?.title = ""
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonClicked(_:)))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonClicked(_:)))
         navigationController?.navigationBar.tintColor = UIColor(white: 0.1, alpha: 1)
@@ -97,5 +97,11 @@ extension EditorViewController: UITextViewDelegate {
         UIView.animate(withDuration: duration, animations: { [weak self] in
             self?.view.layoutIfNeeded()
         })
+    }
+}
+
+extension EditorViewController: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
