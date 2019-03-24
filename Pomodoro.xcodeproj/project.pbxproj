@@ -110,6 +110,9 @@
 		F0D89E3A21D90D820011A0B7 /* SettingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DD121D8D1BA0011A0B7 /* SettingContent.swift */; };
 		F0D89E3B21D90E390011A0B7 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F0D985F12237CF39006D2A08 /* MockTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D985F02237CF39006D2A08 /* MockTimeLineViewController.swift */; };
+		F0DB788A22477F4F0006F65A /* TimeLine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0DB788822477F4F0006F65A /* TimeLine.xcdatamodeld */; };
+		F0DB788D22477FA30006F65A /* HistoryMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB788B22477FA30006F65A /* HistoryMO+CoreDataClass.swift */; };
+		F0DB788E22477FA30006F65A /* HistoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB788C22477FA30006F65A /* HistoryMO+CoreDataProperties.swift */; };
 		F0EF230D21EE161C00338D51 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F0EF230E21EE161C00338D51 /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
 		F0EF230F21EE164D00338D51 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */; };
@@ -441,6 +444,9 @@
 		F0D89E2421D8D6DA0011A0B7 /* SettingsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppUITests.swift; sourceTree = "<group>"; };
 		F0D89E2621D8D6DA0011A0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0D985F02237CF39006D2A08 /* MockTimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimeLineViewController.swift; sourceTree = "<group>"; };
+		F0DB788922477F4F0006F65A /* TimeLine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeLine.xcdatamodel; sourceTree = "<group>"; };
+		F0DB788B22477FA30006F65A /* HistoryMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HistoryMO+CoreDataClass.swift"; path = "/Users/esung/Pomodoro/TimeLine/HistoryMO+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		F0DB788C22477FA30006F65A /* HistoryMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HistoryMO+CoreDataProperties.swift"; path = "/Users/esung/Pomodoro/TimeLine/HistoryMO+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -782,6 +788,8 @@
 			isa = PBXGroup;
 			children = (
 				F0BA0DC722367AB9004CD72C /* History.swift */,
+				F0DB788B22477FA30006F65A /* HistoryMO+CoreDataClass.swift */,
+				F0DB788C22477FA30006F65A /* HistoryMO+CoreDataProperties.swift */,
 				F01A200322118A7B001ECF23 /* TimelineViewController.swift */,
 				F0BA0DC3223674E2004CD72C /* TimeLineCell.swift */,
 				F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */,
@@ -789,6 +797,7 @@
 				F0BA0DF822367BB6004CD72C /* Info.plist */,
 				F0D0C804223FB528001D81B7 /* EditorViewController.swift */,
 				F0D0C805223FB528001D81B7 /* EditorViewController.xib */,
+				F0DB788822477F4F0006F65A /* TimeLine.xcdatamodeld */,
 			);
 			path = TimeLine;
 			sourceTree = "<group>";
@@ -1806,10 +1815,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0DB788D22477FA30006F65A /* HistoryMO+CoreDataClass.swift in Sources */,
+				F0DB788A22477F4F0006F65A /* TimeLine.xcdatamodeld in Sources */,
 				F0BA0E1422367BCB004CD72C /* TimeLineCell.swift in Sources */,
 				F0BA0E1322367BCB004CD72C /* History.swift in Sources */,
 				F0BA0E1222367BCB004CD72C /* TimelineViewController.swift in Sources */,
 				F0D0C806223FB528001D81B7 /* EditorViewController.swift in Sources */,
+				F0DB788E22477FA30006F65A /* HistoryMO+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3020,6 +3032,16 @@
 			);
 			currentVersion = F0843CAB21CE5AD900EDB65F /* Pomodoro.xcdatamodel */;
 			path = Pomodoro.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		F0DB788822477F4F0006F65A /* TimeLine.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F0DB788922477F4F0006F65A /* TimeLine.xcdatamodel */,
+			);
+			currentVersion = F0DB788922477F4F0006F65A /* TimeLine.xcdatamodel */;
+			path = TimeLine.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

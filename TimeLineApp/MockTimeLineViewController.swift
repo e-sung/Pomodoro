@@ -14,10 +14,20 @@ import LoremIpsum_iOS
 
 class MockTimeLineViewController: TimelineViewController {
 
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let historyMOs = try! context.fetch(HistoryMO.fetchRequest())
+        let histories = historyMOs.compactMap({ $0 as? HistoryMO }).compactMap({
+            return History(title: $0.title!, content: $0.content!, startTime: Date(), endTime: Date())
+        })
+        self.historyList = histories
     }
     
     @IBAction func buttonFloatClicked(_ sender: UIButton) {
@@ -25,6 +35,11 @@ class MockTimeLineViewController: TimelineViewController {
         let content = LoremIpsum.generateRandomWords(withLength: UInt.random(in: 10...50))!
         let historyItem = History(title: title, content: content, startTime: Date(), endTime: Date())
         historyList.append(historyItem)
+        
+        let historyMO = HistoryMO(entity: HistoryMO.entity(), insertInto: context)
+        historyMO.title = title
+        historyMO.content = content
+        appDelegate.saveContext()
     }
 
 }
