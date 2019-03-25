@@ -7,6 +7,7 @@
 //
 
 import AudioToolbox
+import CoreMotion
 import Foundation
 import HGCircularSlider
 import PomodoroFoundation
@@ -14,6 +15,14 @@ import PomodoroSettings
 import PomodoroUIKit
 import UIKit
 import UserNotifications
+
+extension Double {
+    func roundTo(places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        let divisee = self
+        return roundl(divisee * divisor) / divisor
+    }
+}
 
 public class MainTimerViewController: TimerViewController {
     // MARK: IBOutlets
@@ -26,8 +35,12 @@ public class MainTimerViewController: TimerViewController {
     @IBOutlet var labelTimeFocusedTodayTitle: UILabel!
     @IBOutlet var labelTimeFocusedTodayContent: UILabel!
     @IBOutlet var labelDashboardTitle: UILabel!
+    @IBOutlet var clearButton: UIButton!
 
     // MARK: Properties
+
+    private let motionManager: CMMotionManager = CMMotionManager()
+    private var shouldShowClearButton = false
 
     public static var shared: MainTimerViewController {
         let application = UIApplication.shared
@@ -47,6 +60,7 @@ public class MainTimerViewController: TimerViewController {
         super.viewDidLoad()
         tabBarController?.delegate = self
         rippleButton.buttonCornerRadius = Float(mainSlider.frame.width / 2)
+        clearButton.alpha = 0
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +73,53 @@ public class MainTimerViewController: TimerViewController {
 
         let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.shared)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
+
+        motionManager.startDeviceMotionUpdates(using: CMAttitudeReferenceFrame.xArbitraryCorrectedZVertical, to: OperationQueue.main) { [weak self] motion, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            guard let motion = motion else { return }
+            var accel = motion.userAcceleration.y.roundTo(places: 2)
+            accel = abs(accel)
+            guard self?.clearButton.layer.animationKeys() == nil else { return }
+            if accel > 0.1 {
+                self?.shouldShowClearButton = true
+                UIView.animate(withDuration: 0.5, animations: {
+                    self?.clearButton.alpha = 1
+                }, completion: { _ in
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: {
+                        self?.shouldShowClearButton = false
+                    })
+                })
+            } else if self?.shouldShowClearButton == false {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self?.clearButton.alpha = 0
+                })
+            }
+        }
+    }
+    
+//    func showClearButton(with accel: Double) {
+//        if accel > 0.1 {
+//            shouldShowClearButton = true
+//            UIView.animate(withDuration: 0.5, animations: { [weak self] in
+//                self?.clearButton.alpha = 1
+//            }, completion: { [weak self] _ in
+//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: {
+//                    self?.shouldShowClearButton = false
+//                })
+//            })
+//        }
+//        else if shouldShowClearButton == false {
+//            UIView.animate(withDuration: 0.5, animations: { [weak self] in
+//                self?.clearButton.alpha = 0
+//            })
+//        }
+//    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        motionManager.stopDeviceMotionUpdates()
     }
 
     public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
