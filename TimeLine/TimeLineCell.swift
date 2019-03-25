@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 open class TimeLineCell: UITableViewCell {
     
@@ -16,8 +17,9 @@ open class TimeLineCell: UITableViewCell {
     @IBOutlet private var labelTime: UILabel!
     @IBOutlet private var labels:[UILabel]!
     @IBOutlet var heightOfArrow: NSLayoutConstraint!
+    @IBOutlet var viewCard: UIView!
     var heightArrowConstantFromIB: CGFloat!
-
+    
     var isLastItem = false
     
     open func update(with history: HistoryMO, isLast: Bool) {
@@ -49,6 +51,9 @@ open class TimeLineCell: UITableViewCell {
         labels.forEach({ $0.text = "" })
         labelContent.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: labelContent.font)
         isHidden = true
+//        viewCard.layer.shadowOffset = CGSize(width: 2, height: 2)
+        viewCard.layer.shadowRadius = 20
+        viewCard.layer.shadowColor = UIColor.black.cgColor
     }
 
 }

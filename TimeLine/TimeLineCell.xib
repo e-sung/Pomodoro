@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlS-Sv-77c" userLabel="CardView" customClass="DesignableView" customModule="Spring">
-                        <rect key="frame" x="14" y="0.0" width="311" height="153.5"/>
+                        <rect key="frame" x="14" y="0.0" width="311" height="150.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="752" text="08:30 - 09:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MJC-FL-aJj">
                                 <rect key="frame" x="189.5" y="14" width="107.5" height="20.5"/>
@@ -29,14 +29,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세부적인 내용은 이러하였다. 세부적인 내용은 이러하였다. 세부적인 내용은 이러하였다. 세부적인 내용은 이러하였다. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7f-hS-zdC">
-                                <rect key="frame" x="14" y="74" width="283" height="65.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <rect key="frame" x="14" y="73" width="283" height="63.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="751" text="이것 저것 하기 이것 저것 하기" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTU-0y-WX1">
-                                <rect key="frame" x="14" y="11" width="156.5" height="49"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <rect key="frame" x="14" y="11" width="156.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -55,32 +55,20 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="value" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
+                                <real key="value" value="0.5"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="2"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                <real key="value" value="4"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
-                                <real key="value" value="2"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="0.5"/>
-                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="egf-4J-0Xv">
-                        <rect key="frame" x="154.5" y="153.5" width="30" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downward_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="egf-4J-0Xv">
+                        <rect key="frame" x="164" y="150.5" width="11" height="30"/>
+                        <color key="tintColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="egf-4J-0Xv" secondAttribute="height" multiplier="1:1" id="MwV-Kg-NH2"/>
                             <constraint firstAttribute="height" constant="30" id="NdO-3A-p8B"/>
                         </constraints>
                     </imageView>
@@ -92,7 +80,7 @@
                     <constraint firstItem="egf-4J-0Xv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="f6d-0e-rb9"/>
                     <constraint firstItem="nlS-Sv-77c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="pHT-Pd-hFw"/>
                     <constraint firstAttribute="trailing" secondItem="nlS-Sv-77c" secondAttribute="trailing" constant="14" id="q7H-D0-uUD"/>
-                    <constraint firstAttribute="bottom" secondItem="egf-4J-0Xv" secondAttribute="bottom" constant="-3" id="r7R-aJ-Gc6"/>
+                    <constraint firstAttribute="bottom" secondItem="egf-4J-0Xv" secondAttribute="bottom" id="r7R-aJ-Gc6"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,6 +90,7 @@
                 <outlet property="labelContent" destination="p7f-hS-zdC" id="CAP-mT-kfa"/>
                 <outlet property="labelTime" destination="MJC-FL-aJj" id="iNE-TK-pqM"/>
                 <outlet property="labelTitle" destination="qTU-0y-WX1" id="qiR-pa-3xa"/>
+                <outlet property="viewCard" destination="nlS-Sv-77c" id="gl2-h4-Kpi"/>
                 <outletCollection property="labels" destination="MJC-FL-aJj" collectionClass="NSMutableArray" id="dbc-yy-lCw"/>
                 <outletCollection property="labels" destination="qTU-0y-WX1" collectionClass="NSMutableArray" id="iM7-a1-Oiz"/>
                 <outletCollection property="labels" destination="p7f-hS-zdC" collectionClass="NSMutableArray" id="kGb-df-NlN"/>
@@ -110,6 +99,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_down_arrow" width="24" height="25"/>
+        <image name="downward_arrow" width="11" height="44"/>
     </resources>
 </document>
