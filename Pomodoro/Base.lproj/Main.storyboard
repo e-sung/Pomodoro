@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wui-MR-8g3">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainTimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eggWhite" translatesAutoresizingMaskIntoConstraints="NO" id="w84-Xy-4zv">
-                                <rect key="frame" x="0.0" y="-435" width="667" height="1125"/>
+                                <rect key="frame" x="0.0" y="-6.5" width="375" height="563"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="w84-Xy-4zv" secondAttribute="height" multiplier="2:3" id="bl3-WI-vyv"/>
                                 </constraints>
@@ -31,7 +31,7 @@
                                 </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0j-TM-sWV" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="-40" y="75.5" width="375" height="375"/>
+                                <rect key="frame" x="60" y="147.5" width="255" height="255"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -77,7 +77,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="p0n-JA-XET">
-                                <rect key="frame" x="-10" y="212.5" width="315" height="101.5"/>
+                                <rect key="frame" x="90" y="239" width="195" height="72"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -88,13 +88,13 @@
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shine" translatesAutoresizingMaskIntoConstraints="NO" id="aEs-Ou-jv6">
-                                <rect key="frame" x="-21.5" y="94.5" width="338" height="337.5"/>
+                                <rect key="frame" x="73" y="160.5" width="229.5" height="229.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aEs-Ou-jv6" secondAttribute="height" multiplier="1:1" id="2kU-Jb-1Bh"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ol-b31" customClass="RippleButton" customModule="PomodoroUIKit">
-                                <rect key="frame" x="-40" y="75.5" width="375" height="375"/>
+                                <rect key="frame" x="60" y="147.5" width="255" height="255"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" allowsDirectInteraction="YES"/>
                                 </accessibility>
@@ -118,30 +118,30 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAK-wa-qwe">
-                                <rect key="frame" x="562.5" y="301.5" width="64.5" height="31.5"/>
+                                <rect key="frame" x="155.5" y="576.5" width="64.5" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=compact-widthClass=compact" hidden="YES"/>
                             </label>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="az7-aC-2DG">
-                                <rect key="frame" x="377.5" y="176" width="275.5" height="160"/>
+                                <rect key="frame" x="375" y="554" width="275.5" height="64"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resting..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5gL-Q6-V7j">
-                                        <rect key="frame" x="0.0" y="0.0" width="275.5" height="84"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275.5" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact-widthClass=compact" hidden="NO"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Focused Today " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wky-T1-G2n">
-                                        <rect key="frame" x="0.0" y="96" width="275.5" height="31.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275.5" height="31.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 min × n cycles = 2 hr 10 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCN-3T-Pog">
-                                        <rect key="frame" x="0.0" y="139.5" width="275.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="43.5" width="275.5" height="20.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -199,7 +199,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="ojq-on-Bqu"/>
                                 <exclude reference="Kno-1E-lv9"/>
                                 <exclude reference="PvZ-GQ-nNi"/>
                                 <exclude reference="diY-qW-Uhx"/>
@@ -213,6 +212,7 @@
                                 <exclude reference="mJ6-Bi-MZh"/>
                                 <exclude reference="GMg-kT-be7"/>
                                 <exclude reference="mzc-vb-PPZ"/>
+                                <exclude reference="ojq-on-Bqu"/>
                                 <exclude reference="CUq-Mm-x41"/>
                                 <exclude reference="ECX-mW-UN6"/>
                                 <exclude reference="SPc-YH-quA"/>
