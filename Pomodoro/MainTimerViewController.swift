@@ -98,24 +98,6 @@ public class MainTimerViewController: TimerViewController {
             }
         }
     }
-    
-//    func showClearButton(with accel: Double) {
-//        if accel > 0.1 {
-//            shouldShowClearButton = true
-//            UIView.animate(withDuration: 0.5, animations: { [weak self] in
-//                self?.clearButton.alpha = 1
-//            }, completion: { [weak self] _ in
-//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: {
-//                    self?.shouldShowClearButton = false
-//                })
-//            })
-//        }
-//        else if shouldShowClearButton == false {
-//            UIView.animate(withDuration: 0.5, animations: { [weak self] in
-//                self?.clearButton.alpha = 0
-//            })
-//        }
-//    }
 
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -194,6 +176,10 @@ public class MainTimerViewController: TimerViewController {
     @IBAction func eggYellowClicked(_: Any) {
         startOrStopTimer()
         setAccessiblityHintOfRippleButton(given: interval)
+    }
+
+    @IBAction func clearButtonClicked(_: Any) {
+        intervalFinished(by: .user)
     }
 }
 
