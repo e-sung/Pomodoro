@@ -16,14 +16,6 @@ import PomodoroUIKit
 import UIKit
 import UserNotifications
 
-extension Double {
-    func roundTo(places: Int) -> Double {
-        let divisor = pow(10.0, Double(places))
-        let divisee = self
-        return roundl(divisee * divisor) / divisor
-    }
-}
-
 public class MainTimerViewController: TimerViewController {
     // MARK: IBOutlets
 
