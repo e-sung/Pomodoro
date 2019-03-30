@@ -908,9 +908,11 @@
 				TargetAttributes = {
 					F0006EAC21EDE11F00307F88 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					F06BEC3821EDE46500A45E08 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -919,6 +921,7 @@
 					};
 					F0843C9F21CE5AD900EDB65F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -927,24 +930,30 @@
 					};
 					F0843CB621CE5ADA00EDB65F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = F0843C9F21CE5AD900EDB65F;
 					};
 					F0843CC121CE5ADA00EDB65F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = F0843C9F21CE5AD900EDB65F;
 					};
 					F087251F21CF6719007EB27F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					F087252721CF6719007EB27F = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = F0843C9F21CE5AD900EDB65F;
 					};
 					F0D89DD921D8D32B0011A0B7 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					F0D89DE121D8D32B0011A0B7 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = F0843C9F21CE5AD900EDB65F;
 					};
 					F0D89E0121D8D6D80011A0B7 = {
@@ -1529,7 +1538,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1559,7 +1568,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1582,7 +1591,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1603,7 +1612,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro.Widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1743,7 +1752,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1765,7 +1774,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1786,7 +1795,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Pomodoro";
 			};
@@ -1808,7 +1817,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Pomodoro";
 			};
@@ -1829,7 +1838,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Pomodoro;
 			};
@@ -1850,7 +1859,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Pomodoro;
 			};
@@ -1880,7 +1889,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1911,7 +1920,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1932,7 +1941,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Pomodoro";
 			};
@@ -1952,7 +1961,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Pomodoro";
 			};
@@ -1982,7 +1991,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroSettings;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2013,7 +2022,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroSettings;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2034,7 +2043,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroSettingsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Pomodoro";
 			};
@@ -2054,7 +2063,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroSettingsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pomodoro.app/Pomodoro";
 			};
