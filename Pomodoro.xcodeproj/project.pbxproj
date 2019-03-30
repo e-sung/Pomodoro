@@ -1778,7 +1778,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = PomodoroTests/Info.plist;
+				INFOPLIST_FILE = Pomodoro/PomodoroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1800,7 +1800,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = PomodoroTests/Info.plist;
+				INFOPLIST_FILE = Pomodoro/PomodoroTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1821,7 +1821,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = PomodoroUITests/Info.plist;
+				INFOPLIST_FILE = Pomodoro/PomodoroUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1842,7 +1842,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = PomodoroUITests/Info.plist;
+				INFOPLIST_FILE = Pomodoro/PomodoroUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1924,7 +1924,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = PomodoroFoundationTests/Info.plist;
+				INFOPLIST_FILE = PomodoroFoundation/PomodoroFoundationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1944,7 +1944,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = PomodoroFoundationTests/Info.plist;
+				INFOPLIST_FILE = PomodoroFoundation/PomodoroFoundationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2026,7 +2026,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = PomodoroSettingsTests/Info.plist;
+				INFOPLIST_FILE = PomodoroSettings/PomodoroSettingsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2046,7 +2046,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = PomodoroSettingsTests/Info.plist;
+				INFOPLIST_FILE = PomodoroSettings/PomodoroSettingsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2068,7 +2068,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = SettingsApp/Info.plist;
+				INFOPLIST_FILE = PomodoroSettings/SettingsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2088,7 +2088,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = SettingsApp/Info.plist;
+				INFOPLIST_FILE = PomodoroSettings/SettingsApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2106,7 +2106,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = SettingsAppUITests/Info.plist;
+				INFOPLIST_FILE = PomodoroSettings/SettingsApp/SettingsAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2126,7 +2126,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = SettingsAppUITests/Info.plist;
+				INFOPLIST_FILE = PomodoroSettings/SettingsApp/SettingsAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
