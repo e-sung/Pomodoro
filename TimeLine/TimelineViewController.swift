@@ -8,12 +8,16 @@
 
 import PomodoroFoundation
 import PomodoroUIKit
+import RxSwift
+import RxKeyboard
 import UIKit
 
 open class TimelineViewController: UIViewController {
     @IBOutlet public var titleTextView: UITextView!
     @IBOutlet public var tableView: UITableView!
     public var fetchedHistories: [HistoryMO] = []
+    public var keyboardHeight: CGFloat = 0
+    public var disposeBag = DisposeBag()
 
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,13 @@ open class TimelineViewController: UIViewController {
         tableView.separatorStyle = .none
         let cellNib = UINib(nibName: TimeLineCell.className, bundle: Bundle(for: TimeLineCell.self))
         tableView.register(cellNib, forCellReuseIdentifier: TimeLineCell.className)
+        RxKeyboard.instance.visibleHeight.asObservable()
+            .delay(1, scheduler: MainScheduler.instance)
+            .bind(onNext:  { [weak self] in
+            self?.keyboardHeight = $0
+        })
+        .disposed(by: disposeBag)
+        
     }
 
     open override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +71,7 @@ extension TimelineViewController: UITableViewDataSource {
 extension TimelineViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? TimeLineCell else { return }
+        guard keyboardHeight == 0 else { return }
         performSegue(withIdentifier: "showEditVC", sender: cell)
     }
 
