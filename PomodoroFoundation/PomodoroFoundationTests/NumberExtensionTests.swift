@@ -31,4 +31,13 @@ class NumberExtensionTests: XCTestCase {
             XCTAssert(intFour.secondString == "4 sec")
         }
     }
+
+    func testRound() {
+        // Given
+        let sut: Double = 3.3333
+        // When
+        let roundedNumber = sut.roundTo(places: 2)
+        // Then
+        XCTAssert(roundedNumber == 3.33)
+    }
 }

@@ -6,36 +6,34 @@
 //  Copyright © 2019 Sungdoo. All rights reserved.
 //
 
-import UIKit
 import Spring
+import UIKit
 
 open class TimeLineCell: UITableViewCell {
-    
     public var history: HistoryMO?
     @IBOutlet private var labelTitle: UILabel!
     @IBOutlet private var labelContent: UILabel!
     @IBOutlet private var labelTime: UILabel!
-    @IBOutlet private var labels:[UILabel]!
+    @IBOutlet private var labels: [UILabel]!
     @IBOutlet var heightOfArrow: NSLayoutConstraint!
     @IBOutlet var viewCard: UIView!
     var heightArrowConstantFromIB: CGFloat!
-    
+
     var isLastItem = false
-    
+
     open func update(with history: HistoryMO, isLast: Bool) {
         update(isLastItem: isLast)
         update(with: history)
     }
-    
+
     func update(isLastItem: Bool) {
         if isLastItem {
             heightOfArrow.constant = CGFloat.leastNonzeroMagnitude
-        }
-        else {
+        } else {
             heightOfArrow.constant = heightArrowConstantFromIB
         }
     }
-    
+
     func update(with history: HistoryMO) {
         isHidden = false
         self.history = history
@@ -43,7 +41,7 @@ open class TimeLineCell: UITableViewCell {
         labelContent.text = history.content
         labelTime.text = history.durationStr
     }
-    
+
     open override func awakeFromNib() {
         super.awakeFromNib()
         heightArrowConstantFromIB = heightOfArrow.constant
@@ -55,7 +53,6 @@ open class TimeLineCell: UITableViewCell {
         viewCard.layer.shadowRadius = 20
         viewCard.layer.shadowColor = UIColor.black.cgColor
     }
-
 }
 
 extension TimeLineCell: EditorViewControllerDelegate {

@@ -6,11 +6,10 @@
 //  Copyright © 2019 Sungdoo. All rights reserved.
 //
 
-import XCTest
 @testable import TimeLine
+import XCTest
 
 class TimeLineTests: XCTestCase {
-
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -26,9 +25,8 @@ class TimeLineTests: XCTestCase {
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

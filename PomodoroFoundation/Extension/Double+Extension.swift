@@ -18,6 +18,12 @@ extension Double {
         let integerValue = Int(exactly: self)!
         return integerValue.secondString
     }
+
+    public func roundTo(places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        let divisee = self
+        return Double(roundl(divisee * divisor)) / divisor
+    }
 }
 
 extension Int {

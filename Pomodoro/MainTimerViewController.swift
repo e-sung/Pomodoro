@@ -7,6 +7,7 @@
 //
 
 import AudioToolbox
+import CoreMotion
 import Foundation
 import HGCircularSlider
 import PomodoroFoundation
@@ -26,8 +27,13 @@ public class MainTimerViewController: TimerViewController {
     @IBOutlet var labelTimeFocusedTodayTitle: UILabel!
     @IBOutlet var labelTimeFocusedTodayContent: UILabel!
     @IBOutlet var labelDashboardTitle: UILabel!
+    @IBOutlet var clearButton: UIButton!
 
     // MARK: Properties
+
+    private let motionManager: CMMotionManager = CMMotionManager()
+    public var notificationManager: NotificationManager!
+    private var shouldShowClearButton = false
 
     public static var shared: MainTimerViewController {
         let application = UIApplication.shared
@@ -45,8 +51,10 @@ public class MainTimerViewController: TimerViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        notificationManager = NotificationManager(delegate: self)
         tabBarController?.delegate = self
         rippleButton.buttonCornerRadius = Float(mainSlider.frame.width / 2)
+        clearButton.alpha = 0
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +67,35 @@ public class MainTimerViewController: TimerViewController {
 
         let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.shared)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
+
+        motionManager.startDeviceMotionUpdates(using: CMAttitudeReferenceFrame.xArbitraryCorrectedZVertical, to: OperationQueue.main) { [weak self] motion, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            guard let motion = motion else { return }
+            var accel = motion.userAcceleration.y.roundTo(places: 2)
+            accel = abs(accel)
+            guard self?.clearButton.layer.animationKeys() == nil else { return }
+            if accel > 0.1 {
+                self?.shouldShowClearButton = true
+                UIView.animate(withDuration: 0.5, animations: {
+                    self?.clearButton.alpha = 1
+                }, completion: { _ in
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: {
+                        self?.shouldShowClearButton = false
+                    })
+                })
+            } else if self?.shouldShowClearButton == false {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self?.clearButton.alpha = 0
+                })
+            }
+        }
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        motionManager.stopDeviceMotionUpdates()
     }
 
     public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -89,6 +126,13 @@ public class MainTimerViewController: TimerViewController {
         labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
         updateLabelTimeFocusedTodayContent()
         setAccessibilityHintOfLabelIntervalCount()
+    }
+
+    public override func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
+        if isFromBackground == false {
+            notificationManager.publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
+        }
+        super.intervalFinished(by: finisher, isFromBackground: isFromBackground)
     }
 
     func updateLabelTimeFocusedTodayContent() {
@@ -134,6 +178,10 @@ public class MainTimerViewController: TimerViewController {
         startOrStopTimer()
         setAccessiblityHintOfRippleButton(given: interval)
     }
+
+    @IBAction func clearButtonClicked(_: Any) {
+        intervalFinished(by: .user, isFromBackground: false)
+    }
 }
 
 // MARK: Update
@@ -172,6 +220,26 @@ extension MainTimerViewController {
         let completedCycleFormatString = NSLocalizedString("completed cycle accessibility hint", comment: "")
         let completedCycleString = String.localizedStringWithFormat(completedCycleFormatString, currentCycleCount)
         labelIntervalCount.accessibilityLabel = goalString + ". " + completedCycleString
+    }
+}
+
+// MARK: UserNotificationExtension
+
+extension MainTimerViewController: UNUserNotificationCenterDelegate {
+    public func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.notification.request.identifier == "background.noti" {
+            intervalFinished(by: .time, isFromBackground: true)
+            if response.actionIdentifier != "com.apple.UNNotificationDefaultActionIdentifier" {
+                registerBackgroundTimer(with: interval)
+            }
+        } else {
+            startOrStopTimer()
+        }
+        completionHandler()
+    }
+
+    public func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
     }
 }
 

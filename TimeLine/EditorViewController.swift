@@ -6,17 +6,16 @@
 //  Copyright © 2019 Sungdoo. All rights reserved.
 //
 
-import UIKit
 import RxKeyboard
 import RxSwift
+import UIKit
 
 public protocol EditorViewControllerDelegate: class {
     func itemDidChange(_ title: String, body: String)
 }
 
 open class EditorViewController: UIViewController {
-    
-    public var history:HistoryMO?
+    public var history: HistoryMO?
 
     @IBOutlet public var titleTextView: UITextView!
     @IBOutlet public var bodyTextView: UITextView!
@@ -26,13 +25,14 @@ open class EditorViewController: UIViewController {
     @IBOutlet var topConstraint: NSLayoutConstraint!
     var disposeBag = DisposeBag()
     public weak var delegate: EditorViewControllerDelegate?
-    
+
     open override func loadView() {
         Bundle(for: EditorViewController.self).loadNibNamed(EditorViewController.className,
                                                             owner: self,
                                                             options: nil)
     }
-    override open func viewDidLoad() {
+
+    open override func viewDidLoad() {
         super.viewDidLoad()
 
         titleTextView.delegate = self
@@ -41,7 +41,7 @@ open class EditorViewController: UIViewController {
         bodyTextView.text = history?.content
         bodyTextView.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: bodyTextView.font!)
         navigationController?.interactivePopGestureRecognizer?.delegate = self
-        
+
         adjustHeight(of: titleTextView, with: heightOfTitleView)
         RxKeyboard.instance.visibleHeight.asObservable().bind(onNext: { [weak self] height in
             self?.bottomConstraint.constant = height
@@ -52,9 +52,9 @@ open class EditorViewController: UIViewController {
                 })
             }
         })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
     }
-    
+
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
@@ -62,19 +62,18 @@ open class EditorViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonClicked(_:)))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonClicked(_:)))
         navigationController?.navigationBar.tintColor = UIColor(white: 0.1, alpha: 1)
-
     }
-    
+
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         delegate?.itemDidChange(titleTextView.text, body: bodyTextView.text)
     }
-    
-    @objc open func cancelButtonClicked(_ sender: Any?) {
+
+    @objc open func cancelButtonClicked(_: Any?) {
         navigationController?.popViewController(animated: true)
     }
-    
-    @objc open func doneButtonClicked(_ sender: Any?) {
+
+    @objc open func doneButtonClicked(_: Any?) {
         navigationController?.popViewController(animated: true)
     }
 }
@@ -101,7 +100,7 @@ extension EditorViewController: UITextViewDelegate {
 }
 
 extension EditorViewController: UIGestureRecognizerDelegate {
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_: UIGestureRecognizer, shouldBeRequiredToFailBy _: UIGestureRecognizer) -> Bool {
         return true
     }
 }

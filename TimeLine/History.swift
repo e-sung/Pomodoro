@@ -20,17 +20,18 @@ public struct History: Codable {
         let endStr = dateFormatter.string(from: endTime)
         return "\(startStr) - \(endStr)"
     }
+
     public init(title: String, content: String, startTime: Date, endTime: Date) {
         self.title = title
         self.content = content
         self.startTime = startTime
         self.endTime = endTime
     }
-    
+
     public init(with managedObject: HistoryMO) {
-        self.title = managedObject.title ?? ""
-        self.content = managedObject.content ?? ""
-        self.startTime = managedObject.startDate as Date? ?? Date()
-        self.endTime = managedObject.endDate as Date? ?? Date()
+        title = managedObject.title ?? ""
+        content = managedObject.content ?? ""
+        startTime = managedObject.startDate as Date? ?? Date()
+        endTime = managedObject.endDate as Date? ?? Date()
     }
 }

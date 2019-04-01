@@ -23,7 +23,7 @@ public class PickerViewController: UIViewController, PickerUpdater {
         guard let defaultAmount = retreiveAmount(for: settingCell.content, from: UserDefaults(suiteName: "group.pomodoro.com")!) else { return }
         guard let defaultRow = settingCell.content.rowFor(defaultAmount) else { return }
         pickerView.selectRow(defaultRow, inComponent: 0, animated: false)
-        view.accessibilityElements = [pickerView, buttonDone, buttonCancel]
+        view.accessibilityElements = [pickerView as Any, buttonDone as Any, buttonCancel as Any]
         if UIAccessibility.isReduceTransparencyEnabled {
             view.backgroundColor = .gray
         }

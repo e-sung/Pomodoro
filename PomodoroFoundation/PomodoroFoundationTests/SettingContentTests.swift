@@ -46,8 +46,8 @@ class SettingContentTests: XCTestCase {
         XCTAssert(breakTime?.formattedString(given: 17) == "17 min")
         XCTAssert(longBreakTime?.formattedString(given: 16) == "16 min")
 
-        XCTAssert(cycleForLongBreak?.formattedString(given: 100) == "100 cycles")
-        XCTAssert(targetSetting?.formattedString(given: 30) == "30 intervals")
+        XCTAssert(cycleForLongBreak?.formattedString(given: 100) == "After 100 Cycles")
+        XCTAssert(targetSetting?.formattedString(given: 30) == "30 cycles per day")
 
         XCTAssert(neverSleepSetting?.formattedString(given: 30) == nil)
         XCTAssert(enhancedFocusModeSetting?.formattedString(given: 3) == nil)
