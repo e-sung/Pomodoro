@@ -35,6 +35,14 @@ open class TimelineViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        titleTextView.rx.text.bind(onNext: { [weak self] _ in
+            guard let tableHeaderView = self?.tableView.tableHeaderView else { return }
+            let newSize = tableHeaderView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+            tableHeaderView.frame = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+            self?.tableView.reloadData()
+        })
+        .disposed(by: disposeBag)
+        
     }
 
     open override func viewWillAppear(_ animated: Bool) {
