@@ -22,7 +22,7 @@ extension Double {
     public func roundTo(places: Int) -> Double {
         let divisor = pow(10.0, Double(places))
         let divisee = self
-        return Double(roundl(Float80(divisee * divisor))) / divisor
+        return Double(roundl(divisee * divisor)) / divisor
     }
 }
 
