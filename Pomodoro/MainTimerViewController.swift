@@ -32,6 +32,7 @@ public class MainTimerViewController: TimerViewController {
     // MARK: Properties
 
     private let motionManager: CMMotionManager = CMMotionManager()
+    public var notificationManager: NotificationManager!
     private var shouldShowClearButton = false
 
     public static var shared: MainTimerViewController {
@@ -50,6 +51,7 @@ public class MainTimerViewController: TimerViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        notificationManager = NotificationManager(delegate: self)
         tabBarController?.delegate = self
         rippleButton.buttonCornerRadius = Float(mainSlider.frame.width / 2)
         clearButton.alpha = 0
@@ -126,6 +128,13 @@ public class MainTimerViewController: TimerViewController {
         setAccessibilityHintOfLabelIntervalCount()
     }
 
+    public override func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
+        if isFromBackground == false {
+            notificationManager.publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
+        }
+        super.intervalFinished(by: finisher, isFromBackground: isFromBackground)
+    }
+
     func updateLabelTimeFocusedTodayContent() {
         let focusMinute = Int(FocusInterval().targetMinute).minuteString
         let focusCycle = currentCycleCount + 1
@@ -171,7 +180,7 @@ public class MainTimerViewController: TimerViewController {
     }
 
     @IBAction func clearButtonClicked(_: Any) {
-        intervalFinished(by: .user)
+        intervalFinished(by: .user, isFromBackground: false)
     }
 }
 
@@ -211,6 +220,26 @@ extension MainTimerViewController {
         let completedCycleFormatString = NSLocalizedString("completed cycle accessibility hint", comment: "")
         let completedCycleString = String.localizedStringWithFormat(completedCycleFormatString, currentCycleCount)
         labelIntervalCount.accessibilityLabel = goalString + ". " + completedCycleString
+    }
+}
+
+// MARK: UserNotificationExtension
+
+extension MainTimerViewController: UNUserNotificationCenterDelegate {
+    public func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.notification.request.identifier == "background.noti" {
+            intervalFinished(by: .time, isFromBackground: true)
+            if response.actionIdentifier != "com.apple.UNNotificationDefaultActionIdentifier" {
+                registerBackgroundTimer(with: interval)
+            }
+        } else {
+            startOrStopTimer()
+        }
+        completionHandler()
+    }
+
+    public func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
     }
 }
 
