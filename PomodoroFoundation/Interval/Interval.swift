@@ -16,7 +16,7 @@ public class IntervalManager {
 
 public protocol IntervalDelegate: class {
     func timeElapsed(_ seconds: TimeInterval)
-    func intervalFinished(by finisher: IntervalFinisher)
+    func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool)
 }
 
 public enum IntervalFinisher {
@@ -68,7 +68,7 @@ extension Interval {
     public func stopTimer(by finisher: IntervalFinisher = .user) {
         timer.invalidate()
         elapsedSeconds = 0
-        delegate?.intervalFinished(by: finisher)
+        delegate?.intervalFinished(by: finisher, isFromBackground: false)
     }
 
     public func pauseTimer() {

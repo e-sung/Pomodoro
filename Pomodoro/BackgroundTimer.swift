@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import PomodoroFoundation
+import PomodoroUIKit
 import UIKit
 import UserNotifications
 
-public func registerBackgroundTimer() {
-    guard let interval = IntervalManager.shared, interval.isActive else { return }
+public func registerBackgroundTimer(with interval: Interval) {
+    guard interval.isActive else { return }
 
     let remainingTime = interval.targetSeconds - interval.elapsedSeconds
 

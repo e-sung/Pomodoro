@@ -11,7 +11,7 @@ open class TimerViewController: UIViewController, IntervalDelegate {
     // MARK: Properties
 
     public var interval: Interval! = IntervalManager.shared
-    public var notificationManager: NotificationManager!
+//    public var notificationManager: NotificationManager!
     public var maxCycleCount: Int {
         return retreiveAmount(for: .target, from: UserDefaults(suiteName: "group.pomodoro.com")!)!
     }
@@ -54,9 +54,7 @@ open class TimerViewController: UIViewController, IntervalDelegate {
         updateLabelTime(with: seconds)
     }
 
-    open func intervalFinished(by finisher: IntervalFinisher) {
-        notificationManager.publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
-
+    open func intervalFinished(by finisher: IntervalFinisher, isFromBackground _: Bool) {
         if finisher == .time, interval is BreakInterval {
             currentCycleCount += 1
             saveCycles(currentCycleCount, to: UserDefaults(suiteName: "group.pomodoro.com")!)
@@ -71,7 +69,7 @@ open class TimerViewController: UIViewController, IntervalDelegate {
 
 extension TimerViewController {
     func setUpInitialValue() {
-        notificationManager = NotificationManager(delegate: self)
+//        notificationManager = NotificationManager(delegate: self)
         if let savedInterval = retreiveInterval(from: UserDefaults(suiteName: "group.pomodoro.com")!) {
             interval = savedInterval
             interval.delegate = self
@@ -159,26 +157,6 @@ extension TimerViewController {
             currentCycleCount = 0
             saveCycles(currentCycleCount, date: Date(), to: UserDefaults(suiteName: "group.pomodoro.com")!)
         }
-    }
-}
-
-// MARK: UserNotificationExtension
-
-extension TimerViewController: UNUserNotificationCenterDelegate {
-    public func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        if response.notification.request.identifier == "background.noti" {
-            intervalFinished(by: .time)
-            if response.actionIdentifier != "com.apple.UNNotificationDefaultActionIdentifier" {
-                registerBackgroundTimer()
-            }
-        } else {
-            startOrStopTimer()
-        }
-        completionHandler()
-    }
-
-    public func userNotificationCenter(_: UNUserNotificationCenter, willPresent _: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound, .badge])
     }
 }
 

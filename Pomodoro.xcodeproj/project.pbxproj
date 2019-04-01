@@ -17,7 +17,6 @@
 		F0006EB921EDE13300307F88 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F087250D21CF1264007EB27F /* DesignableView.swift */; };
 		F0006EBB21EDE13300307F88 /* RippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12DE21E36423003C2129 /* RippleButton.swift */; };
 		F0006EBC21EDE13300307F88 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0006EA421EDD8CF00307F88 /* TimerViewController.swift */; };
-		F0006EBD21EDE20400307F88 /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* BackgroundTimer.swift */; };
 		F0006EBE21EDE2AD00307F88 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F038205221F2202C000ACFD0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038205121F2202C000ACFD0 /* String+Extension.swift */; };
 		F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F038208721F496C8000ACFD0 /* Localizable.stringsdict */; };
@@ -83,6 +82,7 @@
 		F0EF230D21EE161C00338D51 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F0EF230E21EE161C00338D51 /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
 		F0EF230F21EE164D00338D51 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */; };
+		F0F6765222522334007607B8 /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* BackgroundTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -513,6 +513,7 @@
 				F0843CC521CE5ADA00EDB65F /* PomodoroUITests */,
 				F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */,
 				F0843CA321CE5AD900EDB65F /* AppDelegate.swift */,
+				F09422EB21D2F60700134C63 /* BackgroundTimer.swift */,
 				F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */,
 				F0843CA721CE5AD900EDB65F /* Main.storyboard */,
 				F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */,
@@ -552,7 +553,6 @@
 				F038205421F2249B000ACFD0 /* Singletons */,
 				F0D89DD121D8D1BA0011A0B7 /* SettingContent.swift */,
 				F09422E921D2476600134C63 /* StandardTime.swift */,
-				F09422EB21D2F60700134C63 /* BackgroundTimer.swift */,
 				F087252221CF6719007EB27F /* PomodoroFoundation.h */,
 				F087252321CF6719007EB27F /* Info.plist */,
 			);
@@ -1286,6 +1286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
+				F0F6765222522334007607B8 /* BackgroundTimer.swift in Sources */,
 				F0843CA621CE5AD900EDB65F /* MainTimerViewController.swift in Sources */,
 				F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */,
 			);
@@ -1322,7 +1323,6 @@
 				F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */,
 				F087254021CF6731007EB27F /* NSObject+Extension.swift in Sources */,
 				F0D89DD321D8D1DA0011A0B7 /* Double+Extension.swift in Sources */,
-				F0006EBD21EDE20400307F88 /* BackgroundTimer.swift in Sources */,
 				F087254121CF6731007EB27F /* FocusInterval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
