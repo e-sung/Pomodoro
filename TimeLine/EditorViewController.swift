@@ -43,6 +43,7 @@ open class EditorViewController: UIViewController {
         navigationController?.interactivePopGestureRecognizer?.delegate = self
 
         adjustHeight(of: titleTextView, with: heightOfTitleView)
+        hideKeyboardWhenTappedAround()
         RxKeyboard.instance.visibleHeight.asObservable().bind(onNext: { [weak self] height in
             self?.bottomConstraint.constant = height
             if height == 0 {
@@ -87,6 +88,10 @@ extension EditorViewController: UITextViewDelegate {
             }
             adjustHeight(of: textView, with: heightOfTitleView, duration: 0.5)
         }
+    }
+ 
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        view.endEditing(true)
     }
 
     func adjustHeight(of textView: UITextView, with height: NSLayoutConstraint, duration: TimeInterval = 0) {
