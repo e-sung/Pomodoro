@@ -37,4 +37,12 @@ class MockTimeLineViewController: TimelineViewController {
         fetchedHistories.append(historyMO)
         tableView.reloadData()
     }
+    
+    override func delete(history: HistoryMO) {
+        context.delete(history)
+        fetchedHistories.removeAll(where: { $0.startDate == history.startDate })
+        try? context.save()
+        tableView.reloadData()
+    }
+    
 }

@@ -56,6 +56,10 @@ open class TimelineViewController: UIViewController {
             editVC.history = sender.history
         }
     }
+    
+    open func delete(history: HistoryMO) {
+        
+    }
 }
 
 extension TimelineViewController: UITableViewDataSource {
@@ -92,7 +96,7 @@ extension TimelineViewController: UITableViewDelegate {
                 self?.performSegue(withIdentifier: "showEditVC", sender: cell)
             }),
             UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
-                self?.showAreYouSureToDeleteAlert()
+                self?.showAreYouSureToDeleteAlert(for: cell)
             })
         ]
         
@@ -100,9 +104,11 @@ extension TimelineViewController: UITableViewDelegate {
         present(actionSheet, animated: true, completion: nil)
     }
     
-    func showAreYouSureToDeleteAlert() {
+    func showAreYouSureToDeleteAlert(for cell: TimeLineCell) {
         let areYouSureAlert = UIAlertController(title: "Are you Sure?", message: nil, preferredStyle: .alert)
-        let Delete = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+        let Delete = UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
+            guard let history = cell.history else { return }
+            self?.delete(history: history)
             print("Deleted")
         })
         let Cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
