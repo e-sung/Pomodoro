@@ -80,7 +80,35 @@ extension TimelineViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? TimeLineCell else { return }
         guard keyboardHeight == 0 else { return }
-        performSegue(withIdentifier: "showEditVC", sender: cell)
+        showEditItemActionSheet(for: cell)
+
+    }
+    
+    func showEditItemActionSheet(for cell: TimeLineCell) {
+        let actionSheet = UIAlertController(title: "What do yo want to do?", message: nil, preferredStyle: .actionSheet)
+        
+        let actions = [
+            UIAlertAction(title: "Edit", style: .default, handler: { [weak self] (action) in
+                self?.performSegue(withIdentifier: "showEditVC", sender: cell)
+            }),
+            UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
+                self?.showAreYouSureToDeleteAlert()
+            })
+        ]
+        
+        actions.forEach({ actionSheet.addAction($0) })
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func showAreYouSureToDeleteAlert() {
+        let areYouSureAlert = UIAlertController(title: "Are you Sure?", message: nil, preferredStyle: .alert)
+        let Delete = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+            print("Deleted")
+        })
+        let Cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        areYouSureAlert.addAction(Delete)
+        areYouSureAlert.addAction(Cancel)
+        present(areYouSureAlert, animated: true, completion: nil)
     }
 
     open func tableView(_: UITableView, viewForFooterInSection _: Int) -> UIView? {
