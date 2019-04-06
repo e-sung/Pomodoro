@@ -41,26 +41,29 @@ class MockTimeLineViewController: TimelineViewController {
     
     @IBAction func buttonAddNewItemClicked(_ sender: Any) {
         let alert = UIAlertController(title: "Congratulation!", message: "Add Memo?", preferredStyle: .alert)
-        alert.addTextField(configurationHandler: { tf in
-            
+        alert.addTextField(configurationHandler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+            self?.addNewItem(with: alert)
         })
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
-            guard let sself = self else { return }
-            
-            let title = sself.titleText
-            let memo = alert.textFields?.first?.text ?? "-"
-            let historyItem = History(title: title, content: memo, startTime: Date(), endTime: Date())
-            let historyMO = HistoryMO(entity: HistoryMO.entity(), insertInto: sself.context)
-            historyMO.setUp(with: historyItem)
-            self?.appDelegate.saveContext()
-            self?.fetchedHistories.append(historyMO)
-            self?.tableView.reloadData()
-            self?.scrollToBottom()
-
-            
+        
+        let noAction = UIAlertAction(title: "No", style: .default, handler: { [weak self] _ in
+            self?.addNewItem(with: alert)
         })
-        alert.addAction(alertAction)
+        
+        alert.addAction(noAction)
+        alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func addNewItem(with alert: UIAlertController) {
+        let memo = alert.textFields?.first?.text ?? "-"
+        let historyItem = History(title: titleText, content: memo, startTime: Date(), endTime: Date())
+        let historyMO = HistoryMO(entity: HistoryMO.entity(), insertInto: context)
+        historyMO.setUp(with: historyItem)
+        appDelegate.saveContext()
+        fetchedHistories.append(historyMO)
+        tableView.reloadData()
+        scrollToBottom()
     }
     
     private func scrollToBottom() {
