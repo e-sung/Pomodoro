@@ -91,14 +91,36 @@
                                     <action selector="buttonFloatClicked:" destination="Vtj-Ua-G06" eventType="touchUpInside" id="Eaw-VV-tSI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ4-S5-oVQ" customClass="DesignableButton" customModule="PomodoroUIKit">
+                                <rect key="frame" x="14" y="603" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="G6t-Og-0Ep"/>
+                                    <constraint firstAttribute="width" constant="50" id="qIm-Iv-gfz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonAddNewItemClicked:" destination="Vtj-Ua-G06" eventType="touchUpInside" id="9Rk-K9-AFf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.97647058819999999" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="I7d-fV-NGq" firstAttribute="top" secondItem="p0b-bN-HOA" secondAttribute="top" id="A43-ZH-Htn"/>
                             <constraint firstItem="3wx-4r-O5v" firstAttribute="trailing" secondItem="I7d-fV-NGq" secondAttribute="trailing" constant="-14" id="FzN-vi-crs"/>
+                            <constraint firstItem="ZJ4-S5-oVQ" firstAttribute="bottom" secondItem="p0b-bN-HOA" secondAttribute="bottom" constant="-14" id="IrE-M3-9s8"/>
                             <constraint firstItem="p0b-bN-HOA" firstAttribute="bottom" secondItem="I7d-fV-NGq" secondAttribute="bottom" id="OhP-Hy-Hbc"/>
                             <constraint firstItem="3wx-4r-O5v" firstAttribute="bottom" secondItem="I7d-fV-NGq" secondAttribute="bottom" constant="-14" id="SYH-TZ-f7h"/>
                             <constraint firstItem="I7d-fV-NGq" firstAttribute="leading" secondItem="p0b-bN-HOA" secondAttribute="leading" id="Xry-hQ-czY"/>
+                            <constraint firstItem="ZJ4-S5-oVQ" firstAttribute="leading" secondItem="p0b-bN-HOA" secondAttribute="leading" constant="14" id="dfN-08-lKp"/>
                             <constraint firstItem="p0b-bN-HOA" firstAttribute="trailing" secondItem="I7d-fV-NGq" secondAttribute="trailing" id="kgj-B0-hOC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p0b-bN-HOA"/>

@@ -18,6 +18,13 @@ open class TimelineViewController: UIViewController {
     public var fetchedHistories: [HistoryMO] = []
     public var keyboardHeight: CGFloat = 0
     public var disposeBag = DisposeBag()
+    public var titleText: String {
+        var title = titleTextView.text
+        if title == nil || title?.isEmpty == true {
+            title = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
+        }
+        return title!
+    }
 
     open override func viewDidLoad() {
         super.viewDidLoad()

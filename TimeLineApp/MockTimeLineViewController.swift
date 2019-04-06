@@ -24,6 +24,7 @@ class MockTimeLineViewController: TimelineViewController {
         super.viewWillAppear(animated)
         fetchedHistories = try! context.fetch(HistoryMO.fetchRequest())
         tableView.reloadData()
+        tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
     }
 
     @IBAction func buttonFloatClicked(_: UIButton) {
@@ -37,6 +38,37 @@ class MockTimeLineViewController: TimelineViewController {
         fetchedHistories.append(historyMO)
         tableView.reloadData()
     }
+    
+    @IBAction func buttonAddNewItemClicked(_ sender: Any) {
+        let alert = UIAlertController(title: "Congratulation!", message: "Add Memo?", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: { tf in
+            
+        })
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+            guard let sself = self else { return }
+            
+            let title = sself.titleText
+            let memo = alert.textFields?.first?.text ?? "-"
+            let historyItem = History(title: title, content: memo, startTime: Date(), endTime: Date())
+            let historyMO = HistoryMO(entity: HistoryMO.entity(), insertInto: sself.context)
+            historyMO.setUp(with: historyItem)
+            self?.appDelegate.saveContext()
+            self?.fetchedHistories.append(historyMO)
+            self?.tableView.reloadData()
+            self?.scrollToBottom()
+
+            
+        })
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func scrollToBottom() {
+        let itemCount = fetchedHistories.count
+        let indexPath = IndexPath(row: itemCount - 1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+    
     
     override func delete(history: HistoryMO) {
         context.delete(history)
