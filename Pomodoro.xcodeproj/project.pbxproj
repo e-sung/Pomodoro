@@ -71,7 +71,6 @@
 		F0BA0E0A22367BB6004CD72C /* TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; };
 		F0BA0E0B22367BB6004CD72C /* TimeLine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0BA0E1222367BCB004CD72C /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A200322118A7B001ECF23 /* TimelineViewController.swift */; };
-		F0BA0E1322367BCB004CD72C /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DC722367AB9004CD72C /* History.swift */; };
 		F0BA0E1422367BCB004CD72C /* TimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DC3223674E2004CD72C /* TimeLineCell.swift */; };
 		F0BA0E1522367C29004CD72C /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F0BA0E1622367C29004CD72C /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
@@ -402,7 +401,6 @@
 		F09422EB21D2F60700134C63 /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		F0BA0DC3223674E2004CD72C /* TimeLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineCell.swift; sourceTree = "<group>"; };
 		F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeLineCell.xib; sourceTree = "<group>"; };
-		F0BA0DC722367AB9004CD72C /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		F0BA0DCD22367B51004CD72C /* TimeLineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BA0DCF22367B51004CD72C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0BA0DD422367B51004CD72C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -790,7 +788,6 @@
 		F0BA0DF622367BB6004CD72C /* TimeLine */ = {
 			isa = PBXGroup;
 			children = (
-				F0BA0DC722367AB9004CD72C /* History.swift */,
 				F0DB788B22477FA30006F65A /* HistoryMO+CoreDataClass.swift */,
 				F0DB788C22477FA30006F65A /* HistoryMO+CoreDataProperties.swift */,
 				F01A200322118A7B001ECF23 /* TimelineViewController.swift */,
@@ -1831,7 +1828,6 @@
 				F0DB788D22477FA30006F65A /* HistoryMO+CoreDataClass.swift in Sources */,
 				F0DB788A22477F4F0006F65A /* TimeLine.xcdatamodeld in Sources */,
 				F0BA0E1422367BCB004CD72C /* TimeLineCell.swift in Sources */,
-				F0BA0E1322367BCB004CD72C /* History.swift in Sources */,
 				F0BA0E1222367BCB004CD72C /* TimelineViewController.swift in Sources */,
 				F0D0C806223FB528001D81B7 /* EditorViewController.swift in Sources */,
 				F0DB788E22477FA30006F65A /* HistoryMO+CoreDataProperties.swift in Sources */,

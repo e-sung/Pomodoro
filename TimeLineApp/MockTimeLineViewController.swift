@@ -30,10 +30,9 @@ class MockTimeLineViewController: TimelineViewController {
     @IBAction func buttonFloatClicked(_: UIButton) {
         let title = LoremIpsum.generateRandomWords(withLength: UInt.random(in: 1 ... 5))!
         let content = LoremIpsum.generateRandomWords(withLength: UInt.random(in: 10 ... 50))!
-        let historyItem = History(title: title, content: content, startTime: Date(), endTime: Date())
 
         let historyMO = HistoryMO(entity: HistoryMO.entity(), insertInto: context)
-        historyMO.setUp(with: historyItem)
+        historyMO.setUp(title: title, content: content, startTime: Date(), endTime: Date())
         appDelegate.saveContext()
         fetchedHistories.append(historyMO)
         tableView.reloadData()
@@ -57,9 +56,8 @@ class MockTimeLineViewController: TimelineViewController {
     
     private func addNewItem(with alert: UIAlertController) {
         let memo = alert.textFields?.first?.text ?? "-"
-        let historyItem = History(title: titleText, content: memo, startTime: Date(), endTime: Date())
         let historyMO = HistoryMO(entity: HistoryMO.entity(), insertInto: context)
-        historyMO.setUp(with: historyItem)
+        historyMO.setUp(title: titleText, content: memo, startTime: Date(), endTime: Date())
         appDelegate.saveContext()
         fetchedHistories.append(historyMO)
         tableView.reloadData()
