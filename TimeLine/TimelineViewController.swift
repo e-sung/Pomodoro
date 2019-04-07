@@ -16,52 +16,19 @@ import CoreData
 open class TimelineViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! PMAppDelegate
     let context = (UIApplication.shared.delegate as! PMAppDelegate).persistentContainer.viewContext
-    public let viewModel = TimelineViewModel()
-
+    public var viewModel = TimelineViewModel()
     public var disposeBag = DisposeBag()
-    
     public var keyboardHeight: CGFloat = 0
 
     @IBOutlet public var titleTextView: UITextView!
     @IBOutlet public var tableView: UITableView!
-    
-    public var titleText: String {
-        var title = titleTextView.text
-        if title == nil || title?.isEmpty == true {
-            title = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
-        }
-        return title!
-    }
-    
 
-    public var finishPopUp: UIAlertController {
-        let alert = UIAlertController(title: "Congratulation!", message: "Add Memo?", preferredStyle: .alert)
-        alert.addTextField(configurationHandler: { tf in
-            tf.placeholder = "some placeholderw"
-        })
-        
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
-            self?.addNewItem(with: alert)
-        })
-        
-        let noAction = UIAlertAction(title: "No", style: .default, handler: { [weak self] _ in
-            self?.addNewItem(with: alert)
-        })
-        
-        alert.addAction(noAction)
-        alert.addAction(okAction)
-        return alert
-    }
-
+    // MARK: - LifeCycle
     open override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         titleTextView.text = ""
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.separatorStyle = .none
-        let cellNib = UINib(nibName: TimeLineCell.className, bundle: Bundle(for: TimeLineCell.self))
-        tableView.register(cellNib, forCellReuseIdentifier: TimeLineCell.className)
+        setUpTableView()
         RxKeyboard.instance.visibleHeight.asObservable()
             .delay(1, scheduler: MainScheduler.instance)
             .bind(onNext:  { [weak self] in
@@ -94,6 +61,117 @@ open class TimelineViewController: UIViewController {
             editVC.history = sender.history
         }
     }
+}
+
+// MARK: - TableViewDataSource
+extension TimelineViewController: UITableViewDataSource {
+    open func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        return viewModel.fetchedHistories.count
+    }
+
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TimeLineCell.className) as! TimeLineCell
+        let isLastIndex = (indexPath.row == viewModel.fetchedHistories.count - 1)
+        let history = viewModel.fetchedHistories[indexPath.row]
+        cell.update(with: history, isLast: isLastIndex)
+        return cell
+    }
+
+    public func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}
+
+// MARK: - TableViewDelegate
+extension TimelineViewController: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? TimeLineCell else { return }
+        guard keyboardHeight == 0 else { return }
+        present(editPopUp(for: cell), animated: true, completion: nil)
+
+    }
+
+    open func tableView(_: UITableView, viewForFooterInSection _: Int) -> UIView? {
+        return UIView(frame: CGRect.zero)
+    }
+
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "progressCell")
+        return cell
+    }
+}
+
+// MARK: - Alerts
+extension TimelineViewController {
+    public var finishPopUp: UIAlertController {
+        let alert = UIAlertController(title: "Congratulation!", message: "Add Memo?", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: { tf in
+            tf.placeholder = "some placeholderw"
+        })
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+            self?.addNewItem(with: alert)
+        })
+        
+        let noAction = UIAlertAction(title: "No", style: .default, handler: { [weak self] _ in
+            self?.addNewItem(with: alert)
+        })
+        
+        alert.addAction(noAction)
+        alert.addAction(okAction)
+        return alert
+    }
+    
+    public func editPopUp(for cell: TimeLineCell ) -> UIAlertController {
+        let actionSheet = UIAlertController(title: "What do yo want to do?", message: nil, preferredStyle: .actionSheet)
+        let areYouSureAlert = deletePopUp(for: cell)
+        let actions = [
+            UIAlertAction(title: "Edit", style: .default, handler: { [weak self] (action) in
+                self?.performSegue(withIdentifier: "showEditVC", sender: cell)
+            }),
+            UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
+                self?.present(areYouSureAlert, animated: true, completion: nil)
+            }),
+            UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                actionSheet.dismiss(animated: true, completion: nil)
+            })
+        ]
+        
+        actions.forEach({ actionSheet.addAction($0) })
+        return actionSheet
+    }
+    
+    public func deletePopUp(for cell: TimeLineCell) -> UIAlertController {
+        let areYouSureAlert = UIAlertController(title: "Are you Sure?", message: nil, preferredStyle: .alert)
+        let Delete = UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
+            guard let history = cell.history else { return }
+            self?.delete(history: history)
+        })
+        let Cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        areYouSureAlert.addAction(Delete)
+        areYouSureAlert.addAction(Cancel)
+        return areYouSureAlert
+    }
+}
+
+// MARK: - Helper
+extension TimelineViewController {
+    
+    public func setUpTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorStyle = .none
+        let cellNib = UINib(nibName: TimeLineCell.className, bundle: Bundle(for: TimeLineCell.self))
+        tableView.register(cellNib, forCellReuseIdentifier: TimeLineCell.className)
+    }
+    
+    public var titleText: String {
+        var title = titleTextView.text
+        if title == nil || title?.isEmpty == true {
+            title = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
+        }
+        return title!
+    }
     
     open func delete(history: HistoryMO) {
         viewModel.delete(history: history)
@@ -115,73 +193,5 @@ open class TimelineViewController: UIViewController {
         guard itemCount > 0 else { return }
         let indexPath = IndexPath(row: itemCount - 1, section: 0)
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-    }
-}
-
-extension TimelineViewController: UITableViewDataSource {
-    open func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return viewModel.fetchedHistories.count
-    }
-
-    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TimeLineCell.className) as! TimeLineCell
-        let isLastIndex = (indexPath.row == viewModel.fetchedHistories.count - 1)
-        let history = viewModel.fetchedHistories[indexPath.row]
-        cell.update(with: history, isLast: isLastIndex)
-        return cell
-    }
-
-    public func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-}
-
-extension TimelineViewController: UITableViewDelegate {
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? TimeLineCell else { return }
-        guard keyboardHeight == 0 else { return }
-        showEditItemActionSheet(for: cell)
-
-    }
-    
-    func showEditItemActionSheet(for cell: TimeLineCell) {
-        let actionSheet = UIAlertController(title: "What do yo want to do?", message: nil, preferredStyle: .actionSheet)
-        
-        let actions = [
-            UIAlertAction(title: "Edit", style: .default, handler: { [weak self] (action) in
-                self?.performSegue(withIdentifier: "showEditVC", sender: cell)
-            }),
-            UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
-                self?.showAreYouSureToDeleteAlert(for: cell)
-            }),
-            UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-                actionSheet.dismiss(animated: true, completion: nil)
-            })
-        ]
-        
-        actions.forEach({ actionSheet.addAction($0) })
-        present(actionSheet, animated: true, completion: nil)
-    }
-    
-    func showAreYouSureToDeleteAlert(for cell: TimeLineCell) {
-        let areYouSureAlert = UIAlertController(title: "Are you Sure?", message: nil, preferredStyle: .alert)
-        let Delete = UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
-            guard let history = cell.history else { return }
-            self?.delete(history: history)
-            print("Deleted")
-        })
-        let Cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        areYouSureAlert.addAction(Delete)
-        areYouSureAlert.addAction(Cancel)
-        present(areYouSureAlert, animated: true, completion: nil)
-    }
-
-    open func tableView(_: UITableView, viewForFooterInSection _: Int) -> UIView? {
-        return UIView(frame: CGRect.zero)
-    }
-
-    open func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "progressCell")
-        return cell
     }
 }
