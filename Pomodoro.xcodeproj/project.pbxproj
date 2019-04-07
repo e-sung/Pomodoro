@@ -59,6 +59,7 @@
 		F0880AA221D72AB3008AE79F /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA121D72AB3008AE79F /* NotificationManagerTests.swift */; };
 		F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
 		F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */; };
+		F0A8E1DE2259A17B007FE83F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DD2259A17B007FE83F /* Date+Extension.swift */; };
 		F0BA0DD022367B51004CD72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DCF22367B51004CD72C /* AppDelegate.swift */; };
 		F0BA0DD522367B51004CD72C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD322367B51004CD72C /* Main.storyboard */; };
 		F0BA0DD722367B53004CD72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD622367B53004CD72C /* Assets.xcassets */; };
@@ -399,6 +400,7 @@
 		F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTimeTests.swift; sourceTree = "<group>"; };
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
 		F09422EB21D2F60700134C63 /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
+		F0A8E1DD2259A17B007FE83F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F0BA0DC3223674E2004CD72C /* TimeLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineCell.swift; sourceTree = "<group>"; };
 		F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeLineCell.xib; sourceTree = "<group>"; };
 		F0BA0DCD22367B51004CD72C /* TimeLineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -618,6 +620,7 @@
 				F0D89DCB21D899160011A0B7 /* UserDefault+Extension.swift */,
 				F038205121F2202C000ACFD0 /* String+Extension.swift */,
 				F087251321CF5FAE007EB27F /* NSObject+Extension.swift */,
+				F0A8E1DD2259A17B007FE83F /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1775,6 +1778,7 @@
 			files = (
 				F0880A9E21D71FBD008AE79F /* LongBreakInterval.swift in Sources */,
 				F0880A9C21D67EE7008AE79F /* NotificationManager.swift in Sources */,
+				F0A8E1DE2259A17B007FE83F /* Date+Extension.swift in Sources */,
 				F087253F21CF6731007EB27F /* PermissionManager.swift in Sources */,
 				F087254221CF6731007EB27F /* BreakInterval.swift in Sources */,
 				F087253E21CF6731007EB27F /* Interval.swift in Sources */,
