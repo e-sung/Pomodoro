@@ -104,6 +104,9 @@ extension TimelineViewController: UITableViewDelegate {
             }),
             UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] action in
                 self?.showAreYouSureToDeleteAlert(for: cell)
+            }),
+            UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                actionSheet.dismiss(animated: true, completion: nil)
             })
         ]
         
