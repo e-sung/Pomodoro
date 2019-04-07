@@ -17,73 +17,16 @@ class MockTimeLineViewController: TimelineViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let fetchRequest = NSFetchRequest<HistoryMO>(entityName: HistoryMO.className)
-        fetchRequest.predicate = NSPredicate(format: "startDate >= %@", argumentArray: [Date().midnight])
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "startDate", ascending: true)]
-        fetchedHistories = try! context.fetch(fetchRequest)
-        tableView.reloadData()
-        guard fetchedHistories.isEmpty == false else { return }
-        tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
-    }
 
     @IBAction func buttonFloatClicked(_: UIButton) {
         let title = LoremIpsum.generateRandomWords(withLength: UInt.random(in: 1 ... 5))!
         let content = LoremIpsum.generateRandomWords(withLength: UInt.random(in: 10 ... 50))!
-
-        let historyMO = HistoryMO(entity: HistoryMO.entity(), insertInto: context)
-        historyMO.setUp(title: title, content: content, startTime: Date(), endTime: Date())
-        appDelegate.saveContext()
-        fetchedHistories.append(historyMO)
+        viewModel.addHistory(title: title, memo: content, startDate: Date(), endDate: Date())
         tableView.reloadData()
     }
     
     @IBAction func buttonAddNewItemClicked(_ sender: Any) {
-        let alert = UIAlertController(title: "Congratulation!", message: "Add Memo?", preferredStyle: .alert)
-        alert.addTextField(configurationHandler: { tf in
-            tf.placeholder = "some placeholderw"
-        })
-        
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
-            self?.addNewItem(with: alert)
-        })
-        
-        let noAction = UIAlertAction(title: "No", style: .default, handler: { [weak self] _ in
-            self?.addNewItem(with: alert)
-        })
-        
-        alert.addAction(noAction)
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    private func addNewItem(with alert: UIAlertController) {
-        var memo = alert.textFields?.first?.text
-        if memo == nil || memo?.isEmpty == true {
-            memo = "-"
-        }
-        let historyMO = HistoryMO(entity: HistoryMO.entity(), insertInto: context)
-        historyMO.setUp(title: titleText, content: memo!, startTime: Date(), endTime: Date())
-        appDelegate.saveContext()
-        fetchedHistories.append(historyMO)
-        tableView.reloadData()
-        scrollToBottom()
-    }
-    
-    private func scrollToBottom() {
-        let itemCount = fetchedHistories.count
-        let indexPath = IndexPath(row: itemCount - 1, section: 0)
-        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-    }
-    
-    
-    override func delete(history: HistoryMO) {
-        context.delete(history)
-        fetchedHistories.removeAll(where: { $0.startDate == history.startDate })
-        try? context.save()
-        tableView.reloadData()
+        present(finishPopUp, animated: true, completion: nil)
     }
     
 }

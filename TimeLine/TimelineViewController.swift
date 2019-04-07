@@ -11,19 +11,46 @@ import PomodoroUIKit
 import RxSwift
 import RxKeyboard
 import UIKit
+import CoreData
 
 open class TimelineViewController: UIViewController {
+    let appDelegate = UIApplication.shared.delegate as! PMAppDelegate
+    let context = (UIApplication.shared.delegate as! PMAppDelegate).persistentContainer.viewContext
+    public let viewModel = TimelineViewModel()
+
+    public var disposeBag = DisposeBag()
+    
+    public var keyboardHeight: CGFloat = 0
+
     @IBOutlet public var titleTextView: UITextView!
     @IBOutlet public var tableView: UITableView!
-    public var fetchedHistories: [HistoryMO] = []
-    public var keyboardHeight: CGFloat = 0
-    public var disposeBag = DisposeBag()
+    
     public var titleText: String {
         var title = titleTextView.text
         if title == nil || title?.isEmpty == true {
             title = DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .none)
         }
         return title!
+    }
+    
+
+    public var finishPopUp: UIAlertController {
+        let alert = UIAlertController(title: "Congratulation!", message: "Add Memo?", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: { tf in
+            tf.placeholder = "some placeholderw"
+        })
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
+            self?.addNewItem(with: alert)
+        })
+        
+        let noAction = UIAlertAction(title: "No", style: .default, handler: { [weak self] _ in
+            self?.addNewItem(with: alert)
+        })
+        
+        alert.addAction(noAction)
+        alert.addAction(okAction)
+        return alert
     }
 
     open override func viewDidLoad() {
@@ -55,6 +82,10 @@ open class TimelineViewController: UIViewController {
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        viewModel.fetchHistories()
+        tableView.reloadData()
+        guard viewModel.fetchedHistories.isEmpty == false else { return }
+        tableView.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
     }
 
     open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,19 +96,37 @@ open class TimelineViewController: UIViewController {
     }
     
     open func delete(history: HistoryMO) {
-        
+        viewModel.delete(history: history)
+        tableView.reloadData()
+    }
+    
+    public func addNewItem(with alert: UIAlertController) {
+        var memo = alert.textFields?.first?.text
+        if memo == nil || memo?.isEmpty == true {
+            memo = "-"
+        }
+        viewModel.addHistory(title: titleText, memo: memo!, startDate: Date(), endDate: Date())
+        tableView.reloadData()
+        scrollToBottom()
+    }
+    
+    public func scrollToBottom() {
+        let itemCount = viewModel.fetchedHistories.count
+        guard itemCount > 0 else { return }
+        let indexPath = IndexPath(row: itemCount - 1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
     }
 }
 
 extension TimelineViewController: UITableViewDataSource {
     open func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        return fetchedHistories.count
+        return viewModel.fetchedHistories.count
     }
 
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TimeLineCell.className) as! TimeLineCell
-        let isLastIndex = (indexPath.row == fetchedHistories.count - 1)
-        let history = fetchedHistories[indexPath.row]
+        let isLastIndex = (indexPath.row == viewModel.fetchedHistories.count - 1)
+        let history = viewModel.fetchedHistories[indexPath.row]
         cell.update(with: history, isLast: isLastIndex)
         return cell
     }
