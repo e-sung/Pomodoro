@@ -16,7 +16,7 @@ open class TimelineViewModel {
     
     public var fetchRequest: NSFetchRequest<HistoryMO> {
         let fetchRequest = NSFetchRequest<HistoryMO>(entityName: HistoryMO.className)
-        fetchRequest.predicate = NSPredicate(format: "startDate >= %@", argumentArray: [Date().midnight])
+        fetchRequest.predicate = NSPredicate(format: "(startDate >= %@) AND (startDate <= %@)", argumentArray: [Date().midnight, Date.tomorrow.midnight])
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "startDate", ascending: true)]
         return fetchRequest
     }
