@@ -103,8 +103,11 @@ extension TimelineViewController: UITableViewDelegate {
     }
 
     open func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "progressCell")
+        let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProgressHeaderView.className)
         return cell
+    }
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
     }
 }
 
@@ -170,6 +173,8 @@ extension TimelineViewController {
         tableView.separatorStyle = .none
         let cellNib = UINib(nibName: TimeLineCell.className, bundle: Bundle(for: TimeLineCell.self))
         tableView.register(cellNib, forCellReuseIdentifier: TimeLineCell.className)
+        let progresViewNib = UINib(nibName: ProgressHeaderView.className, bundle: Bundle(for: ProgressHeaderView.self))
+        tableView.register(progresViewNib, forHeaderFooterViewReuseIdentifier: ProgressHeaderView.className)
     }
     
     public var titleText: String {

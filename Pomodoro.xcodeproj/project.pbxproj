@@ -59,6 +59,8 @@
 		F0880AA221D72AB3008AE79F /* NotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA121D72AB3008AE79F /* NotificationManagerTests.swift */; };
 		F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422E921D2476600134C63 /* StandardTime.swift */; };
 		F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */; };
+		F09C0BD5226ABD4C008EF37C /* ProgressHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09C0BD4226ABD4C008EF37C /* ProgressHeaderView.swift */; };
+		F09C0BD7226ABDA7008EF37C /* ProgressHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09C0BD6226ABDA7008EF37C /* ProgressHeaderView.xib */; };
 		F0A8E1DE2259A17B007FE83F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DD2259A17B007FE83F /* Date+Extension.swift */; };
 		F0A8E1E02259A811007FE83F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DF2259A811007FE83F /* Protocols.swift */; };
 		F0A8E1E22259AD4E007FE83F /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1E12259AD4E007FE83F /* TimelineViewModel.swift */; };
@@ -402,6 +404,8 @@
 		F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTimeTests.swift; sourceTree = "<group>"; };
 		F09422E921D2476600134C63 /* StandardTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardTime.swift; sourceTree = "<group>"; };
 		F09422EB21D2F60700134C63 /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
+		F09C0BD4226ABD4C008EF37C /* ProgressHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHeaderView.swift; sourceTree = "<group>"; };
+		F09C0BD6226ABDA7008EF37C /* ProgressHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressHeaderView.xib; sourceTree = "<group>"; };
 		F0A8E1DD2259A17B007FE83F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F0A8E1DF2259A811007FE83F /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		F0A8E1E12259AD4E007FE83F /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
@@ -800,6 +804,8 @@
 				F0DB788C22477FA30006F65A /* HistoryMO+CoreDataProperties.swift */,
 				F01A200322118A7B001ECF23 /* TimelineViewController.swift */,
 				F0A8E1E12259AD4E007FE83F /* TimelineViewModel.swift */,
+				F09C0BD4226ABD4C008EF37C /* ProgressHeaderView.swift */,
+				F09C0BD6226ABDA7008EF37C /* ProgressHeaderView.xib */,
 				F0BA0DC3223674E2004CD72C /* TimeLineCell.swift */,
 				F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */,
 				F0BA0DF722367BB6004CD72C /* TimeLine.h */,
@@ -1421,6 +1427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09C0BD7226ABDA7008EF37C /* ProgressHeaderView.xib in Resources */,
 				F0D0C807223FB528001D81B7 /* EditorViewController.xib in Resources */,
 				F0BA0E2522368145004CD72C /* Assets.xcassets in Resources */,
 				F0BA0E2422367DFB004CD72C /* TimeLineCell.xib in Resources */,
@@ -1840,6 +1847,7 @@
 				F0A8E1E22259AD4E007FE83F /* TimelineViewModel.swift in Sources */,
 				F0DB788A22477F4F0006F65A /* TimeLine.xcdatamodeld in Sources */,
 				F0BA0E1422367BCB004CD72C /* TimeLineCell.swift in Sources */,
+				F09C0BD5226ABD4C008EF37C /* ProgressHeaderView.swift in Sources */,
 				F0BA0E1222367BCB004CD72C /* TimelineViewController.swift in Sources */,
 				F0D0C806223FB528001D81B7 /* EditorViewController.swift in Sources */,
 				F0DB788E22477FA30006F65A /* HistoryMO+CoreDataProperties.swift in Sources */,

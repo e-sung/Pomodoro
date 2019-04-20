@@ -46,30 +46,6 @@
                                         <constraint firstAttribute="trailing" secondItem="qAg-ix-PIA" secondAttribute="trailing" constant="14" id="m4Q-Kt-NTu"/>
                                     </constraints>
                                 </view>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="progressCell" rowHeight="54" id="ADM-i4-651">
-                                        <rect key="frame" x="0.0" y="113" width="375" height="54"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ADM-i4-651" id="RmO-Bi-e6F">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ycy-1B-k3p">
-                                                    <rect key="frame" x="0.0" y="37.5" width="375" height="2"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="progressTintColor" red="0.96991807220000004" green="0.80945187809999997" blue="0.27433031800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </progressView>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.99607843139999996" green="0.97647058819999999" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Ycy-1B-k3p" secondAttribute="bottom" constant="14" id="Iwb-eC-agH"/>
-                                                <constraint firstItem="Ycy-1B-k3p" firstAttribute="leading" secondItem="RmO-Bi-e6F" secondAttribute="leading" id="LAb-ph-MqI"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ycy-1B-k3p" secondAttribute="trailing" id="feu-bP-Oeb"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wx-4r-O5v" customClass="DesignableButton" customModule="PomodoroUIKit">
                                 <rect key="frame" x="311" y="603" width="50" height="50"/>

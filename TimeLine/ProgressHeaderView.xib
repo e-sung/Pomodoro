@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProgressHeaderView" customModule="TimeLine" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYc-9t-jS7">
+                    <rect key="frame" x="0.0" y="0.0" width="415" height="54"/>
+                    <color key="backgroundColor" red="0.99607843137254903" green="0.97647058823529409" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </view>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rkL-5n-leT">
+                    <rect key="frame" x="0.0" y="38" width="415" height="2"/>
+                    <color key="progressTintColor" red="0.96991807220000004" green="0.80945187809999997" blue="0.27433031800000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </progressView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="sYc-9t-jS7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7s7-YC-ocW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sYc-9t-jS7" secondAttribute="trailing" id="PVZ-Ml-u4T"/>
+                <constraint firstItem="sYc-9t-jS7" firstAttribute="bottom" secondItem="rkL-5n-leT" secondAttribute="bottom" constant="14" id="SGk-LA-ar4"/>
+                <constraint firstItem="rkL-5n-leT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="d3z-Co-LQ1"/>
+                <constraint firstAttribute="trailing" secondItem="rkL-5n-leT" secondAttribute="trailing" id="nXs-6e-wFO"/>
+                <constraint firstItem="sYc-9t-jS7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xPP-HP-G74"/>
+                <constraint firstAttribute="bottom" secondItem="sYc-9t-jS7" secondAttribute="bottom" id="xQq-tR-1bX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="progressView" destination="rkL-5n-leT" id="0Vn-u1-KhF"/>
+            </connections>
+            <point key="canvasLocation" x="129.71014492753625" y="-165.06696428571428"/>
+        </view>
+    </objects>
+</document>
