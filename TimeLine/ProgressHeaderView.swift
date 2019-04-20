@@ -9,7 +9,6 @@
 import UIKit
 
 class ProgressHeaderView: UITableViewHeaderFooterView {
-
     @IBOutlet private var progressView: UIProgressView!
     var progress: Float {
         get {

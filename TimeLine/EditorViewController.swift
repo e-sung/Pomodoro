@@ -89,8 +89,8 @@ extension EditorViewController: UITextViewDelegate {
             adjustHeight(of: textView, with: heightOfTitleView, duration: 0.5)
         }
     }
- 
-    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+
+    public func scrollViewDidEndDragging(_: UIScrollView, willDecelerate _: Bool) {
         view.endEditing(true)
     }
 

@@ -13,12 +13,11 @@ public class TLPersistantContainer: NSPersistentContainer {}
 
 @objc(HistoryMO)
 public class HistoryMO: NSManagedObject {
-    
     public func setUp(title: String, content: String, startTime: Date, endTime: Date) {
         self.title = title
         self.content = content
-        self.startDate = startTime as NSDate
-        self.endDate = endTime as NSDate
+        startDate = startTime as NSDate
+        endDate = endTime as NSDate
     }
 
     public var durationStr: String {

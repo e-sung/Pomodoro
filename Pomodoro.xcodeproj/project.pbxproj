@@ -61,11 +61,12 @@
 		F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */; };
 		F09C0BD5226ABD4C008EF37C /* ProgressHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09C0BD4226ABD4C008EF37C /* ProgressHeaderView.swift */; };
 		F09C0BD7226ABDA7008EF37C /* ProgressHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09C0BD6226ABDA7008EF37C /* ProgressHeaderView.xib */; };
+		F09C0BD8226AC73F008EF37C /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD322367B51004CD72C /* Timeline.storyboard */; };
 		F0A8E1DE2259A17B007FE83F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DD2259A17B007FE83F /* Date+Extension.swift */; };
 		F0A8E1E02259A811007FE83F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DF2259A811007FE83F /* Protocols.swift */; };
 		F0A8E1E22259AD4E007FE83F /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1E12259AD4E007FE83F /* TimelineViewModel.swift */; };
 		F0BA0DD022367B51004CD72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DCF22367B51004CD72C /* AppDelegate.swift */; };
-		F0BA0DD522367B51004CD72C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD322367B51004CD72C /* Main.storyboard */; };
+		F0BA0DD522367B51004CD72C /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD322367B51004CD72C /* Timeline.storyboard */; };
 		F0BA0DD722367B53004CD72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD622367B53004CD72C /* Assets.xcassets */; };
 		F0BA0DDA22367B53004CD72C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD822367B53004CD72C /* LaunchScreen.storyboard */; };
 		F0BA0DE522367B53004CD72C /* TimeLineAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DE422367B53004CD72C /* TimeLineAppUITests.swift */; };
@@ -413,7 +414,7 @@
 		F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeLineCell.xib; sourceTree = "<group>"; };
 		F0BA0DCD22367B51004CD72C /* TimeLineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BA0DCF22367B51004CD72C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F0BA0DD422367B51004CD72C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0BA0DD422367B51004CD72C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Timeline.storyboard; sourceTree = "<group>"; };
 		F0BA0DD622367B53004CD72C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0BA0DD922367B53004CD72C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0BA0DDB22367B53004CD72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -778,7 +779,7 @@
 			children = (
 				F0BA0DE322367B53004CD72C /* TimeLineAppUITests */,
 				F0BA0DCF22367B51004CD72C /* AppDelegate.swift */,
-				F0BA0DD322367B51004CD72C /* Main.storyboard */,
+				F0BA0DD322367B51004CD72C /* Timeline.storyboard */,
 				F0BA0DD622367B53004CD72C /* Assets.xcassets */,
 				F0BA0DD822367B53004CD72C /* LaunchScreen.storyboard */,
 				F0BA0DDB22367B53004CD72C /* Info.plist */,
@@ -1372,6 +1373,7 @@
 				F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */,
 				F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */,
 				F0D89E3021D8D7170011A0B7 /* Settings.storyboard in Resources */,
+				F09C0BD8226AC73F008EF37C /* Timeline.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1412,7 +1414,7 @@
 				F0BA0DDA22367B53004CD72C /* LaunchScreen.storyboard in Resources */,
 				F0BA0DD722367B53004CD72C /* Assets.xcassets in Resources */,
 				F0BA0DEF22367B74004CD72C /* Assets.xcassets in Resources */,
-				F0BA0DD522367B51004CD72C /* Main.storyboard in Resources */,
+				F0BA0DD522367B51004CD72C /* Timeline.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2049,12 +2051,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		F0BA0DD322367B51004CD72C /* Main.storyboard */ = {
+		F0BA0DD322367B51004CD72C /* Timeline.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F0BA0DD422367B51004CD72C /* Base */,
 			);
-			name = Main.storyboard;
+			name = Timeline.storyboard;
 			sourceTree = "<group>";
 		};
 		F0BA0DD822367B53004CD72C /* LaunchScreen.storyboard */ = {

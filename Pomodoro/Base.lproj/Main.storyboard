@@ -219,14 +219,12 @@
                                 <exclude reference="ixK-8c-Vct"/>
                                 <exclude reference="rOU-KO-KIG"/>
                                 <exclude reference="tpo-98-gQk"/>
+                                <exclude reference="ojq-on-Bqu"/>
                                 <exclude reference="7ph-cJ-OOY"/>
                                 <exclude reference="CLj-fV-FBc"/>
                                 <exclude reference="D5F-GA-jif"/>
                                 <exclude reference="eIe-Zq-zmq"/>
                                 <exclude reference="mJ6-Bi-MZh"/>
-                                <exclude reference="GMg-kT-be7"/>
-                                <exclude reference="mzc-vb-PPZ"/>
-                                <exclude reference="ojq-on-Bqu"/>
                                 <exclude reference="CUq-Mm-x41"/>
                                 <exclude reference="ECX-mW-UN6"/>
                                 <exclude reference="SPc-YH-quA"/>
@@ -250,7 +248,6 @@
                                 <exclude reference="AUr-yF-cbn"/>
                                 <exclude reference="IwP-tg-CHI"/>
                                 <include reference="mJ6-Bi-MZh"/>
-                                <include reference="GMg-kT-be7"/>
                                 <exclude reference="2Qr-fa-rtt"/>
                                 <exclude reference="ECX-mW-UN6"/>
                                 <include reference="dGo-AZ-d2Z"/>
@@ -272,7 +269,6 @@
                             <mask key="constraints">
                                 <include reference="rOU-KO-KIG"/>
                                 <include reference="CLj-fV-FBc"/>
-                                <include reference="mzc-vb-PPZ"/>
                                 <exclude reference="2Qr-fa-rtt"/>
                                 <include reference="cBF-6p-B6D"/>
                                 <exclude reference="wHm-Yw-ULw"/>
@@ -307,6 +303,16 @@
             </objects>
             <point key="canvasLocation" x="2498.4000000000001" y="130.88455772113943"/>
         </scene>
+        <!--TimelineNavigationController-->
+        <scene sceneID="iNq-2W-CN0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Timeline" bundleIdentifier="com.sungdoo.TimeLineApp" referencedIdentifier="TimelineNavigationController" id="5MF-bp-Gbo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="WIT-pu-0zH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWf-8g-5g3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047" y="614"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="XfH-iu-MHm">
             <objects>
@@ -317,7 +323,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWu-dq-NZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2236" y="541"/>
+            <point key="canvasLocation" x="2183" y="614"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ikl-f0-0ai">
@@ -331,8 +337,9 @@
                         <color key="selectedImageTintColor" name="OrangePlate"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="iUU-NF-wyV"/>
-                        <segue destination="3u8-iq-ffm" kind="relationship" relationship="viewControllers" id="lOG-Z5-zYP"/>
+                        <segue destination="5MF-bp-Gbo" kind="relationship" relationship="viewControllers" id="T4L-mI-ZAK"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="NSw-fA-PfD"/>
+                        <segue destination="3u8-iq-ffm" kind="relationship" relationship="viewControllers" id="HSE-75-6ZV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wQ-NY-KD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
