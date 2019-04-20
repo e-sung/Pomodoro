@@ -280,6 +280,9 @@
                                 <include reference="CLj-fV-FBc"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dR9-Mr-qbd" appends="YES" id="LCK-a6-rHE"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="timer" image="ic_alarm" id="rLT-hC-FVi">
                         <color key="badgeColor" name="OrangePlate"/>
@@ -300,6 +303,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dR9-Mr-qbd">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="BYZ-38-t0r" id="7IL-yK-CNq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2498.4000000000001" y="130.88455772113943"/>
         </scene>
