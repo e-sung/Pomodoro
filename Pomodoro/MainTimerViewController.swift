@@ -77,14 +77,7 @@ public class MainTimerViewController: TimerViewController {
             accel = abs(accel)
             guard self?.clearButton.layer.animationKeys() == nil else { return }
             if accel > 0.1 {
-                self?.shouldShowClearButton = true
-                UIView.animate(withDuration: 0.5, animations: {
-                    self?.clearButton.alpha = 1
-                }, completion: { _ in
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: {
-                        self?.shouldShowClearButton = false
-                    })
-                })
+                self?.showClearButton()
             } else if self?.shouldShowClearButton == false {
                 UIView.animate(withDuration: 0.5, animations: {
                     self?.clearButton.alpha = 0
@@ -161,6 +154,18 @@ public class MainTimerViewController: TimerViewController {
         }
     }
 
+    func showClearButton() {
+        guard clearButton.layer.animationKeys() == nil else { return }
+        shouldShowClearButton = true
+        UIView.animate(withDuration: 0.5, animations: { [weak self] in
+            self?.clearButton.alpha = 1
+        }, completion: { [weak self] _ in
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: {
+                self?.shouldShowClearButton = false
+            })
+        })
+    }
+
     public override func timeElapsed(_ seconds: TimeInterval) {
         super.timeElapsed(seconds)
         updateMainSlider(to: seconds)
@@ -173,6 +178,10 @@ public class MainTimerViewController: TimerViewController {
     }
 
     // MARK: IBAction
+
+    @IBAction func backgroundTapped(_: Any) {
+        showClearButton()
+    }
 
     @IBAction func eggYellowClicked(_: Any) {
         startOrStopTimer()
