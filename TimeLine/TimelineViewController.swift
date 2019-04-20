@@ -35,7 +35,6 @@ open class TimelineViewController: UIViewController {
             self?.keyboardHeight = $0
         })
         .disposed(by: disposeBag)
-        navigationController?.setNavigationBarHidden(true, animated: false)
         titleTextView.rx.text.bind(onNext: { [weak self] _ in
             guard let tableHeaderView = self?.tableView.tableHeaderView else { return }
             let newSize = tableHeaderView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
@@ -48,6 +47,7 @@ open class TimelineViewController: UIViewController {
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         viewModel.fetchHistories()
         tableView.reloadData()
         guard viewModel.fetchedHistories.isEmpty == false else { return }
