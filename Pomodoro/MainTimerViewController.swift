@@ -81,23 +81,9 @@ public class MainTimerViewController: TimerViewController {
 
     public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
-
-        dashboardLabels.forEach({ $0.alpha = CGFloat.leastNonzeroMagnitude })
-        coordinator.animate(alongsideTransition: { [weak self] _ in
-            guard let strongSelf = self else { return }
-            var alphaOfEggWhite: CGFloat = 0
-            if newCollection.verticalSizeClass == .compact {
-                self?.mainSlider.trackFillColor = .clear
-            } else {
-                alphaOfEggWhite = 1
-                self?.mainSlider.trackFillColor = strongSelf.interval.themeColor.trackColor
-            }
-
-            self?.imageViewEggWhite.alpha = alphaOfEggWhite
-            self?.mainSlider.setNeedsDisplay()
-        }, completion: { [weak self] _ in
-            self?.showOrHideDashboardLabels(given: newCollection.verticalSizeClass)
-        })
+        if UIDevice.current.orientation.isLandscape {
+            performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
+        }
     }
 
     public override func refreshViews(with interval: Interval) {

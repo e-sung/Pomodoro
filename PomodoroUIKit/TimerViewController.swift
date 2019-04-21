@@ -26,6 +26,11 @@ open class TimerViewController: UIViewController, IntervalDelegate {
         refreshViews(with: interval)
     }
 
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interval.delegate = self
+    }
+
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setUpFonts()

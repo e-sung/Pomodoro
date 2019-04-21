@@ -300,6 +300,7 @@
                         <outletCollection property="dashboardLabels" destination="wky-T1-G2n" collectionClass="NSMutableArray" id="rpq-Td-zJV"/>
                         <outletCollection property="dashboardLabels" destination="ZCN-3T-Pog" collectionClass="NSMutableArray" id="4Zc-nQ-nj1"/>
                         <outletCollection property="dashboardLabels" destination="5gL-Q6-V7j" collectionClass="NSMutableArray" id="r5D-Zw-eb5"/>
+                        <segue destination="bnD-03-evO" kind="presentation" identifier="showSimpleTimerVC" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="kdT-GJ-2pv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -310,6 +311,49 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2498.4000000000001" y="130.88455772113943"/>
+        </scene>
+        <!--Simple Timer View Controller-->
+        <scene sceneID="fPZ-AL-di2">
+            <objects>
+                <viewController id="bnD-03-evO" customClass="SimpleTimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Tk-D4-8qc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-vp-PKR">
+                                <rect key="frame" x="0.0" y="342.5" width="375" height="2"/>
+                            </progressView>
+                            <label hidden="YES" opaque="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="9MK-wA-GZp">
+                                <rect key="frame" x="109.5" y="262" width="156" height="72"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="85"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7dc-vp-PKR" firstAttribute="top" secondItem="9MK-wA-GZp" secondAttribute="bottom" constant="8.5" id="2jC-fF-pTN"/>
+                            <constraint firstItem="7dc-vp-PKR" firstAttribute="centerY" secondItem="gtp-Xr-faC" secondAttribute="centerY" id="8cW-Ce-H0u"/>
+                            <constraint firstItem="9MK-wA-GZp" firstAttribute="centerX" secondItem="gtp-Xr-faC" secondAttribute="centerX" id="M8Q-Kx-TJJ"/>
+                            <constraint firstAttribute="trailing" secondItem="7dc-vp-PKR" secondAttribute="trailing" id="s38-xh-spN"/>
+                            <constraint firstItem="7dc-vp-PKR" firstAttribute="leading" secondItem="8Tk-D4-8qc" secondAttribute="leading" id="tGC-PX-N2i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gtp-Xr-faC"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="labelTime" destination="9MK-wA-GZp" id="AE6-Rk-Gsw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LuM-ny-TTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3335" y="131"/>
         </scene>
         <!--Settings-->
         <scene sceneID="XfH-iu-MHm">
