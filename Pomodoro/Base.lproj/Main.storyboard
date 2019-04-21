@@ -311,16 +311,6 @@
             </objects>
             <point key="canvasLocation" x="2498.4000000000001" y="130.88455772113943"/>
         </scene>
-        <!--TimelineNavigationController-->
-        <scene sceneID="iNq-2W-CN0">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Timeline" bundleIdentifier="com.sungdoo.TimeLineApp" referencedIdentifier="TimelineNavigationController" id="5MF-bp-Gbo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="WIT-pu-0zH"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dWf-8g-5g3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1047" y="614"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="XfH-iu-MHm">
             <objects>
@@ -331,7 +321,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWu-dq-NZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2183" y="614"/>
+            <point key="canvasLocation" x="1559" y="619"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ikl-f0-0ai">
@@ -345,7 +335,6 @@
                         <color key="selectedImageTintColor" name="OrangePlate"/>
                     </tabBar>
                     <connections>
-                        <segue destination="5MF-bp-Gbo" kind="relationship" relationship="viewControllers" id="T4L-mI-ZAK"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="NSw-fA-PfD"/>
                         <segue destination="3u8-iq-ffm" kind="relationship" relationship="viewControllers" id="HSE-75-6ZV"/>
                     </connections>
