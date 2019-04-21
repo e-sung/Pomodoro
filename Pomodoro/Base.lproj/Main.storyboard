@@ -321,26 +321,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-vp-PKR">
-                                <rect key="frame" x="0.0" y="342.5" width="375" height="2"/>
+                                <rect key="frame" x="0.0" y="625" width="375" height="2"/>
                             </progressView>
-                            <label hidden="YES" opaque="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="9MK-wA-GZp">
-                                <rect key="frame" x="109.5" y="262" width="156" height="72"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="60"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="85"/>
-                                </variation>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C7q-RY-gdF">
+                                <rect key="frame" x="109.5" y="273.5" width="156" height="140"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴식중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YA-SV-5xS">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="9MK-wA-GZp">
+                                        <rect key="frame" x="0.0" y="68" width="156" height="72"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="60"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="85"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7dc-vp-PKR" firstAttribute="top" secondItem="9MK-wA-GZp" secondAttribute="bottom" constant="8.5" id="2jC-fF-pTN"/>
-                            <constraint firstItem="7dc-vp-PKR" firstAttribute="centerY" secondItem="gtp-Xr-faC" secondAttribute="centerY" id="8cW-Ce-H0u"/>
-                            <constraint firstItem="9MK-wA-GZp" firstAttribute="centerX" secondItem="gtp-Xr-faC" secondAttribute="centerX" id="M8Q-Kx-TJJ"/>
+                            <constraint firstItem="C7q-RY-gdF" firstAttribute="centerY" secondItem="gtp-Xr-faC" secondAttribute="centerY" id="3Zx-0w-a65"/>
+                            <constraint firstItem="gtp-Xr-faC" firstAttribute="bottom" secondItem="7dc-vp-PKR" secondAttribute="bottom" constant="40" id="Crf-57-WxL"/>
+                            <constraint firstItem="C7q-RY-gdF" firstAttribute="centerX" secondItem="gtp-Xr-faC" secondAttribute="centerX" id="Wqw-sf-VWm"/>
                             <constraint firstAttribute="trailing" secondItem="7dc-vp-PKR" secondAttribute="trailing" id="s38-xh-spN"/>
                             <constraint firstItem="7dc-vp-PKR" firstAttribute="leading" secondItem="8Tk-D4-8qc" secondAttribute="leading" id="tGC-PX-N2i"/>
                         </constraints>
@@ -350,6 +361,7 @@
                     <connections>
                         <outlet property="labelTime" destination="9MK-wA-GZp" id="AE6-Rk-Gsw"/>
                         <outlet property="progressBar" destination="7dc-vp-PKR" id="Ime-rc-nFe"/>
+                        <outlet property="stackViewLabels" destination="C7q-RY-gdF" id="Vw8-9Y-fRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LuM-ny-TTU" userLabel="First Responder" sceneMemberID="firstResponder"/>

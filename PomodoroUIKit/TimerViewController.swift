@@ -31,12 +31,12 @@ open class TimerViewController: UIViewController, IntervalDelegate {
     open override func viewDidLoad() {
         super.viewDidLoad()
         setUpInitialValue()
-        refreshViews(with: interval)
     }
 
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         interval.delegate = self
+        refreshViews(with: interval)
     }
 
     open override func viewDidAppear(_ animated: Bool) {
