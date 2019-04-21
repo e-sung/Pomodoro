@@ -10,7 +10,7 @@ open class TimerViewController: UIViewController, IntervalDelegate {
 
     // MARK: Properties
 
-    public var interval: Interval! = IntervalManager.shared
+    public var interval: Interval!
     public var maxCycleCount: Int {
         return retreiveAmount(for: .target, from: UserDefaults(suiteName: "group.pomodoro.com")!)!
     }
@@ -68,13 +68,8 @@ open class TimerViewController: UIViewController, IntervalDelegate {
 
 extension TimerViewController {
     func setUpInitialValue() {
-        if let savedInterval = retreiveInterval(from: UserDefaults(suiteName: "group.pomodoro.com")!) {
-            interval = savedInterval
-            interval.delegate = self
-        } else {
-            interval = FocusInterval(intervalDelegate: self)
-        }
-
+        interval = IntervalManager.shared
+        interval.delegate = self
         resetCycleIfDayHasPassed()
         currentCycleCount = retreiveCycle(from: UserDefaults(suiteName: "group.pomodoro.com")!)
     }
@@ -123,12 +118,13 @@ extension TimerViewController {
 
     func applyNewSettingForInterval() {
         if interval is FocusInterval {
-            interval = FocusInterval(intervalDelegate: self)
+            interval = FocusInterval()
         } else if interval is BreakInterval {
-            interval = BreakInterval(intervalDelegate: self)
+            interval = BreakInterval()
         } else if interval is LongBreakInterval {
-            interval = LongBreakInterval(intervalDelegate: self)
+            interval = LongBreakInterval()
         }
+        interval.delegate = self
         refreshViews(with: interval)
     }
 }
@@ -139,12 +135,15 @@ extension TimerViewController {
     public func resetInterval() {
         if interval is FocusInterval {
             if (currentCycleCount + 1) % cycleCountForLongBreak == 0 {
-                interval = LongBreakInterval(intervalDelegate: self)
+                interval = LongBreakInterval()
+                interval.delegate = self
             } else {
-                interval = BreakInterval(intervalDelegate: self)
+                interval = BreakInterval()
+                interval.delegate = self
             }
         } else if interval is BreakInterval {
-            interval = FocusInterval(intervalDelegate: self)
+            interval = FocusInterval()
+            interval.delegate = self
         }
     }
 

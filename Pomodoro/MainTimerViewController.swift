@@ -35,18 +35,6 @@ public class MainTimerViewController: TimerViewController {
     public var notificationManager: NotificationManager!
     private var shouldShowClearButton = false
 
-    public static var shared: MainTimerViewController {
-        let application = UIApplication.shared
-        let tabBarController = application.keyWindow?.rootViewController as? UITabBarController
-        guard let timerViewController = tabBarController?
-            .viewControllers?
-            .compactMap({ $0 as? MainTimerViewController })
-            .first else {
-            fatalError("Couldn't Load TimerViewController.")
-        }
-        return timerViewController
-    }
-
     // MARK: LifeCycle
 
     public override func viewDidLoad() {

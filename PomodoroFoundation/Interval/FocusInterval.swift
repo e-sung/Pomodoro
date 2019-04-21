@@ -19,11 +19,6 @@ public class FocusInterval: NSObject, Interval {
 
     public weak var delegate: IntervalDelegate?
 
-    public init(intervalDelegate: IntervalDelegate? = nil) {
-        super.init()
-        delegate = intervalDelegate
-    }
-
     public var notiAction: UNNotificationAction {
         return UNNotificationAction(identifier: "interval.break", title: "Start Break", options: [])
     }

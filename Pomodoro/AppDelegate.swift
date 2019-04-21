@@ -26,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PMAppDelegate {
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if let savedInterval = retreiveInterval(from: UserDefaults(suiteName: "group.pomodoro.com")!) {
+            IntervalManager.shared = savedInterval
+        } else {
+            IntervalManager.shared = FocusInterval()
+        }
         return true
     }
 
@@ -36,8 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PMAppDelegate {
 
     func applicationDidEnterBackground(_: UIApplication) {
         saveDateBackgroundEntered(Date(), to: UserDefaults.shared)
-        let timerViewController = MainTimerViewController.shared
-        if let interval = timerViewController.interval {
+        if let interval = IntervalManager.shared {
             saveIntervalContext(of: interval, to: UserDefaults.shared)
             registerBackgroundTimer(with: interval)
         }
@@ -52,9 +56,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PMAppDelegate {
 
     func applicationDidBecomeActive(_: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        let timerViewController = MainTimerViewController.shared
+        retreiveIntervalContext()
+        resetIntervalContext(on: UserDefaults.shared)
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+    }
 
-        guard let interval = timerViewController.interval else { return }
+    func retreiveIntervalContext() {
+        guard let interval = IntervalManager.shared else { return }
         if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.shared),
             let isEnhancedFocusMode = retreiveBool(for: .enhancedFocusMode, from: UserDefaults.shared),
             isEnhancedFocusMode == false,
@@ -66,10 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PMAppDelegate {
             interval.startOrPauseTimer()
             hasOpenedByWidgetPlayPauseButton = false
         }
-
-        resetIntervalContext(on: UserDefaults.shared)
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
     }
 
     func applicationWillTerminate(_: UIApplication) {

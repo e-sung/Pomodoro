@@ -19,11 +19,6 @@ public class BreakInterval: NSObject, Interval {
 
     public weak var delegate: IntervalDelegate?
 
-    public init(intervalDelegate: IntervalDelegate? = nil) {
-        super.init()
-        delegate = intervalDelegate
-    }
-
     public var elapsedSeconds: TimeInterval = 0
 
     public var targetMinute: TimeInterval {
