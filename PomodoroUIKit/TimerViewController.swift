@@ -10,7 +10,15 @@ open class TimerViewController: UIViewController, IntervalDelegate {
 
     // MARK: Properties
 
-    public var interval: Interval!
+    public var interval: Interval {
+        get {
+            return IntervalManager.shared!
+        }
+        set {
+            IntervalManager.shared = newValue
+        }
+    }
+
     public var maxCycleCount: Int {
         return retreiveAmount(for: .target, from: UserDefaults(suiteName: "group.pomodoro.com")!)!
     }
@@ -73,7 +81,6 @@ open class TimerViewController: UIViewController, IntervalDelegate {
 
 extension TimerViewController {
     func setUpInitialValue() {
-        interval = IntervalManager.shared
         interval.delegate = self
         resetCycleIfDayHasPassed()
         currentCycleCount = retreiveCycle(from: UserDefaults(suiteName: "group.pomodoro.com")!)

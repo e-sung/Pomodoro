@@ -349,6 +349,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="labelTime" destination="9MK-wA-GZp" id="AE6-Rk-Gsw"/>
+                        <outlet property="progressBar" destination="7dc-vp-PKR" id="Ime-rc-nFe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LuM-ny-TTU" userLabel="First Responder" sceneMemberID="firstResponder"/>

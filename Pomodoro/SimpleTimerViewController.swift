@@ -11,6 +11,7 @@ import PomodoroFoundation
 import PomodoroUIKit
 
 class SimpleTimerViewController: TimerViewController {
+    @IBOutlet private var progressBar: UIProgressView!
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if UIDevice.current.orientation.isPortrait {
@@ -18,5 +19,13 @@ class SimpleTimerViewController: TimerViewController {
         }
     }
 
-    override func refreshViews(with _: Interval) {}
+    override func timeElapsed(_ seconds: TimeInterval) {
+        super.timeElapsed(seconds)
+        progressBar.progress = interval.progress
+    }
+
+    override func refreshViews(with interval: Interval) {
+        progressBar.progressTintColor = interval.themeColor.trackColor
+        progressBar.progress = interval.progress
+    }
 }

@@ -32,6 +32,7 @@ public protocol Interval: class {
     var notiAction: UNNotificationAction { get }
     var elapsedSeconds: TimeInterval { get set }
     var targetSeconds: TimeInterval { get }
+    var progress: Float { get }
     var targetMinute: TimeInterval { get }
     var themeColor: ThemeColorSet { get }
     var typeIdentifier: String { get }
@@ -44,6 +45,10 @@ public protocol Interval: class {
 extension Interval {
     public var isActive: Bool {
         return timer.isValid
+    }
+
+    public var progress: Float {
+        return Float(elapsedSeconds / targetSeconds)
     }
 
     public func startOrPauseTimer() {
