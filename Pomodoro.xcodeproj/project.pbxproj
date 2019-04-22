@@ -25,9 +25,9 @@
 		F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F038208D21F4A486000ACFD0 /* Localizable.strings */; };
 		F038209021F4BA1D000ACFD0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F038208721F496C8000ACFD0 /* Localizable.stringsdict */; };
 		F03E12E121E44BC1003C2129 /* NumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */; };
+		F04CC55C226DDB8A00339455 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F06BEC3921EDE46500A45E08 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F06BEC3E21EDE46500A45E08 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06BEC3D21EDE46500A45E08 /* TodayViewController.swift */; };
 		F06BEC4121EDE46500A45E08 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06BEC3F21EDE46500A45E08 /* MainInterface.storyboard */; };
-		F06BEC4521EDE46500A45E08 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F06BEC3921EDE46500A45E08 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC4D21EE01D900A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
@@ -63,6 +63,7 @@
 		F09C0BD7226ABDA7008EF37C /* ProgressHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09C0BD6226ABDA7008EF37C /* ProgressHeaderView.xib */; };
 		F09C0BD8226AC73F008EF37C /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD322367B51004CD72C /* Timeline.storyboard */; };
 		F09C0BDB226C29F9008EF37C /* SimpleTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09C0BDA226C29F9008EF37C /* SimpleTimerViewController.swift */; };
+		F09C0BDC226C3C39008EF37C /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* BackgroundTimer.swift */; };
 		F0A8E1DE2259A17B007FE83F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DD2259A17B007FE83F /* Date+Extension.swift */; };
 		F0A8E1E02259A811007FE83F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DF2259A811007FE83F /* Protocols.swift */; };
 		F0A8E1E22259AD4E007FE83F /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1E12259AD4E007FE83F /* TimelineViewModel.swift */; };
@@ -122,7 +123,6 @@
 		F0EF230D21EE161C00338D51 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F0EF230E21EE161C00338D51 /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
 		F0EF230F21EE164D00338D51 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */; };
-		F0F6765222522334007607B8 /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* BackgroundTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,7 +275,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F06BEC4521EDE46500A45E08 /* Widget.appex in Embed App Extensions */,
+				F04CC55C226DDB8A00339455 /* Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,6 +616,7 @@
 			children = (
 				F0006EAF21EDE11F00307F88 /* PomodoroUIKit.h */,
 				F0006EA421EDD8CF00307F88 /* TimerViewController.swift */,
+				F09422EB21D2F60700134C63 /* BackgroundTimer.swift */,
 				F087250D21CF1264007EB27F /* DesignableView.swift */,
 				F03E12DE21E36423003C2129 /* RippleButton.swift */,
 				F0006EB021EDE11F00307F88 /* Info.plist */,
@@ -702,7 +703,6 @@
 				F0843CC521CE5ADA00EDB65F /* PomodoroUITests */,
 				F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */,
 				F0843CA321CE5AD900EDB65F /* AppDelegate.swift */,
-				F09422EB21D2F60700134C63 /* BackgroundTimer.swift */,
 				F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */,
 				F09C0BDA226C29F9008EF37C /* SimpleTimerViewController.swift */,
 				F0843CA721CE5AD900EDB65F /* Main.storyboard */,
@@ -1749,6 +1749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0775F362234DDB4003CF712 /* UIViewController+Extension.swift in Sources */,
+				F09C0BDC226C3C39008EF37C /* BackgroundTimer.swift in Sources */,
 				F0006EBC21EDE13300307F88 /* TimerViewController.swift in Sources */,
 				F0006EBB21EDE13300307F88 /* RippleButton.swift in Sources */,
 				F0006EB921EDE13300307F88 /* DesignableView.swift in Sources */,
@@ -1769,7 +1770,6 @@
 			files = (
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
 				F09C0BDB226C29F9008EF37C /* SimpleTimerViewController.swift in Sources */,
-				F0F6765222522334007607B8 /* BackgroundTimer.swift in Sources */,
 				F0843CA621CE5AD900EDB65F /* MainTimerViewController.swift in Sources */,
 				F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */,
 			);

@@ -8,7 +8,6 @@
 
 import Foundation
 import PomodoroFoundation
-import PomodoroUIKit
 import UIKit
 import UserNotifications
 

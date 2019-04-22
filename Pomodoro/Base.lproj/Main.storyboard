@@ -321,7 +321,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-vp-PKR">
-                                <rect key="frame" x="0.0" y="625" width="375" height="2"/>
+                                <rect key="frame" x="0.0" y="607" width="375" height="2"/>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C7q-RY-gdF">
                                 <rect key="frame" x="109.5" y="273.5" width="156" height="140"/>
@@ -346,25 +346,52 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZv-2L-Jox">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.08235294118" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem id="xfg-4i-dia">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="rlc-wH-h0I">
+                                            <color key="tintColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="closeButtonTapped:" destination="bnD-03-evO" id="r9v-Qh-7oh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="C7q-RY-gdF" firstAttribute="centerY" secondItem="gtp-Xr-faC" secondAttribute="centerY" id="3Zx-0w-a65"/>
-                            <constraint firstItem="gtp-Xr-faC" firstAttribute="bottom" secondItem="7dc-vp-PKR" secondAttribute="bottom" constant="40" id="Crf-57-WxL"/>
+                            <constraint firstItem="gtp-Xr-faC" firstAttribute="bottom" secondItem="7dc-vp-PKR" secondAttribute="bottom" constant="58" id="FuB-cb-p4H"/>
                             <constraint firstItem="C7q-RY-gdF" firstAttribute="centerX" secondItem="gtp-Xr-faC" secondAttribute="centerX" id="Wqw-sf-VWm"/>
+                            <constraint firstItem="HZv-2L-Jox" firstAttribute="leading" secondItem="gtp-Xr-faC" secondAttribute="leading" id="aUd-Xu-i9i"/>
+                            <constraint firstItem="HZv-2L-Jox" firstAttribute="trailing" secondItem="gtp-Xr-faC" secondAttribute="trailing" id="kbV-Tl-DY8"/>
+                            <constraint firstItem="HZv-2L-Jox" firstAttribute="top" secondItem="gtp-Xr-faC" secondAttribute="top" id="q5T-SR-sdP"/>
                             <constraint firstAttribute="trailing" secondItem="7dc-vp-PKR" secondAttribute="trailing" id="s38-xh-spN"/>
                             <constraint firstItem="7dc-vp-PKR" firstAttribute="leading" secondItem="8Tk-D4-8qc" secondAttribute="leading" id="tGC-PX-N2i"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gtp-Xr-faC"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="B7d-WK-BK7" appends="YES" id="cad-kD-9G9"/>
+                        </connections>
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="labelTime" destination="9MK-wA-GZp" id="AE6-Rk-Gsw"/>
+                        <outlet property="navItem" destination="xfg-4i-dia" id="BgM-hh-x0q"/>
                         <outlet property="progressBar" destination="7dc-vp-PKR" id="Ime-rc-nFe"/>
                         <outlet property="stackViewLabels" destination="C7q-RY-gdF" id="Vw8-9Y-fRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LuM-ny-TTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="B7d-WK-BK7">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="bnD-03-evO" id="TnG-Kh-3Rv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3335" y="131"/>
         </scene>

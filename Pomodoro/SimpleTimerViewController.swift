@@ -13,6 +13,7 @@ import PomodoroUIKit
 class SimpleTimerViewController: TimerViewController {
     @IBOutlet private var progressBar: UIProgressView!
     @IBOutlet private var stackViewLabels: UIStackView!
+    @IBOutlet private var navItem: UINavigationItem!
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if UIDevice.current.orientation.isPortrait {
@@ -25,10 +26,35 @@ class SimpleTimerViewController: TimerViewController {
         progressBar.progress = interval.progress
     }
 
+    @IBAction func backgroundTapped(_: Any) {
+        startOrStopTimer()
+    }
+
+    @IBAction func closeButtonTapped(_: Any) {
+        intervalFinished(by: .user, isFromBackground: false)
+    }
+
+    override func startOrStopTimer() {
+        super.startOrStopTimer()
+        updateControlButton()
+    }
+
+    func updateControlButton() {
+        var button: UIBarButtonItem!
+        if interval.isActive {
+            button = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(startOrStopTimer))
+        } else {
+            button = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(startOrStopTimer))
+        }
+        button.tintColor = UIColor.gray
+        navItem.leftBarButtonItem = button
+    }
+
     override func refreshViews(with interval: Interval) {
         updateLabelTime(with: interval.elapsedSeconds)
         progressBar.progressTintColor = interval.themeColor.trackColor
         progressBar.progress = interval.progress
         stackViewLabels.isHidden = interval is FocusInterval
+        updateControlButton()
     }
 }
