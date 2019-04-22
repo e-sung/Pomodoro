@@ -41,6 +41,7 @@ public class MainTimerViewController: TimerViewController {
         tabBarController?.delegate = self
         rippleButton.buttonCornerRadius = Float(mainSlider.frame.width / 2)
         clearButton.alpha = 0
+        tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
     }
 
     public override func viewDidAppear(_ animated: Bool) {

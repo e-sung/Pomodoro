@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--timer-->
+        <!--Main Timer View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainTimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,10 +81,10 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
                                 </accessibility>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=compact-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="85"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="85"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shine" translatesAutoresizingMaskIntoConstraints="NO" id="aEs-Ou-jv6">
@@ -118,8 +118,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAK-wa-qwe">
-                                <rect key="frame" x="155.5" y="576.5" width="64.5" height="31.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <rect key="frame" x="157" y="576.5" width="61" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=compact-widthClass=compact" hidden="YES"/>
@@ -284,7 +284,7 @@
                             <outletCollection property="gestureRecognizers" destination="dR9-Mr-qbd" appends="YES" id="LCK-a6-rHE"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="timer" image="ic_alarm" id="rLT-hC-FVi">
+                    <tabBarItem key="tabBarItem" title="" image="ic_alarm" id="rLT-hC-FVi">
                         <color key="badgeColor" name="OrangePlate"/>
                     </tabBarItem>
                     <connections>
@@ -321,28 +321,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-vp-PKR">
-                                <rect key="frame" x="0.0" y="607" width="375" height="2"/>
+                                <rect key="frame" x="0.0" y="602" width="375" height="7"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="7" id="qWO-Y5-xwO"/>
+                                </constraints>
+                                <color key="trackTintColor" red="0.10588441044092178" green="0.10587868839502335" blue="0.10588254779577255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C7q-RY-gdF">
-                                <rect key="frame" x="109.5" y="273.5" width="156" height="140"/>
+                                <rect key="frame" x="14" y="262" width="347" height="163.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴식중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YA-SV-5xS">
-                                        <rect key="frame" x="0.0" y="0.0" width="156" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴식중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2YA-SV-5xS">
+                                        <rect key="frame" x="0.0" y="0.0" width="347" height="119.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="100"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="9MK-wA-GZp">
-                                        <rect key="frame" x="0.0" y="68" width="156" height="72"/>
+                                        <rect key="frame" x="0.0" y="127.5" width="347" height="36"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
                                         </accessibility>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact-widthClass=compact">
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="85"/>
-                                        </variation>
                                     </label>
                                 </subviews>
                             </stackView>
@@ -365,8 +366,9 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="C7q-RY-gdF" firstAttribute="centerY" secondItem="gtp-Xr-faC" secondAttribute="centerY" id="3Zx-0w-a65"/>
+                            <constraint firstItem="C7q-RY-gdF" firstAttribute="leading" secondItem="gtp-Xr-faC" secondAttribute="leading" constant="14" id="43V-aM-J5h"/>
                             <constraint firstItem="gtp-Xr-faC" firstAttribute="bottom" secondItem="7dc-vp-PKR" secondAttribute="bottom" constant="58" id="FuB-cb-p4H"/>
-                            <constraint firstItem="C7q-RY-gdF" firstAttribute="centerX" secondItem="gtp-Xr-faC" secondAttribute="centerX" id="Wqw-sf-VWm"/>
+                            <constraint firstItem="gtp-Xr-faC" firstAttribute="trailing" secondItem="C7q-RY-gdF" secondAttribute="trailing" constant="14" id="Kug-GZ-cOG"/>
                             <constraint firstItem="HZv-2L-Jox" firstAttribute="leading" secondItem="gtp-Xr-faC" secondAttribute="leading" id="aUd-Xu-i9i"/>
                             <constraint firstItem="HZv-2L-Jox" firstAttribute="trailing" secondItem="gtp-Xr-faC" secondAttribute="trailing" id="kbV-Tl-DY8"/>
                             <constraint firstItem="HZv-2L-Jox" firstAttribute="top" secondItem="gtp-Xr-faC" secondAttribute="top" id="q5T-SR-sdP"/>
@@ -380,6 +382,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="labelStatus" destination="2YA-SV-5xS" id="hk2-jV-m5w"/>
                         <outlet property="labelTime" destination="9MK-wA-GZp" id="AE6-Rk-Gsw"/>
                         <outlet property="navItem" destination="xfg-4i-dia" id="BgM-hh-x0q"/>
                         <outlet property="progressBar" destination="7dc-vp-PKR" id="Ime-rc-nFe"/>
@@ -399,7 +402,7 @@
         <scene sceneID="XfH-iu-MHm">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" bundleIdentifier="com.sungdoo.SettingsApp" id="3u8-iq-ffm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="ic_setting" largeContentSizeImage="ic_setting" selectedImage="ic_setting" id="q1z-O8-1EX">
+                    <tabBarItem key="tabBarItem" title="" image="ic_setting" largeContentSizeImage="ic_setting" id="q1z-O8-1EX">
                         <color key="badgeColor" name="OrangePlate"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -412,7 +415,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wui-MR-8g3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tEH-Ha-jj6">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="tEH-Ha-jj6">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
