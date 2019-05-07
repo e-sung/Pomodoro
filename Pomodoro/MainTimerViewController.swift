@@ -20,13 +20,9 @@ public class MainTimerViewController: TimerViewController {
     // MARK: IBOutlets
 
     @IBOutlet var mainSlider: CircularSlider!
-    @IBOutlet var labelIntervalCount: UILabel!
-    @IBOutlet var rippleButton: RippleButton!
-    @IBOutlet var dashboardLabels: [UILabel]!
-    @IBOutlet var labelTimeFocusedTodayTitle: UILabel!
-    @IBOutlet var labelTimeFocusedTodayContent: UILabel!
-    @IBOutlet var labelDashboardTitle: UILabel!
+    @IBOutlet var rippleButton: UIButton!
     @IBOutlet var clearButton: UIButton!
+    @IBOutlet var imageViewControl: UIImageView!
 
     // MARK: Properties
 
@@ -44,7 +40,6 @@ public class MainTimerViewController: TimerViewController {
 
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         if hasOpenedByWidgetPlayPauseButton {
             interval.startOrPauseTimer()
             hasOpenedByWidgetPlayPauseButton = false
@@ -83,25 +78,22 @@ public class MainTimerViewController: TimerViewController {
         }
     }
 
+    public override func startOrStopTimer() {
+        super.startOrStopTimer()
+        if interval.isActive == false {
+            mainSlider.alpha = 0.7
+            labelTime.alpha = 0.7
+            imageViewControl.image = UIImage(named: "play")
+        } else {
+            mainSlider.alpha = 1
+            labelTime.alpha = 1
+            imageViewControl.image = UIImage(named: "pause")
+        }
+    }
+
     public override func refreshViews(with interval: Interval) {
         super.refreshViews(with: interval)
         refreshMainSlider(with: interval)
-        #warning("Deal with this")
-        showOrHideDashboardLabels(given: traitCollection.verticalSizeClass)
-        labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
-        setAccessibilityHintOfLabelIntervalCount()
-    }
-
-    func showOrHideDashboardLabels(given verticalSizeClass: UIUserInterfaceSizeClass) {
-        if verticalSizeClass == .compact {
-            dashboardLabels.forEach({ $0.isHidden = (interval is FocusInterval) })
-            dashboardLabels.forEach({ $0.alpha = CGFloat.leastNonzeroMagnitude })
-            UIView.animate(withDuration: 0.4, animations: { [weak self] in
-                self?.dashboardLabels.forEach({ $0.alpha = 1 })
-            })
-        } else {
-            dashboardLabels.forEach({ $0.isHidden = true })
-        }
     }
 
     func showClearButton() {
@@ -167,15 +159,6 @@ extension MainTimerViewController {
         } else {
             rippleButton.accessibilityHint = NSLocalizedString("timerPaused", comment: "")
         }
-    }
-
-    func setAccessibilityHintOfLabelIntervalCount() {
-        let goalFormatString = NSLocalizedString("cycle goal accessibility hint", comment: "")
-        let goalString = String.localizedStringWithFormat(goalFormatString, maxCycleCount)
-
-        let completedCycleFormatString = NSLocalizedString("completed cycle accessibility hint", comment: "")
-        let completedCycleString = String.localizedStringWithFormat(completedCycleFormatString, currentCycleCount)
-        labelIntervalCount.accessibilityLabel = goalString + ". " + completedCycleString
     }
 }
 
