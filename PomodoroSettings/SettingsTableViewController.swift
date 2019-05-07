@@ -21,6 +21,8 @@ public class SettingsTableViewController: UITableViewController {
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tabBarController?.tabBar.barStyle = .default
+        tabBarController?.tabBar.tintColor = .black
         tableView.reloadData()
     }
 

@@ -41,6 +41,12 @@ public class MainTimerViewController: TimerViewController {
         tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.barStyle = .blackOpaque
+        tabBarController?.tabBar.tintColor = .white
+    }
+
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if hasOpenedByWidgetPlayPauseButton {
