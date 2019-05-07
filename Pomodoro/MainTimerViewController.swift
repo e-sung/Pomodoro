@@ -22,7 +22,6 @@ public class MainTimerViewController: TimerViewController {
     @IBOutlet var mainSlider: CircularSlider!
     @IBOutlet var labelIntervalCount: UILabel!
     @IBOutlet var rippleButton: RippleButton!
-    @IBOutlet var imageViewEggWhite: UIImageView!
     @IBOutlet var dashboardLabels: [UILabel]!
     @IBOutlet var labelTimeFocusedTodayTitle: UILabel!
     @IBOutlet var labelTimeFocusedTodayContent: UILabel!
@@ -39,7 +38,6 @@ public class MainTimerViewController: TimerViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.delegate = self
-        rippleButton.buttonCornerRadius = Float(mainSlider.frame.width / 2)
         clearButton.alpha = 0
         tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
     }
@@ -88,24 +86,10 @@ public class MainTimerViewController: TimerViewController {
     public override func refreshViews(with interval: Interval) {
         super.refreshViews(with: interval)
         refreshMainSlider(with: interval)
+        #warning("Deal with this")
         showOrHideDashboardLabels(given: traitCollection.verticalSizeClass)
         labelIntervalCount.text = "\(currentCycleCount) / \(maxCycleCount)"
-        updateLabelTimeFocusedTodayContent()
         setAccessibilityHintOfLabelIntervalCount()
-    }
-
-    func updateLabelTimeFocusedTodayContent() {
-        let focusMinute = Int(FocusInterval().targetMinute).minuteString
-        let focusCycle = currentCycleCount + 1
-        let totalTimeInterval = FocusInterval().targetSeconds * Double(focusCycle)
-
-        let dateComponentFormatter = DateComponentsFormatter()
-        dateComponentFormatter.formattingContext = .middleOfSentence
-        dateComponentFormatter.unitsStyle = .short
-        dateComponentFormatter.allowedUnits = [.hour, .minute]
-
-        let totalTimeString = dateComponentFormatter.string(from: totalTimeInterval)!
-        labelTimeFocusedTodayContent.text = "\(focusMinute) × \(focusCycle) = \(totalTimeString)"
     }
 
     func showOrHideDashboardLabels(given verticalSizeClass: UIUserInterfaceSizeClass) {
@@ -164,11 +148,8 @@ public class MainTimerViewController: TimerViewController {
 extension MainTimerViewController {
     func refreshMainSlider(with interval: Interval) {
         mainSlider.maximumValue = CGFloat(interval.targetSeconds)
-        if traitCollection.verticalSizeClass == .compact {
-            mainSlider.trackFillColor = .clear
-        } else {
-            mainSlider.trackFillColor = interval.themeColor.trackColor
-        }
+        mainSlider.trackFillColor = interval.themeColor.backgroundColor
+        mainSlider.trackColor = interval.themeColor.trackColor
         updateMainSlider(to: interval.elapsedSeconds)
         setAccessiblityHintOfRippleButton(given: interval)
         mainSlider.setNeedsDisplay()

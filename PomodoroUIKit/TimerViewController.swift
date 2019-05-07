@@ -56,9 +56,6 @@ open class TimerViewController: UIViewController, IntervalDelegate {
     // MARK: Public Functions
 
     open func refreshViews(with interval: Interval) {
-        UIView.animate(withDuration: 0.5, animations: { [weak self] in
-            self?.view.backgroundColor = interval.themeColor.backgroundColor
-        })
         updateLabelTime(with: interval.elapsedSeconds)
     }
 
