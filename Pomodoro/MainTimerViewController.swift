@@ -28,6 +28,9 @@ public class MainTimerViewController: TimerViewController {
 
     private let motionManager: CMMotionManager = CMMotionManager()
     private var shouldShowClearButton = false
+    public override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     // MARK: LifeCycle
 
@@ -94,6 +97,11 @@ public class MainTimerViewController: TimerViewController {
     public override func refreshViews(with interval: Interval) {
         super.refreshViews(with: interval)
         refreshMainSlider(with: interval)
+        if interval.isActive {
+            imageViewControl.image = UIImage(named: "pause")
+        } else {
+            imageViewControl.image = UIImage(named: "play")
+        }
     }
 
     func showClearButton() {
@@ -132,6 +140,17 @@ public class MainTimerViewController: TimerViewController {
 
     @IBAction func clearButtonClicked(_: Any) {
         intervalFinished(by: .user, isFromBackground: false)
+    }
+
+    @IBAction func sliderDidSlide(_ slider: CircularSlider) {
+        interval.elapsedSeconds = interval.targetSeconds * slider.progress
+        timeElapsed(interval.elapsedSeconds)
+    }
+}
+
+extension CircularSlider {
+    var progress: TimeInterval {
+        return TimeInterval(endPointValue / maximumValue)
     }
 }
 

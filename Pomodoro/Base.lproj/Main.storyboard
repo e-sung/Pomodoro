@@ -73,6 +73,9 @@
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sliderDidSlide:" destination="BYZ-38-t0r" eventType="valueChanged" id="pio-ZN-KtX"/>
+                                </connections>
                             </view>
                             <label opaque="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="p0n-JA-XET">
                                 <rect key="frame" x="90" y="214" width="195" height="72"/>
@@ -96,7 +99,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ol-b31" userLabel="TouchArea">
-                                <rect key="frame" x="65" y="132.5" width="245" height="245"/>
+                                <rect key="frame" x="129" y="196.5" width="117" height="117"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" allowsDirectInteraction="YES"/>
                                 </accessibility>
@@ -124,6 +127,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="c6C-ol-b31" firstAttribute="width" secondItem="p0n-JA-XET" secondAttribute="width" multiplier="0.6" id="4GQ-yk-IKc"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="4Ow-0k-WTO"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="7ph-cJ-OOY"/>
                             <constraint firstItem="c6C-ol-b31" firstAttribute="centerX" secondItem="C0j-TM-sWV" secondAttribute="centerX" id="8Gd-MQ-SDB"/>
@@ -143,7 +147,6 @@
                             <constraint firstItem="HTF-te-s8l" firstAttribute="top" secondItem="p0n-JA-XET" secondAttribute="bottom" constant="3" id="awk-Ny-dBi"/>
                             <constraint firstItem="zbS-4T-Fx8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="cfS-6t-cXD"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="eIe-Zq-zmq"/>
-                            <constraint firstItem="c6C-ol-b31" firstAttribute="width" secondItem="C0j-TM-sWV" secondAttribute="width" constant="-10" id="fzb-jZ-fTR"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-80" id="mJ6-Bi-MZh"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="30" id="oaw-fY-dx5"/>
                             <constraint firstItem="c6C-ol-b31" firstAttribute="centerY" secondItem="C0j-TM-sWV" secondAttribute="centerY" id="rSL-Ew-QL7"/>
@@ -331,7 +334,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clear" width="627" height="627"/>
+        <image name="clear" width="1210" height="1202"/>
         <image name="ic_alarm" width="24" height="26"/>
         <image name="ic_setting" width="20" height="21"/>
         <image name="play" width="25" height="24"/>
