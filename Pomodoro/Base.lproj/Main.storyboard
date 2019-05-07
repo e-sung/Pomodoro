@@ -34,10 +34,10 @@
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
-                                        <color key="value" name="OrangePlate"/>
+                                        <color key="value" name="FocusRed"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
-                                        <color key="value" name="OrangePlate"/>
+                                        <color key="value" name="FocusRed"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="endThumbTintColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,7 +46,7 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="thumbRadius">
-                                        <real key="value" value="11"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
                                         <real key="value" value="0.0"/>
@@ -65,6 +65,12 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="endThumbStrokeColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="backtrackLineWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -102,14 +108,14 @@
                                     <action selector="eggYellowClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQm-9o-T6M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbS-4T-Fx8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbS-4T-Fx8">
                                 <rect key="frame" x="331" y="34" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zbS-4T-Fx8" secondAttribute="height" multiplier="1:1" id="TdP-NI-IkH"/>
                                     <constraint firstAttribute="width" constant="30" id="rKd-Qc-aWS"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" backgroundImage="clear_button"/>
+                                <state key="normal" backgroundImage="clear"/>
                                 <connections>
                                     <action selector="clearButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYz-XA-vXl"/>
                                 </connections>
@@ -325,10 +331,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clear_button" width="22" height="22"/>
+        <image name="clear" width="627" height="627"/>
         <image name="ic_alarm" width="24" height="26"/>
         <image name="ic_setting" width="20" height="21"/>
         <image name="play" width="25" height="24"/>
+        <namedColor name="FocusRed">
+            <color red="0.82352941176470584" green="0.14509803921568629" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="OrangePlate">
             <color red="0.54509803921568623" green="0.0078431372549019607" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
