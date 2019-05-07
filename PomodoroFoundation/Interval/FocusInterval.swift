@@ -40,8 +40,8 @@ public class FocusInterval: NSObject, Interval {
     }
 
     public var themeColor: ThemeColorSet {
-        return ThemeColorSet(trackColor: UIColor(named: "OrangeEdge")!,
-                             backgroundColor: UIColor(named: "OrangePlate")!)
+        return ThemeColorSet(trackColor: UIColor(named: "FocusRed")!,
+                             backgroundColor: UIColor(named: "FocusRed")!)
     }
 }
 
