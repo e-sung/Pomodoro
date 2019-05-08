@@ -47,6 +47,13 @@ public class MainTimerViewController: TimerViewController {
         tabBarController?.tabBar.tintColor = .white
     }
 
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if UIDevice.current.orientation.isLandscape {
+            performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
+        }
+    }
+
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if hasOpenedByWidgetPlayPauseButton {

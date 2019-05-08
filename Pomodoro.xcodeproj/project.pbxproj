@@ -25,7 +25,6 @@
 		F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F038208D21F4A486000ACFD0 /* Localizable.strings */; };
 		F038209021F4BA1D000ACFD0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F038208721F496C8000ACFD0 /* Localizable.stringsdict */; };
 		F03E12E121E44BC1003C2129 /* NumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */; };
-		F0566AD92283101B00E6CC14 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0566AD82283101B00E6CC14 /* MainTabBarController.swift */; };
 		F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC5421EE0FA100A45E08 /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -347,7 +346,6 @@
 		F038208E21F4A488000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F03E12DE21E36423003C2129 /* RippleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleButton.swift; sourceTree = "<group>"; };
 		F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExtensionTests.swift; sourceTree = "<group>"; };
-		F0566AD82283101B00E6CC14 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
@@ -670,7 +668,6 @@
 				F0843CAA21CE5AD900EDB65F /* Pomodoro.xcdatamodeld */,
 				F038208721F496C8000ACFD0 /* Localizable.stringsdict */,
 				F038208D21F4A486000ACFD0 /* Localizable.strings */,
-				F0566AD82283101B00E6CC14 /* MainTabBarController.swift */,
 			);
 			path = Pomodoro;
 			sourceTree = "<group>";
@@ -1684,7 +1681,6 @@
 			files = (
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
 				F09C0BDB226C29F9008EF37C /* SimpleTimerViewController.swift in Sources */,
-				F0566AD92283101B00E6CC14 /* MainTabBarController.swift in Sources */,
 				F0843CA621CE5AD900EDB65F /* MainTimerViewController.swift in Sources */,
 				F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */,
 			);
