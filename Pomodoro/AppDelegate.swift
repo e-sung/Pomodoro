@@ -64,6 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PMAppDelegate {
 
     func retreiveIntervalContext() {
         guard let interval = IntervalManager.shared else { return }
+        if retreiveBool(for: .enhancedFocusMode, from: UserDefaults.shared) == nil {
+            save(false, for: .enhancedFocusMode, to: UserDefaults.shared)
+        }
         if let dateBackgroundEnter = retreiveDateBackgroundEntered(from: UserDefaults.shared),
             let isEnhancedFocusMode = retreiveBool(for: .enhancedFocusMode, from: UserDefaults.shared),
             isEnhancedFocusMode == false,
