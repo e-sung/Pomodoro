@@ -27,7 +27,7 @@ public class FocusInterval: NSObject, Interval {
         let content = UNMutableNotificationContent()
         content.title = "Time to Break!"
         content.body = "Well Done!!!"
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "focus.aiff"))
         content.categoryIdentifier = "TimeToBreak"
         return content
     }

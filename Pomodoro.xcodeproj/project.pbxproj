@@ -88,6 +88,8 @@
 		F0BA0E2522368145004CD72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F0D0C806223FB528001D81B7 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D0C804223FB528001D81B7 /* EditorViewController.swift */; };
 		F0D0C807223FB528001D81B7 /* EditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D0C805223FB528001D81B7 /* EditorViewController.xib */; };
+		F0D169F122832416005EDF99 /* break.aiff in Resources */ = {isa = PBXBuildFile; fileRef = F0D169F022832416005EDF99 /* break.aiff */; };
+		F0D169F322832572005EDF99 /* focus.aiff in Resources */ = {isa = PBXBuildFile; fileRef = F0D169F222832572005EDF99 /* focus.aiff */; };
 		F0D52F6721E8A8C900EFA205 /* SettingContentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D52F6621E8A8C900EFA205 /* SettingContentTests.swift */; };
 		F0D89DD321D8D1DA0011A0B7 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DC921D88C020011A0B7 /* Double+Extension.swift */; };
 		F0D89DD421D8D2690011A0B7 /* UserDefault+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D89DCB21D899160011A0B7 /* UserDefault+Extension.swift */; };
@@ -411,6 +413,8 @@
 		F0BA0E0622367BB6004CD72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0D0C804223FB528001D81B7 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		F0D0C805223FB528001D81B7 /* EditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditorViewController.xib; sourceTree = "<group>"; };
+		F0D169F022832416005EDF99 /* break.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = break.aiff; sourceTree = "<group>"; };
+		F0D169F222832572005EDF99 /* focus.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = focus.aiff; sourceTree = "<group>"; };
 		F0D52F6621E8A8C900EFA205 /* SettingContentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentTests.swift; sourceTree = "<group>"; };
 		F0D89DC321D741840011A0B7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		F0D89DC521D7B5CE0011A0B7 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
@@ -659,6 +663,8 @@
 				F0843CBA21CE5ADA00EDB65F /* PomodoroTests */,
 				F0843CC521CE5ADA00EDB65F /* PomodoroUITests */,
 				F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */,
+				F0D169F022832416005EDF99 /* break.aiff */,
+				F0D169F222832572005EDF99 /* focus.aiff */,
 				F0843CA321CE5AD900EDB65F /* AppDelegate.swift */,
 				F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */,
 				F09C0BDA226C29F9008EF37C /* SimpleTimerViewController.swift */,
@@ -1290,11 +1296,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D169F122832416005EDF99 /* break.aiff in Resources */,
 				F0843CB121CE5ADA00EDB65F /* LaunchScreen.storyboard in Resources */,
 				F0843CA921CE5AD900EDB65F /* Main.storyboard in Resources */,
 				F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */,
 				F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */,
 				F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */,
+				F0D169F322832572005EDF99 /* focus.aiff in Resources */,
 				F0D89E3021D8D7170011A0B7 /* Settings.storyboard in Resources */,
 				F09C0BD8226AC73F008EF37C /* Timeline.storyboard in Resources */,
 			);

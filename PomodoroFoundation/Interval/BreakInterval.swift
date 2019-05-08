@@ -39,7 +39,7 @@ public class BreakInterval: NSObject, Interval {
         let content = UNMutableNotificationContent()
         content.title = "Time to Focus!"
         content.body = "Cheer Up!!!"
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "break.aiff"))
         content.categoryIdentifier = "TimeToFocus"
         return content
     }

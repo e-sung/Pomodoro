@@ -7,6 +7,7 @@ import UserNotifications
 open class TimerViewController: UIViewController, IntervalDelegate {
     // MAKR: Views
     @IBOutlet public var labelTime: UILabel!
+    private var launchedTime = Date()
 
     // MARK: Properties
 
@@ -37,6 +38,7 @@ open class TimerViewController: UIViewController, IntervalDelegate {
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         interval.delegate = self
+        launchedTime = Date()
         notificationManager = NotificationManager(delegate: self)
         refreshViews(with: interval)
     }
@@ -65,10 +67,13 @@ open class TimerViewController: UIViewController, IntervalDelegate {
         updateLabelTime(with: seconds)
     }
 
-    open func intervalFinished(by finisher: IntervalFinisher, isFromBackground _: Bool) {
+    open func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
         if finisher == .time, interval is BreakInterval {
             currentCycleCount += 1
             saveCycles(currentCycleCount, to: UserDefaults(suiteName: "group.pomodoro.com")!)
+        }
+        if isFromBackground == false, Date().timeIntervalSince(launchedTime) > 1 {
+            notificationManager.publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
         }
 
         resetInterval()
