@@ -65,14 +65,10 @@ open class TimerViewController: UIViewController, IntervalDelegate {
         updateLabelTime(with: seconds)
     }
 
-    open func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
+    open func intervalFinished(by finisher: IntervalFinisher, isFromBackground _: Bool) {
         if finisher == .time, interval is BreakInterval {
             currentCycleCount += 1
             saveCycles(currentCycleCount, to: UserDefaults(suiteName: "group.pomodoro.com")!)
-        }
-
-        if isFromBackground == false {
-            notificationManager.publishNotiContent(of: interval, via: UNUserNotificationCenter.current())
         }
 
         resetInterval()
