@@ -176,51 +176,12 @@
                                             <segue destination="vZM-ox-4fB" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="I22-OJ-a2i"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="E0h-4S-0bV" customClass="AmountSettingCell" customModule="PomodoroSettings">
-                                        <rect key="frame" x="0.0" y="231.5" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E0h-4S-0bV" id="JsK-mh-E7g">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tzY-ZG-wYf">
-                                                    <rect key="frame" x="16" y="11" width="180.5" height="22"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="10 intervals per day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k3-aY-KeI">
-                                                    <rect key="frame" x="210.5" y="11" width="148.5" height="22"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="tzY-ZG-wYf" firstAttribute="bottom" secondItem="JsK-mh-E7g" secondAttribute="bottomMargin" id="8Mb-Cu-S6f"/>
-                                                <constraint firstItem="tzY-ZG-wYf" firstAttribute="top" secondItem="JsK-mh-E7g" secondAttribute="topMargin" id="AQJ-9r-R8c"/>
-                                                <constraint firstItem="6k3-aY-KeI" firstAttribute="top" secondItem="JsK-mh-E7g" secondAttribute="topMargin" id="EeL-TL-7jz"/>
-                                                <constraint firstItem="tzY-ZG-wYf" firstAttribute="leading" secondItem="JsK-mh-E7g" secondAttribute="leadingMargin" id="ImG-UE-btf"/>
-                                                <constraint firstItem="6k3-aY-KeI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tzY-ZG-wYf" secondAttribute="trailing" constant="14" id="bRO-jS-twM"/>
-                                                <constraint firstItem="6k3-aY-KeI" firstAttribute="bottom" secondItem="JsK-mh-E7g" secondAttribute="bottomMargin" id="tzF-Uk-71W"/>
-                                                <constraint firstItem="6k3-aY-KeI" firstAttribute="trailing" secondItem="JsK-mh-E7g" secondAttribute="trailingMargin" id="znW-jn-fpO"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" hint="double tap to edit value" identifier="targetSetting">
-                                            <bool key="isElement" value="YES"/>
-                                        </accessibility>
-                                        <connections>
-                                            <outlet property="amountLabel" destination="6k3-aY-KeI" id="Hhz-20-FLE"/>
-                                            <outlet property="titleLabel" destination="tzY-ZG-wYf" id="jHh-yX-2o6"/>
-                                            <segue destination="vZM-ox-4fB" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="UMs-Ve-iU9"/>
-                                        </connections>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Mode" id="IYp-Qa-I2i">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="rZW-di-Plg" customClass="ToggleSettingCell" customModule="PomodoroSettings">
-                                        <rect key="frame" x="0.0" y="331.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rZW-di-Plg" id="a1J-7y-oTh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -257,7 +218,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="54" id="qRG-N8-Xf6" customClass="ToggleSettingCell" customModule="PomodoroSettings">
-                                        <rect key="frame" x="0.0" y="375.5" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="331.5" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qRG-N8-Xf6" id="cpk-o5-h0f">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
@@ -310,7 +271,7 @@
                             <tableViewSection headerTitle="Developer Mode" id="4HW-nb-Icr">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="xyB-DM-fzN" customClass="ToggleSettingCell" customModule="PomodoroSettings">
-                                        <rect key="frame" x="0.0" y="485.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="441.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xyB-DM-fzN" id="OuZ-9V-1Of">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -360,7 +321,6 @@
                         <outletCollection property="amountSettingCells" destination="ri4-UQ-hVn" collectionClass="NSMutableArray" id="AWI-JJ-IvY"/>
                         <outletCollection property="amountSettingCells" destination="m0o-Vv-D7S" collectionClass="NSMutableArray" id="0mO-4u-MVe"/>
                         <outletCollection property="amountSettingCells" destination="yMm-uf-e1K" collectionClass="NSMutableArray" id="iO9-GH-DAc"/>
-                        <outletCollection property="amountSettingCells" destination="E0h-4S-0bV" collectionClass="NSMutableArray" id="wm4-9p-z24"/>
                         <outletCollection property="amountSettingCells" destination="qcy-rt-YTb" collectionClass="NSMutableArray" id="8gc-il-mKT"/>
                         <outletCollection property="toggleSettingCells" destination="rZW-di-Plg" collectionClass="NSMutableArray" id="WnT-bM-WUd"/>
                         <outletCollection property="toggleSettingCells" destination="qRG-N8-Xf6" collectionClass="NSMutableArray" id="ZaB-cN-MFk"/>
