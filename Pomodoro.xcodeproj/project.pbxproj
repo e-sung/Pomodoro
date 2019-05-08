@@ -25,12 +25,8 @@
 		F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F038208D21F4A486000ACFD0 /* Localizable.strings */; };
 		F038209021F4BA1D000ACFD0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F038208721F496C8000ACFD0 /* Localizable.stringsdict */; };
 		F03E12E121E44BC1003C2129 /* NumberExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */; };
-		F04CC55C226DDB8A00339455 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F06BEC3921EDE46500A45E08 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F06BEC3E21EDE46500A45E08 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06BEC3D21EDE46500A45E08 /* TodayViewController.swift */; };
-		F06BEC4121EDE46500A45E08 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06BEC3F21EDE46500A45E08 /* MainInterface.storyboard */; };
 		F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
-		F06BEC4D21EE01D900A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC5421EE0FA100A45E08 /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F06BEC5821EE0FA100A45E08 /* PomodoroSettings.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0D89DDA21D8D32B0011A0B7 /* PomodoroSettings.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F06BEC5C21EE0FA100A45E08 /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -120,19 +116,9 @@
 		F0DB788D22477FA30006F65A /* HistoryMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB788B22477FA30006F65A /* HistoryMO+CoreDataClass.swift */; };
 		F0DB788E22477FA30006F65A /* HistoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB788C22477FA30006F65A /* HistoryMO+CoreDataProperties.swift */; };
 		F0DB78902247A7FB0006F65A /* MockEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB788F2247A7FB0006F65A /* MockEditViewController.swift */; };
-		F0EF230D21EE161C00338D51 /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
-		F0EF230E21EE161C00338D51 /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
-		F0EF230F21EE164D00338D51 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F06BEC4321EDE46500A45E08 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F06BEC3821EDE46500A45E08;
-			remoteInfo = Widget;
-		};
 		F06BEC5521EE0FA100A45E08 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
@@ -275,7 +261,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F04CC55C226DDB8A00339455 /* Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +340,6 @@
 		F038207D21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F038207E21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Settings.strings; sourceTree = "<group>"; };
 		F038207F21F47CE8000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		F038208021F47CE8000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		F038208621F496C8000ACFD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		F038208821F49B3B000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ko; path = ko.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		F038208C21F4A486000ACFD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -363,13 +347,8 @@
 		F03E12DE21E36423003C2129 /* RippleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleButton.swift; sourceTree = "<group>"; };
 		F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExtensionTests.swift; sourceTree = "<group>"; };
 		F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.debug.xcconfig"; sourceTree = "<group>"; };
-		F06BEC3921EDE46500A45E08 /* Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		F06BEC3D21EDE46500A45E08 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		F06BEC4021EDE46500A45E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		F06BEC4221EDE46500A45E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
-		F06BEC4F21EE057C00A45E08 /* Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Widget.entitlements; sourceTree = "<group>"; };
 		F0775F352234DDB4003CF712 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		F0843CA021CE5AD900EDB65F /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0843CA321CE5AD900EDB65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -468,16 +447,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0006EBE21EDE2AD00307F88 /* PomodoroFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F06BEC3621EDE46500A45E08 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0EF230F21EE164D00338D51 /* NotificationCenter.framework in Frameworks */,
-				F0EF230D21EE161C00338D51 /* PomodoroFoundation.framework in Frameworks */,
-				F0EF230E21EE161C00338D51 /* PomodoroUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,17 +615,6 @@
 			path = Singletons;
 			sourceTree = "<group>";
 		};
-		F06BEC3C21EDE46500A45E08 /* Widget */ = {
-			isa = PBXGroup;
-			children = (
-				F06BEC4F21EE057C00A45E08 /* Widget.entitlements */,
-				F06BEC3D21EDE46500A45E08 /* TodayViewController.swift */,
-				F06BEC3F21EDE46500A45E08 /* MainInterface.storyboard */,
-				F06BEC4221EDE46500A45E08 /* Info.plist */,
-			);
-			path = Widget;
-			sourceTree = "<group>";
-		};
 		F0843C9721CE5AD900EDB65F = {
 			isa = PBXGroup;
 			children = (
@@ -664,7 +622,6 @@
 				F087252121CF6719007EB27F /* PomodoroFoundation */,
 				F0006EAE21EDE11F00307F88 /* PomodoroUIKit */,
 				F0D89DDB21D8D32B0011A0B7 /* PomodoroSettings */,
-				F06BEC3C21EDE46500A45E08 /* Widget */,
 				F0BA0DCE22367B51004CD72C /* TimeLineApp */,
 				F0BA0DF622367BB6004CD72C /* TimeLine */,
 				F0BA0E0322367BB6004CD72C /* TimeLineTests */,
@@ -687,7 +644,6 @@
 				F0D89E0221D8D6D80011A0B7 /* SettingsApp.app */,
 				F0D89E2021D8D6DA0011A0B7 /* SettingsAppUITests.xctest */,
 				F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */,
-				F06BEC3921EDE46500A45E08 /* Widget.appex */,
 				F0BA0DCD22367B51004CD72C /* TimeLineApp.app */,
 				F0BA0DE022367B53004CD72C /* TimeLineAppUITests.xctest */,
 				F0BA0DF522367BB6004CD72C /* TimeLine.framework */,
@@ -956,23 +912,6 @@
 			productReference = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F06BEC3821EDE46500A45E08 /* Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F06BEC4821EDE46500A45E08 /* Build configuration list for PBXNativeTarget "Widget" */;
-			buildPhases = (
-				F06BEC3521EDE46500A45E08 /* Sources */,
-				F06BEC3621EDE46500A45E08 /* Frameworks */,
-				F06BEC3721EDE46500A45E08 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Widget;
-			productName = Widget;
-			productReference = F06BEC3921EDE46500A45E08 /* Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		F0843C9F21CE5AD900EDB65F /* Pomodoro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0843CCB21CE5ADA00EDB65F /* Build configuration list for PBXNativeTarget "Pomodoro" */;
@@ -989,7 +928,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				F06BEC4421EDE46500A45E08 /* PBXTargetDependency */,
 				F06BEC5621EE0FA100A45E08 /* PBXTargetDependency */,
 				F06BEC5A21EE0FA100A45E08 /* PBXTargetDependency */,
 				F06BEC5E21EE0FA100A45E08 /* PBXTargetDependency */,
@@ -1246,21 +1184,12 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
 					};
-					F06BEC3821EDE46500A45E08 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1020;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
 					F0843C9F21CE5AD900EDB65F = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1330,7 +1259,6 @@
 			projectRoot = "";
 			targets = (
 				F0843C9F21CE5AD900EDB65F /* Pomodoro */,
-				F06BEC3821EDE46500A45E08 /* Widget */,
 				F0843CB621CE5ADA00EDB65F /* PomodoroTests */,
 				F0843CC121CE5ADA00EDB65F /* PomodoroUITests */,
 				F087251F21CF6719007EB27F /* PomodoroFoundation */,
@@ -1354,15 +1282,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F06BEC3721EDE46500A45E08 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F06BEC4D21EE01D900A45E08 /* Assets.xcassets in Resources */,
-				F06BEC4121EDE46500A45E08 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1756,14 +1675,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F06BEC3521EDE46500A45E08 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F06BEC3E21EDE46500A45E08 /* TodayViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F0843C9C21CE5AD900EDB65F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1907,11 +1818,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F06BEC4421EDE46500A45E08 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F06BEC3821EDE46500A45E08 /* Widget */;
-			targetProxy = F06BEC4321EDE46500A45E08 /* PBXContainerItemProxy */;
-		};
 		F06BEC5621EE0FA100A45E08 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F087251F21CF6719007EB27F /* PomodoroFoundation */;
@@ -2028,15 +1934,6 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		F06BEC3F21EDE46500A45E08 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F06BEC4021EDE46500A45E08 /* Base */,
-				F038208021F47CE8000ACFD0 /* ko */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		F0843CA721CE5AD900EDB65F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2149,48 +2046,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F06BEC4621EDE46500A45E08 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro.Widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		F06BEC4721EDE46500A45E08 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7KT5X239S9;
-				INFOPLIST_FILE = Widget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro.Widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -2318,7 +2173,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
@@ -2340,7 +2194,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
@@ -2916,15 +2769,6 @@
 			buildConfigurations = (
 				F0006EB721EDE11F00307F88 /* Debug */,
 				F0006EB821EDE11F00307F88 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F06BEC4821EDE46500A45E08 /* Build configuration list for PBXNativeTarget "Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F06BEC4621EDE46500A45E08 /* Debug */,
-				F06BEC4721EDE46500A45E08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
