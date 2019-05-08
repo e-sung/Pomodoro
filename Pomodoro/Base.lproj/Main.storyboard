@@ -280,6 +280,7 @@
                         <viewLayoutGuide key="safeArea" id="gtp-Xr-faC"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="B7d-WK-BK7" appends="YES" id="cad-kD-9G9"/>
+                            <outletCollection property="gestureRecognizers" destination="51F-Sx-Ey1" appends="YES" id="y8L-G9-g5S"/>
                         </connections>
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
@@ -297,6 +298,11 @@
                         <action selector="backgroundTapped:" destination="bnD-03-evO" id="TnG-Kh-3Rv"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="51F-Sx-Ey1">
+                    <connections>
+                        <action selector="swipped:" destination="bnD-03-evO" id="OAz-4X-i5F"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3335" y="131"/>
         </scene>

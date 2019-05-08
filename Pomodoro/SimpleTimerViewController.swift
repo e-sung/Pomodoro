@@ -56,6 +56,19 @@ class SimpleTimerViewController: TimerViewController {
         navItem.leftBarButtonItem = button
     }
 
+    @IBAction func swipped(_ sender: UIPanGestureRecognizer) {
+        let width = UIScreen.main.bounds.width
+        print(sender.velocity(in: view))
+        let velocity = abs(sender.velocity(in: view).x)
+        guard velocity > 10 else { return }
+        guard sender.numberOfTouches > 0 else { return }
+        let swippingPoint = sender.location(ofTouch: 0, in: view)
+        let xPos = swippingPoint.x
+        let progress = TimeInterval(xPos / width)
+        interval.elapsedSeconds = interval.targetSeconds * progress
+        timeElapsed(interval.elapsedSeconds)
+    }
+
     override func refreshViews(with interval: Interval) {
         updateLabelTime(with: interval.elapsedSeconds)
         progressBar.progressTintColor = interval.themeColor.backgroundColor
