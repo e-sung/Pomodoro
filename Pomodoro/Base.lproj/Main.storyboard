@@ -194,7 +194,7 @@
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_alarm" id="rLT-hC-FVi">
-                        <color key="badgeColor" name="OrangePlate"/>
+                        <color key="badgeColor" name="pmWhite"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="clearButton" destination="zbS-4T-Fx8" id="WjF-Ob-LM9"/>
