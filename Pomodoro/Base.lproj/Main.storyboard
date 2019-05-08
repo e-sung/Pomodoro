@@ -90,7 +90,7 @@
                                 </variation>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" highlightedImage="play" translatesAutoresizingMaskIntoConstraints="NO" id="HTF-te-s8l">
-                                <rect key="frame" x="167.5" y="289" width="40" height="40"/>
+                                <rect key="frame" x="167.5" y="286" width="40" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="pmWhite"/>
                                 <constraints>
@@ -144,7 +144,7 @@
                             <constraint firstItem="HTF-te-s8l" firstAttribute="centerX" secondItem="p0n-JA-XET" secondAttribute="centerX" id="Jun-GP-eGh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="40" id="Kno-1E-lv9"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="centerY" secondItem="C0j-TM-sWV" secondAttribute="centerY" constant="-5" id="WU1-s8-wWh"/>
-                            <constraint firstItem="HTF-te-s8l" firstAttribute="top" secondItem="p0n-JA-XET" secondAttribute="bottom" constant="3" id="awk-Ny-dBi"/>
+                            <constraint firstItem="HTF-te-s8l" firstAttribute="top" secondItem="p0n-JA-XET" secondAttribute="bottom" id="awk-Ny-dBi"/>
                             <constraint firstItem="zbS-4T-Fx8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="cfS-6t-cXD"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="eIe-Zq-zmq"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-80" id="mJ6-Bi-MZh"/>

@@ -166,7 +166,7 @@ extension MainTimerViewController {
     func refreshMainSlider(with interval: Interval) {
         mainSlider.maximumValue = CGFloat(interval.targetSeconds)
         mainSlider.trackFillColor = interval.themeColor.backgroundColor
-        mainSlider.trackColor = interval.themeColor.trackColor
+        mainSlider.trackColor = interval.themeColor.trackColor.withAlphaComponent(0.7)
         updateMainSlider(to: interval.elapsedSeconds)
         setAccessiblityHintOfRippleButton(given: interval)
         mainSlider.setNeedsDisplay()
