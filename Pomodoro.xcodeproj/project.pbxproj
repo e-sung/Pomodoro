@@ -23,6 +23,7 @@
 		F0080CB02286634F005D9E2C /* chime_wash.wav in Resources */ = {isa = PBXBuildFile; fileRef = F0080CAF2286634E005D9E2C /* chime_wash.wav */; };
 		F0080CB42286748B005D9E2C /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0080CB32286748B005D9E2C /* MainTabBarViewController.swift */; };
 		F0080CB722867736005D9E2C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0080CB522867735005D9E2C /* InfoPlist.strings */; };
+		F0080CBB2286A123005D9E2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBA2286A123005D9E2C /* Main.storyboard */; };
 		F038205221F2202C000ACFD0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038205121F2202C000ACFD0 /* String+Extension.swift */; };
 		F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F038208721F496C8000ACFD0 /* Localizable.stringsdict */; };
 		F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F038208D21F4A486000ACFD0 /* Localizable.strings */; };
@@ -36,7 +37,6 @@
 		F0775F362234DDB4003CF712 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0775F352234DDB4003CF712 /* UIViewController+Extension.swift */; };
 		F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA321CE5AD900EDB65F /* AppDelegate.swift */; };
 		F0843CA621CE5AD900EDB65F /* MainTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */; };
-		F0843CA921CE5AD900EDB65F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0843CA721CE5AD900EDB65F /* Main.storyboard */; };
 		F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0843CAA21CE5AD900EDB65F /* Pomodoro.xcdatamodeld */; };
 		F0843CB121CE5ADA00EDB65F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAF21CE5ADA00EDB65F /* LaunchScreen.storyboard */; };
 		F0843CBC21CE5ADA00EDB65F /* PomodoroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CBB21CE5ADA00EDB65F /* PomodoroTests.swift */; };
@@ -328,12 +328,11 @@
 		F0006EAF21EDE11F00307F88 /* PomodoroUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PomodoroUIKit.h; sourceTree = "<group>"; };
 		F0006EB021EDE11F00307F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0080CAF2286634E005D9E2C /* chime_wash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = chime_wash.wav; sourceTree = "<group>"; };
-		F0080CB222867088005D9E2C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		F0080CB32286748B005D9E2C /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		F0080CB622867736005D9E2C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0080CBA2286A123005D9E2C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F01A200322118A7B001ECF23 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		F038205121F2202C000ACFD0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		F038207C21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		F038207D21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F038207E21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Settings.strings; sourceTree = "<group>"; };
 		F038207F21F47CE8000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -351,7 +350,6 @@
 		F0843CA021CE5AD900EDB65F /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0843CA321CE5AD900EDB65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimerViewController.swift; sourceTree = "<group>"; };
-		F0843CA821CE5AD900EDB65F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0843CAB21CE5AD900EDB65F /* Pomodoro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pomodoro.xcdatamodel; sourceTree = "<group>"; };
 		F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0843CB021CE5ADA00EDB65F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -660,7 +658,7 @@
 				F0080CB32286748B005D9E2C /* MainTabBarViewController.swift */,
 				F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */,
 				F09C0BDA226C29F9008EF37C /* SimpleTimerViewController.swift */,
-				F0843CA721CE5AD900EDB65F /* Main.storyboard */,
+				F0080CBA2286A123005D9E2C /* Main.storyboard */,
 				F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */,
 				F0843CAF21CE5ADA00EDB65F /* LaunchScreen.storyboard */,
 				F0843CB221CE5ADA00EDB65F /* Info.plist */,
@@ -1290,11 +1288,11 @@
 			files = (
 				F0080CB02286634F005D9E2C /* chime_wash.wav in Resources */,
 				F0843CB121CE5ADA00EDB65F /* LaunchScreen.storyboard in Resources */,
-				F0843CA921CE5AD900EDB65F /* Main.storyboard in Resources */,
 				F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */,
 				F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */,
 				F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */,
 				F0D89E3021D8D7170011A0B7 /* Settings.storyboard in Resources */,
+				F0080CBB2286A123005D9E2C /* Main.storyboard in Resources */,
 				F0080CB722867736005D9E2C /* InfoPlist.strings in Resources */,
 				F09C0BD8226AC73F008EF37C /* Timeline.storyboard in Resources */,
 			);
@@ -1937,16 +1935,6 @@
 				F038208E21F4A488000ACFD0 /* ko */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		F0843CA721CE5AD900EDB65F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F0843CA821CE5AD900EDB65F /* Base */,
-				F038207C21F47CE7000ACFD0 /* ko */,
-				F0080CB222867088005D9E2C /* en */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		F0843CAF21CE5ADA00EDB65F /* LaunchScreen.storyboard */ = {
