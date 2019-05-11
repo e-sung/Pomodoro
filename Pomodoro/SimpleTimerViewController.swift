@@ -76,9 +76,9 @@ class SimpleTimerViewController: TimerViewController {
         labelTime.isHidden = interval is FocusInterval
         updateControlButton()
         if interval is FocusInterval {
-            labelStatus.text = "집중중"
+            labelStatus.text = NSLocalizedString("focusing", comment: "")
         } else {
-            labelStatus.text = "휴식중"
+            labelStatus.text = NSLocalizedString("resting", comment: "")
         }
     }
 }

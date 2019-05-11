@@ -9,3 +9,5 @@
 remainingTime = "Remaining Time : ";
 timerPaused = "Timer is Paused.";
 timerRunning = "Timer is Running.";
+resting = "Resting";
+focusing = "Focusing";

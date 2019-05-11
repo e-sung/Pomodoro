@@ -145,8 +145,7 @@ public class MainTimerViewController: TimerViewController {
         interval.elapsedSeconds = interval.targetSeconds * slider.progress
         timeElapsed(interval.elapsedSeconds)
     }
-    
-    
+
     private func bindAccel(_ acceleration: BehaviorRelay<Double>, to motionManager: CMMotionManager) {
         motionManager.startDeviceMotionUpdates(using: CMAttitudeReferenceFrame.xArbitraryCorrectedZVertical, to: OperationQueue.main) { motion, error in
             if let error = error {
@@ -158,7 +157,7 @@ public class MainTimerViewController: TimerViewController {
             acceleration.accept(accel)
         }
     }
-    
+
     private func showOrHide(_ clearButton: UIButton, by accel: BehaviorRelay<Double>) {
         accel
             .filter({ $0 > 0.1 })

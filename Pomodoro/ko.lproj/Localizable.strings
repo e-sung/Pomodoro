@@ -11,3 +11,5 @@
 /* (No Comment) */
 "timerRunning" = "타이머 진행중.";
 
+resting = "휴식중";
+focusing = "집중중";
