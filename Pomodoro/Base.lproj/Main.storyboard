@@ -108,7 +108,7 @@
                                 </constraints>
                                 <state key="normal" title=" "/>
                                 <connections>
-                                    <action selector="eggYellowClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQm-9o-T6M"/>
+                                    <action selector="mainCircleClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQm-9o-T6M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbS-4T-Fx8">

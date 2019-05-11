@@ -13,6 +13,8 @@ import HGCircularSlider
 import PomodoroFoundation
 import PomodoroSettings
 import PomodoroUIKit
+import RxCocoa
+import RxSwift
 import UIKit
 import UserNotifications
 
@@ -27,10 +29,21 @@ public class MainTimerViewController: TimerViewController {
     // MARK: Properties
 
     private let motionManager: CMMotionManager = CMMotionManager()
-    private var shouldShowClearButton = false
+    private var shouldShowClearButton: Bool {
+        if let lastClearButtonShownTime = lastClearButtonShownTime {
+            let timePassed = Date().timeIntervalSince(lastClearButtonShownTime)
+            return timePassed > 10
+        }
+        return true
+    }
+
     public override var prefersStatusBarHidden: Bool {
         return true
     }
+
+    var acceleration = BehaviorRelay<Double>(value: 0)
+    var lastClearButtonShownTime: Date?
+    var disposeBag = DisposeBag()
 
     // MARK: LifeCycle
 
@@ -63,23 +76,8 @@ public class MainTimerViewController: TimerViewController {
 
         let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.shared)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
-
-        motionManager.startDeviceMotionUpdates(using: CMAttitudeReferenceFrame.xArbitraryCorrectedZVertical, to: OperationQueue.main) { [weak self] motion, error in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            guard let motion = motion else { return }
-            var accel = motion.userAcceleration.y.roundTo(places: 2)
-            accel = abs(accel)
-            guard self?.clearButton.layer.animationKeys() == nil else { return }
-            if accel > 0.1 {
-                self?.showClearButton()
-            } else if self?.shouldShowClearButton == false {
-                UIView.animate(withDuration: 0.5, animations: {
-                    self?.clearButton.alpha = 0
-                })
-            }
-        }
+        bindAccel(acceleration, to: motionManager)
+        showOrHide(clearButton, by: acceleration)
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
@@ -117,18 +115,6 @@ public class MainTimerViewController: TimerViewController {
         }
     }
 
-    func showClearButton() {
-        guard clearButton.layer.animationKeys() == nil else { return }
-        shouldShowClearButton = true
-        UIView.animate(withDuration: 0.5, animations: { [weak self] in
-            self?.clearButton.alpha = 1
-        }, completion: { [weak self] _ in
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: {
-                self?.shouldShowClearButton = false
-            })
-        })
-    }
-
     public override func timeElapsed(_ seconds: TimeInterval) {
         super.timeElapsed(seconds)
         updateMainSlider(to: seconds)
@@ -143,10 +129,10 @@ public class MainTimerViewController: TimerViewController {
     // MARK: IBAction
 
     @IBAction func backgroundTapped(_: Any) {
-        showClearButton()
+        acceleration.accept(1)
     }
 
-    @IBAction func eggYellowClicked(_: Any) {
+    @IBAction func mainCircleClicked(_: Any) {
         startOrStopTimer()
         setAccessiblityHintOfRippleButton(given: interval)
     }
@@ -158,6 +144,39 @@ public class MainTimerViewController: TimerViewController {
     @IBAction func sliderDidSlide(_ slider: CircularSlider) {
         interval.elapsedSeconds = interval.targetSeconds * slider.progress
         timeElapsed(interval.elapsedSeconds)
+    }
+    
+    
+    private func bindAccel(_ acceleration: BehaviorRelay<Double>, to motionManager: CMMotionManager) {
+        motionManager.startDeviceMotionUpdates(using: CMAttitudeReferenceFrame.xArbitraryCorrectedZVertical, to: OperationQueue.main) { motion, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            guard let motion = motion else { return }
+            var accel = motion.userAcceleration.y.roundTo(places: 2)
+            accel = abs(accel)
+            acceleration.accept(accel)
+        }
+    }
+    
+    private func showOrHide(_ clearButton: UIButton, by accel: BehaviorRelay<Double>) {
+        accel
+            .filter({ $0 > 0.1 })
+            .filter({ [weak self] _ in self?.shouldShowClearButton == true })
+            .filter({ _ in clearButton.layer.animationKeys() == nil })
+            .filter({ _ in clearButton.alpha == 0 })
+            .do(onNext: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    clearButton.alpha = 1
+                })
+            })
+            .delay(RxTimeInterval(floatLiteral: 10), scheduler: MainScheduler.instance)
+            .bind(onNext: { _ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    clearButton.alpha = 0
+                })
+            })
+            .disposed(by: disposeBag)
     }
 }
 
