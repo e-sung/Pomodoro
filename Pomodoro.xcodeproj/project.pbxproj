@@ -25,6 +25,8 @@
 		F0080CB722867736005D9E2C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0080CB522867735005D9E2C /* InfoPlist.strings */; };
 		F0080CBB2286A123005D9E2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBA2286A123005D9E2C /* Main.storyboard */; };
 		F0080CBD2286A2CB005D9E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBC2286A2CB005D9E2C /* LaunchScreen.storyboard */; };
+		F0080CC02286A374005D9E2C /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBE2286A374005D9E2C /* Timeline.storyboard */; };
+		F0080CC12286A374005D9E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBF2286A374005D9E2C /* LaunchScreen.storyboard */; };
 		F038205221F2202C000ACFD0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038205121F2202C000ACFD0 /* String+Extension.swift */; };
 		F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F038208721F496C8000ACFD0 /* Localizable.stringsdict */; };
 		F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F038208D21F4A486000ACFD0 /* Localizable.strings */; };
@@ -61,16 +63,13 @@
 		F0880AA521D72DE6008AE79F /* StandardTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0880AA421D72DE6008AE79F /* StandardTimeTests.swift */; };
 		F09C0BD5226ABD4C008EF37C /* ProgressHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09C0BD4226ABD4C008EF37C /* ProgressHeaderView.swift */; };
 		F09C0BD7226ABDA7008EF37C /* ProgressHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09C0BD6226ABDA7008EF37C /* ProgressHeaderView.xib */; };
-		F09C0BD8226AC73F008EF37C /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD322367B51004CD72C /* Timeline.storyboard */; };
 		F09C0BDB226C29F9008EF37C /* SimpleTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09C0BDA226C29F9008EF37C /* SimpleTimerViewController.swift */; };
 		F09C0BDC226C3C39008EF37C /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* BackgroundTimer.swift */; };
 		F0A8E1DE2259A17B007FE83F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DD2259A17B007FE83F /* Date+Extension.swift */; };
 		F0A8E1E02259A811007FE83F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DF2259A811007FE83F /* Protocols.swift */; };
 		F0A8E1E22259AD4E007FE83F /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1E12259AD4E007FE83F /* TimelineViewModel.swift */; };
 		F0BA0DD022367B51004CD72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DCF22367B51004CD72C /* AppDelegate.swift */; };
-		F0BA0DD522367B51004CD72C /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD322367B51004CD72C /* Timeline.storyboard */; };
 		F0BA0DD722367B53004CD72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD622367B53004CD72C /* Assets.xcassets */; };
-		F0BA0DDA22367B53004CD72C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BA0DD822367B53004CD72C /* LaunchScreen.storyboard */; };
 		F0BA0DE522367B53004CD72C /* TimeLineAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DE422367B53004CD72C /* TimeLineAppUITests.swift */; };
 		F0BA0DEF22367B74004CD72C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F0BA0DFE22367BB6004CD72C /* TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; };
@@ -332,6 +331,8 @@
 		F0080CB622867736005D9E2C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0080CBA2286A123005D9E2C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F0080CBC2286A2CB005D9E2C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0080CBE2286A374005D9E2C /* Timeline.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Timeline.storyboard; sourceTree = "<group>"; };
+		F0080CBF2286A374005D9E2C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F01A200322118A7B001ECF23 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		F038205121F2202C000ACFD0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F038207D21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -391,9 +392,7 @@
 		F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeLineCell.xib; sourceTree = "<group>"; };
 		F0BA0DCD22367B51004CD72C /* TimeLineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BA0DCF22367B51004CD72C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F0BA0DD422367B51004CD72C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Timeline.storyboard; sourceTree = "<group>"; };
 		F0BA0DD622367B53004CD72C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F0BA0DD922367B53004CD72C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0BA0DDB22367B53004CD72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0BA0DE022367B53004CD72C /* TimeLineAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLineAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BA0DE422367B53004CD72C /* TimeLineAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineAppUITests.swift; sourceTree = "<group>"; };
@@ -735,9 +734,9 @@
 			children = (
 				F0BA0DE322367B53004CD72C /* TimeLineAppUITests */,
 				F0BA0DCF22367B51004CD72C /* AppDelegate.swift */,
-				F0BA0DD322367B51004CD72C /* Timeline.storyboard */,
+				F0080CBF2286A374005D9E2C /* LaunchScreen.storyboard */,
+				F0080CBE2286A374005D9E2C /* Timeline.storyboard */,
 				F0BA0DD622367B53004CD72C /* Assets.xcassets */,
-				F0BA0DD822367B53004CD72C /* LaunchScreen.storyboard */,
 				F0BA0DDB22367B53004CD72C /* Info.plist */,
 				F0D985F02237CF39006D2A08 /* MockTimeLineViewController.swift */,
 				F0DB788F2247A7FB0006F65A /* MockEditViewController.swift */,
@@ -1293,7 +1292,6 @@
 				F0D89E3021D8D7170011A0B7 /* Settings.storyboard in Resources */,
 				F0080CBB2286A123005D9E2C /* Main.storyboard in Resources */,
 				F0080CB722867736005D9E2C /* InfoPlist.strings in Resources */,
-				F09C0BD8226AC73F008EF37C /* Timeline.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1331,10 +1329,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0BA0DDA22367B53004CD72C /* LaunchScreen.storyboard in Resources */,
 				F0BA0DD722367B53004CD72C /* Assets.xcassets in Resources */,
+				F0080CC12286A374005D9E2C /* LaunchScreen.storyboard in Resources */,
+				F0080CC02286A374005D9E2C /* Timeline.storyboard in Resources */,
 				F0BA0DEF22367B74004CD72C /* Assets.xcassets in Resources */,
-				F0BA0DD522367B51004CD72C /* Timeline.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1946,22 +1944,6 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		F0BA0DD322367B51004CD72C /* Timeline.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F0BA0DD422367B51004CD72C /* Base */,
-			);
-			name = Timeline.storyboard;
-			sourceTree = "<group>";
-		};
-		F0BA0DD822367B53004CD72C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F0BA0DD922367B53004CD72C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		F0D89E0821D8D6D80011A0B7 /* Settings.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2086,7 +2068,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2142,7 +2124,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
