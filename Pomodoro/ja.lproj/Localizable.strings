@@ -1,0 +1,21 @@
+/* 
+  File.strings
+  Pomodoro
+
+  Created by 류성두 on 20/01/2019.
+  Copyright © 2019 Sungdoo. All rights reserved.
+*/
+
+remainingTime = "Remaining Time : ";
+timerPaused = "Timer is Paused.";
+timerRunning = "Timer is Running.";
+resting = "Resting";
+focusing = "Focusing";
+main_timer = "Main Timer";
+setting = "Setting";
+noti_time_to_focus_title = "Time to Focus!!";
+noti_time_to_focus_body = "Cheer up!!";
+noti_time_to_break_title = "Time to Break!!";
+noti_time_to_break_body = "Well Done!!";
+start_focusing = "Start Focusing";
+start_break = "Start Break";
