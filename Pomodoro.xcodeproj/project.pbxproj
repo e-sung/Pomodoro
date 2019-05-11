@@ -75,8 +75,6 @@
 		F0BA0DFE22367BB6004CD72C /* TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; };
 		F0BA0E0522367BB6004CD72C /* TimeLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0E0422367BB6004CD72C /* TimeLineTests.swift */; };
 		F0BA0E0722367BB6004CD72C /* TimeLine.h in Headers */ = {isa = PBXBuildFile; fileRef = F0BA0DF722367BB6004CD72C /* TimeLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0BA0E0A22367BB6004CD72C /* TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; };
-		F0BA0E0B22367BB6004CD72C /* TimeLine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA0DF522367BB6004CD72C /* TimeLine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0BA0E1222367BCB004CD72C /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A200322118A7B001ECF23 /* TimelineViewController.swift */; };
 		F0BA0E1422367BCB004CD72C /* TimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DC3223674E2004CD72C /* TimeLineCell.swift */; };
 		F0BA0E1522367C29004CD72C /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
@@ -192,13 +190,6 @@
 			remoteGlobalIDString = F0843C9F21CE5AD900EDB65F;
 			remoteInfo = Pomodoro;
 		};
-		F0BA0E0822367BB6004CD72C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F0BA0DF422367BB6004CD72C;
-			remoteInfo = TimeLine;
-		};
 		F0BA0E1922367DAE004CD72C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
@@ -275,7 +266,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F06BEC5821EE0FA100A45E08 /* PomodoroSettings.framework in Embed Frameworks */,
-				F0BA0E0B22367BB6004CD72C /* TimeLine.framework in Embed Frameworks */,
 				F06BEC5C21EE0FA100A45E08 /* PomodoroUIKit.framework in Embed Frameworks */,
 				F06BEC5421EE0FA100A45E08 /* PomodoroFoundation.framework in Embed Frameworks */,
 			);
@@ -463,7 +453,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */,
-				F0BA0E0A22367BB6004CD72C /* TimeLine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,7 +931,6 @@
 				F06BEC5621EE0FA100A45E08 /* PBXTargetDependency */,
 				F06BEC5A21EE0FA100A45E08 /* PBXTargetDependency */,
 				F06BEC5E21EE0FA100A45E08 /* PBXTargetDependency */,
-				F0BA0E0922367BB6004CD72C /* PBXTargetDependency */,
 			);
 			name = Pomodoro;
 			productName = Pomodoro;
@@ -1881,11 +1869,6 @@
 			isa = PBXTargetDependency;
 			target = F0843C9F21CE5AD900EDB65F /* Pomodoro */;
 			targetProxy = F0BA0E0122367BB6004CD72C /* PBXContainerItemProxy */;
-		};
-		F0BA0E0922367BB6004CD72C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F0BA0DF422367BB6004CD72C /* TimeLine */;
-			targetProxy = F0BA0E0822367BB6004CD72C /* PBXContainerItemProxy */;
 		};
 		F0BA0E1A22367DAE004CD72C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
