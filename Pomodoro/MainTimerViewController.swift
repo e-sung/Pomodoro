@@ -50,6 +50,7 @@ public class MainTimerViewController: TimerViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.delegate = self
+        tabBarItem.accessibilityLabel = NSLocalizedString("main_timer", comment: "")
         clearButton.alpha = 0
         tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
     }

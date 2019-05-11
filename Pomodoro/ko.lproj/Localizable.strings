@@ -1,3 +1,21 @@
+/* (No Comment) */
+"focusing" = "집중중";
+
+/* (No Comment) */
+"main_timer" = "타이머";
+
+/* (No Comment) */
+"noti_time_to_break_body" = "잘 했어요!";
+
+/* (No Comment) */
+"noti_time_to_break_title" = "휴식 하실 시간이에요!";
+
+/* (No Comment) */
+"noti_time_to_focus_body" = "화이팅!";
+
+/* (No Comment) */
+"noti_time_to_focus_title" = "집중 하실 시간입니다!";
+
 /* File.strings
   Pomodoro
 
@@ -6,10 +24,20 @@
 "remainingTime" = "남은 시간 : ";
 
 /* (No Comment) */
+"resting" = "휴식중";
+
+/* (No Comment) */
+"setting" = "설정";
+
+/* (No Comment) */
 "timerPaused" = "타이머 멈춰있음.";
 
 /* (No Comment) */
 "timerRunning" = "타이머 진행중.";
 
-resting = "휴식중";
-focusing = "집중중";
+
+/* (No Comment) */
+"start_focusing" = "집중 시작";
+
+/* (No Comment) */
+"start_break" = "휴식 시작";

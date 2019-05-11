@@ -100,7 +100,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ol-b31" userLabel="TouchArea">
                                 <rect key="frame" x="129" y="196.5" width="117" height="117"/>
-                                <accessibility key="accessibilityConfiguration">
+                                <accessibility key="accessibilityConfiguration" hint="Double Tap to Start or Pause Timer">
                                     <accessibilityTraits key="traits" button="YES" allowsDirectInteraction="YES"/>
                                 </accessibility>
                                 <constraints>
@@ -113,6 +113,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbS-4T-Fx8">
                                 <rect key="frame" x="331" y="34" width="30" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="Double Tap to End this Session" label="end session"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zbS-4T-Fx8" secondAttribute="height" multiplier="1:1" id="TdP-NI-IkH"/>
                                     <constraint firstAttribute="width" constant="30" id="rKd-Qc-aWS"/>
@@ -318,10 +319,10 @@
             </objects>
             <point key="canvasLocation" x="1559" y="619"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="Ikl-f0-0ai">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wui-MR-8g3" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wui-MR-8g3" customClass="MainTabBarViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" itemPositioning="fill" id="tEH-Ha-jj6">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

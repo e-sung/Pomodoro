@@ -1,14 +1,11 @@
 /* Class = "UILabel"; text = "15 min"; ObjectID = "0cd-aT-D7P"; */
 "0cd-aT-D7P.text" = "15 min";
 
-/* Class = "UILabel"; text = "3 cycles"; ObjectID = "3hJ-ru-pHQ"; */
+/* Class = "UILabel"; text = "After 3 cycles"; ObjectID = "3hJ-ru-pHQ"; */
 "3hJ-ru-pHQ.text" = "3 cycles";
 
 /* Class = "UITableViewSection"; headerTitle = "Developer Mode"; ObjectID = "4HW-nb-Icr"; */
 "4HW-nb-Icr.headerTitle" = "Developer Mode";
-
-/* Class = "UILabel"; text = "10 intervals per day"; ObjectID = "6k3-aY-KeI"; */
-"6k3-aY-KeI.text" = "하루에 10 회";
 
 /* Class = "UILabel"; text = "25 min"; ObjectID = "8bL-QF-UFN"; */
 "8bL-QF-UFN.text" = "25 분";
@@ -28,12 +25,6 @@
 /* Class = "UILabel"; text = "5 min"; ObjectID = "dYI-fm-Mv6"; */
 "dYI-fm-Mv6.text" = "5 분";
 
-/* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "E0h-4S-0bV"; */
-"E0h-4S-0bV.accessibilityHint" = "더블 탭 하여 값을 바꾸실 수 있습니다.";
-
-/* Class = "UITabBarItem"; title = "Setting"; ObjectID = "fCM-yK-58y"; */
-"fCM-yK-58y.title" = "설정";
-
 /* Class = "UILabel"; text = "Focus Interval"; ObjectID = "fJd-L9-vKz"; */
 "fJd-L9-vKz.text" = "집중 할 시간";
 
@@ -47,7 +38,7 @@
 "HVr-XB-gsQ.text" = "화면 끔 방지";
 
 /* Class = "UITableViewSection"; headerTitle = "Mode"; ObjectID = "IYp-Qa-I2i"; */
-"IYp-Qa-I2i.headerTitle" = "Mode";
+"IYp-Qa-I2i.headerTitle" = "모드";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "JeV-RZ-02j"; */
 "JeV-RZ-02j.normalTitle" = "완료";
@@ -61,7 +52,7 @@
 /* Class = "UILabel"; text = "Count time only when clock is visible"; ObjectID = "pki-Wb-r14"; */
 "pki-Wb-r14.text" = "다른 앱을 켜고 있는 시간은 카운트하지 않습니다.";
 
-/* Class = "UILabel"; text = "Long Break After"; ObjectID = "Q4h-eJ-dZU"; */
+/* Class = "UILabel"; text = "Take Long Break"; ObjectID = "Q4h-eJ-dZU"; */
 "Q4h-eJ-dZU.text" = "언제 길게 쉴까요?";
 
 /* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "qcy-rt-YTb"; */
@@ -70,6 +61,6 @@
 /* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "ri4-UQ-hVn"; */
 "ri4-UQ-hVn.accessibilityHint" = "더블 탭 하여 값을 바꾸실 수 있습니다.";
 
-/* Class = "UILabel"; text = "Target"; ObjectID = "tzY-ZG-wYf"; */
-"tzY-ZG-wYf.text" = "목표";
+/* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "yMm-uf-e1K"; */
+"yMm-uf-e1K.accessibilityHint" = "더블 탭 하여 값을 바꾸실 수 있습니다.";
 

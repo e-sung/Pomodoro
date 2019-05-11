@@ -32,13 +32,13 @@ public class BreakInterval: NSObject, Interval {
     }
 
     public var notiAction: UNNotificationAction {
-        return UNNotificationAction(identifier: "interval.focus", title: "Start Focus", options: [])
+        return UNNotificationAction(identifier: "interval.focus", title: NSLocalizedString("start_focusing", comment: ""),
+                                    options: [])
     }
 
     public var notiContent: UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
-        content.title = "Time to Focus!"
-        content.body = "Cheer Up!!!"
+        content.title = NSLocalizedString("noti_time_to_focus_title", comment: "")
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "chime_wash.wav"))
         content.categoryIdentifier = "TimeToFocus"
         return content
