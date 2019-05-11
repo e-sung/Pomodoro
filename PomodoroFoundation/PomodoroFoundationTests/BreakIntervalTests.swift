@@ -19,9 +19,10 @@ class BreakIntervalTests: XCTestCase {
         // Then
         XCTAssert(sut.targetSeconds == 300)
         XCTAssert(sut.targetMinute == 5)
-        XCTAssert(sut.notiAction.title == "Start Focus")
-        XCTAssert(sut.notiContent.title == "Time to Focus!")
-        XCTAssert(sut.notiContent.body == "Cheer Up!!!")
+        if Locale.current.languageCode?.contains("en") == true {
+            XCTAssert(sut.notiContent.title == "Time to Focus!!")
+            XCTAssert(sut.notiAction.title == "Start Focusing")
+        }
         XCTAssert(sut.typeIdentifier == "BreakInterval")
     }
 }

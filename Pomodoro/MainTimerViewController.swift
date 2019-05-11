@@ -153,7 +153,7 @@ public class MainTimerViewController: TimerViewController {
                 print(error.localizedDescription)
             }
             guard let motion = motion else { return }
-            var accel = motion.userAcceleration.y.roundTo(places: 2)
+            var accel = motion.userAcceleration.y
             accel = abs(accel)
             acceleration.accept(accel)
         }
