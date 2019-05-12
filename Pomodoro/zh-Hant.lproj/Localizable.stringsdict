@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>completed cycle accessibility hint</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v2_current_cycle@</string>
+		<key>v2_current_cycle</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>other</key>
+			<string>完成: %u </string>
+		</dict>
+	</dict>
+	<key>cycle a day</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v_cycle_a_day@</string>
+		<key>v_cycle_a_day</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>other</key>
+			<string>一天%u次</string>
+		</dict>
+	</dict>
+	<key>cycle after</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v_cycle_after@</string>
+		<key>v_cycle_after</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>other</key>
+			<string>每%u次</string>
+		</dict>
+	</dict>
+	<key>cycle goal accessibility hint</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v1_cycle_target@</string>
+		<key>v1_cycle_target</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>other</key>
+			<string>Goal :  %u Pomodoro Cycles</string>
+		</dict>
+	</dict>
+	<key>cycles</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v_cycles@</string>
+		<key>v_cycles</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>other</key>
+			<string>%u次</string>
+			<key>zero</key>
+			<string>0次</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

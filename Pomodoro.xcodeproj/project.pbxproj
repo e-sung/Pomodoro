@@ -390,6 +390,10 @@
 		F0A8E1DF2259A811007FE83F /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		F0A8E1E12259AD4E007FE83F /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
 		F0A981FE228814540009EC2F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0A98200228866A10009EC2F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Settings.strings"; sourceTree = "<group>"; };
+		F0A98201228866A10009EC2F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		F0A98202228866A10009EC2F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
+		F0A98203228866A10009EC2F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F0BA0DC3223674E2004CD72C /* TimeLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineCell.swift; sourceTree = "<group>"; };
 		F0BA0DC4223674E2004CD72C /* TimeLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeLineCell.xib; sourceTree = "<group>"; };
 		F0BA0DCD22367B51004CD72C /* TimeLineApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLineApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1250,6 +1254,7 @@
 				Base,
 				ko,
 				ja,
+				"zh-Hant",
 			);
 			mainGroup = F0843C9721CE5AD900EDB65F;
 			productRefGroup = F0843CA121CE5AD900EDB65F /* Products */;
@@ -1910,6 +1915,7 @@
 			children = (
 				F0080CB622867736005D9E2C /* ko */,
 				F0080CC32286A857005D9E2C /* ja */,
+				F0A98201228866A10009EC2F /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1920,6 +1926,7 @@
 				F038208621F496C8000ACFD0 /* en */,
 				F038208821F49B3B000ACFD0 /* ko */,
 				F0080CC42286A857005D9E2C /* ja */,
+				F0A98202228866A10009EC2F /* zh-Hant */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -1930,6 +1937,7 @@
 				F038208C21F4A486000ACFD0 /* en */,
 				F038208E21F4A488000ACFD0 /* ko */,
 				F0080CC52286A857005D9E2C /* ja */,
+				F0A98203228866A10009EC2F /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1940,6 +1948,7 @@
 				F0D89E0921D8D6D80011A0B7 /* Base */,
 				F038207E21F47CE7000ACFD0 /* ko */,
 				F0080CC22286A857005D9E2C /* ja */,
+				F0A98200228866A10009EC2F /* zh-Hant */,
 			);
 			name = Settings.storyboard;
 			sourceTree = "<group>";
