@@ -1,6 +1,7 @@
 import AudioToolbox
 import Foundation
 import PomodoroFoundation
+import StoreKit
 import UIKit
 import UserNotifications
 
@@ -77,6 +78,9 @@ open class TimerViewController: UIViewController, IntervalDelegate {
         }
 
         resetInterval()
+        if interval is LongBreakInterval {
+            SKStoreReviewController.requestReview()
+        }
         refreshViews(with: interval)
     }
 }
