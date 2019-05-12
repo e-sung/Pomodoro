@@ -19,8 +19,6 @@ public class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         amountSettingCells.forEach({ [weak self] in self?.update($0) })
         toggleSettingCells.forEach({ [weak self] in self?.setUp($0) })
-        tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
-        tabBarItem.accessibilityLabel = NSLocalizedString("setting", comment: "")
         if MFMailComposeViewController.canSendMail() == false {
             contactCell.isHidden = true
         }
