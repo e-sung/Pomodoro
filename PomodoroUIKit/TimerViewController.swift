@@ -78,7 +78,7 @@ open class TimerViewController: UIViewController, IntervalDelegate {
         }
 
         resetInterval()
-        if interval is LongBreakInterval {
+        if finisher == .time, interval is LongBreakInterval {
             SKStoreReviewController.requestReview()
         }
         refreshViews(with: interval)
