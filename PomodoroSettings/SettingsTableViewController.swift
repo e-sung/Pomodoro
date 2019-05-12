@@ -6,12 +6,14 @@
 //  Copyright © 2018 Sungdoo. All rights reserved.
 //
 
+import MessageUI
 import PomodoroFoundation
 import UIKit
 
 public class SettingsTableViewController: UITableViewController {
     @IBOutlet var amountSettingCells: [AmountSettingCell]!
     @IBOutlet var toggleSettingCells: [ToggleSettingCell]!
+    @IBOutlet var contactCell: UITableViewCell!
 
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,9 @@ public class SettingsTableViewController: UITableViewController {
         toggleSettingCells.forEach({ [weak self] in self?.setUp($0) })
         tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         tabBarItem.accessibilityLabel = NSLocalizedString("setting", comment: "")
+        if MFMailComposeViewController.canSendMail() == false {
+            contactCell.isHidden = true
+        }
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -62,9 +67,32 @@ public class SettingsTableViewController: UITableViewController {
         cell.setUp(for: boolToSetUp)
     }
 
+    @IBAction func contactCellClicked(_: Any?) {
+        guard let mailComposer = mailComposeViewController else { return }
+        mailComposer.mailComposeDelegate = self
+        present(mailComposer, animated: true, completion: nil)
+    }
+
+    var mailComposeViewController: MFMailComposeViewController? {
+        guard MFMailComposeViewController.canSendMail() else {
+            return nil
+        }
+        let composeViewController = MFMailComposeViewController()
+        composeViewController.setToRecipients(["dev.esung@gmail.com"])
+        composeViewController.setSubject("Feedback From Pomodoro User")
+        composeViewController.setMessageBody("Device Version: \(UIDevice.current.systemVersion)", isHTML: false)
+        return composeViewController
+    }
+
     @IBAction func devModeToggled(_: UISwitch) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
             self?.amountSettingCells.forEach({ [weak self] in self?.update($0) })
         })
+    }
+}
+
+extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith _: MFMailComposeResult, error _: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
