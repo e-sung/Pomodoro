@@ -16,6 +16,7 @@ public enum SettingContent: String {
     case target = "targetSetting"
     case neverSleep = "neverSleepSetting"
     case enhancedFocusMode = "enhancedFocusModeSetting"
+    case continousMode
     case devMode = "devModeSetting"
 
     public var defaultValue: Any {
@@ -28,6 +29,7 @@ public enum SettingContent: String {
         case .neverSleep: return true as Any
         case .enhancedFocusMode: return false as Any
         case .devMode: return false as Any
+        case .continousMode: return false as Any
         }
     }
 

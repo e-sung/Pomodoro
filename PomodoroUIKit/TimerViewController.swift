@@ -81,6 +81,13 @@ open class TimerViewController: UIViewController, IntervalDelegate {
         if finisher == .time, interval is LongBreakInterval {
             SKStoreReviewController.requestReview()
         }
+
+        let isContinousMode = retreiveBool(for: .continousMode, from: UserDefaults(suiteName: "group.pomodoro.com")!) == true
+        if finisher == .time, isContinousMode {
+            resetCycleIfDayHasPassed()
+            interval.startTimer()
+        }
+
         refreshViews(with: interval)
     }
 }

@@ -224,7 +224,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="O9Q-Ee-gOU">
+                                                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="O9Q-Ee-gOU">
                                                     <rect key="frame" x="14" y="9.5" width="208.5" height="35"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="999" text="Ehnahced Focus Mode" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="de1-AY-qgq">
@@ -266,12 +266,61 @@
                                             <outlet property="toggleSwitch" destination="agZ-sm-nEh" id="E4f-UX-nt8"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="54" id="3Os-bf-Ds7" customClass="ToggleSettingCell" customModule="PomodoroSettings">
+                                        <rect key="frame" x="0.0" y="385.5" width="375" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Os-bf-Ds7" id="xcL-Og-oPV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="TWV-TM-u3A">
+                                                    <rect key="frame" x="14" y="9.5" width="184" height="35"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="999" text="Continuous Mode" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="H1O-in-eRD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="135.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Start Next Session automatically" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-eU-Hj2">
+                                                            <rect key="frame" x="0.0" y="20.5" width="184" height="14.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vyM-mR-sWV">
+                                                    <rect key="frame" x="312" y="11.5" width="51" height="31"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="enhancedFocusModeSwitch"/>
+                                                    <connections>
+                                                        <action selector="switchToggled:" destination="3Os-bf-Ds7" eventType="valueChanged" id="bFe-1f-HKX"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vyM-mR-sWV" firstAttribute="centerY" secondItem="xcL-Og-oPV" secondAttribute="centerY" id="8wp-aW-WT8"/>
+                                                <constraint firstItem="TWV-TM-u3A" firstAttribute="leading" secondItem="xcL-Og-oPV" secondAttribute="leading" constant="14" id="Fy6-yo-YRX"/>
+                                                <constraint firstAttribute="trailing" secondItem="vyM-mR-sWV" secondAttribute="trailing" constant="14" id="Rc5-Q0-hLV"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TWV-TM-u3A" secondAttribute="bottom" constant="7" id="SD8-MJ-hCc"/>
+                                                <constraint firstItem="vyM-mR-sWV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xcL-Og-oPV" secondAttribute="top" constant="7" id="T0d-et-fy9"/>
+                                                <constraint firstItem="TWV-TM-u3A" firstAttribute="centerY" secondItem="vyM-mR-sWV" secondAttribute="centerY" id="T3R-Zu-aLX"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vyM-mR-sWV" secondAttribute="bottom" constant="7" id="X8s-sl-OVn"/>
+                                                <constraint firstItem="TWV-TM-u3A" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xcL-Og-oPV" secondAttribute="top" constant="7" id="qlX-Bk-9eq"/>
+                                                <constraint firstItem="vyM-mR-sWV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TWV-TM-u3A" secondAttribute="trailing" constant="7" id="sVm-0y-qbo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="continousMode"/>
+                                        <connections>
+                                            <outlet property="toggleSwitch" destination="vyM-mR-sWV" id="t6w-Br-Y7I"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="7oL-Ip-Cty">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contact" textLabel="XwX-ew-Cb8" imageView="vhX-Q1-8ES" style="IBUITableViewCellStyleDefault" id="dra-Kn-IeS">
-                                        <rect key="frame" x="0.0" y="421.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="475.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dra-Kn-IeS" id="WyE-iD-QTk">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -289,6 +338,7 @@
                                                     </connections>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vhX-Q1-8ES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -311,6 +361,7 @@
                         <outletCollection property="amountSettingCells" destination="qcy-rt-YTb" collectionClass="NSMutableArray" id="8gc-il-mKT"/>
                         <outletCollection property="toggleSettingCells" destination="rZW-di-Plg" collectionClass="NSMutableArray" id="WnT-bM-WUd"/>
                         <outletCollection property="toggleSettingCells" destination="qRG-N8-Xf6" collectionClass="NSMutableArray" id="ZaB-cN-MFk"/>
+                        <outletCollection property="toggleSettingCells" destination="3Os-bf-Ds7" collectionClass="NSMutableArray" id="REM-pr-hh3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp6-wt-7T7" userLabel="First Responder" sceneMemberID="firstResponder"/>
