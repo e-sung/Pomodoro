@@ -8,28 +8,28 @@
 "8bL-QF-UFN.text" = "25 min";
 
 /* Class = "UINavigationItem"; title = "Setting"; ObjectID = "9OE-Zi-TI3"; */
-"9OE-Zi-TI3.title" = "設置";
+"9OE-Zi-TI3.title" = "设置";
 
 /* Class = "UILabel"; text = "Break Interval"; ObjectID = "C5o-z3-2rb"; */
-"C5o-z3-2rb.text" = "休息時間";
+"C5o-z3-2rb.text" = "休息时间";
 
 /* Class = "UILabel"; text = "Ehnahced Focus Mode"; ObjectID = "de1-AY-qgq"; */
-"de1-AY-qgq.text" = "增強集中模式";
+"de1-AY-qgq.text" = "增强集中模式";
 
 /* Class = "UILabel"; text = "5 min"; ObjectID = "dYI-fm-Mv6"; */
 "dYI-fm-Mv6.text" = "5 min";
 
 /* Class = "UILabel"; text = "Focus Interval"; ObjectID = "fJd-L9-vKz"; */
-"fJd-L9-vKz.text" = "集中時間";
+"fJd-L9-vKz.text" = "集中时间";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Flf-Tr-1Uu"; */
 "Flf-Tr-1Uu.normalTitle" = "取消";
 
 /* Class = "UILabel"; text = "Continuous Mode"; ObjectID = "H1O-in-eRD"; */
-"H1O-in-eRD.text" = "連續模式";
+"H1O-in-eRD.text" = "连续模式";
 
 /* Class = "UILabel"; text = "Long Break Interval"; ObjectID = "hBy-aH-aC1"; */
-"hBy-aH-aC1.text" = "c";
+"hBy-aH-aC1.text" = "长休息时间";
 
 /* Class = "UILabel"; text = "Never Sleep"; ObjectID = "HVr-XB-gsQ"; */
 "HVr-XB-gsQ.text" = "防止屏幕關閉";
@@ -41,29 +41,29 @@
 "JeV-RZ-02j.normalTitle" = "完成";
 
 /* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "m0o-Vv-D7S"; */
-"m0o-Vv-D7S.accessibilityHint" = "雙擊以編輯值";
+"m0o-Vv-D7S.accessibilityHint" = "双击以编辑值";
 
 /* Class = "UITableViewSection"; headerTitle = "Basics"; ObjectID = "n4J-2h-7cO"; */
 "n4J-2h-7cO.headerTitle" = "基本";
 
 /* Class = "UILabel"; text = "Count time only when clock is visible"; ObjectID = "pki-Wb-r14"; */
-"pki-Wb-r14.text" = "僅在時鐘可見時計算時間";
+"pki-Wb-r14.text" = "仅在时钟可见时计算时间";
 
 /* Class = "UILabel"; text = "Take Long Break"; ObjectID = "Q4h-eJ-dZU"; */
-"Q4h-eJ-dZU.text" = "長休息間隔";
+"Q4h-eJ-dZU.text" = "长休息间隔";
 
 /* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "qcy-rt-YTb"; */
-"qcy-rt-YTb.accessibilityHint" = "雙擊以編輯值";
+"qcy-rt-YTb.accessibilityHint" = "双击以编辑值";
 
 /* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "ri4-UQ-hVn"; */
-"ri4-UQ-hVn.accessibilityHint" = "雙擊以編輯值";
+"ri4-UQ-hVn.accessibilityHint" = "双击以编辑值";
 
 /* Class = "UILabel"; text = "Start Next Session automatically"; ObjectID = "Vf8-eU-Hj2"; */
-"Vf8-eU-Hj2.text" = "自動啟動下一個會話";
+"Vf8-eU-Hj2.text" = "自动启动下一个会话";
 
 /* Class = "UILabel"; text = "Contact"; ObjectID = "XwX-ew-Cb8"; */
 "XwX-ew-Cb8.text" = "Contact";
 
 /* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "yMm-uf-e1K"; */
-"yMm-uf-e1K.accessibilityHint" = "雙擊以編輯值";
+"yMm-uf-e1K.accessibilityHint" = "双击以编辑值";
 

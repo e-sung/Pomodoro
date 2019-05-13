@@ -338,6 +338,10 @@
 		F0080CC42286A857005D9E2C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ja; path = ja.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		F0080CC52286A857005D9E2C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F01A200322118A7B001ECF23 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		F021B2C22289797C009FCD39 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Settings.strings"; sourceTree = "<group>"; };
+		F021B2C32289797C009FCD39 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		F021B2C42289797C009FCD39 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.stringsdict"; sourceTree = "<group>"; };
+		F021B2C52289797C009FCD39 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F038205121F2202C000ACFD0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F038207E21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Settings.strings; sourceTree = "<group>"; };
 		F038208621F496C8000ACFD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -1255,6 +1259,7 @@
 				ko,
 				ja,
 				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = F0843C9721CE5AD900EDB65F;
 			productRefGroup = F0843CA121CE5AD900EDB65F /* Products */;
@@ -1916,6 +1921,7 @@
 				F0080CB622867736005D9E2C /* ko */,
 				F0080CC32286A857005D9E2C /* ja */,
 				F0A98201228866A10009EC2F /* zh-Hant */,
+				F021B2C32289797C009FCD39 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1927,6 +1933,7 @@
 				F038208821F49B3B000ACFD0 /* ko */,
 				F0080CC42286A857005D9E2C /* ja */,
 				F0A98202228866A10009EC2F /* zh-Hant */,
+				F021B2C42289797C009FCD39 /* zh-Hans */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -1938,6 +1945,7 @@
 				F038208E21F4A488000ACFD0 /* ko */,
 				F0080CC52286A857005D9E2C /* ja */,
 				F0A98203228866A10009EC2F /* zh-Hant */,
+				F021B2C52289797C009FCD39 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1949,6 +1957,7 @@
 				F038207E21F47CE7000ACFD0 /* ko */,
 				F0080CC22286A857005D9E2C /* ja */,
 				F0A98200228866A10009EC2F /* zh-Hant */,
+				F021B2C22289797C009FCD39 /* zh-Hans */,
 			);
 			name = Settings.storyboard;
 			sourceTree = "<group>";
