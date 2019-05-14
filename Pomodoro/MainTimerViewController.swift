@@ -134,6 +134,15 @@ public class MainTimerViewController: TimerViewController {
         }
     }
 
+    public override func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
+        super.intervalFinished(by: finisher, isFromBackground: isFromBackground)
+        if interval is FocusInterval {
+            UIView.animate(withDuration: 1, animations: { [weak self] in
+                self?.bannerView.alpha = 0
+            })
+        }
+    }
+
     public override func timeElapsed(_ seconds: TimeInterval) {
         super.timeElapsed(seconds)
         updateMainSlider(to: seconds)

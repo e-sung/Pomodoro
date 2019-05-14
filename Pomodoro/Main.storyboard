@@ -224,7 +224,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-vp-PKR">
-                                <rect key="frame" x="0.0" y="602" width="375" height="7"/>
+                                <rect key="frame" x="0.0" y="600" width="375" height="7"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="7" id="qWO-Y5-xwO"/>
                                 </constraints>
@@ -270,7 +270,7 @@
                         <constraints>
                             <constraint firstItem="C7q-RY-gdF" firstAttribute="centerY" secondItem="gtp-Xr-faC" secondAttribute="centerY" id="3Zx-0w-a65"/>
                             <constraint firstItem="C7q-RY-gdF" firstAttribute="leading" secondItem="gtp-Xr-faC" secondAttribute="leading" constant="14" id="43V-aM-J5h"/>
-                            <constraint firstItem="gtp-Xr-faC" firstAttribute="bottom" secondItem="7dc-vp-PKR" secondAttribute="bottom" constant="58" id="FuB-cb-p4H"/>
+                            <constraint firstItem="gtp-Xr-faC" firstAttribute="bottom" secondItem="7dc-vp-PKR" secondAttribute="bottom" constant="60" id="FuB-cb-p4H"/>
                             <constraint firstItem="gtp-Xr-faC" firstAttribute="trailing" secondItem="C7q-RY-gdF" secondAttribute="trailing" constant="14" id="Kug-GZ-cOG"/>
                             <constraint firstItem="HZv-2L-Jox" firstAttribute="leading" secondItem="gtp-Xr-faC" secondAttribute="leading" id="aUd-Xu-i9i"/>
                             <constraint firstItem="HZv-2L-Jox" firstAttribute="trailing" secondItem="gtp-Xr-faC" secondAttribute="trailing" id="kbV-Tl-DY8"/>

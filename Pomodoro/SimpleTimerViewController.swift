@@ -33,6 +33,21 @@ class SimpleTimerViewController: TimerViewController {
     override func timeElapsed(_ seconds: TimeInterval) {
         super.timeElapsed(seconds)
         progressBar.progress = interval.progress
+        let currentSecond = Int(interval.targetSeconds - seconds)
+        if interval is BreakInterval, currentSecond == 60 {
+            UIView.animate(withDuration: 1, animations: { [weak self] in
+                self?.bannerView.alpha = 1
+            })
+        }
+    }
+
+    override func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
+        super.intervalFinished(by: finisher, isFromBackground: isFromBackground)
+        if interval is FocusInterval {
+            UIView.animate(withDuration: 1, animations: { [weak self] in
+                self?.bannerView.alpha = 0
+            })
+        }
     }
 
     @IBAction func backgroundTapped(_: Any) {
