@@ -7,6 +7,7 @@ target 'Pomodoro' do
   pod 'HGCircularSlider'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Google-Mobile-Ads-SDK'
   # Pods for Pomodoro
 
   target 'PomodoroTests' do
