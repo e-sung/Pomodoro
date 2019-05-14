@@ -9,6 +9,7 @@
 import AudioToolbox
 import CoreMotion
 import Foundation
+import GoogleMobileAds
 import HGCircularSlider
 import PomodoroFoundation
 import PomodoroSettings
@@ -25,6 +26,7 @@ public class MainTimerViewController: TimerViewController {
     @IBOutlet var rippleButton: UIButton!
     @IBOutlet var clearButton: UIButton!
     @IBOutlet var imageViewControl: UIImageView!
+    var bannerView: GADBannerView!
 
     // MARK: Properties
 
@@ -53,6 +55,10 @@ public class MainTimerViewController: TimerViewController {
         tabBarItem.accessibilityLabel = NSLocalizedString("main_timer", comment: "")
         clearButton.alpha = 0
         tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+        bannerView = makeBannerView()
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -220,5 +226,15 @@ extension MainTimerViewController: UITabBarControllerDelegate {
             applyNewSetting()
         }
         return true
+    }
+}
+
+extension MainTimerViewController: GADBannerViewDelegate {
+    public func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        addBannerViewToView(bannerView)
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+        })
     }
 }

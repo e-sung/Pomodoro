@@ -27,6 +27,7 @@
 		F0080CBD2286A2CB005D9E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBC2286A2CB005D9E2C /* LaunchScreen.storyboard */; };
 		F0080CC02286A374005D9E2C /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBE2286A374005D9E2C /* Timeline.storyboard */; };
 		F0080CC12286A374005D9E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBF2286A374005D9E2C /* LaunchScreen.storyboard */; };
+		F021B2D9228B093C009FCD39 /* AdmobFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021B2D8228B093C009FCD39 /* AdmobFunctions.swift */; };
 		F038205221F2202C000ACFD0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038205121F2202C000ACFD0 /* String+Extension.swift */; };
 		F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F038208721F496C8000ACFD0 /* Localizable.stringsdict */; };
 		F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F038208D21F4A486000ACFD0 /* Localizable.strings */; };
@@ -356,6 +357,7 @@
 		F021B2D5228ADE9B009FCD39 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F021B2D6228AFCC2009FCD39 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		F021B2D7228B064A009FCD39 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		F021B2D8228B093C009FCD39 /* AdmobFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobFunctions.swift; sourceTree = "<group>"; };
 		F038205121F2202C000ACFD0 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F038207E21F47CE7000ACFD0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Settings.strings; sourceTree = "<group>"; };
 		F038208621F496C8000ACFD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
@@ -679,6 +681,7 @@
 				F0843CA321CE5AD900EDB65F /* AppDelegate.swift */,
 				F0080CB32286748B005D9E2C /* MainTabBarViewController.swift */,
 				F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */,
+				F021B2D8228B093C009FCD39 /* AdmobFunctions.swift */,
 				F09C0BDA226C29F9008EF37C /* SimpleTimerViewController.swift */,
 				F0080CBA2286A123005D9E2C /* Main.storyboard */,
 				F0A981FE228814540009EC2F /* LaunchScreen.storyboard */,
@@ -1706,6 +1709,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0080CB42286748B005D9E2C /* MainTabBarViewController.swift in Sources */,
+				F021B2D9228B093C009FCD39 /* AdmobFunctions.swift in Sources */,
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
 				F09C0BDB226C29F9008EF37C /* SimpleTimerViewController.swift in Sources */,
 				F0843CA621CE5AD900EDB65F /* MainTimerViewController.swift in Sources */,

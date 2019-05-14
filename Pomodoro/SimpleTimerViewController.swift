@@ -9,6 +9,7 @@
 import Foundation
 import PomodoroFoundation
 import PomodoroUIKit
+import GoogleMobileAds
 
 class SimpleTimerViewController: TimerViewController {
     @IBOutlet private var progressBar: UIProgressView!
@@ -20,6 +21,11 @@ class SimpleTimerViewController: TimerViewController {
         if UIDevice.current.orientation.isPortrait {
             dismiss(animated: true, completion: nil)
         }
+    }
+    var bannerView: GADBannerView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 
     override func timeElapsed(_ seconds: TimeInterval) {
