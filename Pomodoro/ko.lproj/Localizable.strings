@@ -30,14 +30,14 @@
 "setting" = "설정";
 
 /* (No Comment) */
-"timerPaused" = "타이머 멈춰있음.";
-
-/* (No Comment) */
-"timerRunning" = "타이머 진행중.";
-
+"start_break" = "휴식 시작";
 
 /* (No Comment) */
 "start_focusing" = "집중 시작";
 
 /* (No Comment) */
-"start_break" = "휴식 시작";
+"timerPaused" = "타이머 멈춰있음.";
+
+/* (No Comment) */
+"timerRunning" = "타이머 진행중.";
+

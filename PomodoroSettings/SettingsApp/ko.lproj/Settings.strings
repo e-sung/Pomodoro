@@ -4,17 +4,11 @@
 /* Class = "UILabel"; text = "After 3 cycles"; ObjectID = "3hJ-ru-pHQ"; */
 "3hJ-ru-pHQ.text" = "3 cycles";
 
-/* Class = "UITableViewSection"; headerTitle = "Developer Mode"; ObjectID = "4HW-nb-Icr"; */
-"4HW-nb-Icr.headerTitle" = "Developer Mode";
-
 /* Class = "UILabel"; text = "25 min"; ObjectID = "8bL-QF-UFN"; */
 "8bL-QF-UFN.text" = "25 분";
 
 /* Class = "UINavigationItem"; title = "Setting"; ObjectID = "9OE-Zi-TI3"; */
 "9OE-Zi-TI3.title" = "설정";
-
-/* Class = "UILabel"; text = "Dev Mode"; ObjectID = "aHq-YK-gmO"; */
-"aHq-YK-gmO.text" = "Dev Mode";
 
 /* Class = "UILabel"; text = "Break Interval"; ObjectID = "C5o-z3-2rb"; */
 "C5o-z3-2rb.text" = "휴식 할 시간";
@@ -30,6 +24,9 @@
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Flf-Tr-1Uu"; */
 "Flf-Tr-1Uu.normalTitle" = "취소";
+
+/* Class = "UILabel"; text = "Continuous Mode"; ObjectID = "H1O-in-eRD"; */
+"H1O-in-eRD.text" = "연속모드";
 
 /* Class = "UILabel"; text = "Long Break Interval"; ObjectID = "hBy-aH-aC1"; */
 "hBy-aH-aC1.text" = "길게 쉴 시간";
@@ -60,6 +57,9 @@
 
 /* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "ri4-UQ-hVn"; */
 "ri4-UQ-hVn.accessibilityHint" = "더블 탭 하여 값을 바꾸실 수 있습니다.";
+
+/* Class = "UILabel"; text = "Start Next Session automatically"; ObjectID = "Vf8-eU-Hj2"; */
+"Vf8-eU-Hj2.text" = "다음 세션을 자동으로 시작합니다.";
 
 /* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "yMm-uf-e1K"; */
 "yMm-uf-e1K.accessibilityHint" = "더블 탭 하여 값을 바꾸실 수 있습니다.";
