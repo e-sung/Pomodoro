@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import GoogleMobileAds
 import PomodoroFoundation
 import PomodoroUIKit
-import GoogleMobileAds
 
 class SimpleTimerViewController: TimerViewController {
     @IBOutlet private var progressBar: UIProgressView!
@@ -22,10 +22,12 @@ class SimpleTimerViewController: TimerViewController {
             dismiss(animated: true, completion: nil)
         }
     }
+
     var bannerView: GADBannerView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBannerViewToView(bannerView)
     }
 
     override func timeElapsed(_ seconds: TimeInterval) {

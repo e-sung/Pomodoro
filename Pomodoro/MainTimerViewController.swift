@@ -55,16 +55,21 @@ public class MainTimerViewController: TimerViewController {
         tabBarItem.accessibilityLabel = NSLocalizedString("main_timer", comment: "")
         clearButton.alpha = 0
         tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         bannerView = makeBannerView()
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self
+        bannerView.alpha = 0
     }
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.barStyle = .blackOpaque
         tabBarController?.tabBar.tintColor = .white
+        if view.subviews.contains(bannerView) == false {
+            addBannerViewToView(bannerView)
+        }
     }
 
     public override func viewDidLayoutSubviews() {
@@ -97,6 +102,13 @@ public class MainTimerViewController: TimerViewController {
         if UIDevice.current.orientation.isLandscape {
             performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
         }
+    }
+
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let nextVC = segue.destination as? SimpleTimerViewController else { return }
+        bannerView.removeFromSuperview()
+        nextVC.bannerView = bannerView
     }
 
     public override func startOrStopTimer() {
@@ -231,7 +243,6 @@ extension MainTimerViewController: UITabBarControllerDelegate {
 
 extension MainTimerViewController: GADBannerViewDelegate {
     public func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        addBannerViewToView(bannerView)
         bannerView.alpha = 0
         UIView.animate(withDuration: 1, animations: {
             bannerView.alpha = 1

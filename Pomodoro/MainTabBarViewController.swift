@@ -10,20 +10,10 @@ import GoogleMobileAds
 import UIKit
 
 class MainTabBarViewController: UITabBarController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBar.items?.first?.accessibilityLabel = NSLocalizedString("main_timer", comment: "")
         tabBar.items?.last?.accessibilityLabel = NSLocalizedString("setting", comment: "")
         tabBar.items?.forEach({ $0.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0) })
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print(infoForKey("GADApplicationIdentifier"))
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
 }
