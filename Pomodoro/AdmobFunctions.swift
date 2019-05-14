@@ -12,7 +12,7 @@ import UIKit
 
 func makeBannerView() -> GADBannerView {
     let bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-    bannerView.adUnitID = infoForKey("GADApplicationIdentifier")
+    bannerView.adUnitID = infoForKey("AD_UNIT_ID")
     return bannerView
 }
 

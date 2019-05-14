@@ -10,4 +10,4 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 #include "Pods/Target Support Files/Pods-Pomodoro/Pods-Pomodoro.debug.xcconfig"
-ADD_MOB_ID = ca-app-pub-3940256099942544/2934735716
+AD_UNIT_ID = ca-app-pub-3940256099942544/2934735716
