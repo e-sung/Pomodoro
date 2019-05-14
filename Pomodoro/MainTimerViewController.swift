@@ -137,6 +137,12 @@ public class MainTimerViewController: TimerViewController {
     public override func timeElapsed(_ seconds: TimeInterval) {
         super.timeElapsed(seconds)
         updateMainSlider(to: seconds)
+        let currentSecond = Int(interval.targetSeconds - seconds)
+        if interval is BreakInterval, currentSecond == 60 {
+            UIView.animate(withDuration: 1, animations: { [weak self] in
+                self?.bannerView.alpha = 1
+            })
+        }
     }
 
     public override func applyNewSetting() {
@@ -242,10 +248,5 @@ extension MainTimerViewController: UITabBarControllerDelegate {
 }
 
 extension MainTimerViewController: GADBannerViewDelegate {
-    public func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        bannerView.alpha = 0
-        UIView.animate(withDuration: 1, animations: {
-            bannerView.alpha = 1
-        })
-    }
+    public func adViewDidReceiveAd(_: GADBannerView) {}
 }
