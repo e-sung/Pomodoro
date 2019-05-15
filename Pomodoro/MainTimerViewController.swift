@@ -59,6 +59,7 @@ public class MainTimerViewController: TimerViewController {
         setUpBannerView()
         bindAccel(acceleration, to: motionManager)
         showOrHide(clearButton, by: acceleration)
+        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -91,13 +92,6 @@ public class MainTimerViewController: TimerViewController {
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         motionManager.stopDeviceMotionUpdates()
-    }
-
-    public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.willTransition(to: newCollection, with: coordinator)
-        if UIDevice.current.orientation.isLandscape {
-            performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
-        }
     }
 
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -157,6 +151,12 @@ public class MainTimerViewController: TimerViewController {
     }
 
     // MARK: IBAction
+
+    @objc func rotated() {
+        if UIDevice.current.orientation.isLandscape {
+            performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
+        }
+    }
 
     @IBAction func backgroundTapped(_: Any) {
         acceleration.accept(1)
