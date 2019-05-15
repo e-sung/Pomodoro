@@ -73,6 +73,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             interval.isActive == true {
             let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
             interval.elapsedSeconds += timeIntervalSinceBackground
+            if interval.elapsedSeconds >= interval.targetSeconds {
+                interval.stopTimer(by: .time, isFromBackground: true)
+            }
         } else if hasOpenedByWidgetPlayPauseButton, let widgetInterval = retreiveInterval(from: UserDefaults.shared) {
             interval.elapsedSeconds = widgetInterval.elapsedSeconds
             interval.startOrPauseTimer()

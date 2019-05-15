@@ -55,12 +55,10 @@ public class MainTimerViewController: TimerViewController {
         tabBarItem.accessibilityLabel = NSLocalizedString("main_timer", comment: "")
         clearButton.alpha = 0
         tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        bannerView = makeBannerView()
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
-        bannerView.alpha = 0
+
+        setUpBannerView()
+        bindAccel(acceleration, to: motionManager)
+        showOrHide(clearButton, by: acceleration)
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -88,8 +86,6 @@ public class MainTimerViewController: TimerViewController {
 
         let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.shared)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
-        bindAccel(acceleration, to: motionManager)
-        showOrHide(clearButton, by: acceleration)
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
@@ -210,6 +206,15 @@ public class MainTimerViewController: TimerViewController {
                 })
             })
             .disposed(by: disposeBag)
+    }
+
+    private func setUpBannerView() {
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        bannerView = makeBannerView()
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
+        bannerView.alpha = 0
     }
 }
 
