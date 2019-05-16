@@ -94,6 +94,13 @@ public class MainTimerViewController: TimerViewController {
         motionManager.stopDeviceMotionUpdates()
     }
 
+    public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
+        }
+    }
+
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         guard let nextVC = segue.destination as? SimpleTimerViewController else { return }
@@ -153,7 +160,7 @@ public class MainTimerViewController: TimerViewController {
     // MARK: IBAction
 
     @objc func rotated() {
-        if UIDevice.current.orientation.isLandscape {
+        if UIDevice.current.orientation.isLandscape, presentedViewController == nil {
             performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
         }
     }

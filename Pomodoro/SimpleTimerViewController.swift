@@ -16,6 +16,12 @@ class SimpleTimerViewController: TimerViewController {
     @IBOutlet private var stackViewLabels: UIStackView!
     @IBOutlet private var labelStatus: UILabel!
     @IBOutlet private var navItem: UINavigationItem!
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if UIDevice.current.orientation.isPortrait {
+            dismiss(animated: true, completion: nil)
+        }
+    }
 
     var bannerView: GADBannerView!
 
