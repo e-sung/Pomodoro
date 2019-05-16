@@ -2037,6 +2037,7 @@
 		F0006EB821EDE11F00307F88 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -2346,6 +2347,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 64CBD454E2A56E9A3E7F00E2 /* Pods-PomodoroFoundation.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -2529,6 +2531,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24A49FD54A7BCD2A3751E145 /* Pods-TimeLine.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2630,6 +2633,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D7C15C8413C987C653EF257D /* Pods-PomodoroSettings.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
