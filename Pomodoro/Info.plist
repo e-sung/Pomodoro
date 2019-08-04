@@ -4,6 +4,8 @@
 <dict>
 	<key>AD_UNIT_ID</key>
 	<string>${AD_UNIT_ID}</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

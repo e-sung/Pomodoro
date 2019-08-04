@@ -39,10 +39,6 @@ public class MainTimerViewController: TimerViewController {
         return true
     }
 
-    public override var prefersStatusBarHidden: Bool {
-        return true
-    }
-
     var acceleration = BehaviorRelay<Double>(value: 0)
     var lastClearButtonShownTime: Date?
     var disposeBag = DisposeBag()
@@ -54,7 +50,6 @@ public class MainTimerViewController: TimerViewController {
         tabBarController?.delegate = self
         tabBarItem.accessibilityLabel = NSLocalizedString("main_timer", comment: "")
         clearButton.alpha = 0
-//        tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
 
         setUpBannerView()
         bindAccel(acceleration, to: motionManager)
