@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wui-MR-8g3">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14854.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wui-MR-8g3">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14806.4"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainTimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0j-TM-sWV" customClass="CircularSlider" customModule="HGCircularSlider">
-                                <rect key="frame" x="51" y="107" width="218" height="217.5"/>
+                                <rect key="frame" x="51" y="99" width="218" height="217.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -78,7 +76,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="p0n-JA-XET">
-                                <rect key="frame" x="81" y="174.5" width="158" height="72"/>
+                                <rect key="frame" x="81" y="166.5" width="158" height="72"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -89,8 +87,8 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="90"/>
                                 </variation>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" highlightedImage="play" translatesAutoresizingMaskIntoConstraints="NO" id="HTF-te-s8l">
-                                <rect key="frame" x="140" y="246.5" width="40" height="40"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" highlightedImage="play.fill" translatesAutoresizingMaskIntoConstraints="NO" id="HTF-te-s8l">
+                                <rect key="frame" x="140" y="240" width="40" height="36.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="pmWhite"/>
                                 <constraints>
@@ -99,7 +97,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-ol-b31" userLabel="TouchArea">
-                                <rect key="frame" x="112.5" y="168.5" width="95" height="94.5"/>
+                                <rect key="frame" x="112.5" y="160.5" width="95" height="94.5"/>
                                 <accessibility key="accessibilityConfiguration" hint="Double Tap to Start or Pause Timer">
                                     <accessibilityTraits key="traits" button="YES" allowsDirectInteraction="YES"/>
                                 </accessibility>
@@ -112,14 +110,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbS-4T-Fx8">
-                                <rect key="frame" x="276" y="34" width="30" height="30"/>
+                                <rect key="frame" x="276" y="14.5" width="30" height="29.5"/>
                                 <accessibility key="accessibilityConfiguration" hint="Double Tap to End this Session" label="end session"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zbS-4T-Fx8" secondAttribute="height" multiplier="1:1" id="TdP-NI-IkH"/>
                                     <constraint firstAttribute="width" constant="30" id="rKd-Qc-aWS"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" backgroundImage="clear"/>
+                                <state key="normal" backgroundImage="xmark.circle" catalog="system"/>
                                 <connections>
                                     <action selector="clearButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYz-XA-vXl"/>
                                 </connections>
@@ -194,7 +192,7 @@
                             <outletCollection property="gestureRecognizers" destination="dR9-Mr-qbd" appends="YES" id="LCK-a6-rHE"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="ic_alarm" id="rLT-hC-FVi">
+                    <tabBarItem key="tabBarItem" title="" id="rLT-hC-FVi">
                         <color key="badgeColor" name="pmWhite"/>
                     </tabBarItem>
                     <connections>
@@ -231,7 +229,7 @@
                                 <color key="trackTintColor" red="0.10588441044092178" green="0.10587868839502335" blue="0.10588254779577255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C7q-RY-gdF">
-                                <rect key="frame" x="14" y="262" width="347" height="163.5"/>
+                                <rect key="frame" x="14" y="252" width="347" height="163.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴식중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2YA-SV-5xS">
                                         <rect key="frame" x="0.0" y="0.0" width="347" height="119.5"/>
@@ -254,11 +252,11 @@
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZv-2L-Jox">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="barTintColor" red="0.08235294118" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem id="xfg-4i-dia">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="rlc-wH-h0I">
+                                        <barButtonItem key="rightBarButtonItem" image="xmark" catalog="system" id="rlc-wH-h0I">
                                             <color key="tintColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="closeButtonTapped:" destination="bnD-03-evO" id="r9v-Qh-7oh"/>
@@ -327,11 +325,10 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wui-MR-8g3" customClass="MainTabBarViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" itemPositioning="fill" id="tEH-Ha-jj6">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="fill" id="tEH-Ha-jj6">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" name="pmWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="NSw-fA-PfD"/>
@@ -344,10 +341,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clear" width="1210" height="1202"/>
-        <image name="ic_alarm" width="24" height="26"/>
         <image name="ic_setting" width="20" height="21"/>
-        <image name="play" width="25" height="24"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
+        <image name="xmark" catalog="system" width="64" height="56"/>
+        <image name="xmark.circle" catalog="system" width="64" height="62"/>
         <namedColor name="FocusRed">
             <color red="0.82352941176470584" green="0.14509803921568629" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

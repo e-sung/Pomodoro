@@ -1,45 +1,46 @@
 PODS:
-  - Google-Mobile-Ads-SDK (7.43.1):
+  - Google-Mobile-Ads-SDK (7.48.0):
     - GoogleAppMeasurement (~> 6.0)
-  - GoogleAppMeasurement (6.0.0):
+  - GoogleAppMeasurement (6.0.4):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3)
-  - GoogleUtilities/AppDelegateSwizzler (6.0.0):
+  - GoogleUtilities/AppDelegateSwizzler (6.2.3):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.0.0)
-  - GoogleUtilities/Logger (6.0.0):
+  - GoogleUtilities/Environment (6.2.3)
+  - GoogleUtilities/Logger (6.2.3):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.0.0):
+  - GoogleUtilities/MethodSwizzler (6.2.3):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.0.0):
+  - GoogleUtilities/Network (6.2.3):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.0.0)"
-  - GoogleUtilities/Reachability (6.0.0):
+  - "GoogleUtilities/NSData+zlib (6.2.3)"
+  - GoogleUtilities/Reachability (6.2.3):
     - GoogleUtilities/Logger
-  - HGCircularSlider (2.0.0)
+  - HGCircularSlider (2.2.0)
   - LoremIpsum-iOS (0.1.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - RxAtomic (4.4.1)
-  - RxCocoa (4.4.1):
-    - RxSwift (~> 4.0)
-  - RxKeyboard (0.9.0):
-    - RxCocoa (>= 4.3.1)
-    - RxSwift (>= 4.3.1)
-  - RxSwift (4.4.1):
-    - RxAtomic (~> 4.4)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxKeyboard (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
   - Spring (1.0.6)
-  - "UITextView+Placeholder (1.2.1)"
+  - "UITextView+Placeholder (1.3.1)"
 
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK
@@ -59,9 +60,9 @@ SPEC REPOS:
     - HGCircularSlider
     - LoremIpsum-iOS
     - nanopb
-    - RxAtomic
     - RxCocoa
     - RxKeyboard
+    - RxRelay
     - RxSwift
     - "UITextView+Placeholder"
 
@@ -75,19 +76,19 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
-  Google-Mobile-Ads-SDK: 9d3474acb70a6c12bfa69c9fe1ac28d7de8b9be9
-  GoogleAppMeasurement: 7f028ea162b72c8f326daec74afc95d94f7a47d6
-  GoogleUtilities: f1faafc033ea203adf1783ce00af455bb99d0e5b
-  HGCircularSlider: 92e2ee098c814709f455b8f46cd9008147f6a869
+  Google-Mobile-Ads-SDK: 709fa768c3ba8e8b260d8cb085c607097fd3f79d
+  GoogleAppMeasurement: 183bd916af7f80deb67c01888368f1108d641832
+  GoogleUtilities: d2b0e277a95962e09bb27f5cd42f5f0b6a506c7d
+  HGCircularSlider: afb1942743a2df156dcc7a3500216e523e14266b
   LoremIpsum-iOS: af893c224373862f1f4b4d12a92afab43501e745
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
-  RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
-  RxKeyboard: 4f782303f499f41577b41c96c6a9a5d7acd51a47
-  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
-  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
+  "UITextView+Placeholder": f23df8592290d8d06078072ae1a663e11ee07ff4
 
-PODFILE CHECKSUM: 2af3ecec19e512dadaf9b5f05084dd30b59603e6
+PODFILE CHECKSUM: 61ea2edc32d3c18a52f32d401f4c88d37d789c73
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.1

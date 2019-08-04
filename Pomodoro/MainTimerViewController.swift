@@ -54,7 +54,7 @@ public class MainTimerViewController: TimerViewController {
         tabBarController?.delegate = self
         tabBarItem.accessibilityLabel = NSLocalizedString("main_timer", comment: "")
         clearButton.alpha = 0
-        tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+//        tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
 
         setUpBannerView()
         bindAccel(acceleration, to: motionManager)
@@ -64,8 +64,10 @@ public class MainTimerViewController: TimerViewController {
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.barStyle = .blackOpaque
+        tabBarController?.tabBar.barStyle = .black
+        tabBarController?.tabBar.isTranslucent = true
         tabBarController?.tabBar.tintColor = .white
+        tabBarController?.tabBar.unselectedItemTintColor = .gray
         if view.subviews.contains(bannerView) == false {
             addBannerViewToView(bannerView)
         }
@@ -113,11 +115,11 @@ public class MainTimerViewController: TimerViewController {
         if interval.isActive == false {
             mainSlider.alpha = 0.7
             labelTime.alpha = 0.7
-            imageViewControl.image = UIImage(named: "play")
+            imageViewControl.image = UIImage(systemName: "play.fill")
         } else {
             mainSlider.alpha = 1
             labelTime.alpha = 1
-            imageViewControl.image = UIImage(named: "pause")
+            imageViewControl.image = UIImage(systemName: "pause.fill")
         }
     }
 
@@ -125,9 +127,9 @@ public class MainTimerViewController: TimerViewController {
         super.refreshViews(with: interval)
         refreshMainSlider(with: interval)
         if interval.isActive {
-            imageViewControl.image = UIImage(named: "pause")
+            imageViewControl.image = UIImage(systemName: "pause.fill")
         } else {
-            imageViewControl.image = UIImage(named: "play")
+            imageViewControl.image = UIImage(systemName: "play.fill")
         }
     }
 
@@ -206,7 +208,7 @@ public class MainTimerViewController: TimerViewController {
                     clearButton.alpha = 1
                 })
             })
-            .delay(RxTimeInterval(floatLiteral: 10), scheduler: MainScheduler.instance)
+            .delay(RxTimeInterval.seconds(10), scheduler: MainScheduler.instance)
             .bind(onNext: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
                     clearButton.alpha = 0
