@@ -130,6 +130,10 @@ public class MainTimerViewController: TimerViewController {
 
     public override func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
         super.intervalFinished(by: finisher, isFromBackground: isFromBackground)
+        if UIApplication.shared.applicationState != .active {
+            interval.pauseTimer()
+            imageViewControl.image = UIImage(systemName: "play.fill")
+        }
         if interval is FocusInterval {
             UIView.animate(withDuration: 1, animations: { [weak self] in
                 self?.bannerView.alpha = 0
