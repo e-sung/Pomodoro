@@ -26,10 +26,6 @@ public class SettingsTableViewController: UITableViewController {
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        tabBarController?.tabBar.isTranslucent = false
-//        tabBarController?.tabBar.unselectedItemTintColor = .lightGray
-//        tabBarController?.tabBar.barStyle = .default
-//        tabBarController?.tabBar.tintColor = .label
         tableView.reloadData()
     }
 
