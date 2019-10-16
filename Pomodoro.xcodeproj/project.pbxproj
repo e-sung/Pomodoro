@@ -36,6 +36,8 @@
 		F04563292356E5B200B0AEAF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F04563282356E5B200B0AEAF /* Alamofire */; };
 		F045632B2356E84B00B0AEAF /* WorkLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045632A2356E84B00B0AEAF /* WorkLog.swift */; };
 		F045632D2356F2C500B0AEAF /* FetchIssues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045632C2356F2C500B0AEAF /* FetchIssues.swift */; };
+		F045632F2356F36300B0AEAF /* MyIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */; };
+		F04563312356F3B400B0AEAF /* MyIssues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04563302356F3B400B0AEAF /* MyIssues.storyboard */; };
 		F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC5421EE0FA100A45E08 /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -386,6 +388,8 @@
 		F03E12E021E44BC0003C2129 /* NumberExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExtensionTests.swift; sourceTree = "<group>"; };
 		F045632A2356E84B00B0AEAF /* WorkLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLog.swift; sourceTree = "<group>"; };
 		F045632C2356F2C500B0AEAF /* FetchIssues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchIssues.swift; sourceTree = "<group>"; };
+		F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssuesViewController.swift; sourceTree = "<group>"; };
+		F04563302356F3B400B0AEAF /* MyIssues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyIssues.storyboard; sourceTree = "<group>"; };
 		F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
@@ -688,6 +692,8 @@
 				F0711B802356E3C200097551 /* Authentication.swift */,
 				F045632A2356E84B00B0AEAF /* WorkLog.swift */,
 				F045632C2356F2C500B0AEAF /* FetchIssues.swift */,
+				F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */,
+				F04563302356F3B400B0AEAF /* MyIssues.storyboard */,
 			);
 			path = JiraSupport;
 			sourceTree = "<group>";
@@ -1418,6 +1424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04563312356F3B400B0AEAF /* MyIssues.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1782,6 +1789,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F045632F2356F36300B0AEAF /* MyIssuesViewController.swift in Sources */,
 				F0711B812356E3C200097551 /* Authentication.swift in Sources */,
 				F045632D2356F2C500B0AEAF /* FetchIssues.swift in Sources */,
 				F045632B2356E84B00B0AEAF /* WorkLog.swift in Sources */,
