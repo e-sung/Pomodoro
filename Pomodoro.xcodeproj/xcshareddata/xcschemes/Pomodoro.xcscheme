@@ -78,6 +78,16 @@
                ReferencedContainer = "container:Pomodoro.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F0BA0DFC22367BB6004CD72C"
+               BuildableName = "TimeLineTests.xctest"
+               BlueprintName = "TimeLineTests"
+               ReferencedContainer = "container:Pomodoro.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -22,6 +22,18 @@ public func saveToKeychain(credentials: Credentials) {
     print(status)
 }
 
+public func removeFromKeychain (credentials: Credentials) {
+    let account = credentials.username
+    let password = credentials.password.data(using: String.Encoding.utf8)!
+    let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
+                                kSecAttrAccount as String: account,
+                                kSecAttrServer as String: server,
+                                kSecValueData as String: password]
+
+    let status = SecItemDelete(query as CFDictionary)
+    print(status)
+}
+
 public func retreiveSavedCredentials() throws -> Credentials {
     let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
                                 kSecAttrServer as String: server,
