@@ -11,6 +11,7 @@ import CoreMotion
 import Foundation
 import GoogleMobileAds
 import HGCircularSlider
+import JiraSupport
 import PomodoroFoundation
 import PomodoroSettings
 import PomodoroUIKit
@@ -26,6 +27,7 @@ public class MainTimerViewController: TimerViewController {
     @IBOutlet var rippleButton: UIButton!
     @IBOutlet var clearButton: UIButton!
     @IBOutlet var imageViewControl: UIImageView!
+    @IBOutlet var buttonIssue: UIButton!
     var bannerView: GADBannerView!
 
     // MARK: Properties
@@ -184,6 +186,12 @@ public class MainTimerViewController: TimerViewController {
         timeElapsed(interval.elapsedSeconds)
     }
 
+    @IBAction func buttonIssueClicked(_: Any) {
+        let issueVC = MyIssuesViewController.storyboardInstance
+        issueVC.delegate = self
+        present(issueVC, animated: true, completion: nil)
+    }
+
     private func bindAccel(_ acceleration: BehaviorRelay<Double>, to motionManager: CMMotionManager) {
         motionManager.startDeviceMotionUpdates(using: CMAttitudeReferenceFrame.xArbitraryCorrectedZVertical, to: OperationQueue.main) { motion, error in
             if let error = error {
@@ -271,4 +279,14 @@ extension MainTimerViewController: UITabBarControllerDelegate {
 
 extension MainTimerViewController: GADBannerViewDelegate {
     public func adViewDidReceiveAd(_: GADBannerView) {}
+}
+
+extension MainTimerViewController: MyIssueViewControllerDelegate {
+    public func didSelect(issue: String) {
+        if issue.isValid {
+            buttonIssue.setTitle(issue, for: .normal)
+        } else {
+            buttonIssue.setTitle("Issues", for: .normal)
+        }
+    }
 }

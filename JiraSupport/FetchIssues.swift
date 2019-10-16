@@ -14,11 +14,13 @@ func fetchIssues(then completionHandler: @escaping (Result<[String], Error>) -> 
     AF.request(url).responseJSON(completionHandler: { res in
         let dict = res.value as? [String: Any]
         let issues = dict?["issues"] as? [[String: Any]]
-        let issueKeys = issues?.compactMap({ $0["key"] as? String })
+        let issueSummaries = issues?
+            .compactMap({ $0["fields"] as? [String: Any] })
+            .compactMap({ $0["summary"] as? String })
         if let error = res.error {
             completionHandler(.failure(error))
         } else {
-            completionHandler(.success(issueKeys ?? []))
+            completionHandler(.success(issueSummaries ?? []))
         }
     })
 }

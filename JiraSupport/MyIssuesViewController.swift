@@ -8,15 +8,20 @@
 
 import UIKit
 
-protocol MyIssueViewControllerDelegate: AnyObject {
+public protocol MyIssueViewControllerDelegate: AnyObject {
     func didSelect(issue: String)
 }
 
-class MyIssuesViewController: UITableViewController {
-    weak var delegate: MyIssueViewControllerDelegate?
+public class MyIssuesViewController: UITableViewController {
+    public weak var delegate: MyIssueViewControllerDelegate?
     var myIssues: [String] = []
 
-    override func viewWillAppear(_ animated: Bool) {
+    public static var storyboardInstance: MyIssuesViewController {
+        let sb = UIStoryboard(name: "MyIssues", bundle: Bundle(for: MyIssuesViewController.self))
+        return sb.instantiateInitialViewController() as! MyIssuesViewController
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchIssues(then: { [weak self] result in
             if let issues = try? result.get() {
@@ -26,22 +31,23 @@ class MyIssuesViewController: UITableViewController {
         })
     }
 
-    override func numberOfSections(in _: UITableView) -> Int {
+    public override func numberOfSections(in _: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+    public override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return myIssues.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = myIssues[indexPath.row]
         return cell
     }
 
-    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let issue = myIssues[indexPath.row]
         delegate?.didSelect(issue: issue)
+        dismiss(animated: true, completion: nil)
     }
 }
