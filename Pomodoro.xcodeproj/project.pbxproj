@@ -38,6 +38,9 @@
 		F06BEC5421EE0FA100A45E08 /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F06BEC5821EE0FA100A45E08 /* PomodoroSettings.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0D89DDA21D8D32B0011A0B7 /* PomodoroSettings.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F06BEC5C21EE0FA100A45E08 /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0711B692356E13900097551 /* KeyChainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0711B682356E13900097551 /* KeyChainError.swift */; };
+		F0711B6B2356E19800097551 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0711B6A2356E19800097551 /* KeyChain.swift */; };
+		F0711B6D2356E1AC00097551 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0711B6C2356E1AC00097551 /* Credentials.swift */; };
 		F0775F362234DDB4003CF712 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0775F352234DDB4003CF712 /* UIViewController+Extension.swift */; };
 		F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA321CE5AD900EDB65F /* AppDelegate.swift */; };
 		F0843CA621CE5AD900EDB65F /* MainTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA521CE5AD900EDB65F /* MainTimerViewController.swift */; };
@@ -369,6 +372,9 @@
 		F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
+		F0711B682356E13900097551 /* KeyChainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainError.swift; sourceTree = "<group>"; };
+		F0711B6A2356E19800097551 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		F0711B6C2356E1AC00097551 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		F0775F352234DDB4003CF712 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		F0843CA021CE5AD900EDB65F /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0843CA321CE5AD900EDB65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -634,6 +640,16 @@
 			path = Singletons;
 			sourceTree = "<group>";
 		};
+		F0711B6E2356E1BF00097551 /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				F0711B682356E13900097551 /* KeyChainError.swift */,
+				F0711B6C2356E1AC00097551 /* Credentials.swift */,
+				F0711B6A2356E19800097551 /* KeyChain.swift */,
+			);
+			path = Privacy;
+			sourceTree = "<group>";
+		};
 		F0843C9721CE5AD900EDB65F = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +743,7 @@
 				F087252221CF6719007EB27F /* PomodoroFoundation.h */,
 				F087252321CF6719007EB27F /* Info.plist */,
 				F0A8E1DF2259A811007FE83F /* Protocols.swift */,
+				F0711B6E2356E1BF00097551 /* Privacy */,
 			);
 			path = PomodoroFoundation;
 			sourceTree = "<group>";
@@ -1710,12 +1727,15 @@
 				F0A8E1DE2259A17B007FE83F /* Date+Extension.swift in Sources */,
 				F087253F21CF6731007EB27F /* PermissionManager.swift in Sources */,
 				F087254221CF6731007EB27F /* BreakInterval.swift in Sources */,
+				F0711B6B2356E19800097551 /* KeyChain.swift in Sources */,
 				F087253E21CF6731007EB27F /* Interval.swift in Sources */,
 				F0D89DD421D8D2690011A0B7 /* UserDefault+Extension.swift in Sources */,
 				F038205221F2202C000ACFD0 /* String+Extension.swift in Sources */,
 				F0D89E3A21D90D820011A0B7 /* SettingContent.swift in Sources */,
+				F0711B6D2356E1AC00097551 /* Credentials.swift in Sources */,
 				F0A8E1E02259A811007FE83F /* Protocols.swift in Sources */,
 				F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */,
+				F0711B692356E13900097551 /* KeyChainError.swift in Sources */,
 				F087254021CF6731007EB27F /* NSObject+Extension.swift in Sources */,
 				F0D89DD321D8D1DA0011A0B7 /* Double+Extension.swift in Sources */,
 				F087254121CF6731007EB27F /* FocusInterval.swift in Sources */,
@@ -2085,7 +2105,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2142,7 +2162,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2158,6 +2178,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
@@ -2168,6 +2189,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2179,6 +2201,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
@@ -2189,6 +2212,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

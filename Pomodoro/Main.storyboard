@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14854.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wui-MR-8g3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wui-MR-8g3">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14806.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -109,7 +109,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbS-4T-Fx8">
-                                <rect key="frame" x="276" y="14.5" width="30" height="29.5"/>
+                                <rect key="frame" x="276" y="14.5" width="30" height="29"/>
                                 <accessibility key="accessibilityConfiguration" hint="Double Tap to End this Session" label="end session"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zbS-4T-Fx8" secondAttribute="height" multiplier="1:1" id="TdP-NI-IkH"/>
@@ -343,7 +343,7 @@
         <image name="ic_setting" width="20" height="21"/>
         <image name="play.fill" catalog="system" width="58" height="64"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
-        <image name="xmark.circle" catalog="system" width="64" height="62"/>
+        <image name="xmark.circle" catalog="system" width="64" height="60"/>
         <namedColor name="FocusRed">
             <color red="0.82352941176470584" green="0.14509803921568629" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
