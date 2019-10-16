@@ -8,6 +8,7 @@
 
 import CoreData
 import GoogleMobileAds
+import JiraSupport
 import PomodoroFoundation
 import PomodoroUIKit
 import UIKit
@@ -30,6 +31,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             IntervalManager.shared = savedInterval
         } else {
             IntervalManager.shared = FocusInterval()
+        }
+
+        if let credentials = try? retreiveSavedCredentials() {
+            loginJira(with: credentials, then: { result in
+                if result.hasFailed {
+                    removeFromKeychain(credentials: credentials)
+                }
+                print(result)
+            })
         }
         return true
     }

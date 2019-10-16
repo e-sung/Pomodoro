@@ -21,5 +21,4 @@ extension Result {
     public var hasFailed: Bool {
         return !hasSucceeded
     }
-
 }

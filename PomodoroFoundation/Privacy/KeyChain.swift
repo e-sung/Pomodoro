@@ -22,7 +22,7 @@ public func saveToKeychain(credentials: Credentials) {
     print(status)
 }
 
-public func removeFromKeychain (credentials: Credentials) {
+public func removeFromKeychain(credentials: Credentials) {
     let account = credentials.username
     let password = credentials.password.data(using: String.Encoding.utf8)!
     let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
