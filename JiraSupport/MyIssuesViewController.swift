@@ -14,19 +14,17 @@ protocol MyIssueViewControllerDelegate: AnyObject {
 
 class MyIssuesViewController: UITableViewController {
 
-    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     weak var delegate: MyIssueViewControllerDelegate?
     var myIssues: [String] = []
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadingIndicator.startAnimating()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchIssues(then: { [weak self] result in
             if let issues = try? result.get() {
                 self?.myIssues = issues
                 self?.tableView.reloadData()
             }
         })
-
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

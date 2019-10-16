@@ -12,7 +12,7 @@ import PomodoroFoundation
 
 public func loginJira(with credential: Credentials, then completionHandler: @escaping (Swift.Result<Bool, Error>) -> Void) {
 
-    AF.request("",
+    AF.request("https://jira.flit.to:18443/rest/auth/1/session/",
                method: .post,
                parameters: credential,
                encoder: JSONParameterEncoder.default).response { res in

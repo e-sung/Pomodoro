@@ -7,24 +7,44 @@
 //
 
 import UIKit
+import PomodoroUIKit
+import PomodoroFoundation
 
-class JiraLoginViewController: UIViewController {
+public class JiraLoginViewController: UIViewController {
 
-    override func viewDidLoad() {
+    @IBOutlet var textFieldUserName: UITextField!
+    @IBOutlet var textFieldPassword: UITextField!
+    public override func loadView() {
+        Bundle(for: type(of: self)).loadNibNamed(className, owner: self, options: nil)
+    }
+    public override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        textFieldUserName.delegate = self
+        textFieldPassword.delegate = self
+        hideKeyboardWhenTappedAround()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func login() {
+        guard let userName = textFieldUserName.text, let password = textFieldPassword.text else { return }
+        let credential = Credentials(username: userName, password: password)
+        loginJira(with: credential, then: { [weak self] result in
+            if result.hasSucceeded {
+                saveToKeychain(credentials: credential)
+            }
+            self?.navigationController?.popViewController(animated: true)
+        })
     }
-    */
+    
+}
 
+extension JiraLoginViewController: UITextFieldDelegate {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField === textFieldUserName {
+            textFieldPassword.becomeFirstResponder()
+        }
+        else {
+            login()
+        }
+        return true
+    }
 }

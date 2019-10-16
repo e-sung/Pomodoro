@@ -42,6 +42,19 @@
 		F04563352356F5C500B0AEAF /* JiraLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */; };
 		F04563382356F84F00B0AEAF /* JiraLogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */; };
 		F04563392356F84F00B0AEAF /* JiraLogOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04563372356F84F00B0AEAF /* JiraLogOutViewController.xib */; };
+		F04563412356F90D00B0AEAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04563402356F90D00B0AEAF /* AppDelegate.swift */; };
+		F04563432356F90D00B0AEAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04563422356F90D00B0AEAF /* SceneDelegate.swift */; };
+		F04563452356F90D00B0AEAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04563442356F90D00B0AEAF /* ViewController.swift */; };
+		F04563482356F90D00B0AEAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04563462356F90D00B0AEAF /* Main.storyboard */; };
+		F045634A2356F90F00B0AEAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04563492356F90F00B0AEAF /* Assets.xcassets */; };
+		F045634D2356F90F00B0AEAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F045634B2356F90F00B0AEAF /* LaunchScreen.storyboard */; };
+		F04563522356F92100B0AEAF /* JiraSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; };
+		F04563532356F92100B0AEAF /* JiraSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F04563562356F92100B0AEAF /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
+		F04563572356F92100B0AEAF /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F045635B2356FCD100B0AEAF /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
+		F045635C2356FCD100B0AEAF /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F04563602356FD9100B0AEAF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045635F2356FD9100B0AEAF /* Result.swift */; };
 		F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC5421EE0FA100A45E08 /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -136,6 +149,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F04563542356F92100B0AEAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0711B732356E39C00097551;
+			remoteInfo = JiraSupport;
+		};
+		F04563582356F92100B0AEAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F087251F21CF6719007EB27F;
+			remoteInfo = PomodoroFoundation;
+		};
+		F045635D2356FCD100B0AEAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0006EAC21EDE11F00307F88;
+			remoteInfo = PomodoroUIKit;
+		};
 		F06BEC5521EE0FA100A45E08 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
@@ -272,6 +306,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		F045635A2356F92100B0AEAF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F04563572356F92100B0AEAF /* PomodoroFoundation.framework in Embed Frameworks */,
+				F045635C2356FCD100B0AEAF /* PomodoroUIKit.framework in Embed Frameworks */,
+				F04563532356F92100B0AEAF /* JiraSupport.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F06BEC4921EDE46500A45E08 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,6 +445,15 @@
 		F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JiraLoginViewController.xib; sourceTree = "<group>"; };
 		F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraLogOutViewController.swift; sourceTree = "<group>"; };
 		F04563372356F84F00B0AEAF /* JiraLogOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JiraLogOutViewController.xib; sourceTree = "<group>"; };
+		F045633E2356F90D00B0AEAF /* JiraSupportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiraSupportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F04563402356F90D00B0AEAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F04563422356F90D00B0AEAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F04563442356F90D00B0AEAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F04563472356F90D00B0AEAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F04563492356F90F00B0AEAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F045634C2356F90F00B0AEAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F045634E2356F90F00B0AEAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F045635F2356FD9100B0AEAF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
@@ -506,6 +562,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0006EBE21EDE2AD00307F88 /* PomodoroFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F045633B2356F90D00B0AEAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F04563562356F92100B0AEAF /* PomodoroFoundation.framework in Frameworks */,
+				F045635B2356FCD100B0AEAF /* PomodoroUIKit.framework in Frameworks */,
+				F04563522356F92100B0AEAF /* JiraSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +735,7 @@
 				F038205121F2202C000ACFD0 /* String+Extension.swift */,
 				F087251321CF5FAE007EB27F /* NSObject+Extension.swift */,
 				F0A8E1DD2259A17B007FE83F /* Date+Extension.swift */,
+				F045635F2356FD9100B0AEAF /* Result.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -680,6 +747,20 @@
 				F0880A9B21D67EE7008AE79F /* NotificationManager.swift */,
 			);
 			path = Singletons;
+			sourceTree = "<group>";
+		};
+		F045633F2356F90D00B0AEAF /* JiraSupportApp */ = {
+			isa = PBXGroup;
+			children = (
+				F04563402356F90D00B0AEAF /* AppDelegate.swift */,
+				F04563422356F90D00B0AEAF /* SceneDelegate.swift */,
+				F04563442356F90D00B0AEAF /* ViewController.swift */,
+				F04563462356F90D00B0AEAF /* Main.storyboard */,
+				F04563492356F90F00B0AEAF /* Assets.xcassets */,
+				F045634B2356F90F00B0AEAF /* LaunchScreen.storyboard */,
+				F045634E2356F90F00B0AEAF /* Info.plist */,
+			);
+			path = JiraSupportApp;
 			sourceTree = "<group>";
 		};
 		F0711B6E2356E1BF00097551 /* Privacy */ = {
@@ -700,11 +781,11 @@
 				F0711B802356E3C200097551 /* Authentication.swift */,
 				F045632A2356E84B00B0AEAF /* WorkLog.swift */,
 				F045632C2356F2C500B0AEAF /* FetchIssues.swift */,
-				F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */,
 				F04563322356F5C500B0AEAF /* JiraLoginViewController.swift */,
 				F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */,
 				F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */,
 				F04563372356F84F00B0AEAF /* JiraLogOutViewController.xib */,
+				F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */,
 				F04563302356F3B400B0AEAF /* MyIssues.storyboard */,
 			);
 			path = JiraSupport;
@@ -721,6 +802,7 @@
 				F0BA0DF622367BB6004CD72C /* TimeLine */,
 				F0BA0E0322367BB6004CD72C /* TimeLineTests */,
 				F0711B752356E39C00097551 /* JiraSupport */,
+				F045633F2356F90D00B0AEAF /* JiraSupportApp */,
 				F0843CA121CE5AD900EDB65F /* Products */,
 				FFD2E382A03C8A4D78114878 /* Pods */,
 				647AC616D0FE392B89E1E767 /* Frameworks */,
@@ -745,6 +827,7 @@
 				F0BA0DF522367BB6004CD72C /* TimeLine.framework */,
 				F0BA0DFD22367BB6004CD72C /* TimeLineTests.xctest */,
 				F0711B742356E39C00097551 /* JiraSupport.framework */,
+				F045633E2356F90D00B0AEAF /* JiraSupportApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1023,6 +1106,27 @@
 			productName = PomodoroUIKit;
 			productReference = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		F045633D2356F90D00B0AEAF /* JiraSupportApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F045634F2356F90F00B0AEAF /* Build configuration list for PBXNativeTarget "JiraSupportApp" */;
+			buildPhases = (
+				F045633A2356F90D00B0AEAF /* Sources */,
+				F045633B2356F90D00B0AEAF /* Frameworks */,
+				F045633C2356F90D00B0AEAF /* Resources */,
+				F045635A2356F92100B0AEAF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F04563552356F92100B0AEAF /* PBXTargetDependency */,
+				F04563592356F92100B0AEAF /* PBXTargetDependency */,
+				F045635E2356FCD100B0AEAF /* PBXTargetDependency */,
+			);
+			name = JiraSupportApp;
+			productName = JiraSupportApp;
+			productReference = F045633E2356F90D00B0AEAF /* JiraSupportApp.app */;
+			productType = "com.apple.product-type.application";
 		};
 		F0711B732356E39C00097551 /* JiraSupport */ = {
 			isa = PBXNativeTarget;
@@ -1309,13 +1413,16 @@
 		F0843C9821CE5AD900EDB65F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Sungdoo;
 				TargetAttributes = {
 					F0006EAC21EDE11F00307F88 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+					};
+					F045633D2356F90D00B0AEAF = {
+						CreatedOnToolsVersion = 11.1;
 					};
 					F0711B732356E39C00097551 = {
 						CreatedOnToolsVersion = 11.1;
@@ -1419,6 +1526,7 @@
 				F0BA0DF422367BB6004CD72C /* TimeLine */,
 				F0BA0DFC22367BB6004CD72C /* TimeLineTests */,
 				F0711B732356E39C00097551 /* JiraSupport */,
+				F045633D2356F90D00B0AEAF /* JiraSupportApp */,
 			);
 		};
 /* End PBXProject section */
@@ -1429,6 +1537,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F045633C2356F90D00B0AEAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F045634D2356F90F00B0AEAF /* LaunchScreen.storyboard in Resources */,
+				F045634A2356F90F00B0AEAF /* Assets.xcassets in Resources */,
+				F04563482356F90D00B0AEAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1799,6 +1917,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F045633A2356F90D00B0AEAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F04563452356F90D00B0AEAF /* ViewController.swift in Sources */,
+				F04563412356F90D00B0AEAF /* AppDelegate.swift in Sources */,
+				F04563432356F90D00B0AEAF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0711B702356E39C00097551 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1845,6 +1973,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04563602356FD9100B0AEAF /* Result.swift in Sources */,
 				F0880A9E21D71FBD008AE79F /* LongBreakInterval.swift in Sources */,
 				F0880A9C21D67EE7008AE79F /* NotificationManager.swift in Sources */,
 				F0A8E1DE2259A17B007FE83F /* Date+Extension.swift in Sources */,
@@ -1960,6 +2089,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F04563552356F92100B0AEAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0711B732356E39C00097551 /* JiraSupport */;
+			targetProxy = F04563542356F92100B0AEAF /* PBXContainerItemProxy */;
+		};
+		F04563592356F92100B0AEAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F087251F21CF6719007EB27F /* PomodoroFoundation */;
+			targetProxy = F04563582356F92100B0AEAF /* PBXContainerItemProxy */;
+		};
+		F045635E2356FCD100B0AEAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
+			targetProxy = F045635D2356FCD100B0AEAF /* PBXContainerItemProxy */;
+		};
 		F06BEC5621EE0FA100A45E08 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F087251F21CF6719007EB27F /* PomodoroFoundation */;
@@ -2102,6 +2246,22 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		F04563462356F90D00B0AEAF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F04563472356F90D00B0AEAF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F045634B2356F90F00B0AEAF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F045634C2356F90F00B0AEAF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		F0D89E0821D8D6D80011A0B7 /* Settings.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2178,6 +2338,42 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F04563502356F90F00B0AEAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				INFOPLIST_FILE = JiraSupportApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flitto.JiraSupportApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F04563512356F90F00B0AEAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				INFOPLIST_FILE = JiraSupportApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flitto.JiraSupportApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -2966,6 +3162,15 @@
 			buildConfigurations = (
 				F0006EB721EDE11F00307F88 /* Debug */,
 				F0006EB821EDE11F00307F88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F045634F2356F90F00B0AEAF /* Build configuration list for PBXNativeTarget "JiraSupportApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F04563502356F90F00B0AEAF /* Debug */,
+				F04563512356F90F00B0AEAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

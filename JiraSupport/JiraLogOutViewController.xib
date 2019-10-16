@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JiraLogOutViewController" customModule="JiraSupport" customModuleProvider="target">
             <connections>
+                <outlet property="buttonLogout" destination="3qU-lv-7fX" id="IXn-Rc-aNa"/>
+                <outlet property="imageViewStatus" destination="KFa-cd-HrW" id="UzW-DR-lQi"/>
+                <outlet property="labelStatus" destination="IQC-KL-hlp" id="fXD-5Z-38K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,9 +37,12 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qU-lv-7fX">
                     <rect key="frame" x="164" y="747" width="86" height="30"/>
                     <state key="normal" title="로그 아웃 하기"/>
+                    <connections>
+                        <action selector="buttonLogoutClicked" destination="-1" eventType="touchUpInside" id="VN2-WY-8uo"/>
+                    </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="KFa-cd-HrW" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-100" id="2LJ-bm-dA7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3qU-lv-7fX" secondAttribute="bottom" constant="85" id="3n5-Ko-rif"/>
