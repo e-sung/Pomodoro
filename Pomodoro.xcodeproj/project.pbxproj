@@ -55,6 +55,12 @@
 		F045635B2356FCD100B0AEAF /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
 		F045635C2356FCD100B0AEAF /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F04563602356FD9100B0AEAF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045635F2356FD9100B0AEAF /* Result.swift */; };
+		F04563612357052300B0AEAF /* JiraSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; };
+		F04563622357052300B0AEAF /* JiraSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F04563662357077A00B0AEAF /* JiraSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; };
+		F04563672357077A00B0AEAF /* JiraSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F045636A2357079C00B0AEAF /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
+		F045636B2357079C00B0AEAF /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC5421EE0FA100A45E08 /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -164,6 +170,27 @@
 			remoteInfo = PomodoroFoundation;
 		};
 		F045635D2356FCD100B0AEAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0006EAC21EDE11F00307F88;
+			remoteInfo = PomodoroUIKit;
+		};
+		F04563632357052300B0AEAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0711B732356E39C00097551;
+			remoteInfo = JiraSupport;
+		};
+		F04563682357077A00B0AEAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0711B732356E39C00097551;
+			remoteInfo = JiraSupport;
+		};
+		F045636C2357079C00B0AEAF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
 			proxyType = 1;
@@ -319,6 +346,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F04563652357052300B0AEAF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F04563622357052300B0AEAF /* JiraSupport.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F06BEC4921EDE46500A45E08 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +400,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F045636B2357079C00B0AEAF /* PomodoroUIKit.framework in Embed Frameworks */,
+				F04563672357077A00B0AEAF /* JiraSupport.framework in Embed Frameworks */,
 				F0D89E3621D8D7D90011A0B7 /* PomodoroSettings.framework in Embed Frameworks */,
 				F0D89E3221D8D7D90011A0B7 /* PomodoroFoundation.framework in Embed Frameworks */,
 			);
@@ -664,6 +704,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04563612357052300B0AEAF /* JiraSupport.framework in Frameworks */,
 				F0D89E3B21D90E390011A0B7 /* PomodoroFoundation.framework in Frameworks */,
 				05DF4762513D38F4CDA3DFE9 /* Pods_PomodoroSettings.framework in Frameworks */,
 			);
@@ -681,7 +722,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04563662357077A00B0AEAF /* JiraSupport.framework in Frameworks */,
 				F0D89E3521D8D7D90011A0B7 /* PomodoroSettings.framework in Frameworks */,
+				F045636A2357079C00B0AEAF /* PomodoroUIKit.framework in Frameworks */,
 				F0D89E3121D8D7D90011A0B7 /* PomodoroFoundation.framework in Frameworks */,
 				AB85875DAEB0C86F6C3B199F /* Pods_SettingsApp.framework in Frameworks */,
 			);
@@ -1339,10 +1382,12 @@
 				F0D89DD621D8D32B0011A0B7 /* Sources */,
 				F0D89DD721D8D32B0011A0B7 /* Frameworks */,
 				F0D89DD821D8D32B0011A0B7 /* Resources */,
+				F04563652357052300B0AEAF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F04563642357052300B0AEAF /* PBXTargetDependency */,
 			);
 			name = PomodoroSettings;
 			productName = PomodoroSettings;
@@ -1383,6 +1428,8 @@
 			dependencies = (
 				F0D89E3421D8D7D90011A0B7 /* PBXTargetDependency */,
 				F0D89E3821D8D7D90011A0B7 /* PBXTargetDependency */,
+				F04563692357077A00B0AEAF /* PBXTargetDependency */,
+				F045636D2357079C00B0AEAF /* PBXTargetDependency */,
 			);
 			name = SettingsApp;
 			productName = SettingsApp;
@@ -2104,6 +2151,21 @@
 			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
 			targetProxy = F045635D2356FCD100B0AEAF /* PBXContainerItemProxy */;
 		};
+		F04563642357052300B0AEAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0711B732356E39C00097551 /* JiraSupport */;
+			targetProxy = F04563632357052300B0AEAF /* PBXContainerItemProxy */;
+		};
+		F04563692357077A00B0AEAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0711B732356E39C00097551 /* JiraSupport */;
+			targetProxy = F04563682357077A00B0AEAF /* PBXContainerItemProxy */;
+		};
+		F045636D2357079C00B0AEAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
+			targetProxy = F045636C2357079C00B0AEAF /* PBXContainerItemProxy */;
+		};
 		F06BEC5621EE0FA100A45E08 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F087251F21CF6719007EB27F /* PomodoroFoundation */;
@@ -2294,7 +2356,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2325,7 +2387,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2384,6 +2446,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2398,6 +2461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flitto.JiraSupport;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2413,6 +2477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2427,6 +2492,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flitto.JiraSupport;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2563,7 +2629,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2586,7 +2652,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2700,7 +2766,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2732,7 +2798,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2797,7 +2863,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				INFOPLIST_FILE = TimeLineApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2818,7 +2884,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				INFOPLIST_FILE = TimeLineApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2884,7 +2950,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TimeLine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2915,7 +2981,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TimeLine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2986,7 +3052,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroSettings/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3018,7 +3084,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroSettings/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

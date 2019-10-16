@@ -9,18 +9,18 @@
 import UIKit
 import PomodoroFoundation
 
-class JiraLogOutViewController: UIViewController {
+public class JiraLogOutViewController: UIViewController {
 
     @IBOutlet var imageViewStatus: UIImageView!
     @IBOutlet var labelStatus: UILabel!
     @IBOutlet var buttonLogout: UIButton!
     
-    override func loadView() {
+    public override func loadView() {
         Bundle(for: type(of: self)).loadNibNamed(className, owner: self, options: nil)
     }
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
-        if let credentials = try? retreiveSavedCredentials() {
+        if let _ = try? retreiveSavedCredentials() {
             imageViewStatus.image = UIImage(systemName: "checkmark.circle")
             imageViewStatus.tintColor = .systemGreen
             labelStatus.text = "로그인 되어 있습니다"

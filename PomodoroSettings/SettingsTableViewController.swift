@@ -8,6 +8,7 @@
 
 import MessageUI
 import PomodoroFoundation
+import JiraSupport
 import UIKit
 
 public class SettingsTableViewController: UITableViewController {
@@ -67,6 +68,19 @@ public class SettingsTableViewController: UITableViewController {
         guard let mailComposer = mailComposeViewController else { return }
         mailComposer.mailComposeDelegate = self
         present(mailComposer, animated: true, completion: nil)
+    }
+    
+    @IBAction func JiraLoginClicked() {
+        var vc: UIViewController? = nil
+        if let _ = try? retreiveSavedCredentials() {
+            vc = JiraLogOutViewController(nibName: JiraLogOutViewController.className,
+                                          bundle: Bundle(for: JiraLogOutViewController.self))
+        }
+        else {
+            vc = JiraLoginViewController(nibName: JiraLoginViewController.className,
+                                         bundle: Bundle(for: JiraLoginViewController.self))
+        }
+        show(vc!, sender: nil)
     }
 
     var mailComposeViewController: MFMailComposeViewController? {
