@@ -75,8 +75,8 @@
 		F0711B6B2356E19800097551 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0711B6A2356E19800097551 /* KeyChain.swift */; };
 		F0711B6D2356E1AC00097551 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0711B6C2356E1AC00097551 /* Credentials.swift */; };
 		F0711B782356E39C00097551 /* JiraSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = F0711B762356E39C00097551 /* JiraSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0711B7B2356E39C00097551 /* JiraSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; };
-		F0711B7C2356E39C00097551 /* JiraSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0711B7B2356E39C00097551 /* JiraSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; platformFilter = ios; };
+		F0711B7C2356E39C00097551 /* JiraSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0711B812356E3C200097551 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0711B802356E3C200097551 /* Authentication.swift */; };
 		F0775F362234DDB4003CF712 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0775F352234DDB4003CF712 /* UIViewController+Extension.swift */; };
 		F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA321CE5AD900EDB65F /* AppDelegate.swift */; };
@@ -157,6 +157,8 @@
 		F0DB788D22477FA30006F65A /* HistoryMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB788B22477FA30006F65A /* HistoryMO+CoreDataClass.swift */; };
 		F0DB788E22477FA30006F65A /* HistoryMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB788C22477FA30006F65A /* HistoryMO+CoreDataProperties.swift */; };
 		F0DB78902247A7FB0006F65A /* MockEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB788F2247A7FB0006F65A /* MockEditViewController.swift */; };
+		F0EECDE623580B59001F50D7 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F0EECDE523580B59001F50D7 /* RxSwift */; };
+		F0EECDE823580B59001F50D7 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F0EECDE723580B59001F50D7 /* RxCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -661,7 +663,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EECDE623580B59001F50D7 /* RxSwift in Frameworks */,
 				F0711B7B2356E39C00097551 /* JiraSupport.framework in Frameworks */,
+				F0EECDE823580B59001F50D7 /* RxCocoa in Frameworks */,
 				6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1252,6 +1256,10 @@
 				F0711B7A2356E39C00097551 /* PBXTargetDependency */,
 			);
 			name = Pomodoro;
+			packageProductDependencies = (
+				F0EECDE523580B59001F50D7 /* RxSwift */,
+				F0EECDE723580B59001F50D7 /* RxCocoa */,
+			);
 			productName = Pomodoro;
 			productReference = F0843CA021CE5AD900EDB65F /* Pomodoro.app */;
 			productType = "com.apple.product-type.application";
@@ -1591,6 +1599,7 @@
 			mainGroup = F0843C9721CE5AD900EDB65F;
 			packageReferences = (
 				F04563272356E5B200B0AEAF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F0EECDE423580B59001F50D7 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = F0843CA121CE5AD900EDB65F /* Products */;
 			projectDirPath = "";
@@ -2232,6 +2241,7 @@
 		};
 		F0711B7A2356E39C00097551 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = F0711B732356E39C00097551 /* JiraSupport */;
 			targetProxy = F0711B792356E39C00097551 /* PBXContainerItemProxy */;
 		};
@@ -2405,7 +2415,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2436,7 +2446,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroUIKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2502,6 +2512,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JiraSupport/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2510,7 +2521,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flitto.JiraSupport;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2533,6 +2544,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JiraSupport/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2541,7 +2553,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flitto.JiraSupport;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2676,16 +2688,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2699,16 +2712,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 7836J6Z5N8;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2815,7 +2829,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2847,7 +2861,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroFoundation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2999,7 +3013,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TimeLine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3030,7 +3044,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TimeLine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3101,7 +3115,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroSettings/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3133,7 +3147,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PomodoroSettings/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3436,6 +3450,14 @@
 				kind = branch;
 			};
 		};
+		F0EECDE423580B59001F50D7 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -3443,6 +3465,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F04563272356E5B200B0AEAF /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		F0EECDE523580B59001F50D7 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0EECDE423580B59001F50D7 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		F0EECDE723580B59001F50D7 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0EECDE423580B59001F50D7 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -16,9 +16,7 @@ PODS:
 DEPENDENCIES:
   - HGCircularSlider
   - LoremIpsum-iOS
-  - RxCocoa
   - RxKeyboard
-  - RxSwift
   - Spring (from `https://github.com/MengTo/Spring.git`)
   - "UITextView+Placeholder"
 
@@ -51,6 +49,6 @@ SPEC CHECKSUMS:
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
 
-PODFILE CHECKSUM: 6444d91c42a3632340cc3047b586f67cf0b92f9d
+PODFILE CHECKSUM: 59a1159bfbe1d7468799fdeefb3b5d1123034ff9
 
 COCOAPODS: 1.7.5
