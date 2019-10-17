@@ -165,9 +165,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="40" id="Kno-1E-lv9"/>
                             <constraint firstItem="U8M-RA-u57" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LgR-18-UHO"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="centerY" secondItem="C0j-TM-sWV" secondAttribute="centerY" constant="-5" id="WU1-s8-wWh"/>
+                            <constraint firstItem="U8M-RA-u57" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="ZkM-x3-QY0"/>
                             <constraint firstItem="HTF-te-s8l" firstAttribute="top" secondItem="p0n-JA-XET" secondAttribute="bottom" id="awk-Ny-dBi"/>
                             <constraint firstItem="zbS-4T-Fx8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="cfS-6t-cXD"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="eIe-Zq-zmq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U8M-RA-u57" secondAttribute="trailing" constant="14" id="kLQ-Ax-Wcz"/>
                             <constraint firstItem="C0j-TM-sWV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-80" id="mJ6-Bi-MZh"/>
                             <constraint firstItem="p0n-JA-XET" firstAttribute="leading" secondItem="C0j-TM-sWV" secondAttribute="leading" constant="30" id="oaw-fY-dx5"/>
                             <constraint firstItem="c6C-ol-b31" firstAttribute="centerY" secondItem="C0j-TM-sWV" secondAttribute="centerY" id="rSL-Ew-QL7"/>
@@ -254,7 +256,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C7q-RY-gdF">
                                 <rect key="frame" x="14" y="252" width="347" height="163.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴식중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2YA-SV-5xS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴식중" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2YA-SV-5xS">
                                         <rect key="frame" x="0.0" y="0.0" width="347" height="119.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="100"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

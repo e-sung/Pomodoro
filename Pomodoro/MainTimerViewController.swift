@@ -43,6 +43,7 @@ public class MainTimerViewController: TimerViewController {
 
     var acceleration = BehaviorRelay<Double>(value: 0)
     var lastClearButtonShownTime: Date?
+    var selectedIssue: Issue?
     var disposeBag = DisposeBag()
 
     // MARK: LifeCycle
@@ -105,6 +106,7 @@ public class MainTimerViewController: TimerViewController {
         guard let nextVC = segue.destination as? SimpleTimerViewController else { return }
         bannerView.removeFromSuperview()
         nextVC.bannerView = bannerView
+        nextVC.issue = selectedIssue
     }
 
     public override func startOrStopTimer() {
@@ -140,6 +142,9 @@ public class MainTimerViewController: TimerViewController {
             UIView.animate(withDuration: 1, animations: { [weak self] in
                 self?.bannerView.alpha = 0
             })
+        } else if let issue = selectedIssue, finisher == .time {
+            let focusedTime = FocusInterval().targetMinute
+            logWorkTime(seconds: focusedTime * 60, for: issue.key)
         }
     }
 
@@ -282,10 +287,12 @@ extension MainTimerViewController: GADBannerViewDelegate {
 }
 
 extension MainTimerViewController: MyIssueViewControllerDelegate {
-    public func didSelect(issue: String) {
-        if issue.isValid {
-            buttonIssue.setTitle(issue, for: .normal)
+    public func didSelect(issue: Issue?) {
+        if let issue = issue {
+            selectedIssue = issue
+            buttonIssue.setTitle(issue.sumamry, for: .normal)
         } else {
+            selectedIssue = nil
             buttonIssue.setTitle("Issues", for: .normal)
         }
     }

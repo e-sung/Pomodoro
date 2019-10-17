@@ -9,12 +9,12 @@
 import UIKit
 
 public protocol MyIssueViewControllerDelegate: AnyObject {
-    func didSelect(issue: String)
+    func didSelect(issue: Issue?)
 }
 
 public class MyIssuesViewController: UITableViewController {
     public weak var delegate: MyIssueViewControllerDelegate?
-    var myIssues: [String] = []
+    var myIssues: [Issue] = []
 
     public static var storyboardInstance: MyIssuesViewController {
         let sb = UIStoryboard(name: "MyIssues", bundle: Bundle(for: MyIssuesViewController.self))
@@ -41,7 +41,7 @@ public class MyIssuesViewController: UITableViewController {
 
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = myIssues[indexPath.row]
+        cell.textLabel?.text = myIssues[indexPath.row].sumamry
         return cell
     }
 

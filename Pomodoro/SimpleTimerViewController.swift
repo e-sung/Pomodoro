@@ -8,6 +8,7 @@
 
 import Foundation
 import GoogleMobileAds
+import JiraSupport
 import PomodoroFoundation
 import PomodoroUIKit
 
@@ -16,6 +17,7 @@ class SimpleTimerViewController: TimerViewController {
     @IBOutlet private var stackViewLabels: UIStackView!
     @IBOutlet private var labelStatus: UILabel!
     @IBOutlet private var navItem: UINavigationItem!
+    var issue: Issue?
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if UIDevice.current.orientation.isPortrait {
@@ -106,7 +108,11 @@ class SimpleTimerViewController: TimerViewController {
         labelTime.isHidden = interval is FocusInterval
         updateControlButton()
         if interval is FocusInterval {
-            labelStatus.text = NSLocalizedString("focusing", comment: "")
+            if let issue = issue {
+                labelStatus.text = issue.sumamry
+            } else {
+                labelStatus.text = NSLocalizedString("focusing", comment: "")
+            }
         } else {
             labelStatus.text = NSLocalizedString("resting", comment: "")
         }

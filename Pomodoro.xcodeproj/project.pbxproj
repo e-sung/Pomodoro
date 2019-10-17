@@ -61,6 +61,7 @@
 		F04563672357077A00B0AEAF /* JiraSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F045636A2357079C00B0AEAF /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
 		F045636B2357079C00B0AEAF /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F045636F2357100400B0AEAF /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045636E2357100400B0AEAF /* Issue.swift */; };
 		F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC5421EE0FA100A45E08 /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -494,6 +495,7 @@
 		F045634C2356F90F00B0AEAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F045634E2356F90F00B0AEAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F045635F2356FD9100B0AEAF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		F045636E2357100400B0AEAF /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroFoundation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroFoundation/Pods-PomodoroFoundation.debug.xcconfig"; sourceTree = "<group>"; };
 		F06BEC3A21EDE46500A45E08 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pomodoro.entitlements; sourceTree = "<group>"; };
@@ -824,6 +826,7 @@
 				F0711B802356E3C200097551 /* Authentication.swift */,
 				F045632A2356E84B00B0AEAF /* WorkLog.swift */,
 				F045632C2356F2C500B0AEAF /* FetchIssues.swift */,
+				F045636E2357100400B0AEAF /* Issue.swift */,
 				F04563322356F5C500B0AEAF /* JiraLoginViewController.swift */,
 				F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */,
 				F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */,
@@ -1979,6 +1982,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04563382356F84F00B0AEAF /* JiraLogOutViewController.swift in Sources */,
+				F045636F2357100400B0AEAF /* Issue.swift in Sources */,
 				F045632F2356F36300B0AEAF /* MyIssuesViewController.swift in Sources */,
 				F0711B812356E3C200097551 /* Authentication.swift in Sources */,
 				F045632D2356F2C500B0AEAF /* FetchIssues.swift in Sources */,
