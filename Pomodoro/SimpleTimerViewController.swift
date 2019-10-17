@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import GoogleMobileAds
+// import GoogleMobileAds
 import JiraSupport
 import PomodoroFoundation
 import PomodoroUIKit
@@ -25,11 +25,11 @@ class SimpleTimerViewController: TimerViewController {
         }
     }
 
-    var bannerView: GADBannerView!
+//    var bannerView: GADBannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBannerViewToView(bannerView)
+//        addBannerViewToView(bannerView)
         NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
@@ -44,18 +44,18 @@ class SimpleTimerViewController: TimerViewController {
         progressBar.progress = interval.progress
         let currentSecond = Int(interval.targetSeconds - seconds)
         if interval is BreakInterval, currentSecond == 60 {
-            UIView.animate(withDuration: 1, animations: { [weak self] in
-                self?.bannerView.alpha = 1
-            })
+//            UIView.animate(withDuration: 1, animations: { [weak self] in
+//                self?.bannerView.alpha = 1
+//            })
         }
     }
 
     override func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
         super.intervalFinished(by: finisher, isFromBackground: isFromBackground)
         if interval is FocusInterval {
-            UIView.animate(withDuration: 1, animations: { [weak self] in
-                self?.bannerView.alpha = 0
-            })
+//            UIView.animate(withDuration: 1, animations: { [weak self] in
+//                self?.bannerView.alpha = 0
+//            })
         }
     }
 

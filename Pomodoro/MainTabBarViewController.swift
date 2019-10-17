@@ -6,7 +6,6 @@
 //  Copyright © 2019 Sungdoo. All rights reserved.
 //
 
-import GoogleMobileAds
 import UIKit
 
 class MainTabBarViewController: UITabBarController {

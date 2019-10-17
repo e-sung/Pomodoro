@@ -9,7 +9,7 @@
 import AudioToolbox
 import CoreMotion
 import Foundation
-import GoogleMobileAds
+// import GoogleMobileAds
 import HGCircularSlider
 import JiraSupport
 import PomodoroFoundation
@@ -28,7 +28,7 @@ public class MainTimerViewController: TimerViewController {
     @IBOutlet var clearButton: UIButton!
     @IBOutlet var imageViewControl: UIImageView!
     @IBOutlet var buttonIssue: UIButton!
-    var bannerView: GADBannerView!
+//    var bannerView: GADBannerView!
 
     // MARK: Properties
 
@@ -66,9 +66,9 @@ public class MainTimerViewController: TimerViewController {
         tabBarController?.tabBar.isTranslucent = true
         tabBarController?.tabBar.tintColor = .white
         tabBarController?.tabBar.unselectedItemTintColor = .gray
-        if view.subviews.contains(bannerView) == false {
-            addBannerViewToView(bannerView)
-        }
+//        if view.subviews.contains(bannerView) == false {
+//            addBannerViewToView(bannerView)
+//        }
     }
 
     public override func viewDidLayoutSubviews() {
@@ -104,8 +104,8 @@ public class MainTimerViewController: TimerViewController {
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         guard let nextVC = segue.destination as? SimpleTimerViewController else { return }
-        bannerView.removeFromSuperview()
-        nextVC.bannerView = bannerView
+//        bannerView.removeFromSuperview()
+//        nextVC.bannerView = bannerView
         nextVC.issue = selectedIssue
     }
 
@@ -139,9 +139,9 @@ public class MainTimerViewController: TimerViewController {
             imageViewControl.image = UIImage(systemName: "play.fill")
         }
         if interval is FocusInterval {
-            UIView.animate(withDuration: 1, animations: { [weak self] in
-                self?.bannerView.alpha = 0
-            })
+//            UIView.animate(withDuration: 1, animations: { [weak self] in
+//                self?.bannerView.alpha = 0
+//            })
         } else if let issue = selectedIssue, finisher == .time {
             let focusedTime = FocusInterval().targetMinute
             logWorkTime(seconds: focusedTime * 60, for: issue.key)
@@ -153,9 +153,9 @@ public class MainTimerViewController: TimerViewController {
         updateMainSlider(to: seconds)
         let currentSecond = Int(interval.targetSeconds - seconds)
         if interval is BreakInterval, currentSecond == 60 {
-            UIView.animate(withDuration: 1, animations: { [weak self] in
-                self?.bannerView.alpha = 1
-            })
+//            UIView.animate(withDuration: 1, animations: { [weak self] in
+//                self?.bannerView.alpha = 1
+//            })
         }
     }
 
@@ -230,12 +230,12 @@ public class MainTimerViewController: TimerViewController {
     }
 
     private func setUpBannerView() {
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        bannerView = makeBannerView()
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
-        bannerView.alpha = 0
+//        GADMobileAds.sharedInstance().start(completionHandler: nil)
+//        bannerView = makeBannerView()
+//        bannerView.rootViewController = self
+//        bannerView.load(GADRequest())
+//        bannerView.delegate = self
+//        bannerView.alpha = 0
     }
 }
 
@@ -282,9 +282,9 @@ extension MainTimerViewController: UITabBarControllerDelegate {
     }
 }
 
-extension MainTimerViewController: GADBannerViewDelegate {
-    public func adViewDidReceiveAd(_: GADBannerView) {}
-}
+// extension MainTimerViewController: GADBannerViewDelegate {
+//    public func adViewDidReceiveAd(_: GADBannerView) {}
+// }
 
 extension MainTimerViewController: MyIssueViewControllerDelegate {
     public func didSelect(issue: Issue?) {

@@ -7,7 +7,7 @@
 //
 
 import CoreData
-import GoogleMobileAds
+// import GoogleMobileAds
 import JiraSupport
 import PomodoroFoundation
 import PomodoroUIKit

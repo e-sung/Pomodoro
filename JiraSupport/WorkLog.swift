@@ -30,8 +30,8 @@ public func logWorkTime(seconds: TimeInterval, for issue: String) {
     AF.request(url,
                method: .post,
                parameters: workLog,
-               headers: HTTPHeaders([credentialHeader])
-               encoder: JSONParameterEncoder.default).response { res in
+               encoder: JSONParameterEncoder.default,
+               headers: HTTPHeaders([credentialHeader])).response { res in
         print(res)
     }
 }
