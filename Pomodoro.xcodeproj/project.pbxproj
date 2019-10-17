@@ -62,6 +62,10 @@
 		F045636A2357079C00B0AEAF /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
 		F045636B2357079C00B0AEAF /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F045636F2357100400B0AEAF /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045636E2357100400B0AEAF /* Issue.swift */; };
+		F04563792358043500B0AEAF /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
+		F045637A2358043500B0AEAF /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F045637E2358045300B0AEAF /* PomodoroUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; };
+		F045637F2358045300B0AEAF /* PomodoroUIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */; };
 		F06BEC5421EE0FA100A45E08 /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -192,6 +196,20 @@
 			remoteInfo = JiraSupport;
 		};
 		F045636C2357079C00B0AEAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0006EAC21EDE11F00307F88;
+			remoteInfo = PomodoroUIKit;
+		};
+		F045637B2358043500B0AEAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F087251F21CF6719007EB27F;
+			remoteInfo = PomodoroFoundation;
+		};
+		F04563802358045300B0AEAF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
 			proxyType = 1;
@@ -354,6 +372,18 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F04563622357052300B0AEAF /* JiraSupport.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F045637D2358043500B0AEAF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F045637F2358045300B0AEAF /* PomodoroUIKit.framework in Embed Frameworks */,
+				F045637A2358043500B0AEAF /* PomodoroFoundation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,6 +651,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04563792358043500B0AEAF /* PomodoroFoundation.framework in Frameworks */,
+				F045637E2358045300B0AEAF /* PomodoroUIKit.framework in Frameworks */,
 				F04563292356E5B200B0AEAF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1182,10 +1214,13 @@
 				F0711B702356E39C00097551 /* Sources */,
 				F0711B712356E39C00097551 /* Frameworks */,
 				F0711B722356E39C00097551 /* Resources */,
+				F045637D2358043500B0AEAF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F045637C2358043500B0AEAF /* PBXTargetDependency */,
+				F04563812358045300B0AEAF /* PBXTargetDependency */,
 			);
 			name = JiraSupport;
 			packageProductDependencies = (
@@ -2169,6 +2204,16 @@
 			isa = PBXTargetDependency;
 			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
 			targetProxy = F045636C2357079C00B0AEAF /* PBXContainerItemProxy */;
+		};
+		F045637C2358043500B0AEAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F087251F21CF6719007EB27F /* PomodoroFoundation */;
+			targetProxy = F045637B2358043500B0AEAF /* PBXContainerItemProxy */;
+		};
+		F04563812358045300B0AEAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
+			targetProxy = F04563802358045300B0AEAF /* PBXContainerItemProxy */;
 		};
 		F06BEC5621EE0FA100A45E08 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
