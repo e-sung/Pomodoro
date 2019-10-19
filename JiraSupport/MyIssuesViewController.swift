@@ -24,6 +24,8 @@ public class MyIssuesViewController: UIViewController, UITableViewDelegate, UITa
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.delegate = self
+        tableView.dataSource = self
         fetchIssues(then: { [weak self] result in
             if let issues = try? result.get() {
                 self?.myIssues = issues

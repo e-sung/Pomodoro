@@ -16,13 +16,14 @@ class MacTimerViewController: TimerViewController {
     @IBOutlet private var stackViewLabels: UIStackView!
     @IBOutlet private var labelStatus: UILabel!
     @IBOutlet private var navItem: UINavigationItem!
+    @IBOutlet private var buttonIssue: UIButton!
 
     var issue: Issue?
 
     override var keyCommands: [UIKeyCommand]? {
         return [
             UIKeyCommand(title: "Toggle", action: #selector(startOrStopTimer), input: " "),
-            UIKeyCommand(title: "Toggle", action: #selector(startOrStopTimer), input: "\r"),
+            UIKeyCommand(title: "Toggle", action: #selector(startOrStopTimer), input: "\r")
         ]
     }
 
@@ -37,6 +38,12 @@ class MacTimerViewController: TimerViewController {
 
     @IBAction func closeButtonTapped(_: Any) {
         intervalFinished(by: .user, isFromBackground: false)
+    }
+
+    @IBAction func buttonIssueSelectorClicked(_: Any) {
+        let issueVC = MyIssuesViewController.storyboardInstance
+        issueVC.delegate = self
+        present(issueVC, animated: true, completion: nil)
     }
 
     @objc override func startOrStopTimer() {
@@ -79,5 +86,12 @@ class MacTimerViewController: TimerViewController {
     @IBAction func sliderSlided(_: Any?) {
         interval.elapsedSeconds = interval.targetSeconds * TimeInterval(progressBar.value)
         timeElapsed(interval.elapsedSeconds)
+    }
+}
+
+extension MacTimerViewController: MyIssueViewControllerDelegate {
+    func didSelect(issue: Issue?) {
+        self.issue = issue
+        refreshViews(with: interval)
     }
 }

@@ -525,6 +525,7 @@
 		F019BC29235B08130005E9AC /* PomodoroMacDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroMacDebug.entitlements; sourceTree = "<group>"; };
 		F019BC47235B0C920005E9AC /* MacMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MacMain.storyboard; sourceTree = "<group>"; };
 		F019BC49235B0FD10005E9AC /* MacTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacTimerViewController.swift; sourceTree = "<group>"; };
+		F019BC4B235B2A370005E9AC /* PomodoroDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroDebug.entitlements; sourceTree = "<group>"; };
 		F01A200322118A7B001ECF23 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		F021B2C22289797C009FCD39 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Settings.strings"; sourceTree = "<group>"; };
 		F021B2C32289797C009FCD39 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -984,6 +985,7 @@
 		F0843CA221CE5AD900EDB65F /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				F019BC4B235B2A370005E9AC /* PomodoroDebug.entitlements */,
 				F0843CBA21CE5ADA00EDB65F /* PomodoroTests */,
 				F0843CC521CE5ADA00EDB65F /* PomodoroUITests */,
 				F06BEC4E21EE046500A45E08 /* Pomodoro.entitlements */,
@@ -2866,10 +2868,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Pomodoro/PomodoroDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

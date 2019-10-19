@@ -29,6 +29,7 @@ public class SettingsTableViewController: UITableViewController {
                                                             target: self,
                                                             action: #selector(close)),
                                             animated: true)
+            addKeyCommand(UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(close)))
         }
     }
 
