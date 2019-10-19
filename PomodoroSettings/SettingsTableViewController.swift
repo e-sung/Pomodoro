@@ -23,6 +23,13 @@ public class SettingsTableViewController: UITableViewController {
         if MFMailComposeViewController.canSendMail() == false {
             contactCell.isHidden = true
         }
+
+        if #available(macCatalyst 13, *) {
+            navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .close,
+                                                            target: self,
+                                                            action: #selector(close)),
+                                            animated: true)
+        }
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +75,11 @@ public class SettingsTableViewController: UITableViewController {
         guard let mailComposer = mailComposeViewController else { return }
         mailComposer.mailComposeDelegate = self
         present(mailComposer, animated: true, completion: nil)
+    }
+
+    @objc func close() {
+        presentingViewController?.viewWillAppear(false)
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func JiraLoginClicked() {

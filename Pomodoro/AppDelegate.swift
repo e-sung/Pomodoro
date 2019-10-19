@@ -118,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let openCommand =
             UIKeyCommand(title: "셋팅",
                          image: nil,
-                         action: #selector(foo),
+                         action: #selector(showSettings),
                          input: ",",
                          modifierFlags: .command,
                          propertyList: nil)
@@ -131,8 +131,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return openMenu
     }
 
-    @objc func foo() {
-        print("bar")
+    @objc func showSettings() {
+        let sb = UIStoryboard(name: "Settings", bundle: nil)
+        guard let vc = sb.instantiateInitialViewController() else { return }
+        window?.rootViewController?.show(vc, sender: nil)
     }
 
     // MARK: - Core Data stack
