@@ -41,6 +41,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(result)
             })
         }
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        var storyboard: UIStoryboard!
+        if #available(macCatalyst 13, *) {
+            storyboard = UIStoryboard(name: "MacMain", bundle: nil)
+        } else {
+            storyboard = UIStoryboard(name: "Main", bundle: nil)
+        }
+
+        window?.rootViewController = storyboard.instantiateInitialViewController()
+        window?.makeKeyAndVisible()
         return true
     }
 

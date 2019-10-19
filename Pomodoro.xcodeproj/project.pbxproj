@@ -27,6 +27,15 @@
 		F0080CBD2286A2CB005D9E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBC2286A2CB005D9E2C /* LaunchScreen.storyboard */; };
 		F0080CC02286A374005D9E2C /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBE2286A374005D9E2C /* Timeline.storyboard */; };
 		F0080CC12286A374005D9E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBF2286A374005D9E2C /* LaunchScreen.storyboard */; };
+		F019BC1C235B080B0005E9AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019BC1B235B080B0005E9AC /* AppDelegate.swift */; };
+		F019BC1E235B080B0005E9AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019BC1D235B080B0005E9AC /* ViewController.swift */; };
+		F019BC20235B080C0005E9AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F019BC1F235B080C0005E9AC /* Assets.xcassets */; };
+		F019BC23235B080C0005E9AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F019BC21235B080C0005E9AC /* Main.storyboard */; };
+		F019BC2E235B08340005E9AC /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
+		F019BC2F235B08340005E9AC /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F019BC3B235B088E0005E9AC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DF2259A811007FE83F /* Protocols.swift */; };
+		F019BC48235B0C920005E9AC /* MacMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F019BC47235B0C920005E9AC /* MacMain.storyboard */; };
+		F019BC4A235B0FD10005E9AC /* MacTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019BC49235B0FD10005E9AC /* MacTimerViewController.swift */; };
 		F021B2D9228B093C009FCD39 /* AdmobFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F021B2D8228B093C009FCD39 /* AdmobFunctions.swift */; };
 		F038205221F2202C000ACFD0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038205121F2202C000ACFD0 /* String+Extension.swift */; };
 		F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = F038208721F496C8000ACFD0 /* Localizable.stringsdict */; };
@@ -75,8 +84,8 @@
 		F0711B6B2356E19800097551 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0711B6A2356E19800097551 /* KeyChain.swift */; };
 		F0711B6D2356E1AC00097551 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0711B6C2356E1AC00097551 /* Credentials.swift */; };
 		F0711B782356E39C00097551 /* JiraSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = F0711B762356E39C00097551 /* JiraSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0711B7B2356E39C00097551 /* JiraSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; platformFilter = ios; };
-		F0711B7C2356E39C00097551 /* JiraSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0711B7B2356E39C00097551 /* JiraSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; };
+		F0711B7C2356E39C00097551 /* JiraSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F0711B742356E39C00097551 /* JiraSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0711B812356E3C200097551 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0711B802356E3C200097551 /* Authentication.swift */; };
 		F0775F362234DDB4003CF712 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0775F352234DDB4003CF712 /* UIViewController+Extension.swift */; };
 		F0843CA421CE5AD900EDB65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0843CA321CE5AD900EDB65F /* AppDelegate.swift */; };
@@ -106,7 +115,6 @@
 		F09C0BDB226C29F9008EF37C /* SimpleTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09C0BDA226C29F9008EF37C /* SimpleTimerViewController.swift */; };
 		F09C0BDC226C3C39008EF37C /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09422EB21D2F60700134C63 /* BackgroundTimer.swift */; };
 		F0A8E1DE2259A17B007FE83F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DD2259A17B007FE83F /* Date+Extension.swift */; };
-		F0A8E1E02259A811007FE83F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DF2259A811007FE83F /* Protocols.swift */; };
 		F0A8E1E22259AD4E007FE83F /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1E12259AD4E007FE83F /* TimelineViewModel.swift */; };
 		F0A981FF228814540009EC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A981FE228814540009EC2F /* LaunchScreen.storyboard */; };
 		F0BA0DD022367B51004CD72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BA0DCF22367B51004CD72C /* AppDelegate.swift */; };
@@ -162,6 +170,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F019BC30235B08340005E9AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F087251F21CF6719007EB27F;
+			remoteInfo = PomodoroFoundation;
+		};
+		F019BC3D235B08EC0005E9AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0006EAC21EDE11F00307F88;
+			remoteInfo = PomodoroUIKit;
+		};
 		F04563542356F92100B0AEAF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
@@ -354,6 +376,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		F019BC3A235B08340005E9AC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F019BC2F235B08340005E9AC /* PomodoroFoundation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F045635A2356F92100B0AEAF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -482,6 +515,16 @@
 		F0080CC32286A857005D9E2C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0080CC42286A857005D9E2C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ja; path = ja.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		F0080CC52286A857005D9E2C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F019BC19235B080B0005E9AC /* PomodoroMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F019BC1B235B080B0005E9AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F019BC1D235B080B0005E9AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F019BC1F235B080C0005E9AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F019BC22235B080C0005E9AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F019BC24235B080C0005E9AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F019BC25235B080C0005E9AC /* PomodoroMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroMac.entitlements; sourceTree = "<group>"; };
+		F019BC29235B08130005E9AC /* PomodoroMacDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroMacDebug.entitlements; sourceTree = "<group>"; };
+		F019BC47235B0C920005E9AC /* MacMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MacMain.storyboard; sourceTree = "<group>"; };
+		F019BC49235B0FD10005E9AC /* MacTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacTimerViewController.swift; sourceTree = "<group>"; };
 		F01A200322118A7B001ECF23 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		F021B2C22289797C009FCD39 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Settings.strings"; sourceTree = "<group>"; };
 		F021B2C32289797C009FCD39 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -636,6 +679,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0006EBE21EDE2AD00307F88 /* PomodoroFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F019BC16235B080B0005E9AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F019BC2E235B08340005E9AC /* PomodoroFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +859,20 @@
 			path = PomodoroUIKit;
 			sourceTree = "<group>";
 		};
+		F019BC1A235B080B0005E9AC /* PomodoroMac */ = {
+			isa = PBXGroup;
+			children = (
+				F019BC29235B08130005E9AC /* PomodoroMacDebug.entitlements */,
+				F019BC1B235B080B0005E9AC /* AppDelegate.swift */,
+				F019BC1D235B080B0005E9AC /* ViewController.swift */,
+				F019BC1F235B080C0005E9AC /* Assets.xcassets */,
+				F019BC21235B080C0005E9AC /* Main.storyboard */,
+				F019BC24235B080C0005E9AC /* Info.plist */,
+				F019BC25235B080C0005E9AC /* PomodoroMac.entitlements */,
+			);
+			path = PomodoroMac;
+			sourceTree = "<group>";
+		};
 		F038205321F22484000ACFD0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -885,6 +950,7 @@
 				F0BA0E0322367BB6004CD72C /* TimeLineTests */,
 				F0711B752356E39C00097551 /* JiraSupport */,
 				F045633F2356F90D00B0AEAF /* JiraSupportApp */,
+				F019BC1A235B080B0005E9AC /* PomodoroMac */,
 				F0843CA121CE5AD900EDB65F /* Products */,
 				FFD2E382A03C8A4D78114878 /* Pods */,
 				647AC616D0FE392B89E1E767 /* Frameworks */,
@@ -910,6 +976,7 @@
 				F0BA0DFD22367BB6004CD72C /* TimeLineTests.xctest */,
 				F0711B742356E39C00097551 /* JiraSupport.framework */,
 				F045633E2356F90D00B0AEAF /* JiraSupportApp.app */,
+				F019BC19235B080B0005E9AC /* PomodoroMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -927,6 +994,8 @@
 				F021B2D8228B093C009FCD39 /* AdmobFunctions.swift */,
 				F09C0BDA226C29F9008EF37C /* SimpleTimerViewController.swift */,
 				F0080CBA2286A123005D9E2C /* Main.storyboard */,
+				F019BC49235B0FD10005E9AC /* MacTimerViewController.swift */,
+				F019BC47235B0C920005E9AC /* MacMain.storyboard */,
 				F0A981FE228814540009EC2F /* LaunchScreen.storyboard */,
 				F0843CAD21CE5ADA00EDB65F /* Assets.xcassets */,
 				F021B2D6228AFCC2009FCD39 /* Debug.xcconfig */,
@@ -1188,6 +1257,28 @@
 			productName = PomodoroUIKit;
 			productReference = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		F019BC18235B080B0005E9AC /* PomodoroMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F019BC26235B080C0005E9AC /* Build configuration list for PBXNativeTarget "PomodoroMac" */;
+			buildPhases = (
+				F019BC15235B080B0005E9AC /* Sources */,
+				F019BC16235B080B0005E9AC /* Frameworks */,
+				F019BC17235B080B0005E9AC /* Resources */,
+				F019BC3A235B08340005E9AC /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F019BC31235B08340005E9AC /* PBXTargetDependency */,
+				F019BC3E235B08EC0005E9AC /* PBXTargetDependency */,
+			);
+			name = PomodoroMac;
+			packageProductDependencies = (
+			);
+			productName = PomodoroMac;
+			productReference = F019BC19235B080B0005E9AC /* PomodoroMac.app */;
+			productType = "com.apple.product-type.application";
 		};
 		F045633D2356F90D00B0AEAF /* JiraSupportApp */ = {
 			isa = PBXNativeTarget;
@@ -1514,6 +1605,9 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
 					};
+					F019BC18235B080B0005E9AC = {
+						CreatedOnToolsVersion = 11.1;
+					};
 					F045633D2356F90D00B0AEAF = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -1621,6 +1715,7 @@
 				F0BA0DFC22367BB6004CD72C /* TimeLineTests */,
 				F0711B732356E39C00097551 /* JiraSupport */,
 				F045633D2356F90D00B0AEAF /* JiraSupportApp */,
+				F019BC18235B080B0005E9AC /* PomodoroMac */,
 			);
 		};
 /* End PBXProject section */
@@ -1631,6 +1726,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F019BC17235B080B0005E9AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F019BC20235B080C0005E9AC /* Assets.xcassets in Resources */,
+				F019BC23235B080C0005E9AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1660,6 +1764,7 @@
 			files = (
 				F0080CB02286634F005D9E2C /* chime_wash.wav in Resources */,
 				F0A981FF228814540009EC2F /* LaunchScreen.storyboard in Resources */,
+				F019BC48235B0C920005E9AC /* MacMain.storyboard in Resources */,
 				F038208B21F4A486000ACFD0 /* Localizable.strings in Resources */,
 				F06BEC4C21EE01A700A45E08 /* Assets.xcassets in Resources */,
 				F038208521F496C8000ACFD0 /* Localizable.stringsdict in Resources */,
@@ -2011,6 +2116,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F019BC15235B080B0005E9AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F019BC1E235B080B0005E9AC /* ViewController.swift in Sources */,
+				F019BC1C235B080B0005E9AC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F045633A2356F90D00B0AEAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2041,6 +2155,7 @@
 			files = (
 				F0080CB42286748B005D9E2C /* MainTabBarViewController.swift in Sources */,
 				F021B2D9228B093C009FCD39 /* AdmobFunctions.swift in Sources */,
+				F019BC4A235B0FD10005E9AC /* MacTimerViewController.swift in Sources */,
 				F0843CAC21CE5AD900EDB65F /* Pomodoro.xcdatamodeld in Sources */,
 				F09C0BDB226C29F9008EF37C /* SimpleTimerViewController.swift in Sources */,
 				F0843CA621CE5AD900EDB65F /* MainTimerViewController.swift in Sources */,
@@ -2071,6 +2186,7 @@
 				F04563602356FD9100B0AEAF /* Result.swift in Sources */,
 				F0880A9E21D71FBD008AE79F /* LongBreakInterval.swift in Sources */,
 				F0880A9C21D67EE7008AE79F /* NotificationManager.swift in Sources */,
+				F019BC3B235B088E0005E9AC /* Protocols.swift in Sources */,
 				F0A8E1DE2259A17B007FE83F /* Date+Extension.swift in Sources */,
 				F087253F21CF6731007EB27F /* PermissionManager.swift in Sources */,
 				F087254221CF6731007EB27F /* BreakInterval.swift in Sources */,
@@ -2080,7 +2196,6 @@
 				F038205221F2202C000ACFD0 /* String+Extension.swift in Sources */,
 				F0D89E3A21D90D820011A0B7 /* SettingContent.swift in Sources */,
 				F0711B6D2356E1AC00097551 /* Credentials.swift in Sources */,
-				F0A8E1E02259A811007FE83F /* Protocols.swift in Sources */,
 				F0880AA321D72DD2008AE79F /* StandardTime.swift in Sources */,
 				F0711B692356E13900097551 /* KeyChainError.swift in Sources */,
 				F087254021CF6731007EB27F /* NSObject+Extension.swift in Sources */,
@@ -2184,6 +2299,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F019BC31235B08340005E9AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F087251F21CF6719007EB27F /* PomodoroFoundation */;
+			targetProxy = F019BC30235B08340005E9AC /* PBXContainerItemProxy */;
+		};
+		F019BC3E235B08EC0005E9AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
+			targetProxy = F019BC3D235B08EC0005E9AC /* PBXContainerItemProxy */;
+		};
 		F04563552356F92100B0AEAF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F0711B732356E39C00097551 /* JiraSupport */;
@@ -2241,7 +2366,6 @@
 		};
 		F0711B7A2356E39C00097551 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = F0711B732356E39C00097551 /* JiraSupport */;
 			targetProxy = F0711B792356E39C00097551 /* PBXContainerItemProxy */;
 		};
@@ -2337,6 +2461,14 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		F019BC21235B080C0005E9AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F019BC22235B080C0005E9AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		F038208721F496C8000ACFD0 /* Localizable.stringsdict */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2405,11 +2537,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2423,6 +2556,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2459,6 +2594,51 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F019BC27235B080C0005E9AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PomodoroMac/PomodoroMacDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = PomodoroMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F019BC28235B080C0005E9AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PomodoroMac/PomodoroMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = PomodoroMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -2819,11 +2999,12 @@
 			baseConfigurationReference = F062E091F87C7DF1C6874B27 /* Pods-PomodoroFoundation.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2837,6 +3018,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3291,6 +3474,15 @@
 			buildConfigurations = (
 				F0006EB721EDE11F00307F88 /* Debug */,
 				F0006EB821EDE11F00307F88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F019BC26235B080C0005E9AC /* Build configuration list for PBXNativeTarget "PomodoroMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F019BC27235B080C0005E9AC /* Debug */,
+				F019BC28235B080C0005E9AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
