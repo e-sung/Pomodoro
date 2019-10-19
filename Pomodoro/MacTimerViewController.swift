@@ -19,6 +19,13 @@ class MacTimerViewController: TimerViewController {
 
     var issue: Issue?
 
+    override var keyCommands: [UIKeyCommand]? {
+        return [
+            UIKeyCommand(title: "Toggle", action: #selector(startOrStopTimer), input: " "),
+            UIKeyCommand(title: "Toggle", action: #selector(startOrStopTimer), input: "\r"),
+        ]
+    }
+
     override func timeElapsed(_ seconds: TimeInterval) {
         super.timeElapsed(seconds)
         progressBar.setValue(interval.progress, animated: true)
@@ -32,7 +39,7 @@ class MacTimerViewController: TimerViewController {
         intervalFinished(by: .user, isFromBackground: false)
     }
 
-    override func startOrStopTimer() {
+    @objc override func startOrStopTimer() {
         super.startOrStopTimer()
         updateControlButton()
         if interval.isActive {
