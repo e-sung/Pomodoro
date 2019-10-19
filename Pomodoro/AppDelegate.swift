@@ -110,6 +110,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        saveContext()
     }
 
+    override func buildMenu(with builder: UIMenuBuilder) {
+        builder.insertChild(settingMenu, atEndOfMenu: .application)
+    }
+
+    var settingMenu: UIMenu {
+        let openCommand =
+            UIKeyCommand(title: "셋팅",
+                         image: nil,
+                         action: #selector(foo),
+                         input: ",",
+                         modifierFlags: .command,
+                         propertyList: nil)
+        let openMenu =
+            UIMenu(title: "",
+                   image: nil,
+                   identifier: UIMenu.Identifier("com.sungdoo.pomodoro.menus.openSetting"),
+                   options: .displayInline,
+                   children: [openCommand])
+        return openMenu
+    }
+
+    @objc func foo() {
+        print("bar")
+    }
+
     // MARK: - Core Data stack
 
 //    lazy var persistentContainer: NSPersistentContainer = {

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pUY-kG-Ghw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pUY-kG-Ghw" initialMenu="Ojj-Ui-Wsg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -94,6 +95,22 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="738" y="67"/>
+        </scene>
+        <!--Main Menu-->
+        <scene sceneID="6YN-OO-N6b">
+            <objects>
+                <menu isSystemItem="YES" title="Main Menu" identifier="com.apple.menu.root" id="Ojj-Ui-Wsg" sceneMemberID="viewController">
+                    <systemMenuChildDeletions>
+                        <menuDeletion anchor="com.apple.menu.file"/>
+                        <menuDeletion anchor="com.apple.menu.edit"/>
+                        <menuDeletion anchor="com.apple.menu.format"/>
+                        <menuDeletion anchor="com.apple.menu.view"/>
+                        <menuDeletion anchor="com.apple.menu.window"/>
+                    </systemMenuChildDeletions>
+                </menu>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dji-bQ-T8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="-75"/>
         </scene>
     </scenes>
     <resources>

@@ -16,6 +16,7 @@ class MacTimerViewController: TimerViewController {
     @IBOutlet private var stackViewLabels: UIStackView!
     @IBOutlet private var labelStatus: UILabel!
     @IBOutlet private var navItem: UINavigationItem!
+
     var issue: Issue?
 
     override func timeElapsed(_ seconds: TimeInterval) {
