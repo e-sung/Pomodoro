@@ -27,10 +27,7 @@ public class JiraLoginViewController: UIViewController {
     @IBAction func login() {
         guard let userName = textFieldUserName.text, let password = textFieldPassword.text else { return }
         let credential = Credentials(username: userName, password: password)
-        loginJira(with: credential, then: { [weak self] result in
-            if result.hasSucceeded {
-                saveToKeychain(credentials: credential)
-            }
+        loginJira(with: credential, then: { [weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         })
     }

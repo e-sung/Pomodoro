@@ -23,7 +23,7 @@ class MacTimerViewController: TimerViewController {
     override var keyCommands: [UIKeyCommand]? {
         return [
             UIKeyCommand(title: "Toggle", action: #selector(startOrStopTimer), input: " "),
-            UIKeyCommand(title: "Toggle", action: #selector(startOrStopTimer), input: "\r")
+            UIKeyCommand(title: "Toggle", action: #selector(startOrStopTimer), input: "\r"),
         ]
     }
 
@@ -44,6 +44,14 @@ class MacTimerViewController: TimerViewController {
         let issueVC = MyIssuesViewController.storyboardInstance
         issueVC.delegate = self
         present(issueVC, animated: true, completion: nil)
+    }
+
+    override func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
+        super.intervalFinished(by: finisher, isFromBackground: isFromBackground)
+        if let issue = issue, finisher == .time {
+            let focusedTime = FocusInterval().targetMinute
+            logWorkTime(seconds: focusedTime * 60, for: issue.key)
+        }
     }
 
     @objc override func startOrStopTimer() {

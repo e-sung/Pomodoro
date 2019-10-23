@@ -4,8 +4,6 @@
 <dict>
 	<key>AD_UNIT_ID</key>
 	<string>${AD_UNIT_ID}</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Dark</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -34,7 +32,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>4</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3940256099942544~1458002511</string>
 	<key>GADIsAdManagerApp</key>
@@ -68,5 +66,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
 </dict>
 </plist>

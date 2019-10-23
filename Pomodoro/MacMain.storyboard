@@ -24,6 +24,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="140"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="100"/>
+                                        </variation>
                                     </label>
                                     <label opaque="NO" contentMode="center" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="cfr-lk-iFM">
                                         <rect key="frame" x="0.0" y="173" width="472" height="35"/>
