@@ -44,12 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         var storyboard: UIStoryboard!
-        if #available(macCatalyst 13, *) {
+        #if os(OSX)
             storyboard = UIStoryboard(name: "MacMain", bundle: nil)
-        } else {
+        #else
             storyboard = UIStoryboard(name: "Main", bundle: nil)
-        }
-
+        #endif
         window?.rootViewController = storyboard.instantiateInitialViewController()
         window?.makeKeyAndVisible()
         return true
