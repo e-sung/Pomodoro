@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         var storyboard: UIStoryboard!
-        #if os(OSX)
+        #if targetEnvironment(macCatalyst)
             storyboard = UIStoryboard(name: "MacMain", bundle: nil)
         #else
             storyboard = UIStoryboard(name: "Main", bundle: nil)

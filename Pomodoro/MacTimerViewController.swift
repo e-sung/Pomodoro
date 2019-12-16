@@ -32,8 +32,9 @@ class MacTimerViewController: TimerViewController {
         progressBar.setValue(interval.progress, animated: true)
     }
 
-    @IBAction func backgroundTapped(_: Any) {
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         startOrStopTimer()
+        indicateCurrentStatus(on: sender.location(in: view))
     }
 
     @IBAction func closeButtonTapped(_: Any) {
@@ -94,6 +95,25 @@ class MacTimerViewController: TimerViewController {
     @IBAction func sliderSlided(_: Any?) {
         interval.elapsedSeconds = interval.targetSeconds * TimeInterval(progressBar.value)
         timeElapsed(interval.elapsedSeconds)
+    }
+
+    /// 방금 클릭이 일시정지를 유발했는지, 또는 진행을 유발했는지를 애니메이션을 통해 알려줌
+    private func indicateCurrentStatus(on point: CGPoint) {
+        let originalSize = CGSize(width: 40, height: 40)
+        let statusImageView = UIImageView(frame: CGRect(origin: point, size: originalSize))
+        statusImageView.center = point
+        statusImageView.image = interval.isActive ? UIImage(systemName: "play.fill") : UIImage(systemName: "pause.fill")
+        statusImageView.tintColor = interval.themeColor.trackColor
+        statusImageView.alpha = 0.8
+        view.addSubview(statusImageView)
+        UIView.animate(withDuration: 0.6, animations: {
+            let grownSize = CGSize(width: 300, height: 300)
+            statusImageView.frame = CGRect(origin: point, size: grownSize)
+            statusImageView.center = point
+            statusImageView.alpha = 0
+        }, completion: { _ in
+            statusImageView.removeFromSuperview()
+        })
     }
 }
 
