@@ -13,6 +13,8 @@ import UIKit
 public class JiraLoginViewController: UIViewController {
     @IBOutlet var textFieldUserName: UITextField!
     @IBOutlet var textFieldPassword: UITextField!
+    @IBOutlet var textFieldJiraHost: UITextField!
+    private var jiraHostTextFieldDelegate = JiraHostTextFieldDelegate()
     public override func loadView() {
         Bundle(for: type(of: self)).loadNibNamed(className, owner: self, options: nil)
     }
@@ -21,7 +23,12 @@ public class JiraLoginViewController: UIViewController {
         super.viewDidLoad()
         textFieldUserName.delegate = self
         textFieldPassword.delegate = self
+        textFieldJiraHost.delegate = jiraHostTextFieldDelegate
         hideKeyboardWhenTappedAround()
+        
+        if let jiraHostURL = UserDefaults.standard.url(forKey: "JiraHostURL") {
+            textFieldJiraHost.text = jiraHostURL.absoluteString
+        }
     }
 
     @IBAction func login() {
@@ -41,5 +48,13 @@ extension JiraLoginViewController: UITextFieldDelegate {
             login()
         }
         return true
+    }
+}
+
+class JiraHostTextFieldDelegate: NSObject, UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        guard let url = URL(string: text) else { return }
+        UserDefaults.standard.set(url, forKey: "JiraHostURL")
     }
 }
