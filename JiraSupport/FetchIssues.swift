@@ -18,15 +18,20 @@ var credentialHeader: HTTPHeader? {
 }
 
 func fetchIssues(then completionHandler: @escaping (Result<[Issue], Error>) -> Void) {
-    let url = "https://jira.flit.to:18443/rest/api/2/search?jql=assignee%20=%20currentUser()%20AND%20%20status%20=%20%22In%20Progress%22"
+    let jql = "assignee%20=%20sungdoo.yoo%20AND%20%20status%20=%20%22In%20Progress%22"
+    guard let url = URL(string: "/rest/api/2/search?jql=\(jql)", relativeTo: mainJiraDomain) else {
+        fatalError("Wrong Path for Issues")
+    }
+    
     guard let credentialHeader = credentialHeader else {
         completionHandler(.failure(KeychainError.noPassword))
         return
     }
+    
     AF.request(url,
                method: .get,
                parameters: nil,
-               encoding: JSONEncoding.default,
+               encoding: JSONEncoding.prettyPrinted,
                headers: HTTPHeaders([credentialHeader]),
                interceptor: nil).responseJSON(completionHandler: { res in
         let dict = res.value as? [String: Any]

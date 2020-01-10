@@ -10,8 +10,25 @@ import Alamofire
 import Foundation
 import PomodoroFoundation
 
+public var mainJiraDomain: URL? {
+    get {
+        UserDefaults.standard.url(forKey: "JiraHostURL")
+    }
+    set {
+       UserDefaults.standard.set(newValue, forKey: "JiraHostURL")
+    }
+}
+
 public func loginJira(with credential: Credentials, then completionHandler: @escaping (Swift.Result<Bool, Error>) -> Void) {
-    AF.request("https://jira.flit.to:18443/rest/auth/1/session/",
+    
+    guard let mainDomain = mainJiraDomain else {
+        fatalError("Jira Domain isn't configured!")
+    }
+    guard let url = URL(string: "/rest/auth/1/session/", relativeTo: mainDomain) else {
+        fatalError("Wrong Path for Jira Auth Session")
+    }
+
+    AF.request(url,
                method: .post,
                parameters: credential,
                encoder: JSONParameterEncoder.default).response { res in

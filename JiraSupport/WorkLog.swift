@@ -25,7 +25,12 @@ public func logWorkTime(seconds: TimeInterval, for issue: String) {
     let startedTime = Date(timeInterval: seconds, since: Date())
     let workLog = WorkLog(timeSpentSeconds: Int(seconds),
                           started: dateFormatter.string(from: startedTime) + ".000+0000")
-    let url = "https://jira.flit.to:18443/rest/api/2/issue/\(issue)/worklog"
+    guard let mainDomain = mainJiraDomain else {
+        fatalError("Main Jira URL hasn't been configured!")
+    }
+    guard let url = URL(string: "/rest/api/2/issue/\(issue)/worklog", relativeTo: mainDomain ) else {
+        fatalError("Wrong Path for WorkLog")
+    }
     guard let credentialHeader = credentialHeader else { return }
     AF.request(url,
                method: .post,

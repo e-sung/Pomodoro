@@ -25,10 +25,7 @@ public class JiraLoginViewController: UIViewController {
         textFieldPassword.delegate = self
         textFieldJiraHost.delegate = jiraHostTextFieldDelegate
         hideKeyboardWhenTappedAround()
-        
-        if let jiraHostURL = UserDefaults.standard.url(forKey: "JiraHostURL") {
-            textFieldJiraHost.text = jiraHostURL.absoluteString
-        }
+        textFieldJiraHost.text = mainJiraDomain?.absoluteString
     }
 
     @IBAction func login() {
