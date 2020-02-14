@@ -28,7 +28,7 @@ public func logWorkTime(seconds: TimeInterval, for issue: String) {
     guard let mainDomain = mainJiraDomain else {
         fatalError("Main Jira URL hasn't been configured!")
     }
-    guard let url = URL(string: "/rest/api/2/issue/\(issue)/worklog", relativeTo: mainDomain ) else {
+    guard let url = URL(string: "/rest/api/2/issue/\(issue)/worklog", relativeTo: mainDomain) else {
         fatalError("Wrong Path for WorkLog")
     }
     guard let credentialHeader = credentialHeader else { return }

@@ -19,7 +19,7 @@ class NotificationManagerTests: XCTestCase {
 
     func testPublishNotification() {
         #if targetEnvironment(simulator)
-            // Don't test this on simulator because it cannot be tested
+        // Don't test this on simulator because it cannot be tested
         #else
             let sut = NotificationManager(delegate: self)
             notiExpectation = expectation(description: "Noti Received")

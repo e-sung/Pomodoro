@@ -18,8 +18,8 @@ public class SettingsTableViewController: UITableViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        amountSettingCells.forEach({ [weak self] in self?.update($0) })
-        toggleSettingCells.forEach({ [weak self] in self?.setUp($0) })
+        amountSettingCells.forEach { [weak self] in self?.update($0) }
+        toggleSettingCells.forEach { [weak self] in self?.setUp($0) }
         if MFMailComposeViewController.canSendMail() == false {
             contactCell.isHidden = true
         }
@@ -106,9 +106,9 @@ public class SettingsTableViewController: UITableViewController {
     }
 
     @IBAction func devModeToggled(_: UISwitch) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
-            self?.amountSettingCells.forEach({ [weak self] in self?.update($0) })
-        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            self?.amountSettingCells.forEach { [weak self] in self?.update($0) }
+        }
     }
 }
 

@@ -69,7 +69,7 @@ public enum SettingContent: String {
         switch self {
         case .target, .cycleForLongBreak: return amount - 1
         case .focusTime, .breakTime, .longBreakTime:
-            return isDevMode ? amount - 1 : Int((amount / 5)) - 1
+            return isDevMode ? amount - 1 : Int(amount / 5) - 1
         default: return nil
         }
     }

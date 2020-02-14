@@ -52,7 +52,7 @@ class FocusIntervalTests: XCTestCase {
         // When
         let sut = FocusInterval()
         sut.startTimer()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             // Then
             XCTAssert(sut.elapsedSeconds >= 3)
 
@@ -61,7 +61,7 @@ class FocusIntervalTests: XCTestCase {
             // Then
             XCTAssert(sut.elapsedSeconds == 0)
             expect.fulfill()
-        })
+        }
 
         wait(for: [expect], timeout: 5)
     }

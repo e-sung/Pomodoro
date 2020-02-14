@@ -18,16 +18,16 @@ var credentialHeader: HTTPHeader? {
 }
 
 func fetchIssues(then completionHandler: @escaping (Result<[Issue], Error>) -> Void) {
-    let jql = "assignee%20=%20sungdoo.yoo%20AND%20%20status%20=%20%22In%20Progress%22"
+    let jql = "assignee%20=%20currentUser()"
     guard let url = URL(string: "/rest/api/2/search?jql=\(jql)", relativeTo: mainJiraDomain) else {
         fatalError("Wrong Path for Issues")
     }
-    
+
     guard let credentialHeader = credentialHeader else {
         completionHandler(.failure(KeychainError.noPassword))
         return
     }
-    
+
     AF.request(url,
                method: .get,
                parameters: nil,
@@ -37,12 +37,12 @@ func fetchIssues(then completionHandler: @escaping (Result<[Issue], Error>) -> V
         let dict = res.value as? [String: Any]
         let issues = dict?["issues"] as? [[String: Any]]
         let issueSummaries = issues?
-            .compactMap({ dict -> Issue? in
+            .compactMap { dict -> Issue? in
                 guard let field = dict["fields"] as? [String: Any] else { return nil }
                 guard let key = dict["key"] as? String else { return nil }
                 guard let summary = field["summary"] as? String else { return nil }
                 return Issue(key: key, sumamry: summary)
-            })
+            }
         if let error = res.error {
             completionHandler(.failure(error))
         } else {

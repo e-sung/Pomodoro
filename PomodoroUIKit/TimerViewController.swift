@@ -205,7 +205,7 @@ extension TimerViewController: UNUserNotificationCenterDelegate {
 
 // MARK: Etc
 
-fileprivate extension Date {
+private extension Date {
     var isYesterday: Bool {
         return day != Date().day
     }

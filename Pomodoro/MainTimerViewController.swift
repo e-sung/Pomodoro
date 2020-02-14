@@ -211,10 +211,10 @@ public class MainTimerViewController: TimerViewController {
 
     private func showOrHide(_ clearButton: UIButton, by accel: BehaviorRelay<Double>) {
         accel
-            .filter({ $0 > 0.1 })
-            .filter({ [weak self] _ in self?.shouldShowClearButton == true })
-            .filter({ _ in clearButton.layer.animationKeys() == nil })
-            .filter({ _ in clearButton.alpha == 0 })
+            .filter { $0 > 0.1 }
+            .filter { [weak self] _ in self?.shouldShowClearButton == true }
+            .filter { _ in clearButton.layer.animationKeys() == nil }
+            .filter { _ in clearButton.alpha == 0 }
             .do(onNext: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
                     clearButton.alpha = 1

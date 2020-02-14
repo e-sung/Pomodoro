@@ -2057,7 +2057,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"$BITRISE_PROJECT_PATH\" = \"Pomodoro.xcworkspace\" ]\nthen\necho \"Don't run SwiftFormat/Lint on CI server\"\nelse \nswiftformat .\nswiftlint\nfi\n\n\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"$BITRISE_PROJECT_PATH\" = \"Pomodoro.xcworkspace\" ]\nthen\necho \"Don't run SwiftFormat/Lint on CI server\"\nelse \nswiftformat .\n\nfi\n\n\n";
 		};
 		F13E7DA86CC9482551DCE79A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

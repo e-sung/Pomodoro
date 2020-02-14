@@ -46,7 +46,7 @@ open class TimeLineCell: UITableViewCell {
         super.awakeFromNib()
         heightArrowConstantFromIB = heightOfArrow.constant
         selectionStyle = .none
-        labels.forEach({ $0.text = "" })
+        labels.forEach { $0.text = "" }
         labelContent.font = UIFontMetrics(forTextStyle: .body).scaledFont(for: labelContent.font)
         isHidden = true
 //        viewCard.layer.shadowOffset = CGSize(width: 2, height: 2)
