@@ -25,7 +25,7 @@ public class JiraLoginViewController: UIViewController {
         textFieldPassword.delegate = self
         textFieldJiraHost.delegate = jiraHostTextFieldDelegate
         textFieldUserName.placeholder = "e-mail"
-        textFieldPassword.placeholder = "password"
+        textFieldPassword.placeholder = "API-Token"
         hideKeyboardWhenTappedAround()
         textFieldJiraHost.text = mainJiraDomain?.absoluteString
     }

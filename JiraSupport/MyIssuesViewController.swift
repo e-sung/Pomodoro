@@ -16,6 +16,7 @@ public class MyIssuesViewController: UIViewController, UITableViewDelegate, UITa
     public weak var delegate: MyIssueViewControllerDelegate?
     var myIssues: [Issue] = []
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
 
     public static var storyboardInstance: MyIssuesViewController {
         let sb = UIStoryboard(name: "MyIssues", bundle: Bundle(for: MyIssuesViewController.self))
@@ -26,10 +27,12 @@ public class MyIssuesViewController: UIViewController, UITableViewDelegate, UITa
         super.viewWillAppear(animated)
         tableView.delegate = self
         tableView.dataSource = self
+        loadingIndicator.startAnimating()
         fetchIssues(then: { [weak self] result in
             if let issues = try? result.get() {
                 self?.myIssues = issues
                 self?.tableView.reloadData()
+                self?.loadingIndicator.isHidden = true
             }
         })
     }
