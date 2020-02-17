@@ -18,7 +18,9 @@ var credentialHeader: HTTPHeader? {
 }
 
 func fetchIssues(then completionHandler: @escaping (Result<[Issue], Error>) -> Void) {
-    let jql = "assignee%20=%20currentUser()"
+    let jql = """
+    assignee = currentUser() AND status in (진행중, "개발 중")
+    """.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
     guard let url = URL(string: "/rest/api/2/search?jql=\(jql)", relativeTo: mainJiraDomain) else {
         fatalError("Wrong Path for Issues")
     }
