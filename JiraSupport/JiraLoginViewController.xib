@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,19 +79,6 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxY-pi-wcp">
-                    <rect key="frame" x="32" y="428" width="350" height="44"/>
-                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="f8G-Ta-vnJ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="로그인"/>
-                    <connections>
-                        <action selector="login" destination="-1" eventType="touchUpInside" id="5Ch-ue-yKh"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jira Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWu-HV-n0j">
                     <rect key="frame" x="113" y="206" width="188.5" height="48"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
@@ -103,13 +90,10 @@
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="5Tn-9Y-5gh" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-100" id="2i4-Sf-Gva"/>
-                <constraint firstItem="vxY-pi-wcp" firstAttribute="width" secondItem="5Tn-9Y-5gh" secondAttribute="width" id="6pd-AB-n2T"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Tn-9Y-5gh" secondAttribute="trailing" constant="32" id="A4Y-bi-q0A"/>
-                <constraint firstItem="vxY-pi-wcp" firstAttribute="centerX" secondItem="5Tn-9Y-5gh" secondAttribute="centerX" id="TbK-U8-aXv"/>
                 <constraint firstItem="5Tn-9Y-5gh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="Yaa-Q4-c7x"/>
                 <constraint firstItem="5Tn-9Y-5gh" firstAttribute="top" secondItem="XWu-HV-n0j" secondAttribute="bottom" constant="40" id="awX-K6-Glc"/>
                 <constraint firstItem="XWu-HV-n0j" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xJF-xl-TiS"/>
-                <constraint firstItem="vxY-pi-wcp" firstAttribute="top" secondItem="5Tn-9Y-5gh" secondAttribute="bottom" constant="16" id="zBh-2e-bfE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="141" y="154"/>

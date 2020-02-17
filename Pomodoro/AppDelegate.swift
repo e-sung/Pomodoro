@@ -33,15 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             IntervalManager.shared = FocusInterval()
         }
 
-        if let credentials = try? retreiveSavedCredentials() {
-            loginJira(with: credentials, then: { result in
-                if result.hasFailed {
-                    removeFromKeychain(credentials: credentials)
-                }
-                print(result)
-            })
-        }
-
         window = UIWindow(frame: UIScreen.main.bounds)
         var storyboard: UIStoryboard!
         #if targetEnvironment(macCatalyst)

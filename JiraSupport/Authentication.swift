@@ -19,31 +19,6 @@ public var mainJiraDomain: URL? {
     }
 }
 
-public func loginJira(with credential: Credentials, then completionHandler: @escaping (Swift.Result<Bool, Error>) -> Void) {
-    guard let mainDomain = mainJiraDomain else {
-        fatalError("Jira Domain isn't configured!")
-    }
-    guard let url = URL(string: "/rest/auth/1/session/", relativeTo: mainDomain) else {
-        fatalError("Wrong Path for Jira Auth Session")
-    }
-    saveToKeychain(credentials: credential)
-    completionHandler(.success(true))
-//    let header = HTTPHeader(name: "Authorization", value: "Basic ZGV2LmVzdW5nQGdtYWlsLmNvbTpKN0xYNEh5OVZnWjJjUTV4bVRKUUJDMzg")
-//
-//    AF.request(url,
-//               method: .post,
-//               parameters: credential,
-//               encoder: JSONParameterEncoder.default,
-//               headers: [header]).response { res in
-//        if let error = res.error {
-//            completionHandler(.failure(error))
-//        } else {
-//            saveToKeychain(credentials: credential)
-//            completionHandler(.success(true))
-//        }
-//    }
-}
-
 public func logout() {
     HTTPCookieStorage.shared.cookies?.forEach { HTTPCookieStorage.shared.deleteCookie($0) }
     if let credentials = try? retreiveSavedCredentials() {

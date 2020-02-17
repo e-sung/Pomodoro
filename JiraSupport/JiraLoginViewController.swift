@@ -24,16 +24,10 @@ public class JiraLoginViewController: UIViewController {
         textFieldUserName.delegate = self
         textFieldPassword.delegate = self
         textFieldJiraHost.delegate = jiraHostTextFieldDelegate
+        textFieldUserName.placeholder = "e-mail"
+        textFieldPassword.placeholder = "password"
         hideKeyboardWhenTappedAround()
         textFieldJiraHost.text = mainJiraDomain?.absoluteString
-    }
-
-    @IBAction func login() {
-        guard let userName = textFieldUserName.text, let password = textFieldPassword.text else { return }
-        let credential = Credentials(username: userName, password: password)
-        loginJira(with: credential, then: { [weak self] _ in
-            self?.navigationController?.popViewController(animated: true)
-        })
     }
 }
 
@@ -41,10 +35,15 @@ extension JiraLoginViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField === textFieldUserName {
             textFieldPassword.becomeFirstResponder()
-        } else {
-            login()
         }
         return true
+    }
+
+    public func textFieldDidEndEditing(_: UITextField) {
+        guard let userName = textFieldUserName.text, let password = textFieldPassword.text else { return }
+        guard userName.isEmpty == false, password.isEmpty == false else { return }
+        let credential = Credentials(username: userName, password: password)
+        saveToKeychain(credentials: credential)
     }
 }
 
