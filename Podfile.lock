@@ -1,33 +1,32 @@
 PODS:
-  - HGCircularSlider (2.0.0)
+  - HGCircularSlider (2.2.0)
   - LoremIpsum-iOS (0.1.0)
-  - RxAtomic (4.4.1)
-  - RxCocoa (4.4.1):
-    - RxSwift (~> 4.0)
-  - RxKeyboard (0.9.0):
-    - RxCocoa (>= 4.3.1)
-    - RxSwift (>= 4.3.1)
-  - RxSwift (4.4.1):
-    - RxAtomic (~> 4.4)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxKeyboard (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
   - Spring (1.0.6)
-  - "UITextView+Placeholder (1.2.1)"
+  - "UITextView+Placeholder (1.3.3)"
 
 DEPENDENCIES:
   - HGCircularSlider
   - LoremIpsum-iOS
-  - RxCocoa
   - RxKeyboard
-  - RxSwift
   - Spring (from `https://github.com/MengTo/Spring.git`)
   - "UITextView+Placeholder"
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - HGCircularSlider
     - LoremIpsum-iOS
-    - RxAtomic
     - RxCocoa
     - RxKeyboard
+    - RxRelay
     - RxSwift
     - "UITextView+Placeholder"
 
@@ -37,19 +36,19 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Spring:
-    :commit: fafd0b2e8d4d46405bd86fa7ba84bb7f73a20b13
+    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
-  HGCircularSlider: 92e2ee098c814709f455b8f46cd9008147f6a869
+  HGCircularSlider: afb1942743a2df156dcc7a3500216e523e14266b
   LoremIpsum-iOS: af893c224373862f1f4b4d12a92afab43501e745
-  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
-  RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
-  RxKeyboard: 4f782303f499f41577b41c96c6a9a5d7acd51a47
-  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
-  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
+  "UITextView+Placeholder": c407b27599ea23cca425946fee3cf1db5d547008
 
-PODFILE CHECKSUM: dd610c5847ac880a3aff032d81b8cd45bccfcabf
+PODFILE CHECKSUM: 59a1159bfbe1d7468799fdeefb3b5d1123034ff9
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

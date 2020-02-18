@@ -1,0 +1,43 @@
+/* (No Comment) */
+"focusing" = "集中";
+
+/* (No Comment) */
+"main_timer" = "主計時器";
+
+/* (No Comment) */
+"noti_time_to_break_body" = "太好了！";
+
+/* (No Comment) */
+"noti_time_to_break_title" = "休息時間！";
+
+/* (No Comment) */
+"noti_time_to_focus_body" = "加油";
+
+/* (No Comment) */
+"noti_time_to_focus_title" = "集中時間";
+
+/* File.strings
+  Pomodoro
+
+  Created by 류성두 on 20/01/2019.
+  Copyright © 2019 Sungdoo. All rights reserved. */
+"remainingTime" = "剩餘時間:";
+
+/* (No Comment) */
+"resting" = "休息";
+
+/* (No Comment) */
+"setting" = "設置";
+
+/* (No Comment) */
+"start_break" = "開始休息";
+
+/* (No Comment) */
+"start_focusing" = "開始集中";
+
+/* (No Comment) */
+"timerPaused" = "定時器暫停";
+
+/* (No Comment) */
+"timerRunning" = "定時器正在運行";
+

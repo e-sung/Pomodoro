@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>completed cycle accessibility hint</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v2_current_cycle@</string>
+		<key>v2_current_cycle</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>one</key>
+			<string>Completado:%u</string>
+			<key>other</key>
+			<string>Completado:%u</string>
+		</dict>
+	</dict>
+	<key>cycle a day</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v_cycle_a_day@</string>
+		<key>v_cycle_a_day</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>one</key>
+			<string>1 ciclo por día</string>
+			<key>other</key>
+			<string>%u ciclos por día</string>
+		</dict>
+	</dict>
+	<key>cycle after</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v_cycle_after@</string>
+		<key>v_cycle_after</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>one</key>
+			<string>Después de 1 ciclo</string>
+			<key>other</key>
+			<string>Después de %u Cycles</string>
+		</dict>
+	</dict>
+	<key>cycle goal accessibility hint</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v1_cycle_target@</string>
+		<key>v1_cycle_target</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>one</key>
+			<string>Objetivo: Un Ciclo de Pomodoro.</string>
+			<key>other</key>
+			<string>Objetivo:%u Ciclos de Pomodoro</string>
+		</dict>
+	</dict>
+	<key>cycles</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@v_cycles@</string>
+		<key>v_cycles</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>one</key>
+			<string>un ciclo</string>
+			<key>other</key>
+			<string>%u ciclos</string>
+			<key>zero</key>
+			<string>0 ciclo</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

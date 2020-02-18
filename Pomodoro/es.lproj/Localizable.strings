@@ -1,0 +1,43 @@
+/* (No Comment) */
+"focusing" = "Enfoque";
+
+/* (No Comment) */
+"main_timer" = "Temporizador principal";
+
+/* (No Comment) */
+"noti_time_to_break_body" = "¡Bien hecho!";
+
+/* (No Comment) */
+"noti_time_to_break_title" = "¡Hora de descanso!";
+
+/* (No Comment) */
+"noti_time_to_focus_body" = "Vamos!";
+
+/* (No Comment) */
+"noti_time_to_focus_title" = "Tiempo para enfocar!!";
+
+/* File.strings
+  Pomodoro
+
+  Created by 류성두 on 20/01/2019.
+  Copyright © 2019 Sungdoo. All rights reserved. */
+"remainingTime" = "Tiempo restante :";
+
+/* (No Comment) */
+"resting" = "Descansando";
+
+/* (No Comment) */
+"setting" = "Ajuste";
+
+/* (No Comment) */
+"start_break" = "Empezar a romper";
+
+/* (No Comment) */
+"start_focusing" = "Empezar a enfocar";
+
+/* (No Comment) */
+"timerPaused" = "El temporizador está en pausa.";
+
+/* (No Comment) */
+"timerRunning" = "El temporizador está funcionando";
+

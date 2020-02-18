@@ -9,7 +9,9 @@
 import AudioToolbox
 import CoreMotion
 import Foundation
+// import GoogleMobileAds
 import HGCircularSlider
+import JiraSupport
 import PomodoroFoundation
 import PomodoroSettings
 import PomodoroUIKit
@@ -25,6 +27,8 @@ public class MainTimerViewController: TimerViewController {
     @IBOutlet var rippleButton: UIButton!
     @IBOutlet var clearButton: UIButton!
     @IBOutlet var imageViewControl: UIImageView!
+    @IBOutlet var buttonIssue: UIButton!
+//    var bannerView: GADBannerView!
 
     // MARK: Properties
 
@@ -37,12 +41,9 @@ public class MainTimerViewController: TimerViewController {
         return true
     }
 
-    public override var prefersStatusBarHidden: Bool {
-        return true
-    }
-
     var acceleration = BehaviorRelay<Double>(value: 0)
     var lastClearButtonShownTime: Date?
+    var selectedIssue: Issue?
     var disposeBag = DisposeBag()
 
     // MARK: LifeCycle
@@ -52,13 +53,22 @@ public class MainTimerViewController: TimerViewController {
         tabBarController?.delegate = self
         tabBarItem.accessibilityLabel = NSLocalizedString("main_timer", comment: "")
         clearButton.alpha = 0
-        tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+
+        setUpBannerView()
+        bindAccel(acceleration, to: motionManager)
+        showOrHide(clearButton, by: acceleration)
+        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.barStyle = .blackOpaque
+        tabBarController?.tabBar.barStyle = .black
+        tabBarController?.tabBar.isTranslucent = true
         tabBarController?.tabBar.tintColor = .white
+        tabBarController?.tabBar.unselectedItemTintColor = .gray
+//        if view.subviews.contains(bannerView) == false {
+//            addBannerViewToView(bannerView)
+//        }
     }
 
     public override func viewDidLayoutSubviews() {
@@ -77,8 +87,6 @@ public class MainTimerViewController: TimerViewController {
 
         let shouldPreventSleep = retreiveBool(for: SettingContent.neverSleep, from: UserDefaults.shared)
         UIApplication.shared.isIdleTimerDisabled = shouldPreventSleep ?? true
-        bindAccel(acceleration, to: motionManager)
-        showOrHide(clearButton, by: acceleration)
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
@@ -93,16 +101,24 @@ public class MainTimerViewController: TimerViewController {
         }
     }
 
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let nextVC = segue.destination as? SimpleTimerViewController else { return }
+//        bannerView.removeFromSuperview()
+//        nextVC.bannerView = bannerView
+        nextVC.issue = selectedIssue
+    }
+
     public override func startOrStopTimer() {
         super.startOrStopTimer()
         if interval.isActive == false {
             mainSlider.alpha = 0.7
             labelTime.alpha = 0.7
-            imageViewControl.image = UIImage(named: "play")
+            imageViewControl.image = UIImage(systemName: "play.fill")
         } else {
             mainSlider.alpha = 1
             labelTime.alpha = 1
-            imageViewControl.image = UIImage(named: "pause")
+            imageViewControl.image = UIImage(systemName: "pause.fill")
         }
     }
 
@@ -110,15 +126,37 @@ public class MainTimerViewController: TimerViewController {
         super.refreshViews(with: interval)
         refreshMainSlider(with: interval)
         if interval.isActive {
-            imageViewControl.image = UIImage(named: "pause")
+            imageViewControl.image = UIImage(systemName: "pause.fill")
         } else {
-            imageViewControl.image = UIImage(named: "play")
+            imageViewControl.image = UIImage(systemName: "play.fill")
+        }
+    }
+
+    public override func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
+        super.intervalFinished(by: finisher, isFromBackground: isFromBackground)
+        if UIApplication.shared.applicationState != .active {
+            interval.pauseTimer()
+            imageViewControl.image = UIImage(systemName: "play.fill")
+        }
+        if interval is FocusInterval {
+//            UIView.animate(withDuration: 1, animations: { [weak self] in
+//                self?.bannerView.alpha = 0
+//            })
+        } else if let issue = selectedIssue, finisher == .time {
+            let focusedTime = FocusInterval().targetMinute
+            logWorkTime(seconds: focusedTime * 60, for: issue.key)
         }
     }
 
     public override func timeElapsed(_ seconds: TimeInterval) {
         super.timeElapsed(seconds)
         updateMainSlider(to: seconds)
+        let currentSecond = Int(interval.targetSeconds - seconds)
+        if interval is BreakInterval, currentSecond == 60 {
+//            UIView.animate(withDuration: 1, animations: { [weak self] in
+//                self?.bannerView.alpha = 1
+//            })
+        }
     }
 
     public override func applyNewSetting() {
@@ -128,6 +166,12 @@ public class MainTimerViewController: TimerViewController {
     }
 
     // MARK: IBAction
+
+    @objc func rotated() {
+        if UIDevice.current.orientation.isLandscape, presentedViewController == nil {
+            performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
+        }
+    }
 
     @IBAction func backgroundTapped(_: Any) {
         acceleration.accept(1)
@@ -147,6 +191,12 @@ public class MainTimerViewController: TimerViewController {
         timeElapsed(interval.elapsedSeconds)
     }
 
+    @IBAction func buttonIssueClicked(_: Any) {
+        let issueVC = MyIssuesViewController.storyboardInstance
+        issueVC.delegate = self
+        present(issueVC, animated: true, completion: nil)
+    }
+
     private func bindAccel(_ acceleration: BehaviorRelay<Double>, to motionManager: CMMotionManager) {
         motionManager.startDeviceMotionUpdates(using: CMAttitudeReferenceFrame.xArbitraryCorrectedZVertical, to: OperationQueue.main) { motion, error in
             if let error = error {
@@ -161,22 +211,31 @@ public class MainTimerViewController: TimerViewController {
 
     private func showOrHide(_ clearButton: UIButton, by accel: BehaviorRelay<Double>) {
         accel
-            .filter({ $0 > 0.1 })
-            .filter({ [weak self] _ in self?.shouldShowClearButton == true })
-            .filter({ _ in clearButton.layer.animationKeys() == nil })
-            .filter({ _ in clearButton.alpha == 0 })
+            .filter { $0 > 0.1 }
+            .filter { [weak self] _ in self?.shouldShowClearButton == true }
+            .filter { _ in clearButton.layer.animationKeys() == nil }
+            .filter { _ in clearButton.alpha == 0 }
             .do(onNext: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
                     clearButton.alpha = 1
                 })
             })
-            .delay(RxTimeInterval(floatLiteral: 10), scheduler: MainScheduler.instance)
+            .delay(RxTimeInterval.seconds(10), scheduler: MainScheduler.instance)
             .bind(onNext: { _ in
                 UIView.animate(withDuration: 0.5, animations: {
                     clearButton.alpha = 0
                 })
             })
             .disposed(by: disposeBag)
+    }
+
+    private func setUpBannerView() {
+//        GADMobileAds.sharedInstance().start(completionHandler: nil)
+//        bannerView = makeBannerView()
+//        bannerView.rootViewController = self
+//        bannerView.load(GADRequest())
+//        bannerView.delegate = self
+//        bannerView.alpha = 0
     }
 }
 
@@ -220,5 +279,21 @@ extension MainTimerViewController: UITabBarControllerDelegate {
             applyNewSetting()
         }
         return true
+    }
+}
+
+// extension MainTimerViewController: GADBannerViewDelegate {
+//    public func adViewDidReceiveAd(_: GADBannerView) {}
+// }
+
+extension MainTimerViewController: MyIssueViewControllerDelegate {
+    public func didSelect(issue: Issue?) {
+        if let issue = issue {
+            selectedIssue = issue
+            buttonIssue.setTitle(issue.sumamry, for: .normal)
+        } else {
+            selectedIssue = nil
+            buttonIssue.setTitle("Issues", for: .normal)
+        }
     }
 }

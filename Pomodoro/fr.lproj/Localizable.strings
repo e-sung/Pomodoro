@@ -1,0 +1,43 @@
+/* (No Comment) */
+"focusing" = "Se concentrer";
+
+/* (No Comment) */
+"main_timer" = "Minuterie principale";
+
+/* (No Comment) */
+"noti_time_to_break_body" = "Bien joué!!";
+
+/* (No Comment) */
+"noti_time_to_break_title" = "Temps de pause !!";
+
+/* (No Comment) */
+"noti_time_to_focus_body" = "Courage!!";
+
+/* (No Comment) */
+"noti_time_to_focus_title" = "Temps de concentrer !!";
+
+/* File.strings
+  Pomodoro
+
+  Created by 류성두 on 20/01/2019.
+  Copyright © 2019 Sungdoo. All rights reserved. */
+"remainingTime" = "Temps restant :";
+
+/* (No Comment) */
+"resting" = "Repos";
+
+/* (No Comment) */
+"setting" = "Réglage";
+
+/* (No Comment) */
+"start_break" = "Début de pause";
+
+/* (No Comment) */
+"start_focusing" = "Commencer à se concentrer";
+
+/* (No Comment) */
+"timerPaused" = "La minuterie est en pause.";
+
+/* (No Comment) */
+"timerRunning" = "La minuterie est en cours d'exécution.";
+

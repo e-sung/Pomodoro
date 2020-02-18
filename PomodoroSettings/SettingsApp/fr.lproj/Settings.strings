@@ -1,0 +1,69 @@
+/* Class = "UILabel"; text = "15 min"; ObjectID = "0cd-aT-D7P"; */
+"0cd-aT-D7P.text" = "15 min";
+
+/* Class = "UILabel"; text = "After 3 cycles"; ObjectID = "3hJ-ru-pHQ"; */
+"3hJ-ru-pHQ.text" = "After 3 cycles";
+
+/* Class = "UILabel"; text = "25 min"; ObjectID = "8bL-QF-UFN"; */
+"8bL-QF-UFN.text" = "25 min";
+
+/* Class = "UINavigationItem"; title = "Setting"; ObjectID = "9OE-Zi-TI3"; */
+"9OE-Zi-TI3.title" = "Réglage";
+
+/* Class = "UILabel"; text = "Break Interval"; ObjectID = "C5o-z3-2rb"; */
+"C5o-z3-2rb.text" = "Intervalle de pause";
+
+/* Class = "UILabel"; text = "Ehnahced Focus Mode"; ObjectID = "de1-AY-qgq"; */
+"de1-AY-qgq.text" = "Mode de concentration amélioré";
+
+/* Class = "UILabel"; text = "5 min"; ObjectID = "dYI-fm-Mv6"; */
+"dYI-fm-Mv6.text" = "5 min";
+
+/* Class = "UILabel"; text = "Focus Interval"; ObjectID = "fJd-L9-vKz"; */
+"fJd-L9-vKz.text" = "Intervalle de concentration";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Flf-Tr-1Uu"; */
+"Flf-Tr-1Uu.normalTitle" = "Annuler";
+
+/* Class = "UILabel"; text = "Continuous Mode"; ObjectID = "H1O-in-eRD"; */
+"H1O-in-eRD.text" = "Mode continu";
+
+/* Class = "UILabel"; text = "Long Break Interval"; ObjectID = "hBy-aH-aC1"; */
+"hBy-aH-aC1.text" = "Intervalle de pause long";
+
+/* Class = "UILabel"; text = "Never Sleep"; ObjectID = "HVr-XB-gsQ"; */
+"HVr-XB-gsQ.text" = "Ne jamais dormir";
+
+/* Class = "UITableViewSection"; headerTitle = "Mode"; ObjectID = "IYp-Qa-I2i"; */
+"IYp-Qa-I2i.headerTitle" = "Mode";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "JeV-RZ-02j"; */
+"JeV-RZ-02j.normalTitle" = "Terminé";
+
+/* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "m0o-Vv-D7S"; */
+"m0o-Vv-D7S.accessibilityHint" = "taper deux fois pour modifier la valeur";
+
+/* Class = "UITableViewSection"; headerTitle = "Basics"; ObjectID = "n4J-2h-7cO"; */
+"n4J-2h-7cO.headerTitle" = "Les bases";
+
+/* Class = "UILabel"; text = "Count time only when clock is visible"; ObjectID = "pki-Wb-r14"; */
+"pki-Wb-r14.text" = "Compter le temps seulement quand l'horloge est visible";
+
+/* Class = "UILabel"; text = "Take Long Break"; ObjectID = "Q4h-eJ-dZU"; */
+"Q4h-eJ-dZU.text" = "Faire une longue pause";
+
+/* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "qcy-rt-YTb"; */
+"qcy-rt-YTb.accessibilityHint" = "taper deux fois pour modifier la valeur";
+
+/* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "ri4-UQ-hVn"; */
+"ri4-UQ-hVn.accessibilityHint" = "taper deux fois pour modifier la valeur";
+
+/* Class = "UILabel"; text = "Start Next Session automatically"; ObjectID = "Vf8-eU-Hj2"; */
+"Vf8-eU-Hj2.text" = "Démarrer la session suivante automatiquement";
+
+/* Class = "UILabel"; text = "Contact"; ObjectID = "XwX-ew-Cb8"; */
+"XwX-ew-Cb8.text" = "Contact";
+
+/* Class = "UITableViewCell"; accessibilityHint = "double tap to edit value"; ObjectID = "yMm-uf-e1K"; */
+"yMm-uf-e1K.accessibilityHint" = "taper deux fois pour modifier la valeur";
+

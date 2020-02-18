@@ -7,6 +7,8 @@
 //
 
 import CoreData
+// import GoogleMobileAds
+import JiraSupport
 import PomodoroFoundation
 import PomodoroUIKit
 import UIKit
@@ -30,6 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             IntervalManager.shared = FocusInterval()
         }
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        var storyboard: UIStoryboard!
+        #if targetEnvironment(macCatalyst)
+            storyboard = UIStoryboard(name: "MacMain", bundle: nil)
+        #else
+            storyboard = UIStoryboard(name: "Main", bundle: nil)
+        #endif
+        window?.rootViewController = storyboard.instantiateInitialViewController()
+        window?.makeKeyAndVisible()
         return true
     }
 
@@ -72,6 +84,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             interval.isActive == true {
             let timeIntervalSinceBackground = Date().timeIntervalSince(dateBackgroundEnter)
             interval.elapsedSeconds += timeIntervalSinceBackground
+            if interval.elapsedSeconds >= interval.targetSeconds {
+                interval.stopTimer(by: .time, isFromBackground: true)
+            }
         } else if hasOpenedByWidgetPlayPauseButton, let widgetInterval = retreiveInterval(from: UserDefaults.shared) {
             interval.elapsedSeconds = widgetInterval.elapsedSeconds
             interval.startOrPauseTimer()
@@ -83,6 +98,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
 //        saveContext()
+    }
+
+    override func buildMenu(with builder: UIMenuBuilder) {
+        builder.insertChild(settingMenu, atEndOfMenu: .application)
+    }
+
+    var settingMenu: UIMenu {
+        let openCommand =
+            UIKeyCommand(title: "셋팅",
+                         image: nil,
+                         action: #selector(showSettings),
+                         input: ",",
+                         modifierFlags: .command,
+                         propertyList: nil)
+        let openMenu =
+            UIMenu(title: "",
+                   image: nil,
+                   identifier: UIMenu.Identifier("com.sungdoo.pomodoro.menus.openSetting"),
+                   options: .displayInline,
+                   children: [openCommand])
+        return openMenu
+    }
+
+    @objc func showSettings() {
+        let sb = UIStoryboard(name: "Settings", bundle: nil)
+        guard let vc = sb.instantiateInitialViewController() else { return }
+        window?.rootViewController?.show(vc, sender: nil)
     }
 
     // MARK: - Core Data stack
@@ -129,4 +171,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
 //        }
 //    }
+}
+
+func infoForKey(_ key: String) -> String? {
+    return (Bundle.main.infoDictionary?[key] as? String)?
+        .replacingOccurrences(of: "\\", with: "")
 }

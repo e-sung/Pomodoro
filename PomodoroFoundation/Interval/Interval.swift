@@ -39,6 +39,7 @@ public protocol Interval: class {
 
     func startTimer()
     func stopTimer(by finisher: IntervalFinisher)
+    func stopTimer(by finisher: IntervalFinisher, isFromBackground: Bool)
     func pauseTimer()
 }
 
@@ -70,10 +71,16 @@ extension Interval {
         })
     }
 
-    public func stopTimer(by finisher: IntervalFinisher = .user) {
+    public func stopTimer(by finisher: IntervalFinisher) {
         timer.invalidate()
         elapsedSeconds = 0
         delegate?.intervalFinished(by: finisher, isFromBackground: false)
+    }
+
+    public func stopTimer(by finisher: IntervalFinisher = .user, isFromBackground: Bool = false) {
+        timer.invalidate()
+        elapsedSeconds = 0
+        delegate?.intervalFinished(by: finisher, isFromBackground: isFromBackground)
     }
 
     public func pauseTimer() {

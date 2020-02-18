@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire",
+        "state": {
+          "branch": "master",
+          "revision": "6afd00ef8bf800edd14cc141e0677045b5d02a67",
+          "version": null
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift",
+        "state": {
+          "branch": "master",
+          "revision": "9b31a15520306b073cb9d46456f64826c1d6dcab",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

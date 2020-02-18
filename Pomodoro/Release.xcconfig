@@ -1,0 +1,13 @@
+//
+//  Release.xcconfig
+//  Pomodoro
+//
+//  Created by 류성두 on 14/05/2019.
+//  Copyright © 2019 Sungdoo. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-Pomodoro/Pods-Pomodoro.release.xcconfig"
+AD_UNIT_ID = ca-app-pub-3940256099942544~1458002511

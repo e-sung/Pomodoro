@@ -1,6 +1,7 @@
 import AudioToolbox
 import Foundation
 import PomodoroFoundation
+import StoreKit
 import UIKit
 import UserNotifications
 
@@ -77,6 +78,16 @@ open class TimerViewController: UIViewController, IntervalDelegate {
         }
 
         resetInterval()
+        if finisher == .time, interval is LongBreakInterval {
+            SKStoreReviewController.requestReview()
+        }
+
+        let isContinousMode = retreiveBool(for: .continousMode, from: UserDefaults(suiteName: "group.pomodoro.com")!) == true
+        if finisher == .time, isContinousMode {
+            resetCycleIfDayHasPassed()
+            interval.startTimer()
+        }
+
         refreshViews(with: interval)
     }
 }
@@ -194,7 +205,7 @@ extension TimerViewController: UNUserNotificationCenterDelegate {
 
 // MARK: Etc
 
-fileprivate extension Date {
+private extension Date {
     var isYesterday: Bool {
         return day != Date().day
     }

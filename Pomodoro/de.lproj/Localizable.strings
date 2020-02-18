@@ -1,0 +1,43 @@
+/* (No Comment) */
+"focusing" = "Konzentration";
+
+/* (No Comment) */
+"main_timer" = "Haupttimer";
+
+/* (No Comment) */
+"noti_time_to_break_body" = "Gut gemacht!!";
+
+/* (No Comment) */
+"noti_time_to_break_title" = "Zeit zum ausruhen!!";
+
+/* (No Comment) */
+"noti_time_to_focus_body" = "Kopf hoch!!";
+
+/* (No Comment) */
+"noti_time_to_focus_title" = "Zeit sich zu konzentrieren!!";
+
+/* File.strings
+  Pomodoro
+
+  Created by 류성두 on 20/01/2019.
+  Copyright © 2019 Sungdoo. All rights reserved. */
+"remainingTime" = "Verbleibende Zeit :";
+
+/* (No Comment) */
+"resting" = "Ausruhen";
+
+/* (No Comment) */
+"setting" = "Rahmen";
+
+/* (No Comment) */
+"start_break" = "Rest starten";
+
+/* (No Comment) */
+"start_focusing" = "Konzentrat starten";
+
+/* (No Comment) */
+"timerPaused" = "Timer ist angehalten.";
+
+/* (No Comment) */
+"timerRunning" = "Timer läuft.";
+

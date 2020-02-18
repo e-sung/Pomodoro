@@ -28,7 +28,7 @@ extension String {
     }
 
     public func substring(_ length: Int) -> String {
-        return count <= length ? self : String(self[..<self.index(self.startIndex, offsetBy: length)])
+        return count <= length ? self : String(self[..<index(startIndex, offsetBy: length)])
     }
 
     public func trim() -> String {

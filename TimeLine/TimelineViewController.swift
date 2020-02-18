@@ -150,7 +150,7 @@ extension TimelineViewController {
             }),
         ]
 
-        actions.forEach({ actionSheet.addAction($0) })
+        actions.forEach { actionSheet.addAction($0) }
         return actionSheet
     }
 

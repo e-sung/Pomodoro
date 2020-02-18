@@ -18,9 +18,9 @@ public func registerBackgroundTimer(with interval: Interval) {
 
     let timeToRing = Date(timeInterval: remainingTime, since: Date())
     let calendar = Calendar.autoupdatingCurrent
-    let components = calendar.dateComponents(in: .current, from: timeToRing)
-    let newComponents = DateComponents(calendar: calendar, timeZone: .current, hour: components.hour, minute: components.minute, second: components.second)
-    let trigger = UNCalendarNotificationTrigger(dateMatching: newComponents, repeats: false)
+    let target = calendar.dateComponents(in: .current, from: timeToRing)
+    let dateComponent = DateComponents(day: target.day, hour: target.hour, minute: target.minute, second: target.second)
+    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: true)
 
     let request = UNNotificationRequest(identifier: "background.noti", content: interval.notiContent, trigger: trigger)
     let notificationCenter = UNUserNotificationCenter.current()

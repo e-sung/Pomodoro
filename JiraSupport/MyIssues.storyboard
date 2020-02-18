@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HCN-mq-FNN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Issues View Controller-->
+        <scene sceneID="zpg-DF-YCK">
+            <objects>
+                <viewController id="HCN-mq-FNN" customClass="MyIssuesViewController" customModule="JiraSupport" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pQq-Ef-fWg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ao6-Ye-qKQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="My Issues" id="uwO-VZ-N28">
+                                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="ACI-bd-n6q">
+                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="buttonCloseClicked:" destination="HCN-mq-FNN" id="wDa-nB-yfz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nTH-p8-F4u">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Icz-ff-3KZ" style="IBUITableViewCellStyleDefault" id="Bqa-LP-kZ7">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bqa-LP-kZ7" id="Gtg-1F-CQs">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Icz-ff-3KZ">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hWI-JJ-ql9">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ao6-Ye-qKQ" firstAttribute="top" secondItem="XOL-p9-iS3" secondAttribute="top" id="BkO-u8-UDe"/>
+                            <constraint firstItem="XOL-p9-iS3" firstAttribute="bottom" secondItem="nTH-p8-F4u" secondAttribute="bottom" id="Lqe-fv-qvD"/>
+                            <constraint firstItem="Ao6-Ye-qKQ" firstAttribute="trailing" secondItem="XOL-p9-iS3" secondAttribute="trailing" id="YIu-8l-vmb"/>
+                            <constraint firstItem="hWI-JJ-ql9" firstAttribute="centerY" secondItem="XOL-p9-iS3" secondAttribute="centerY" id="ZTl-Wr-AeH"/>
+                            <constraint firstItem="Ao6-Ye-qKQ" firstAttribute="leading" secondItem="XOL-p9-iS3" secondAttribute="leading" id="e6h-ab-Ugd"/>
+                            <constraint firstItem="nTH-p8-F4u" firstAttribute="top" secondItem="Ao6-Ye-qKQ" secondAttribute="bottom" id="gQE-4m-dzk"/>
+                            <constraint firstItem="XOL-p9-iS3" firstAttribute="trailing" secondItem="nTH-p8-F4u" secondAttribute="trailing" id="uf2-Ju-fjS"/>
+                            <constraint firstItem="nTH-p8-F4u" firstAttribute="leading" secondItem="XOL-p9-iS3" secondAttribute="leading" id="upF-g0-t3j"/>
+                            <constraint firstItem="hWI-JJ-ql9" firstAttribute="centerX" secondItem="XOL-p9-iS3" secondAttribute="centerX" id="yHS-HC-ec7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XOL-p9-iS3"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="hWI-JJ-ql9" id="kE1-ys-HiK"/>
+                        <outlet property="tableView" destination="nTH-p8-F4u" id="2dz-ys-gIY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyO-Eh-WZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690" y="-111"/>
+        </scene>
+        <!--Jira Login View Controller-->
+        <scene sceneID="oAO-GY-h7b">
+            <objects>
+                <viewController id="W8f-7Y-PKg" customClass="JiraLoginViewController" customModule="JiraSupport" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bio-qE-P7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="538"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="64" height="56"/>
+    </resources>
+</document>

@@ -6,26 +6,34 @@
 //  Copyright © 2018 Sungdoo. All rights reserved.
 //
 
+import JiraSupport
+import MessageUI
 import PomodoroFoundation
 import UIKit
 
 public class SettingsTableViewController: UITableViewController {
     @IBOutlet var amountSettingCells: [AmountSettingCell]!
     @IBOutlet var toggleSettingCells: [ToggleSettingCell]!
+    @IBOutlet var contactCell: UITableViewCell!
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        amountSettingCells.forEach({ [weak self] in self?.update($0) })
-        toggleSettingCells.forEach({ [weak self] in self?.setUp($0) })
-        tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
-        tabBarItem.accessibilityLabel = NSLocalizedString("setting", comment: "")
+        amountSettingCells.forEach { [weak self] in self?.update($0) }
+        toggleSettingCells.forEach { [weak self] in self?.setUp($0) }
+        if MFMailComposeViewController.canSendMail() == false {
+            contactCell.isHidden = true
+        }
     }
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.tabBar.barStyle = .default
-        tabBarController?.tabBar.tintColor = .black
         tableView.reloadData()
+        #if targetEnvironment(macCatalyst)
+            navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .close,
+                                                            target: self,
+                                                            action: #selector(close)),
+                                            animated: true)
+        #endif
     }
 
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,9 +70,49 @@ public class SettingsTableViewController: UITableViewController {
         cell.setUp(for: boolToSetUp)
     }
 
+    @IBAction func contactCellClicked(_: Any?) {
+        guard let mailComposer = mailComposeViewController else { return }
+        mailComposer.mailComposeDelegate = self
+        present(mailComposer, animated: true, completion: nil)
+    }
+
+    @objc func close() {
+        presentingViewController?.viewWillAppear(false)
+        dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func JiraLoginClicked() {
+        var vc: UIViewController?
+        if let _ = try? retreiveSavedCredentials() {
+            vc = JiraLogOutViewController(nibName: JiraLogOutViewController.className,
+                                          bundle: Bundle(for: JiraLogOutViewController.self))
+        } else {
+            vc = JiraLoginViewController(nibName: JiraLoginViewController.className,
+                                         bundle: Bundle(for: JiraLoginViewController.self))
+        }
+        show(vc!, sender: nil)
+    }
+
+    var mailComposeViewController: MFMailComposeViewController? {
+        guard MFMailComposeViewController.canSendMail() else {
+            return nil
+        }
+        let composeViewController = MFMailComposeViewController()
+        composeViewController.setToRecipients(["dev.esung@gmail.com"])
+        composeViewController.setSubject("Feedback From Pomodoro User")
+        composeViewController.setMessageBody("Device Version: \(UIDevice.current.systemVersion)", isHTML: false)
+        return composeViewController
+    }
+
     @IBAction func devModeToggled(_: UISwitch) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
-            self?.amountSettingCells.forEach({ [weak self] in self?.update($0) })
-        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            self?.amountSettingCells.forEach { [weak self] in self?.update($0) }
+        }
+    }
+}
+
+extension SettingsTableViewController: MFMailComposeViewControllerDelegate {
+    public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith _: MFMailComposeResult, error _: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

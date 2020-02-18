@@ -7,6 +7,8 @@
 //
 
 import Foundation
+// import GoogleMobileAds
+import JiraSupport
 import PomodoroFoundation
 import PomodoroUIKit
 
@@ -15,8 +17,23 @@ class SimpleTimerViewController: TimerViewController {
     @IBOutlet private var stackViewLabels: UIStackView!
     @IBOutlet private var labelStatus: UILabel!
     @IBOutlet private var navItem: UINavigationItem!
+    var issue: Issue?
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
+        if UIDevice.current.orientation.isPortrait {
+            dismiss(animated: true, completion: nil)
+        }
+    }
+
+//    var bannerView: GADBannerView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        addBannerViewToView(bannerView)
+        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
+    }
+
+    @objc func rotated() {
         if UIDevice.current.orientation.isPortrait {
             dismiss(animated: true, completion: nil)
         }
@@ -25,6 +42,21 @@ class SimpleTimerViewController: TimerViewController {
     override func timeElapsed(_ seconds: TimeInterval) {
         super.timeElapsed(seconds)
         progressBar.progress = interval.progress
+        let currentSecond = Int(interval.targetSeconds - seconds)
+        if interval is BreakInterval, currentSecond == 60 {
+//            UIView.animate(withDuration: 1, animations: { [weak self] in
+//                self?.bannerView.alpha = 1
+//            })
+        }
+    }
+
+    override func intervalFinished(by finisher: IntervalFinisher, isFromBackground: Bool) {
+        super.intervalFinished(by: finisher, isFromBackground: isFromBackground)
+        if interval is FocusInterval {
+//            UIView.animate(withDuration: 1, animations: { [weak self] in
+//                self?.bannerView.alpha = 0
+//            })
+        }
     }
 
     @IBAction func backgroundTapped(_: Any) {
@@ -76,7 +108,11 @@ class SimpleTimerViewController: TimerViewController {
         labelTime.isHidden = interval is FocusInterval
         updateControlButton()
         if interval is FocusInterval {
-            labelStatus.text = NSLocalizedString("focusing", comment: "")
+            if let issue = issue {
+                labelStatus.text = issue.sumamry
+            } else {
+                labelStatus.text = NSLocalizedString("focusing", comment: "")
+            }
         } else {
             labelStatus.text = NSLocalizedString("resting", comment: "")
         }
