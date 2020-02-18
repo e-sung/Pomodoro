@@ -28,13 +28,12 @@ public class SettingsTableViewController: UITableViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-//        #if os(OSX)
-        navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .close,
-                                                        target: self,
-                                                        action: #selector(close)),
-                                        animated: true)
-        addKeyCommand(UIKeyCommand(input: "w", modifierFlags: .command, action: #selector(close)))
-//        #endif
+        #if targetEnvironment(macCatalyst)
+            navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .close,
+                                                            target: self,
+                                                            action: #selector(close)),
+                                            animated: true)
+        #endif
     }
 
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
