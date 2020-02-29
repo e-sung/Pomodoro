@@ -27,10 +27,6 @@
 		F0080CBD2286A2CB005D9E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBC2286A2CB005D9E2C /* LaunchScreen.storyboard */; };
 		F0080CC02286A374005D9E2C /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBE2286A374005D9E2C /* Timeline.storyboard */; };
 		F0080CC12286A374005D9E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBF2286A374005D9E2C /* LaunchScreen.storyboard */; };
-		F019BC1C235B080B0005E9AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019BC1B235B080B0005E9AC /* AppDelegate.swift */; };
-		F019BC1E235B080B0005E9AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019BC1D235B080B0005E9AC /* ViewController.swift */; };
-		F019BC20235B080C0005E9AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F019BC1F235B080C0005E9AC /* Assets.xcassets */; };
-		F019BC23235B080C0005E9AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F019BC21235B080C0005E9AC /* Main.storyboard */; };
 		F019BC2E235B08340005E9AC /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
 		F019BC2F235B08340005E9AC /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F019BC3B235B088E0005E9AC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DF2259A811007FE83F /* Protocols.swift */; };
@@ -516,13 +512,6 @@
 		F0080CC42286A857005D9E2C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ja; path = ja.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		F0080CC52286A857005D9E2C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F019BC19235B080B0005E9AC /* PomodoroMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F019BC1B235B080B0005E9AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F019BC1D235B080B0005E9AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F019BC1F235B080C0005E9AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F019BC22235B080C0005E9AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F019BC24235B080C0005E9AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F019BC25235B080C0005E9AC /* PomodoroMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroMac.entitlements; sourceTree = "<group>"; };
-		F019BC29235B08130005E9AC /* PomodoroMacDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroMacDebug.entitlements; sourceTree = "<group>"; };
 		F019BC47235B0C920005E9AC /* MacMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MacMain.storyboard; sourceTree = "<group>"; };
 		F019BC49235B0FD10005E9AC /* MacTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacTimerViewController.swift; sourceTree = "<group>"; };
 		F019BC4B235B2A370005E9AC /* PomodoroDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroDebug.entitlements; sourceTree = "<group>"; };
@@ -860,20 +849,6 @@
 			path = PomodoroUIKit;
 			sourceTree = "<group>";
 		};
-		F019BC1A235B080B0005E9AC /* PomodoroMac */ = {
-			isa = PBXGroup;
-			children = (
-				F019BC29235B08130005E9AC /* PomodoroMacDebug.entitlements */,
-				F019BC1B235B080B0005E9AC /* AppDelegate.swift */,
-				F019BC1D235B080B0005E9AC /* ViewController.swift */,
-				F019BC1F235B080C0005E9AC /* Assets.xcassets */,
-				F019BC21235B080C0005E9AC /* Main.storyboard */,
-				F019BC24235B080C0005E9AC /* Info.plist */,
-				F019BC25235B080C0005E9AC /* PomodoroMac.entitlements */,
-			);
-			path = PomodoroMac;
-			sourceTree = "<group>";
-		};
 		F038205321F22484000ACFD0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -951,7 +926,6 @@
 				F0BA0E0322367BB6004CD72C /* TimeLineTests */,
 				F0711B752356E39C00097551 /* JiraSupport */,
 				F045633F2356F90D00B0AEAF /* JiraSupportApp */,
-				F019BC1A235B080B0005E9AC /* PomodoroMac */,
 				F0843CA121CE5AD900EDB65F /* Products */,
 				FFD2E382A03C8A4D78114878 /* Pods */,
 				647AC616D0FE392B89E1E767 /* Frameworks */,
@@ -1735,8 +1709,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F019BC20235B080C0005E9AC /* Assets.xcassets in Resources */,
-				F019BC23235B080C0005E9AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2122,8 +2094,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F019BC1E235B080B0005E9AC /* ViewController.swift in Sources */,
-				F019BC1C235B080B0005E9AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2461,14 +2431,6 @@
 				F021B2D3228ADE9B009FCD39 /* de */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		F019BC21235B080C0005E9AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F019BC22235B080C0005E9AC /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		F038208721F496C8000ACFD0 /* Localizable.stringsdict */ = {
