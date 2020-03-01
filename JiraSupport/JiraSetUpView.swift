@@ -138,7 +138,7 @@ struct HelperHeader: View {
 
 struct HelperFooter: View {
     var body: some View {
-        VStack(alignment:.leading) {
+        VStack(alignment: .leading) {
             Text("* Jira의 비밀번호 대신 API 토큰을 발급받으셔야 합니다")
             Text("* JQL로 앱과 연동할 티켓들을 세부적으로 고를 수 있습니다.")
             Text("* JQL 기본값: assignee = currentUser()")
