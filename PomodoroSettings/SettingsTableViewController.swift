@@ -9,8 +9,8 @@
 import JiraSupport
 import MessageUI
 import PomodoroFoundation
-import UIKit
 import SwiftUI
+import UIKit
 
 public class SettingsTableViewController: UITableViewController {
     @IBOutlet var amountSettingCells: [AmountSettingCell]!
@@ -29,6 +29,8 @@ public class SettingsTableViewController: UITableViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Settings"
         #if targetEnvironment(macCatalyst)
             navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .close,
                                                             target: self,
@@ -83,8 +85,9 @@ public class SettingsTableViewController: UITableViewController {
     }
 
     @IBAction func JiraLoginClicked() {
-
-        var vc:UIViewController = UIHostingController(rootView: JiraSetUpView(viewModel: JiraSetUpViewModel(previousCredential: nil)))
+        var vc: UIViewController = UIHostingController(rootView: JiraSetUpView(viewModel: JiraSetUpViewModel(previousCredential: nil)))
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.navigationItem.title = "Jira SetUp"
         do {
             if let mainJiraDomain = mainJiraDomain?.absoluteString {
                 let credential = try retreiveSavedCredentials(for: mainJiraDomain)
@@ -92,8 +95,7 @@ public class SettingsTableViewController: UITableViewController {
                 let jiraSetupView = JiraSetUpView(viewModel: viewModel)
                 vc = UIHostingController(rootView: jiraSetupView)
             }
-        }
-        catch {
+        } catch {
             print(error.localizedDescription)
         }
         show(vc, sender: nil)

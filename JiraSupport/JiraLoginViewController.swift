@@ -8,8 +8,8 @@
 
 import PomodoroFoundation
 import PomodoroUIKit
-import UIKit
 import SwiftUI
+import UIKit
 
 public class JiraLoginViewController: UIViewController {
     @IBOutlet var textFieldUserName: UITextField!
@@ -36,7 +36,6 @@ public class JiraLoginViewController: UIViewController {
         jiraSetUpViewHostController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         jiraSetUpViewHostController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         jiraSetUpViewHostController.view.translatesAutoresizingMaskIntoConstraints = false
-
     }
 
     func removePreviousCredential() {
@@ -60,8 +59,8 @@ extension JiraLoginViewController: UITextFieldDelegate {
         guard let host = textFieldJiraHost.text else { return }
         guard let userName = textFieldUserName.text, let password = textFieldPassword.text else { return }
         guard userName.isEmpty == false, password.isEmpty == false else { return }
-        let newCredential = Credentials(username:userName, password: password)
-        saveToKeychain(credentials: newCredential,for: host)
+        let newCredential = Credentials(username: userName, password: password)
+        saveToKeychain(credentials: newCredential, for: host)
     }
 }
 

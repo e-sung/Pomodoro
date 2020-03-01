@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public func saveToKeychain(credentials: Credentials, for server: String) {
     let account = credentials.username
     let password = credentials.password.data(using: String.Encoding.utf8)!
@@ -33,7 +32,7 @@ public func removeFromKeychain(credentials: Credentials, for server: String) {
     print(status)
 }
 
-public func retreiveSavedCredentials(for server:String) throws -> Credentials {
+public func retreiveSavedCredentials(for server: String) throws -> Credentials {
     let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
                                 kSecAttrServer as String: server,
                                 kSecMatchLimit as String: kSecMatchLimitOne,
@@ -52,6 +51,6 @@ public func retreiveSavedCredentials(for server:String) throws -> Credentials {
     else {
         throw KeychainError.unexpectedPasswordData
     }
-    
+
     return Credentials(username: account, password: password)
 }
