@@ -54,7 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         saveDateBackgroundEntered(Date(), to: UserDefaults.shared)
         if let interval = IntervalManager.shared {
             saveIntervalContext(of: interval, to: UserDefaults.shared)
-            registerBackgroundTimer(with: interval)
+            if retreiveBool(for: .enhancedFocusMode, from: UserDefaults.shared) == false {
+                registerBackgroundTimer(with: interval)
+            }
         }
 
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
