@@ -101,7 +101,7 @@ public struct JiraSetUpView: View {
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
             }
-            Section(header: HelperHeader()) {
+            Section(header: HelperHeader(), footer: HelperFooter()) {
                 Button(action: {
                     self.openAPITokenHelperPage()
                 }) {
@@ -133,6 +133,17 @@ struct HelperHeader: View {
             Image(systemName: "questionmark.circle")
             Text("도움말")
         }
+    }
+}
+
+struct HelperFooter: View {
+    var body: some View {
+        VStack(alignment:.leading) {
+            Text("* Jira의 비밀번호 대신 API 토큰을 발급받으셔야 합니다")
+            Text("* JQL로 앱과 연동할 티켓들을 세부적으로 고를 수 있습니다.")
+            Text("* JQL 기본값: assignee = currentUser()")
+        }
+        .padding(.top, 4)
     }
 }
 
