@@ -90,6 +90,8 @@ public class MainTimerViewController: TimerViewController {
         super.willTransition(to: newCollection, with: coordinator)
         if UIDevice.current.orientation.isLandscape {
             performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
+        } else {
+            interval.delegate = self
         }
     }
 
