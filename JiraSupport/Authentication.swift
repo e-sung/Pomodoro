@@ -28,13 +28,13 @@ public var mainJQL: String {
     }
 }
 
-//public var defaultJQL:String {
+// public var defaultJQL:String {
 //    return """
 //    assignee = currentUser() AND status in ("진행중", "개발 중", "In Progress")
 //    """
-//}
+// }
 
-public var defaultJQL:String {
+public var defaultJQL: String {
     return """
     assignee = currentUser()
     """

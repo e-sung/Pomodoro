@@ -19,8 +19,8 @@ public class JiraSetUpViewModel: ObservableObject {
     var cancelables: [Cancellable] = []
     let previousCredential: Credentials?
     let previousHost: String?
-    let tokenHelperURL = URL(string:"https://confluence.atlassian.com/cloud/api-tokens-938839638.html")!
-    let jqlHelperURL = URL(string:"https://www.atlassian.com/blog/jira-software/jql-the-most-flexible-way-to-search-jira-14")!
+    let tokenHelperURL = URL(string: "https://confluence.atlassian.com/cloud/api-tokens-938839638.html")!
+    let jqlHelperURL = URL(string: "https://www.atlassian.com/blog/jira-software/jql-the-most-flexible-way-to-search-jira-14")!
 
     public init(previousCredential: Credentials?, jql: String) {
         self.previousCredential = previousCredential
@@ -62,54 +62,54 @@ public struct JiraSetUpView: View {
     }
 
     public var body: some View {
-            Form {
-                HStack {
-                    Image(systemName: "globe")
-                        .frame(width: 15, height: 15)
-                    TextField("Jira Host Address", text: $viewModel.host)
-                        .textContentType(.URL)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
-                }
-                HStack {
-                    Image(systemName: "envelope")
-                        .frame(width: 15, height: 15)
-                    TextField("Jira User Email", text: $viewModel.email)
-                        .textContentType(.emailAddress)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
-                }
-                HStack {
-                    Image(systemName: "lock")
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 15, height: 15)
-                    SecureField("Jira API Token", text: $viewModel.apiToken)
-                        .textContentType(.password)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
-                }
-                HStack {
-                    Image(systemName: "tray.2")
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 15, height: 15)
-                    TextField("JQL", text: $viewModel.jql)
-                        .textContentType(.password)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
-                }
-                Section(header: HelperFooter()) {
-                    Text("API Token 발급 받는 법")
-                        .onTapGesture {
-                            let url = self.viewModel.tokenHelperURL
-                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                        }
-                    Text("JQL이란?")
-                        .onTapGesture {
-                            let url = self.viewModel.jqlHelperURL
-                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                        }
-                }
+        Form {
+            HStack {
+                Image(systemName: "globe")
+                    .frame(width: 15, height: 15)
+                TextField("Jira Host Address", text: $viewModel.host)
+                    .textContentType(.URL)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
             }
+            HStack {
+                Image(systemName: "envelope")
+                    .frame(width: 15, height: 15)
+                TextField("Jira User Email", text: $viewModel.email)
+                    .textContentType(.emailAddress)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+            }
+            HStack {
+                Image(systemName: "lock")
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 15, height: 15)
+                SecureField("Jira API Token", text: $viewModel.apiToken)
+                    .textContentType(.password)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+            }
+            HStack {
+                Image(systemName: "tray.2")
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 15, height: 15)
+                TextField("JQL", text: $viewModel.jql)
+                    .textContentType(.password)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+            }
+            Section(header: HelperFooter()) {
+                Text("API Token 발급 받는 법")
+                    .onTapGesture {
+                        let url = self.viewModel.tokenHelperURL
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                Text("JQL이란?")
+                    .onTapGesture {
+                        let url = self.viewModel.jqlHelperURL
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+            }
+        }
     }
 }
 
