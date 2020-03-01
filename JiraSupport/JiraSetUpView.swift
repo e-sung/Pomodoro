@@ -51,48 +51,48 @@ public class JiraSetUpViewModel: ObservableObject {
 
 public struct JiraSetUpView: View {
     @ObservedObject var viewModel: JiraSetUpViewModel
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State var hasEdited = false
+    @Environment(\.presentationMode) var presentationMode
     public init(viewModel: JiraSetUpViewModel) {
         self.viewModel = viewModel
     }
 
     public var body: some View {
-        Form {
-            HStack {
-                Image(systemName: "globe")
-                    .frame(width: 15, height: 15)
-                TextField("Jira Host Address", text: $viewModel.host)
-                    .textContentType(.URL)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
+            Form {
+                HStack {
+                    Image(systemName: "globe")
+                        .frame(width: 15, height: 15)
+                    TextField("Jira Host Address", text: $viewModel.host)
+                        .textContentType(.URL)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                }
+                HStack {
+                    Image(systemName: "envelope")
+                        .frame(width: 15, height: 15)
+                    TextField("Jira User Email", text: $viewModel.email)
+                        .textContentType(.emailAddress)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                }
+                HStack {
+                    Image(systemName: "lock")
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 15, height: 15)
+                    SecureField("Jira API Token", text: $viewModel.apiToken)
+                        .textContentType(.password)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                }
             }
-            HStack {
-                Image(systemName: "envelope")
-                    .frame(width: 15, height: 15)
-                TextField("Jira User Email", text: $viewModel.email)
-                    .textContentType(.emailAddress)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-            }
-            HStack {
-                Image(systemName: "lock")
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 15, height: 15)
-                SecureField("Jira API Token", text: $viewModel.apiToken)
-                    .textContentType(.password)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-            }
-        }
-        .navigationBarTitle("Jira SetUp", displayMode: .inline)
-        .navigationBarItems(trailing:
-            Button("Save", action: {
-                self.viewModel.saveCredentialsToKeychain()
-                self.presentationMode.wrappedValue.dismiss()
-               })
+            .navigationBarTitle("Jira SetUp", displayMode: .inline)
+            .navigationBarItems(
+                trailing:
+                Button("Save", action: {
+                    self.viewModel.saveCredentialsToKeychain()
+                    self.presentationMode.wrappedValue.dismiss()
+                })
                 .disabled(self.viewModel.canSave == false)
-        )
+            )
     }
 }
 

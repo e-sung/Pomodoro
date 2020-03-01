@@ -43,7 +43,6 @@
 		F045632F2356F36300B0AEAF /* MyIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */; };
 		F04563312356F3B400B0AEAF /* MyIssues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04563302356F3B400B0AEAF /* MyIssues.storyboard */; };
 		F04563342356F5C500B0AEAF /* JiraLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04563322356F5C500B0AEAF /* JiraLoginViewController.swift */; };
-		F04563352356F5C500B0AEAF /* JiraLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */; };
 		F04563382356F84F00B0AEAF /* JiraLogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */; };
 		F04563392356F84F00B0AEAF /* JiraLogOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04563372356F84F00B0AEAF /* JiraLogOutViewController.xib */; };
 		F04563412356F90D00B0AEAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04563402356F90D00B0AEAF /* AppDelegate.swift */; };
@@ -522,7 +521,6 @@
 		F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssuesViewController.swift; sourceTree = "<group>"; };
 		F04563302356F3B400B0AEAF /* MyIssues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyIssues.storyboard; sourceTree = "<group>"; };
 		F04563322356F5C500B0AEAF /* JiraLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraLoginViewController.swift; sourceTree = "<group>"; };
-		F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JiraLoginViewController.xib; sourceTree = "<group>"; };
 		F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraLogOutViewController.swift; sourceTree = "<group>"; };
 		F04563372356F84F00B0AEAF /* JiraLogOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JiraLogOutViewController.xib; sourceTree = "<group>"; };
 		F045633E2356F90D00B0AEAF /* JiraSupportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiraSupportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -872,7 +870,6 @@
 				F045636E2357100400B0AEAF /* Issue.swift */,
 				F04563322356F5C500B0AEAF /* JiraLoginViewController.swift */,
 				11CF69B3240AB996009A6B7D /* JiraSetUpView.swift */,
-				F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */,
 				F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */,
 				F04563372356F84F00B0AEAF /* JiraLogOutViewController.xib */,
 				F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */,
@@ -1660,7 +1657,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04563392356F84F00B0AEAF /* JiraLogOutViewController.xib in Resources */,
-				F04563352356F5C500B0AEAF /* JiraLoginViewController.xib in Resources */,
 				F04563312356F3B400B0AEAF /* MyIssues.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

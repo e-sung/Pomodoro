@@ -85,19 +85,9 @@ public class SettingsTableViewController: UITableViewController {
     }
 
     @IBAction func JiraLoginClicked() {
-        var vc: UIViewController = UIHostingController(rootView: JiraSetUpView(viewModel: JiraSetUpViewModel(previousCredential: nil)))
+        var vc: UIViewController = JiraLoginViewController()
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.navigationItem.title = "Jira SetUp"
-        do {
-            if let mainJiraDomain = mainJiraDomain?.absoluteString {
-                let credential = try retreiveSavedCredentials(for: mainJiraDomain)
-                let viewModel = JiraSetUpViewModel(previousCredential: credential)
-                let jiraSetupView = JiraSetUpView(viewModel: viewModel)
-                vc = UIHostingController(rootView: jiraSetupView)
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
         show(vc, sender: nil)
     }
 
