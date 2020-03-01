@@ -19,11 +19,13 @@ public class JiraSetUpViewModel: ObservableObject {
     var cancelables: [Cancellable] = []
     let previousCredential: Credentials?
     let previousHost: String?
+    let tokenHelperURL = URL(string:"https://confluence.atlassian.com/cloud/api-tokens-938839638.html")!
+    let jqlHelperURL = URL(string:"https://www.atlassian.com/blog/jira-software/jql-the-most-flexible-way-to-search-jira-14")!
 
     public init(previousCredential: Credentials?, jql: String) {
         self.previousCredential = previousCredential
         previousHost = mainJiraDomain?.absoluteString
-        host = mainJiraDomain?.absoluteString ?? ""
+        host = mainJiraDomain?.absoluteString ?? "https://rainist.atlassian.net"
         email = previousCredential?.username ?? ""
         apiToken = previousCredential?.password ?? ""
         self.jql = jql
@@ -95,22 +97,34 @@ public struct JiraSetUpView: View {
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                 }
+                Section(header: HelperFooter()) {
+                    Text("API Token 발급 받는 법")
+                        .onTapGesture {
+                            let url = self.viewModel.tokenHelperURL
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                    Text("JQL이란?")
+                        .onTapGesture {
+                            let url = self.viewModel.jqlHelperURL
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                }
             }
-            .navigationBarTitle("Jira SetUp", displayMode: .inline)
-            .navigationBarItems(
-                trailing:
-                Button("Save", action: {
-                    self.viewModel.saveCredentialsToKeychain()
-                    self.presentationMode.wrappedValue.dismiss()
-                })
-                .disabled(self.viewModel.canSave == false)
-            )
+    }
+}
+
+struct HelperFooter: View {
+    var body: some View {
+        HStack {
+            Image(systemName: "questionmark.circle")
+            Text("도움말")
+        }
     }
 }
 
 struct JiraSetUpView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = JiraSetUpViewModel(previousCredential: nil, jql: mainJQL)
+        let viewModel = JiraSetUpViewModel(previousCredential: nil, jql: "")
         return JiraSetUpView(viewModel: viewModel)
     }
 }
