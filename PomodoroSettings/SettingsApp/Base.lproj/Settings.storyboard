@@ -393,7 +393,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kp6-wt-7T7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="GG9-f6-dIp"/>
+                <tapGestureRecognizer id="GG9-f6-dIp">
+                    <connections>
+                        <action selector="contactCellClicked:" destination="92q-1T-ccy" id="tnx-bg-zVr"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <tapGestureRecognizer id="TB6-kk-cCK">
                     <connections>
                         <action selector="JiraLoginClicked" destination="92q-1T-ccy" id="d4B-Dh-BPZ"/>

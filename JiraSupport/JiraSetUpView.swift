@@ -101,12 +101,12 @@ public struct JiraSetUpView: View {
                 Button(action: {
                     self.openAPITokenHelperPage()
                 }) {
-                    Text("API Token 생성 방법").foregroundColor(.black)
+                    Text("API Token 생성 방법").foregroundColor(.primary)
                 }
                 Button(action: {
                     self.openJQLHelperPage()
                 }) {
-                    Text("JQL 사용방법").foregroundColor(.black)
+                    Text("JQL 사용방법").foregroundColor(.primary)
                 }
             }
         }
