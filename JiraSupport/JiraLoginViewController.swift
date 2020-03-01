@@ -13,15 +13,15 @@ import UIKit
 
 public class JiraLoginViewController: UIViewController {
 
+    var viewModel: JiraSetUpViewModel!
     public override func viewDidLoad() {
         super.viewDidLoad()
-        var viewModel: JiraSetUpViewModel!
         if let mainJiraDomain = mainJiraDomain?.absoluteString {
             let credential = try? retreiveSavedCredentials(for: mainJiraDomain)
-            viewModel = JiraSetUpViewModel(previousCredential: credential)
+            viewModel = JiraSetUpViewModel(previousCredential: credential, jql: mainJQL)
         }
         else {
-            viewModel = JiraSetUpViewModel(previousCredential: nil)
+            viewModel = JiraSetUpViewModel(previousCredential: nil, jql: "")
         }
         let jiraSetUpView = JiraSetUpView(viewModel: viewModel)
         let jiraSetUpViewHostController = UIHostingController(rootView: jiraSetUpView)
@@ -34,6 +34,14 @@ public class JiraLoginViewController: UIViewController {
         jiraSetUpViewHostController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         jiraSetUpViewHostController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         jiraSetUpViewHostController.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
+        navigationItem.setRightBarButton(saveBarButtonItem, animated: false)
+    }
+    
+    @objc func save() {
+        viewModel.saveCredentialsToKeychain()
+        navigationController?.popViewController(animated: true)
     }
 
 }

@@ -85,7 +85,7 @@ public class SettingsTableViewController: UITableViewController {
     }
 
     @IBAction func JiraLoginClicked() {
-        var vc: UIViewController = JiraLoginViewController()
+        let vc: UIViewController = JiraLoginViewController()
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.navigationItem.title = "Jira SetUp"
         show(vc, sender: nil)

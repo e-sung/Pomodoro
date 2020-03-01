@@ -14,17 +14,19 @@ public class JiraSetUpViewModel: ObservableObject {
     @Published var host: String
     @Published public var email: String
     @Published public var apiToken: String
+    @Published public var jql: String
     @Published public var canSave: Bool = false
     var cancelables: [Cancellable] = []
     let previousCredential: Credentials?
     let previousHost: String?
 
-    public init(previousCredential: Credentials?) {
+    public init(previousCredential: Credentials?, jql: String) {
         self.previousCredential = previousCredential
         previousHost = mainJiraDomain?.absoluteString
         host = mainJiraDomain?.absoluteString ?? ""
         email = previousCredential?.username ?? ""
         apiToken = previousCredential?.password ?? ""
+        self.jql = jql
 
         let newInput = $host
             .combineLatest($email, $apiToken)
@@ -39,6 +41,7 @@ public class JiraSetUpViewModel: ObservableObject {
     func saveCredentialsToKeychain() {
         removePreviousCredential()
         mainJiraDomain = URL(string: host)
+        mainJQL = jql
         saveToKeychain(credentials: Credentials(username: email, password: apiToken), for: host)
     }
 
@@ -83,6 +86,15 @@ public struct JiraSetUpView: View {
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
                 }
+                HStack {
+                    Image(systemName: "tray.2")
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 15, height: 15)
+                    TextField("JQL", text: $viewModel.jql)
+                        .textContentType(.password)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                }
             }
             .navigationBarTitle("Jira SetUp", displayMode: .inline)
             .navigationBarItems(
@@ -98,7 +110,7 @@ public struct JiraSetUpView: View {
 
 struct JiraSetUpView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = JiraSetUpViewModel(previousCredential: nil)
+        let viewModel = JiraSetUpViewModel(previousCredential: nil, jql: mainJQL)
         return JiraSetUpView(viewModel: viewModel)
     }
 }
