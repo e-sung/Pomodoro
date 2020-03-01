@@ -21,7 +21,11 @@ public var mainJiraDomain: URL? {
 
 public var mainJQL: String {
     get {
-        UserDefaults.standard.string(forKey: "JQL") ?? defaultJQL
+        if let storedJQL = UserDefaults.standard.string(forKey: "JQL"), storedJQL.isValid {
+            return storedJQL
+        } else {
+            return defaultJQL
+        }
     }
     set {
         UserDefaults.standard.set(newValue, forKey: "JQL")

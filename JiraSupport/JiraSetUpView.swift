@@ -28,7 +28,11 @@ public class JiraSetUpViewModel: ObservableObject {
         host = mainJiraDomain?.absoluteString ?? "https://rainist.atlassian.net"
         email = previousCredential?.username ?? ""
         apiToken = previousCredential?.password ?? ""
-        self.jql = jql
+        if jql == defaultJQL {
+            self.jql = ""
+        } else {
+            self.jql = jql
+        }
 
         let newInput = $host
             .combineLatest($email, $apiToken)
