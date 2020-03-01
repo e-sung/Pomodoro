@@ -8,14 +8,14 @@
 
 import Foundation
 
-let server = "https://jira.flit.to:18443"
 
 public func saveToKeychain(credentials: Credentials) {
+    let host = credentials.host
     let account = credentials.username
     let password = credentials.password.data(using: String.Encoding.utf8)!
     let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
                                 kSecAttrAccount as String: account,
-                                kSecAttrServer as String: server,
+                                kSecAttrServer as String: host,
                                 kSecValueData as String: password]
 
     let status = SecItemAdd(query as CFDictionary, nil)
@@ -23,18 +23,19 @@ public func saveToKeychain(credentials: Credentials) {
 }
 
 public func removeFromKeychain(credentials: Credentials) {
+    let host = credentials.host
     let account = credentials.username
     let password = credentials.password.data(using: String.Encoding.utf8)!
     let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
                                 kSecAttrAccount as String: account,
-                                kSecAttrServer as String: server,
+                                kSecAttrServer as String: host,
                                 kSecValueData as String: password]
 
     let status = SecItemDelete(query as CFDictionary)
     print(status)
 }
 
-public func retreiveSavedCredentials() throws -> Credentials {
+public func retreiveSavedCredentials(for server:String) throws -> Credentials {
     let query: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
                                 kSecAttrServer as String: server,
                                 kSecMatchLimit as String: kSecMatchLimitOne,
@@ -49,9 +50,11 @@ public func retreiveSavedCredentials() throws -> Credentials {
     guard let existingItem = item as? [String: Any],
         let passwordData = existingItem[kSecValueData as String] as? Data,
         let password = String(data: passwordData, encoding: String.Encoding.utf8),
+        let host = existingItem[kSecAttrServer as String] as? String,
         let account = existingItem[kSecAttrAccount as String] as? String
     else {
         throw KeychainError.unexpectedPasswordData
     }
-    return Credentials(username: account, password: password)
+    
+    return Credentials(host:host, username: account, password: password)
 }

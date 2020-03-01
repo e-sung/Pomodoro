@@ -9,9 +9,11 @@
 import Foundation
 
 public struct Credentials: Encodable {
+    public var host:String
     public var username: String
     public var password: String
-    public init(username: String, password: String) {
+    public init(host:String, username: String, password: String) {
+        self.host = host
         self.username = username
         self.password = password
     }

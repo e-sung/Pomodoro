@@ -82,15 +82,18 @@ public class SettingsTableViewController: UITableViewController {
     }
 
     @IBAction func JiraLoginClicked() {
-        var vc: UIViewController?
-        if let _ = try? retreiveSavedCredentials() {
-            vc = JiraLogOutViewController(nibName: JiraLogOutViewController.className,
-                                          bundle: Bundle(for: JiraLogOutViewController.self))
-        } else {
-            vc = JiraLoginViewController(nibName: JiraLoginViewController.className,
+        let vc = JiraLoginViewController(nibName: JiraLoginViewController.className,
                                          bundle: Bundle(for: JiraLoginViewController.self))
+        do {
+            if let mainJiraDomain = mainJiraDomain?.absoluteString {
+                let credential = try retreiveSavedCredentials(for: mainJiraDomain)
+                vc.previousCredential = credential
+            }
         }
-        show(vc!, sender: nil)
+        catch {
+            print(error.localizedDescription)
+        }
+        show(vc, sender: nil)
     }
 
     var mailComposeViewController: MFMailComposeViewController? {

@@ -10,6 +10,7 @@
 		043EBDCCB75E2648B8A0DFE7 /* Pods_PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6ED4FFC9FEC42EFEF23EA2 /* Pods_PomodoroFoundation.framework */; };
 		05DF4762513D38F4CDA3DFE9 /* Pods_PomodoroSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D45DD12ED7CDEE768CA16D /* Pods_PomodoroSettings.framework */; };
 		08A257C018DB2A285D13C78D /* Pods_PomodoroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B232AA18176BBF4A01EF1D2 /* Pods_PomodoroUITests.framework */; };
+		11CF69B6240ABB8B009A6B7D /* JiraSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CF69B3240AB996009A6B7D /* JiraSetUpView.swift */; };
 		573947069AA98EF34B3762BD /* Pods_PomodoroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101F9904C4E8F233CC2A58C4 /* Pods_PomodoroTests.framework */; };
 		5B19C3746C1E3C2F5D55457A /* Pods_TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813C5E24848650E06431EA07 /* Pods_TimeLine.framework */; };
 		6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */; };
@@ -450,6 +451,7 @@
 		05656D574EB3E24F37264C42 /* Pods-PomodoroSettings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroSettings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroSettings/Pods-PomodoroSettings.debug.xcconfig"; sourceTree = "<group>"; };
 		0830BEE4EDED18599049A33F /* Pods_SettingsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SettingsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		101F9904C4E8F233CC2A58C4 /* Pods_PomodoroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PomodoroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11CF69B3240AB996009A6B7D /* JiraSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraSetUpView.swift; sourceTree = "<group>"; };
 		1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pomodoro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A49FD54A7BCD2A3751E145 /* Pods-TimeLine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLine.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLine/Pods-TimeLine.release.xcconfig"; sourceTree = "<group>"; };
 		2B17B64862F4569BED2118DF /* Pods_TimeLineApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLineApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -869,6 +871,7 @@
 				F045632C2356F2C500B0AEAF /* FetchIssues.swift */,
 				F045636E2357100400B0AEAF /* Issue.swift */,
 				F04563322356F5C500B0AEAF /* JiraLoginViewController.swift */,
+				11CF69B3240AB996009A6B7D /* JiraSetUpView.swift */,
 				F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */,
 				F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */,
 				F04563372356F84F00B0AEAF /* JiraLogOutViewController.xib */,
@@ -2034,6 +2037,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CF69B6240ABB8B009A6B7D /* JiraSetUpView.swift in Sources */,
 				F04563382356F84F00B0AEAF /* JiraLogOutViewController.swift in Sources */,
 				F045636F2357100400B0AEAF /* Issue.swift in Sources */,
 				F045632F2356F36300B0AEAF /* MyIssuesViewController.swift in Sources */,

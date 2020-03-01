@@ -21,7 +21,8 @@ public var mainJiraDomain: URL? {
 
 public func logout() {
     HTTPCookieStorage.shared.cookies?.forEach { HTTPCookieStorage.shared.deleteCookie($0) }
-    if let credentials = try? retreiveSavedCredentials() {
+    guard let mainJiraDomain = mainJiraDomain?.absoluteString else { return }
+    if let credentials = try? retreiveSavedCredentials(for: mainJiraDomain) {
         removeFromKeychain(credentials: credentials)
     }
 }
