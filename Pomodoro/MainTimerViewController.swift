@@ -57,7 +57,6 @@ public class MainTimerViewController: TimerViewController {
         setUpBannerView()
         bindAccel(acceleration, to: motionManager)
         showOrHide(clearButton, by: acceleration)
-        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -69,13 +68,6 @@ public class MainTimerViewController: TimerViewController {
 //        if view.subviews.contains(bannerView) == false {
 //            addBannerViewToView(bannerView)
 //        }
-    }
-
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        if UIDevice.current.orientation.isLandscape {
-            performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
-        }
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -166,12 +158,6 @@ public class MainTimerViewController: TimerViewController {
     }
 
     // MARK: IBAction
-
-    @objc func rotated() {
-        if UIDevice.current.orientation.isLandscape, presentedViewController == nil {
-            performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
-        }
-    }
 
     @IBAction func backgroundTapped(_: Any) {
         acceleration.accept(1)

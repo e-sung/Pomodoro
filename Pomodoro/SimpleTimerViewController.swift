@@ -27,18 +27,6 @@ class SimpleTimerViewController: TimerViewController {
 
 //    var bannerView: GADBannerView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        addBannerViewToView(bannerView)
-        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
-    }
-
-    @objc func rotated() {
-        if UIDevice.current.orientation.isPortrait {
-            dismiss(animated: true, completion: nil)
-        }
-    }
-
     override func timeElapsed(_ seconds: TimeInterval) {
         super.timeElapsed(seconds)
         progressBar.progress = interval.progress

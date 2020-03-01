@@ -102,8 +102,8 @@ extension TimerViewController {
     }
 
     func setUpFonts() {
-        let currentFontSize = labelTime.font.pointSize
-        labelTime.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .thin)
+        let currentFontSize = labelTime?.font.pointSize ?? 17
+        labelTime?.font = UIFont.monospacedDigitSystemFont(ofSize: currentFontSize, weight: .thin)
     }
 }
 

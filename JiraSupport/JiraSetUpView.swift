@@ -21,7 +21,7 @@ public class JiraSetUpViewModel: ObservableObject {
     let previousHost: String?
     let tokenHelperURL = URL(string: "https://confluence.atlassian.com/cloud/api-tokens-938839638.html")!
     let jqlHelperURL = URL(string: "https://www.atlassian.com/blog/jira-software/jql-the-most-flexible-way-to-search-jira-14")!
-    
+
     public init(previousCredential: Credentials?, jql: String) {
         self.previousCredential = previousCredential
         previousHost = mainJiraDomain?.absoluteString
@@ -29,7 +29,7 @@ public class JiraSetUpViewModel: ObservableObject {
         email = previousCredential?.username ?? ""
         apiToken = previousCredential?.password ?? ""
         self.jql = jql
-        
+
         let newInput = $host
             .combineLatest($email, $apiToken)
             .sink(receiveValue: { [weak self] newHost, newEmail, newToken in
@@ -39,14 +39,14 @@ public class JiraSetUpViewModel: ObservableObject {
             })
         cancelables = [newInput]
     }
-    
+
     func saveCredentialsToKeychain() {
         removePreviousCredential()
         mainJiraDomain = URL(string: host)
         mainJQL = jql
         saveToKeychain(credentials: Credentials(username: email, password: apiToken), for: host)
     }
-    
+
     func removePreviousCredential() {
         guard let credential = previousCredential else { return }
         guard let jira = mainJiraDomain?.absoluteString else { return }
@@ -60,7 +60,7 @@ public struct JiraSetUpView: View {
     public init(viewModel: JiraSetUpViewModel) {
         self.viewModel = viewModel
     }
-    
+
     public var body: some View {
         Form {
             HStack {
@@ -111,14 +111,14 @@ public struct JiraSetUpView: View {
             }
         }
     }
-    
+
     func openAPITokenHelperPage() {
-        let url = self.viewModel.tokenHelperURL
+        let url = viewModel.tokenHelperURL
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
-    
+
     func openJQLHelperPage() {
-        let url = self.viewModel.jqlHelperURL
+        let url = viewModel.jqlHelperURL
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
