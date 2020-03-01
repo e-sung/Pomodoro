@@ -11,16 +11,15 @@ import Foundation
 import PomodoroFoundation
 
 var credentialHeader: HTTPHeader? {
-    guard let credential = try? retreiveSavedCredentials() else { return nil }
+    guard let mainJiraDomain = mainJiraDomain?.absoluteString else { return nil }
+    guard let credential = try? retreiveSavedCredentials(for: mainJiraDomain) else { return nil }
     let credentialData = "\(credential.username):\(credential.password)".data(using: .utf8)
     guard let base64Credential = credentialData?.base64EncodedString() else { return nil }
     return HTTPHeader(name: "Authorization", value: "Basic \(base64Credential)")
 }
 
 func fetchIssues(then completionHandler: @escaping (Result<[Issue], Error>) -> Void) {
-    let jql = """
-    assignee = currentUser() AND status in (진행중, "개발 중")
-    """.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+    let jql = mainJQL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
     guard let url = URL(string: "/rest/api/2/search?jql=\(jql)", relativeTo: mainJiraDomain) else {
         fatalError("Wrong Path for Issues")
     }

@@ -8,49 +8,37 @@
 
 import PomodoroFoundation
 import PomodoroUIKit
+import SwiftUI
 import UIKit
 
 public class JiraLoginViewController: UIViewController {
-    @IBOutlet var textFieldUserName: UITextField!
-    @IBOutlet var textFieldPassword: UITextField!
-    @IBOutlet var textFieldJiraHost: UITextField!
-    private var jiraHostTextFieldDelegate = JiraHostTextFieldDelegate()
-    public override func loadView() {
-        Bundle(for: type(of: self)).loadNibNamed(className, owner: self, options: nil)
-    }
-
+    var viewModel: JiraSetUpViewModel!
     public override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldUserName.delegate = self
-        textFieldPassword.delegate = self
-        textFieldJiraHost.delegate = jiraHostTextFieldDelegate
-        textFieldUserName.placeholder = "e-mail"
-        textFieldPassword.placeholder = "API-Token"
-        hideKeyboardWhenTappedAround()
-        textFieldJiraHost.text = mainJiraDomain?.absoluteString
-    }
-}
-
-extension JiraLoginViewController: UITextFieldDelegate {
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField === textFieldUserName {
-            textFieldPassword.becomeFirstResponder()
+        if let mainJiraDomain = mainJiraDomain?.absoluteString {
+            let credential = try? retreiveSavedCredentials(for: mainJiraDomain)
+            viewModel = JiraSetUpViewModel(previousCredential: credential, jql: mainJQL)
+        } else {
+            viewModel = JiraSetUpViewModel(previousCredential: nil, jql: "")
         }
-        return true
+        let jiraSetUpView = JiraSetUpView(viewModel: viewModel)
+        let jiraSetUpViewHostController = UIHostingController(rootView: jiraSetUpView)
+
+        addChild(jiraSetUpViewHostController)
+        jiraSetUpViewHostController.loadViewIfNeeded()
+        view.addSubview(jiraSetUpViewHostController.view)
+        jiraSetUpViewHostController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        jiraSetUpViewHostController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        jiraSetUpViewHostController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        jiraSetUpViewHostController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        jiraSetUpViewHostController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
+        navigationItem.setRightBarButton(saveBarButtonItem, animated: false)
     }
 
-    public func textFieldDidEndEditing(_: UITextField) {
-        guard let userName = textFieldUserName.text, let password = textFieldPassword.text else { return }
-        guard userName.isEmpty == false, password.isEmpty == false else { return }
-        let credential = Credentials(username: userName, password: password)
-        saveToKeychain(credentials: credential)
-    }
-}
-
-class JiraHostTextFieldDelegate: NSObject, UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        guard let url = URL(string: text) else { return }
-        UserDefaults.standard.set(url, forKey: "JiraHostURL")
+    @objc func save() {
+        viewModel.saveCredentialsToKeychain()
+        navigationController?.popViewController(animated: true)
     }
 }

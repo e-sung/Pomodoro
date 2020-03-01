@@ -9,6 +9,7 @@
 import JiraSupport
 import MessageUI
 import PomodoroFoundation
+import SwiftUI
 import UIKit
 
 public class SettingsTableViewController: UITableViewController {
@@ -28,6 +29,8 @@ public class SettingsTableViewController: UITableViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Settings"
         #if targetEnvironment(macCatalyst)
             navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .close,
                                                             target: self,
@@ -82,15 +85,10 @@ public class SettingsTableViewController: UITableViewController {
     }
 
     @IBAction func JiraLoginClicked() {
-        var vc: UIViewController?
-        if let _ = try? retreiveSavedCredentials() {
-            vc = JiraLogOutViewController(nibName: JiraLogOutViewController.className,
-                                          bundle: Bundle(for: JiraLogOutViewController.self))
-        } else {
-            vc = JiraLoginViewController(nibName: JiraLoginViewController.className,
-                                         bundle: Bundle(for: JiraLoginViewController.self))
-        }
-        show(vc!, sender: nil)
+        let vc: UIViewController = JiraLoginViewController()
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.navigationItem.title = "Jira SetUp"
+        show(vc, sender: nil)
     }
 
     var mailComposeViewController: MFMailComposeViewController? {

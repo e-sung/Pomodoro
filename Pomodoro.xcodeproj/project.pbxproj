@@ -10,6 +10,7 @@
 		043EBDCCB75E2648B8A0DFE7 /* Pods_PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6ED4FFC9FEC42EFEF23EA2 /* Pods_PomodoroFoundation.framework */; };
 		05DF4762513D38F4CDA3DFE9 /* Pods_PomodoroSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D45DD12ED7CDEE768CA16D /* Pods_PomodoroSettings.framework */; };
 		08A257C018DB2A285D13C78D /* Pods_PomodoroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B232AA18176BBF4A01EF1D2 /* Pods_PomodoroUITests.framework */; };
+		11CF69B6240ABB8B009A6B7D /* JiraSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CF69B3240AB996009A6B7D /* JiraSetUpView.swift */; };
 		573947069AA98EF34B3762BD /* Pods_PomodoroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 101F9904C4E8F233CC2A58C4 /* Pods_PomodoroTests.framework */; };
 		5B19C3746C1E3C2F5D55457A /* Pods_TimeLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 813C5E24848650E06431EA07 /* Pods_TimeLine.framework */; };
 		6170770267831FBAF38C7916 /* Pods_Pomodoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */; };
@@ -27,12 +28,6 @@
 		F0080CBD2286A2CB005D9E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBC2286A2CB005D9E2C /* LaunchScreen.storyboard */; };
 		F0080CC02286A374005D9E2C /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBE2286A374005D9E2C /* Timeline.storyboard */; };
 		F0080CC12286A374005D9E2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0080CBF2286A374005D9E2C /* LaunchScreen.storyboard */; };
-		F019BC1C235B080B0005E9AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019BC1B235B080B0005E9AC /* AppDelegate.swift */; };
-		F019BC1E235B080B0005E9AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019BC1D235B080B0005E9AC /* ViewController.swift */; };
-		F019BC20235B080C0005E9AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F019BC1F235B080C0005E9AC /* Assets.xcassets */; };
-		F019BC23235B080C0005E9AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F019BC21235B080C0005E9AC /* Main.storyboard */; };
-		F019BC2E235B08340005E9AC /* PomodoroFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; };
-		F019BC2F235B08340005E9AC /* PomodoroFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F087252021CF6719007EB27F /* PomodoroFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F019BC3B235B088E0005E9AC /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A8E1DF2259A811007FE83F /* Protocols.swift */; };
 		F019BC48235B0C920005E9AC /* MacMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F019BC47235B0C920005E9AC /* MacMain.storyboard */; };
 		F019BC4A235B0FD10005E9AC /* MacTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F019BC49235B0FD10005E9AC /* MacTimerViewController.swift */; };
@@ -48,7 +43,6 @@
 		F045632F2356F36300B0AEAF /* MyIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */; };
 		F04563312356F3B400B0AEAF /* MyIssues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04563302356F3B400B0AEAF /* MyIssues.storyboard */; };
 		F04563342356F5C500B0AEAF /* JiraLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04563322356F5C500B0AEAF /* JiraLoginViewController.swift */; };
-		F04563352356F5C500B0AEAF /* JiraLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */; };
 		F04563382356F84F00B0AEAF /* JiraLogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */; };
 		F04563392356F84F00B0AEAF /* JiraLogOutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04563372356F84F00B0AEAF /* JiraLogOutViewController.xib */; };
 		F04563412356F90D00B0AEAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04563402356F90D00B0AEAF /* AppDelegate.swift */; };
@@ -170,20 +164,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F019BC30235B08340005E9AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F087251F21CF6719007EB27F;
-			remoteInfo = PomodoroFoundation;
-		};
-		F019BC3D235B08EC0005E9AC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F0006EAC21EDE11F00307F88;
-			remoteInfo = PomodoroUIKit;
-		};
 		F04563542356F92100B0AEAF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F0843C9821CE5AD900EDB65F /* Project object */;
@@ -376,17 +356,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F019BC3A235B08340005E9AC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F019BC2F235B08340005E9AC /* PomodoroFoundation.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F045635A2356F92100B0AEAF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -481,6 +450,7 @@
 		05656D574EB3E24F37264C42 /* Pods-PomodoroSettings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PomodoroSettings.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PomodoroSettings/Pods-PomodoroSettings.debug.xcconfig"; sourceTree = "<group>"; };
 		0830BEE4EDED18599049A33F /* Pods_SettingsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SettingsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		101F9904C4E8F233CC2A58C4 /* Pods_PomodoroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PomodoroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11CF69B3240AB996009A6B7D /* JiraSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraSetUpView.swift; sourceTree = "<group>"; };
 		1D06ED7FDABD84071D13507A /* Pods_Pomodoro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pomodoro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A49FD54A7BCD2A3751E145 /* Pods-TimeLine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLine.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLine/Pods-TimeLine.release.xcconfig"; sourceTree = "<group>"; };
 		2B17B64862F4569BED2118DF /* Pods_TimeLineApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLineApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -515,14 +485,6 @@
 		F0080CC32286A857005D9E2C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0080CC42286A857005D9E2C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ja; path = ja.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		F0080CC52286A857005D9E2C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F019BC19235B080B0005E9AC /* PomodoroMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F019BC1B235B080B0005E9AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F019BC1D235B080B0005E9AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F019BC1F235B080C0005E9AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F019BC22235B080C0005E9AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F019BC24235B080C0005E9AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F019BC25235B080C0005E9AC /* PomodoroMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroMac.entitlements; sourceTree = "<group>"; };
-		F019BC29235B08130005E9AC /* PomodoroMacDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroMacDebug.entitlements; sourceTree = "<group>"; };
 		F019BC47235B0C920005E9AC /* MacMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MacMain.storyboard; sourceTree = "<group>"; };
 		F019BC49235B0FD10005E9AC /* MacTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacTimerViewController.swift; sourceTree = "<group>"; };
 		F019BC4B235B2A370005E9AC /* PomodoroDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroDebug.entitlements; sourceTree = "<group>"; };
@@ -559,7 +521,6 @@
 		F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssuesViewController.swift; sourceTree = "<group>"; };
 		F04563302356F3B400B0AEAF /* MyIssues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyIssues.storyboard; sourceTree = "<group>"; };
 		F04563322356F5C500B0AEAF /* JiraLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraLoginViewController.swift; sourceTree = "<group>"; };
-		F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JiraLoginViewController.xib; sourceTree = "<group>"; };
 		F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiraLogOutViewController.swift; sourceTree = "<group>"; };
 		F04563372356F84F00B0AEAF /* JiraLogOutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JiraLogOutViewController.xib; sourceTree = "<group>"; };
 		F045633E2356F90D00B0AEAF /* JiraSupportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiraSupportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -680,14 +641,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0006EBE21EDE2AD00307F88 /* PomodoroFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F019BC16235B080B0005E9AC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F019BC2E235B08340005E9AC /* PomodoroFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,20 +813,6 @@
 			path = PomodoroUIKit;
 			sourceTree = "<group>";
 		};
-		F019BC1A235B080B0005E9AC /* PomodoroMac */ = {
-			isa = PBXGroup;
-			children = (
-				F019BC29235B08130005E9AC /* PomodoroMacDebug.entitlements */,
-				F019BC1B235B080B0005E9AC /* AppDelegate.swift */,
-				F019BC1D235B080B0005E9AC /* ViewController.swift */,
-				F019BC1F235B080C0005E9AC /* Assets.xcassets */,
-				F019BC21235B080C0005E9AC /* Main.storyboard */,
-				F019BC24235B080C0005E9AC /* Info.plist */,
-				F019BC25235B080C0005E9AC /* PomodoroMac.entitlements */,
-			);
-			path = PomodoroMac;
-			sourceTree = "<group>";
-		};
 		F038205321F22484000ACFD0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,7 +869,7 @@
 				F045632C2356F2C500B0AEAF /* FetchIssues.swift */,
 				F045636E2357100400B0AEAF /* Issue.swift */,
 				F04563322356F5C500B0AEAF /* JiraLoginViewController.swift */,
-				F04563332356F5C500B0AEAF /* JiraLoginViewController.xib */,
+				11CF69B3240AB996009A6B7D /* JiraSetUpView.swift */,
 				F04563362356F84F00B0AEAF /* JiraLogOutViewController.swift */,
 				F04563372356F84F00B0AEAF /* JiraLogOutViewController.xib */,
 				F045632E2356F36300B0AEAF /* MyIssuesViewController.swift */,
@@ -951,7 +890,6 @@
 				F0BA0E0322367BB6004CD72C /* TimeLineTests */,
 				F0711B752356E39C00097551 /* JiraSupport */,
 				F045633F2356F90D00B0AEAF /* JiraSupportApp */,
-				F019BC1A235B080B0005E9AC /* PomodoroMac */,
 				F0843CA121CE5AD900EDB65F /* Products */,
 				FFD2E382A03C8A4D78114878 /* Pods */,
 				647AC616D0FE392B89E1E767 /* Frameworks */,
@@ -977,7 +915,6 @@
 				F0BA0DFD22367BB6004CD72C /* TimeLineTests.xctest */,
 				F0711B742356E39C00097551 /* JiraSupport.framework */,
 				F045633E2356F90D00B0AEAF /* JiraSupportApp.app */,
-				F019BC19235B080B0005E9AC /* PomodoroMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1259,28 +1196,6 @@
 			productName = PomodoroUIKit;
 			productReference = F0006EAD21EDE11F00307F88 /* PomodoroUIKit.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		F019BC18235B080B0005E9AC /* PomodoroMac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F019BC26235B080C0005E9AC /* Build configuration list for PBXNativeTarget "PomodoroMac" */;
-			buildPhases = (
-				F019BC15235B080B0005E9AC /* Sources */,
-				F019BC16235B080B0005E9AC /* Frameworks */,
-				F019BC17235B080B0005E9AC /* Resources */,
-				F019BC3A235B08340005E9AC /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F019BC31235B08340005E9AC /* PBXTargetDependency */,
-				F019BC3E235B08EC0005E9AC /* PBXTargetDependency */,
-			);
-			name = PomodoroMac;
-			packageProductDependencies = (
-			);
-			productName = PomodoroMac;
-			productReference = F019BC19235B080B0005E9AC /* PomodoroMac.app */;
-			productType = "com.apple.product-type.application";
 		};
 		F045633D2356F90D00B0AEAF /* JiraSupportApp */ = {
 			isa = PBXNativeTarget;
@@ -1607,9 +1522,6 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
 					};
-					F019BC18235B080B0005E9AC = {
-						CreatedOnToolsVersion = 11.1;
-					};
 					F045633D2356F90D00B0AEAF = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -1717,7 +1629,6 @@
 				F0BA0DFC22367BB6004CD72C /* TimeLineTests */,
 				F0711B732356E39C00097551 /* JiraSupport */,
 				F045633D2356F90D00B0AEAF /* JiraSupportApp */,
-				F019BC18235B080B0005E9AC /* PomodoroMac */,
 			);
 		};
 /* End PBXProject section */
@@ -1728,15 +1639,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06BEC4B21EE019500A45E08 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F019BC17235B080B0005E9AC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F019BC20235B080C0005E9AC /* Assets.xcassets in Resources */,
-				F019BC23235B080C0005E9AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1755,7 +1657,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04563392356F84F00B0AEAF /* JiraLogOutViewController.xib in Resources */,
-				F04563352356F5C500B0AEAF /* JiraLoginViewController.xib in Resources */,
 				F04563312356F3B400B0AEAF /* MyIssues.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2118,15 +2019,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F019BC15235B080B0005E9AC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F019BC1E235B080B0005E9AC /* ViewController.swift in Sources */,
-				F019BC1C235B080B0005E9AC /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F045633A2356F90D00B0AEAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2141,6 +2033,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CF69B6240ABB8B009A6B7D /* JiraSetUpView.swift in Sources */,
 				F04563382356F84F00B0AEAF /* JiraLogOutViewController.swift in Sources */,
 				F045636F2357100400B0AEAF /* Issue.swift in Sources */,
 				F045632F2356F36300B0AEAF /* MyIssuesViewController.swift in Sources */,
@@ -2301,16 +2194,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F019BC31235B08340005E9AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F087251F21CF6719007EB27F /* PomodoroFoundation */;
-			targetProxy = F019BC30235B08340005E9AC /* PBXContainerItemProxy */;
-		};
-		F019BC3E235B08EC0005E9AC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F0006EAC21EDE11F00307F88 /* PomodoroUIKit */;
-			targetProxy = F019BC3D235B08EC0005E9AC /* PBXContainerItemProxy */;
-		};
 		F04563552356F92100B0AEAF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F0711B732356E39C00097551 /* JiraSupport */;
@@ -2463,14 +2346,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		F019BC21235B080C0005E9AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F019BC22235B080C0005E9AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F038208721F496C8000ACFD0 /* Localizable.stringsdict */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2596,51 +2471,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F019BC27235B080C0005E9AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = PomodoroMac/PomodoroMacDebug.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7KT5X239S9;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = PomodoroMac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroMac;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		F019BC28235B080C0005E9AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = PomodoroMac/PomodoroMac.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 7KT5X239S9;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = PomodoroMac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.PomodoroMac;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -2872,7 +2702,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = 7KT5X239S9;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -2899,10 +2729,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pomodoro/Pomodoro.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 7836J6Z5N8;
+				DEVELOPMENT_TEAM = 7KT5X239S9;
 				INFOPLIST_FILE = Pomodoro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2911,6 +2743,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungdoo.Pomodoro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3483,15 +3317,6 @@
 			buildConfigurations = (
 				F0006EB721EDE11F00307F88 /* Debug */,
 				F0006EB821EDE11F00307F88 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F019BC26235B080C0005E9AC /* Build configuration list for PBXNativeTarget "PomodoroMac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F019BC27235B080C0005E9AC /* Debug */,
-				F019BC28235B080C0005E9AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

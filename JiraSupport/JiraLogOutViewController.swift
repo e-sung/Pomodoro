@@ -20,16 +20,16 @@ public class JiraLogOutViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        if let _ = try? retreiveSavedCredentials() {
-            imageViewStatus.image = UIImage(systemName: "checkmark.circle")
-            imageViewStatus.tintColor = .systemGreen
-            labelStatus.text = "로그인 되어 있습니다"
-        } else {
-            imageViewStatus.image = UIImage(systemName: "xmark.circle")
-            imageViewStatus.tintColor = .systemRed
-            labelStatus.text = "로그 아웃 되어 있습니다"
-            buttonLogout.isHidden = true
-        }
+//        if let _ = try? retreiveSavedCredentials() {
+//            imageViewStatus.image = UIImage(systemName: "checkmark.circle")
+//            imageViewStatus.tintColor = .systemGreen
+//            labelStatus.text = "로그인 되어 있습니다"
+//        } else {
+//            imageViewStatus.image = UIImage(systemName: "xmark.circle")
+//            imageViewStatus.tintColor = .systemRed
+//            labelStatus.text = "로그 아웃 되어 있습니다"
+//            buttonLogout.isHidden = true
+//        }
     }
 
     @IBAction func buttonLogoutClicked() {
