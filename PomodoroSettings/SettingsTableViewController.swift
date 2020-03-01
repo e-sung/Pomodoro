@@ -10,6 +10,7 @@ import JiraSupport
 import MessageUI
 import PomodoroFoundation
 import UIKit
+import SwiftUI
 
 public class SettingsTableViewController: UITableViewController {
     @IBOutlet var amountSettingCells: [AmountSettingCell]!
@@ -82,12 +83,14 @@ public class SettingsTableViewController: UITableViewController {
     }
 
     @IBAction func JiraLoginClicked() {
-        let vc = JiraLoginViewController(nibName: JiraLoginViewController.className,
-                                         bundle: Bundle(for: JiraLoginViewController.self))
+
+        var vc:UIViewController = UIHostingController(rootView: JiraSetUpView(viewModel: JiraSetUpViewModel(previousCredential: nil)))
         do {
             if let mainJiraDomain = mainJiraDomain?.absoluteString {
                 let credential = try retreiveSavedCredentials(for: mainJiraDomain)
-                vc.previousCredential = credential
+                let viewModel = JiraSetUpViewModel(previousCredential: credential)
+                let jiraSetupView = JiraSetUpView(viewModel: viewModel)
+                vc = UIHostingController(rootView: jiraSetupView)
             }
         }
         catch {

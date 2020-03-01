@@ -24,29 +24,18 @@ public class JiraLoginViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldUserName.delegate = self
-        textFieldPassword.delegate = self
-        textFieldJiraHost.delegate = jiraHostTextFieldDelegate
-        textFieldUserName.placeholder = "e-mail"
-        textFieldPassword.placeholder = "API-Token"
-        hideKeyboardWhenTappedAround()
-        textFieldJiraHost.text = mainJiraDomain?.absoluteString
-        if let credential = previousCredential {
-            textFieldUserName.text = credential.username
-            textFieldPassword.text = credential.password
-        }
-        
-        
-        let viewModel = JiraSetUpViewModel(host: "https://asdf.com", email: "asdf", apiToken: "s")
-        var jiraSetUpView = UIHostingController(rootView: JiraSetUpView(viewModel: viewModel))
-        addChild(jiraSetUpView)
-        jiraSetUpView.loadViewIfNeeded()
-        view.addSubview(jiraSetUpView.view)
-        jiraSetUpView.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        jiraSetUpView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        jiraSetUpView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        jiraSetUpView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        jiraSetUpView.view.translatesAutoresizingMaskIntoConstraints = false
+
+        let viewModel = JiraSetUpViewModel(previousCredential: previousCredential)
+        let jiraSetupView = JiraSetUpView(viewModel: viewModel)
+        let jiraSetUpViewHostController = UIHostingController(rootView: jiraSetupView)
+        addChild(jiraSetUpViewHostController)
+        jiraSetUpViewHostController.loadViewIfNeeded()
+        view.addSubview(jiraSetUpViewHostController.view)
+        jiraSetUpViewHostController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        jiraSetUpViewHostController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        jiraSetUpViewHostController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        jiraSetUpViewHostController.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        jiraSetUpViewHostController.view.translatesAutoresizingMaskIntoConstraints = false
 
     }
 
