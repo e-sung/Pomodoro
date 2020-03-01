@@ -37,22 +37,23 @@ public class JiraLoginViewController: UIViewController {
         }
         
         
-//        let viewModel = JiraSetUpViewModel(host: "https://asdf.com", email: "asdf", apiToken: "s")
-//        var jiraSetUpView = UIHostingController(rootView: JiraSetUpView(viewModel: viewModel))
-//        addChild(jiraSetUpView)
-//        jiraSetUpView.loadViewIfNeeded()
-//        view.addSubview(jiraSetUpView.view)
-//        jiraSetUpView.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        jiraSetUpView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//        jiraSetUpView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        jiraSetUpView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        jiraSetUpView.view.translatesAutoresizingMaskIntoConstraints = false
+        let viewModel = JiraSetUpViewModel(host: "https://asdf.com", email: "asdf", apiToken: "s")
+        var jiraSetUpView = UIHostingController(rootView: JiraSetUpView(viewModel: viewModel))
+        addChild(jiraSetUpView)
+        jiraSetUpView.loadViewIfNeeded()
+        view.addSubview(jiraSetUpView.view)
+        jiraSetUpView.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        jiraSetUpView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        jiraSetUpView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        jiraSetUpView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        jiraSetUpView.view.translatesAutoresizingMaskIntoConstraints = false
 
     }
 
     func removePreviousCredential() {
         guard let credential = previousCredential else { return }
-        removeFromKeychain(credentials: credential)
+        guard let jira = mainJiraDomain?.absoluteString else { return }
+        removeFromKeychain(credentials: credential, for: jira)
     }
 }
 
@@ -70,8 +71,8 @@ extension JiraLoginViewController: UITextFieldDelegate {
         guard let host = textFieldJiraHost.text else { return }
         guard let userName = textFieldUserName.text, let password = textFieldPassword.text else { return }
         guard userName.isEmpty == false, password.isEmpty == false else { return }
-        let newCredential = Credentials(host:host, username: userName, password: password)
-        saveToKeychain(credentials: newCredential)
+        let newCredential = Credentials(username:userName, password: password)
+        saveToKeychain(credentials: newCredential,for: host)
     }
 }
 
