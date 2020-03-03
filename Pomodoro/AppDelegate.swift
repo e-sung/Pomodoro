@@ -33,15 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             IntervalManager.shared = FocusInterval()
         }
 
-        window = UIWindow(frame: UIScreen.main.bounds)
-        var storyboard: UIStoryboard!
         #if targetEnvironment(macCatalyst)
-            storyboard = UIStoryboard(name: "MacMain", bundle: nil)
-        #else
-            storyboard = UIStoryboard(name: "Main", bundle: nil)
+            window = UIWindow(frame: UIScreen.main.bounds)
+            var storyboard = UIStoryboard(name: "MacMain", bundle: nil)
+            window?.rootViewController = storyboard.instantiateInitialViewController()
+            window?.makeKeyAndVisible()
         #endif
-        window?.rootViewController = storyboard.instantiateInitialViewController()
-        window?.makeKeyAndVisible()
         return true
     }
 

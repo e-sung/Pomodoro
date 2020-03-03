@@ -92,6 +92,7 @@ public class MainTimerViewController: TimerViewController {
             performSegue(withIdentifier: "showSimpleTimerVC", sender: nil)
         } else {
             interval.delegate = self
+            refreshViews(with: interval)
         }
     }
 
