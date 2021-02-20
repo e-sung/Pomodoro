@@ -37,6 +37,12 @@ class MacTimerViewController: TimerViewController {
         indicateCurrentStatus(on: sender.location(in: view))
     }
 
+    @IBAction func buttonOpenInJiraTapped(_: Any) {
+        guard let key = issue?.key else { return }
+        guard let url = mainJiraDomain?.appendingPathComponent("browse/\(key)") else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+
     @IBAction func closeButtonTapped(_: Any) {
         intervalFinished(by: .user, isFromBackground: false)
     }
@@ -83,7 +89,7 @@ class MacTimerViewController: TimerViewController {
         updateControlButton()
         if interval is FocusInterval {
             if let issue = issue {
-                labelStatus.text = issue.sumamry
+                labelStatus.text = issue.key + "\n" + issue.sumamry
             } else {
                 labelStatus.text = NSLocalizedString("focusing", comment: "")
             }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pUY-kG-Ghw" initialMenu="Ojj-Ui-Wsg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pUY-kG-Ghw" initialMenu="Ojj-Ui-Wsg">
     <device id="mac" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jFb-OW-axl">
-                                <rect key="frame" x="14" y="230" width="472" height="208"/>
+                                <rect key="frame" x="14" y="210" width="472" height="247"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴식중" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rFL-K3-Id9">
                                         <rect key="frame" x="0.0" y="0.0" width="472" height="165"/>
@@ -37,6 +38,13 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9O-L4-BoJ">
+                                        <rect key="frame" x="0.0" y="216" width="472" height="31"/>
+                                        <state key="normal" title="Open In Jira"/>
+                                        <connections>
+                                            <action selector="buttonOpenInJiraTapped:" destination="pUY-kG-Ghw" eventType="touchUpInside" id="DBA-LX-H7I"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5E5-ne-rvC" userLabel="StackView Issue selector">
@@ -81,6 +89,7 @@
                                 </connections>
                             </slider>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="iQg-N0-a6g"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -98,7 +107,6 @@
                             <constraint firstItem="iQg-N0-a6g" firstAttribute="trailing" secondItem="jFb-OW-axl" secondAttribute="trailing" constant="14" id="siM-PB-Iwp"/>
                             <constraint firstItem="iQg-N0-a6g" firstAttribute="bottom" secondItem="0Zq-Hm-skG" secondAttribute="bottom" constant="44" id="vIK-w2-9cZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iQg-N0-a6g"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="IlI-Ju-dBa" appends="YES" id="3Qz-yr-JkX"/>
                         </connections>
@@ -140,7 +148,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrowtriangle.down.fill" catalog="system" width="64" height="62"/>
-        <image name="xmark" catalog="system" width="64" height="56"/>
+        <image name="arrowtriangle.down.fill" catalog="system" width="128" height="124"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>
